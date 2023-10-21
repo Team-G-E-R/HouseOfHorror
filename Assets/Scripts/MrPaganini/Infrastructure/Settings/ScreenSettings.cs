@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MrPaganini.Infrastruct.Settings
+namespace MrPaganini.Infrastructure.Settings
 {
     [Serializable]
     public class ScreenSettings

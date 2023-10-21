@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace MrPaganini.Infrastruct
+namespace MrPaganini.Infrastructure
 {
     public class GameRunner : MonoBehaviour
     {

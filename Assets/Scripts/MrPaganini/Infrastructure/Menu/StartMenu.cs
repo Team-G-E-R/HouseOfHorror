@@ -4,17 +4,20 @@ using UnityEngine.UI;
 public class StartMenu : MonoBehaviour
 {
     [SerializeField] private AudioClip _startMenuSound;
+    private string NextLevel = "";
 
-    private const string NextLevel = "Level 1";
-    
+
     private LoadLevel _loadLevel;
     private AudioSource _audioSource;
+    private IPersistentProgressService _progressService;
 
     public void Construct(GameFactory gameFactory,
-        IAudioService audioService)
+        IAudioService audioService, IPersistentProgressService progressService)
     {
-        _loadLevel = new LoadLevel(gameFactory);
-
+        _loadLevel = new LoadLevel(gameFactory, progressService);
+        _progressService = progressService;
+        Debug.Log(progressService.PlayerProgress);
+        NextLevel = _progressService.PlayerProgress.WorldData.PositionOnLevel.Level;
         StartMusic(audioService);
     }
 

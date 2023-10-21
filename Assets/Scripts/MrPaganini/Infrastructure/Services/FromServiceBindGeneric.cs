@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class FromServiceBindGeneric<TContract>
 {
@@ -16,6 +17,8 @@ public class FromServiceBindGeneric<TContract>
         where TConcrete : TContract, IService
     {
         _di.Add(typeof(TContract), implementation);
+        if (implementation is ISavedProgress savedProgress)
+            _allServices.SavedProgressesServices.Add(savedProgress);
         return new FromServiceBindGeneric<TConcrete>(_di, _allServices);
     }
 }

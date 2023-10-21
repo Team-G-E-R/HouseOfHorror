@@ -1,17 +1,20 @@
+using UnityEditor;
 using UnityEngine;
 
 public class LoadLevel
 {
     private SceneLoader _sceneLoader;
     private GameFactory _gameFactory;
+    private readonly IPersistentProgressService _persistentProgressService;
     private LoadingCurtain _loadingCurtain;
 
     private const string InitialPlayerPointTag = "InitialPoint";
     private const string InitialCameraPointTag = "InitialCameraPoint";
 
-    public LoadLevel(GameFactory gameFactory)
+    public LoadLevel(GameFactory gameFactory, IPersistentProgressService persistentProgressService)
     {
         _gameFactory = gameFactory;
+        _persistentProgressService = persistentProgressService;
         _sceneLoader = new SceneLoader();
     }
 
@@ -31,10 +34,15 @@ public class LoadLevel
     {
         InitGameWorld();
         EnableMusic();
+        InformProgressReaders();
         _loadingCurtain.Hide();
         _sceneLoader.ChangeProgress -= OnChangeProgress;
     }
-
+    private void InformProgressReaders()
+    {
+        foreach (ISavedProgressReader progressReader in _gameFactory.ProgressesReader)
+            progressReader.LoadProgress(_persistentProgressService.PlayerProgress);
+    }
     private void EnableMusic()
     {
         var audioService = AllServices.Singleton.Single<IAudioService>();
