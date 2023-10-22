@@ -1,5 +1,5 @@
 ﻿using System;
-using MrPaganini.Infrastruct.Settings;
+using MrPaganini.Infrastructure.Settings;
 using UnityEngine;
 
 namespace GameResources.SO
