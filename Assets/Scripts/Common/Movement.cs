@@ -58,6 +58,7 @@ namespace Common.Scripts
 
             float sprint = _sprintLocked == false && Input.GetKey(_sprintKey) ? sprintSpeedBonus : 0;
             physicsBody.velocity = _movement * (speed + sprint) * Time.fixedDeltaTime;
+            physicsBody.AddForce(Physics.gravity * (physicsBody.mass * physicsBody.mass));
         }
 
         public void SetSprint(bool sprint) => _sprintLocked = !sprint;
