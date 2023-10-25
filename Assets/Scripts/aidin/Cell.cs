@@ -21,6 +21,9 @@ public class Cell : MonoBehaviour
     private float startTime;
 
     private bool moving;
+
+    public Vector2Int PrevIndex { get; private set; } = Vector2Int.one * -1;
+    public Vector2Int NewIndex { get; private set; } = Vector2Int.one * -1;
     
     public int Number
     {
@@ -35,9 +38,10 @@ public class Cell : MonoBehaviour
         }
     }
 
-    public void Move(float x,float y)
+    public void Move(Vector2Int prevIndex, Vector2Int newIndex, float x,float y)
     {
-        Debug.Log("3");
+        PrevIndex = prevIndex;
+        NewIndex = newIndex;
         start = transform.position;
         end = new Vector3(x, y, transform.position.z);
         startTime = Time.time;  
@@ -55,7 +59,6 @@ public class Cell : MonoBehaviour
         {
             float t = (Time.time - startTime) / 0.25f;
             transform.position = Vector3.Lerp(start, end, t);
-            Debug.Log("4");
 
             if (t > 1) 
             {

@@ -21,7 +21,6 @@ public class MainControler : MonoBehaviour
     private void Table_OnMoveComplete()
     {
         raycaster.Locked = false;
-        Debug.Log("6");
     }
 
     private void Raycaster_OnCellHit(Cell cell)
