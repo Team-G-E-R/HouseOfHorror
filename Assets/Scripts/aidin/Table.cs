@@ -63,7 +63,7 @@ public class Table : MonoBehaviour
         }
         return countInvarsions % 2 == 0;
     }
-    private void Generate()
+    public void Generate()
     {
         Clear();
 
@@ -84,6 +84,27 @@ public class Table : MonoBehaviour
             }
             yOffset += 0.1f; // ”величиваем смещение по оси Y дл€ следующей строки €чеек
         }
+    }
+    
+    public bool WinGame()
+    {
+        if (table[SIZE - 1, SIZE - 1] != null)
+            return false;
+
+        int prev = 0;
+        for (int y = 0; y < SIZE; y++)
+        {
+            for (int x = 0; x < SIZE; x++)
+            {
+                
+                if (table[x, y] == null)
+                    break;
+                if (prev > table[x,y].Number) 
+                    return false;
+                prev = table[x, y].Number; 
+            }
+        }
+        return true;
     }
 
     private Vector2Int FindCellCoordinates(Cell cell)
@@ -143,7 +164,7 @@ public class Table : MonoBehaviour
 
     void Start()
     {
-        Generate();
+
 
     }
 

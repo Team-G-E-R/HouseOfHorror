@@ -10,17 +10,32 @@ public class MainControler : MonoBehaviour
 
     [SerializeField]
     private Raycaster raycaster;
+    public DoorController DC;
 
     void Start()
     {
         raycaster.OnCellHit += Raycaster_OnCellHit;
         table.OnMoveComplete += Table_OnMoveComplete;
+        table.Generate();
+        Win();
 
     }
 
     private void Table_OnMoveComplete()
     {
         raycaster.Locked = false;
+
+     
+    }
+    private void Win() 
+    {
+        Debug.Log("1");
+        if (table.WinGame())
+        {
+            Debug.Log("win");
+            table.Generate();
+            DC.winGame = true;
+        }
     }
 
     private void Raycaster_OnCellHit(Cell cell)
