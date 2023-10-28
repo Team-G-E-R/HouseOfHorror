@@ -17,18 +17,17 @@ public class MainControler : MonoBehaviour
         raycaster.OnCellHit += Raycaster_OnCellHit;
         table.OnMoveComplete += Table_OnMoveComplete;
         table.Generate();
-        Win();
+        
+        
 
     }
 
     private void Table_OnMoveComplete()
     {
+        
         raycaster.Locked = false;
 
-     
-    }
-    private void Win() 
-    {
+        
         Debug.Log("1");
         if (table.WinGame())
         {
@@ -36,7 +35,12 @@ public class MainControler : MonoBehaviour
             table.Generate();
             DC.winGame = true;
         }
+        
+
+
+
     }
+   
 
     private void Raycaster_OnCellHit(Cell cell)
     {

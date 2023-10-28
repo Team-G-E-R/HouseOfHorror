@@ -88,22 +88,28 @@ public class Table : MonoBehaviour
     
     public bool WinGame()
     {
-        if (table[SIZE - 1, SIZE - 1] != null)
+        
+        if (table[SIZE - 1, SIZE - 1] != null) 
+        {
+            
             return false;
-
+        }
         int prev = 0;
         for (int y = 0; y < SIZE; y++)
         {
             for (int x = 0; x < SIZE; x++)
             {
-                
                 if (table[x, y] == null)
+
                     break;
+                    
                 if (prev > table[x,y].Number) 
                     return false;
+                    
                 prev = table[x, y].Number; 
             }
         }
+        
         return true;
     }
 
@@ -119,6 +125,9 @@ public class Table : MonoBehaviour
 
     public bool TryMove(Cell cell)
     {
+
+
+
         Vector2Int coordinates = FindCellCoordinates(cell);
 
         List<Vector2Int> dxdy = new List<Vector2Int>()
@@ -128,6 +137,9 @@ public class Table : MonoBehaviour
             new Vector2Int(0, 1),
             new Vector2Int(-1, 0),
         };
+
+        
+    
 
         for (int i = 0; i < dxdy.Count; i++)
         {
