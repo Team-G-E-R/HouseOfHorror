@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -11,7 +9,7 @@ public class Table : MonoBehaviour
     private const float DECREASE_SIZE = 3f;
 
     public event System.Action OnMoveComplete;
-                
+
     [SerializeField]
     private Cell cellPrefab;
 
@@ -20,7 +18,7 @@ public class Table : MonoBehaviour
     private void Clear()
     {
         var cells = FindObjectsOfType<Cell>();
-        foreach (var cell in cells) 
+        foreach (var cell in cells)
             Destroy(cell.gameObject);
 
         table = new Cell[SIZE, SIZE];
@@ -31,20 +29,20 @@ public class Table : MonoBehaviour
 
         do
         {
-                List<int> numbers = Enumerable.Range(1, 8).ToList();
+            List<int> numbers = Enumerable.Range(1, 8).ToList();
 
-                for (int y = 0; y < SIZE; y++)
+            for (int y = 0; y < SIZE; y++)
+            {
+                for (int x = 0; x < SIZE; x++)
                 {
-                    for (int x = 0; x < SIZE; x++)
-                    {
-                        if (x == SIZE - 1 && y == SIZE - 1)
-                            continue;
+                    if (x == SIZE - 1 && y == SIZE - 1)
+                        continue;
 
-                        int index = Random.Range(0, numbers.Count);
-                        table[x, y] = numbers[index];
-                        numbers.RemoveAt(index);
-                    }
+                    int index = Random.Range(0, numbers.Count);
+                    table[x, y] = numbers[index];
+                    numbers.RemoveAt(index);
                 }
+            }
         }
         while (IsSolvable(table.Cast<int>().ToArray()));
         return table;
@@ -52,12 +50,12 @@ public class Table : MonoBehaviour
     }
     private bool IsSolvable(int[] table)
     {
-        int countInvarsions = 0;    
-        for (int i = 0;i < table.Length; i++)
+        int countInvarsions = 0;
+        for (int i = 0; i < table.Length; i++)
         {
-            for(int j = 0; j < i; j++)
+            for (int j = 0; j < i; j++)
             {
-                if (table[j] > table[i])    
+                if (table[j] > table[i])
                     countInvarsions++;
             }
         }
@@ -85,35 +83,31 @@ public class Table : MonoBehaviour
             yOffset += 0.1f; // ”величиваем смещение по оси Y дл€ следующей строки €чеек
         }
     }
-    
+
     public bool WinGame()
     {
-        
-        if (table[SIZE - 3, SIZE - 3] != null) 
+        if (table[0, 0] != null)
         {
-            Debug.Log("4");
             return false;
         }
         int prev = 0;
-        for (int y = 0; y < SIZE; y++)
+        for (int y = SIZE - 1; y > 0; y--)
         {
-            Debug.Log("5");
-            for (int x = 0; x < SIZE; x++)
+            for (int x = SIZE - 1; x > 0; x--)
             {
-                Debug.Log("6");
                 if (table[x, y] == null)
-           
+                {
+                    if (x == 0 && y == 0)
+                        return true;
                     break;
-                    Debug.Log("7");
+                }
 
-                if (prev > table[x,y].Number) 
+                if (prev > table[x, y].Number)
                     return false;
-                    Debug.Log("8");
 
-                prev = table[x, y].Number; 
+                prev = table[x, y].Number;
             }
         }
-        Debug.Log("9");
 
         return true;
     }
@@ -130,9 +124,6 @@ public class Table : MonoBehaviour
 
     public bool TryMove(Cell cell)
     {
-
-
-
         Vector2Int coordinates = FindCellCoordinates(cell);
 
         List<Vector2Int> dxdy = new List<Vector2Int>()
@@ -142,9 +133,6 @@ public class Table : MonoBehaviour
             new Vector2Int(0, 1),
             new Vector2Int(-1, 0),
         };
-
-        
-    
 
         for (int i = 0; i < dxdy.Count; i++)
         {
@@ -178,12 +166,4 @@ public class Table : MonoBehaviour
         table[cell.NewIndex.x, cell.NewIndex.y] = cell;
         OnMoveComplete?.Invoke();
     }
-
-    void Start()
-    {
-
-
-    }
-
-    
 }
