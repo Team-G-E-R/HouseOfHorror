@@ -97,15 +97,19 @@ public class Table : MonoBehaviour
         int prev = 0;
         for (int y = 0; y < SIZE; y++)
         {
+            Debug.Log("5");
             for (int x = 0; x < SIZE; x++)
             {
+                Debug.Log("6");
                 if (table[x, y] == null)
-
+           
                     break;
-                    
+                    Debug.Log("7");
+
                 if (prev > table[x,y].Number) 
                     return false;
-                    
+                    Debug.Log("8");
+
                 prev = table[x, y].Number; 
             }
         }
