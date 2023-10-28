@@ -37,7 +37,7 @@ public class Table : MonoBehaviour
                 {
                     for (int x = 0; x < SIZE; x++)
                     {
-                        if (x == SIZE - 1 && y  == SIZE - 1)
+                        if (x == SIZE - 1 && y == SIZE - 1)
                             continue;
 
                         int index = Random.Range(0, numbers.Count);
@@ -89,9 +89,9 @@ public class Table : MonoBehaviour
     public bool WinGame()
     {
         
-        if (table[SIZE - 1, SIZE - 1] != null) 
+        if (table[SIZE - 3, SIZE - 3] != null) 
         {
-            
+            Debug.Log("4");
             return false;
         }
         int prev = 0;
@@ -109,7 +109,8 @@ public class Table : MonoBehaviour
                 prev = table[x, y].Number; 
             }
         }
-        
+        Debug.Log("9");
+
         return true;
     }
 
