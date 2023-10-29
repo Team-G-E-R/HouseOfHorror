@@ -55,7 +55,7 @@ public class DoorController : MonoBehaviour
             Debug.LogError("Assign Key GameObject");
         }
         if (table.WinGame())
-        { 
+        {
             winGame = true;
         }
     }
@@ -100,12 +100,12 @@ public class DoorController : MonoBehaviour
 
             if (doorState == DoorState.Closed && !doorAnim.isPlaying)
             {
-                if (!keyNeeded||!gameNeeded)
+                if (!keyNeeded || !gameNeeded)
                 {
                     doorAnim.Play("Door_Open");
                     doorState = DoorState.Opened;
                 }
-                else if ((keyNeeded && !gotKey)||(gameNeeded && !winGame))
+                else if ((keyNeeded && !gotKey) || (gameNeeded && !winGame))
                 {
                     if (doorAnim.GetClip("Door_Jam") != null)
                         doorAnim.Play("Door_Jam");
@@ -113,7 +113,7 @@ public class DoorController : MonoBehaviour
                 }
             }
 
-            if (doorState == DoorState.Closed && (gotKey||winGame) && !doorAnim.isPlaying)
+            if (doorState == DoorState.Closed && (gotKey || winGame) && !doorAnim.isPlaying)
             {
                 doorAnim.Play("Door_Open");
                 doorState = DoorState.Opened;
@@ -125,13 +125,13 @@ public class DoorController : MonoBehaviour
                 doorState = DoorState.Closed;
             }
 
-            if (doorState == DoorState.Jammed && (!gotKey||!winGame))
+            if (doorState == DoorState.Jammed && (!gotKey || !winGame))
             {
                 if (doorAnim.GetClip("Door_Jam") != null)
                     doorAnim.Play("Door_Jam");
                 doorState = DoorState.Jammed;
             }
-            else if (doorState == DoorState.Jammed && (gotKey||winGame) && !doorAnim.isPlaying)
+            else if (doorState == DoorState.Jammed && (gotKey || winGame) && !doorAnim.isPlaying)
             {
                 doorAnim.Play("Door_Open");
                 doorState = DoorState.Opened;

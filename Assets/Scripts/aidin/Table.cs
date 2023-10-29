@@ -91,9 +91,9 @@ public class Table : MonoBehaviour
             return false;
         }
         int prev = 0;
-        for (int y = SIZE - 1; y > 0; y--)
+        for (int y = SIZE - 1; y >= 0; y--)
         {
-            for (int x = SIZE - 1; x > 0; x--)
+            for (int x = SIZE - 1; x >= 0; x--)
             {
                 if (table[x, y] == null)
                 {
