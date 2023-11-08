@@ -123,6 +123,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &39549768
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 39549770}
+  - component: {fileID: 39549769}
+  m_Layer: 0
+  m_Name: Room spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &39549769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39549768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7ed709588fd8724ebaae7c0687a8254, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceBetweenRoom: 110
+  _countRoom: 10
+  _camera: {fileID: 551598151}
+  _cameraSpeed: 10
+  _poolRoom: []
+  _lastPosition: {x: 0, y: 0, z: 0}
+--- !u!4 &39549770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39549768}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -73.23376, y: -20.265022, z: 62.535}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &160422938
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,10 +373,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6832406665557886276, guid: 5263a694b705d8a4ab391a717505efb3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1767084130}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5263a694b705d8a4ab391a717505efb3, type: 3}
 --- !u!1 &551598149
 GameObject:
@@ -420,11 +467,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1332882949 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6832406665557886276, guid: 5263a694b705d8a4ab391a717505efb3, type: 3}
-  m_PrefabInstance: {fileID: 461454003}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1457776229
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,27 +566,9 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4079709290794508053, guid: 5263a694b705d8a4ab391a717505efb3, type: 3}
   m_PrefabInstance: {fileID: 461454003}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332882949}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 202ac33a239b61e4d831b2b0a22c421e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1767084130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1332882949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7ed709588fd8724ebaae7c0687a8254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _distanceBetweenRoom: 110
-  _countRoom: 10
-  _camera: {fileID: 551598151}
-  _cameraSpeed: 10
-  _poolRoom: []
-  _lastPosition: {x: 0, y: 0, z: 0}

@@ -8,8 +8,8 @@ public class LoadLevel
     private readonly IPersistentProgressService _persistentProgressService;
     private LoadingCurtain _loadingCurtain;
 
-    private const string InitialPlayerPointTag = "InitialPoint";
-    private const string InitialCameraPointTag = "InitialCameraPoint";
+    //private const string InitialPlayerPointTag = "InitialPoint";
+    //private const string InitialCameraPointTag = "InitialCameraPoint";
 
     public LoadLevel(GameFactory gameFactory, IPersistentProgressService persistentProgressService)
     {
@@ -59,14 +59,14 @@ public class LoadLevel
     private void SpawnCamera()
     {
         PlayerCamera camera = _gameFactory.CreateCamera().GetComponent<PlayerCamera>();
-        GameObject spawnObject = GameObject.FindWithTag(InitialCameraPointTag);
+        GameObject spawnObject = GameObject.FindWithTag("MainCamera");
         camera.transform.position = spawnObject.transform.position;
     }
 
     private void SpawnPlayer()
     {
         Player player = _gameFactory.CreatPlayer().GetComponent<Player>();
-        GameObject spawnObject = GameObject.FindWithTag(InitialPlayerPointTag);
+        GameObject spawnObject = GameObject.FindWithTag("Player");
         player.transform.position = spawnObject.transform.position;
     }
 
