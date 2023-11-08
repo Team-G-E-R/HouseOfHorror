@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class LoadLevel
 {
+    private AudioClip _audioToNextScene;
     private SceneLoader _sceneLoader;
     private GameFactory _gameFactory;
     private readonly IPersistentProgressService _persistentProgressService;
     private LoadingCurtain _loadingCurtain;
 
-    private const string InitialPlayerPointTag = "InitialPoint";
-    private const string InitialCameraPointTag = "InitialCameraPoint";
+    //private const string InitialPlayerPointTag = "InitialPoint";
+    //private const string InitialCameraPointTag = "InitialCameraPoint";
 
-    public LoadLevel(GameFactory gameFactory, IPersistentProgressService persistentProgressService)
+    public LoadLevel(GameFactory gameFactory, IPersistentProgressService persistentProgressService, AudioClip _audioClip)
     {
+        _audioToNextScene = _audioClip;
         _gameFactory = gameFactory;
         _persistentProgressService = persistentProgressService;
         _sceneLoader = new SceneLoader();
@@ -46,7 +48,7 @@ public class LoadLevel
     private void EnableMusic()
     {
         var audioService = AllServices.Singleton.Single<IAudioService>();
-        audioService.AudioSource.clip = Resources.Load<AudioClip>("Music/Ambient 1");
+        audioService.AudioSource.clip = _audioToNextScene;
         audioService.AudioSource.Play();
     }
 
@@ -59,14 +61,14 @@ public class LoadLevel
     private void SpawnCamera()
     {
         PlayerCamera camera = _gameFactory.CreateCamera().GetComponent<PlayerCamera>();
-        GameObject spawnObject = GameObject.FindWithTag(InitialCameraPointTag);
+        GameObject spawnObject = GameObject.FindWithTag("MainCamera");
         camera.transform.position = spawnObject.transform.position;
     }
 
     private void SpawnPlayer()
     {
         Player player = _gameFactory.CreatPlayer().GetComponent<Player>();
-        GameObject spawnObject = GameObject.FindWithTag(InitialPlayerPointTag);
+        GameObject spawnObject = GameObject.FindWithTag("Player");
         player.transform.position = spawnObject.transform.position;
     }
 

@@ -30,19 +30,22 @@ public class RoomSpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _camera.transform.position += new Vector3(0, 0, _cameraSpeed * Time.deltaTime);
-        if (Math.Abs(_camera.transform.position.z - _lastPosition.z) 
-            < Math.Abs(_poolRoom[0].transform.position.z - _lastPosition.z)/2)
+        if (_camera != null)
         {
-            for (int i = 0; i < _poolRoom.Count / 4; i++)
+            _camera.transform.position += new Vector3(0, 0, _cameraSpeed * Time.deltaTime);   
+            if (Math.Abs(_camera.transform.position.z - _lastPosition.z) 
+                < Math.Abs(_poolRoom[0].transform.position.z - _lastPosition.z)/2)
             {
-                Destroy(_poolRoom[i]);
-                var room = Instantiate(Resources.Load<GameObject>("Room"));
-                _lastPosition.z += _distanceBetweenRoom;
-                room.transform.position = _lastPosition;
-                _poolRoom.Add(room);
+                for (int i = 0; i < _poolRoom.Count / 4; i++)
+                {
+                    Destroy(_poolRoom[i]);
+                    var room = Instantiate(Resources.Load<GameObject>("Room"));
+                    _lastPosition.z += _distanceBetweenRoom;
+                    room.transform.position = _lastPosition;
+                    _poolRoom.Add(room);
+                }
+                _poolRoom.RemoveRange(0,  _poolRoom.Count /4);
             }
-            _poolRoom.RemoveRange(0,  _poolRoom.Count /4);
         }
     }
 }
