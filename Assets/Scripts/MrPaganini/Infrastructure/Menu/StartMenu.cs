@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
+    [SerializeField] private AudioClip _audioToNextScene;
     [SerializeField] private AudioClip _startMenuSound;
     private string NextLevel = "";
 
@@ -15,7 +16,7 @@ public class StartMenu : MonoBehaviour
     public void Construct(GameFactory gameFactory,
         IAudioService audioService, IPersistentProgressService progressService)
     {
-        _loadLevel = new LoadLevel(gameFactory, progressService);
+        _loadLevel = new LoadLevel(gameFactory, progressService, _audioToNextScene);
         _progressService = progressService;
         Debug.Log(progressService.PlayerProgress);
         NextLevel = _progressService.PlayerProgress.WorldData.PositionOnLevel.Level;
