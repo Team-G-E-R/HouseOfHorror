@@ -1,3 +1,4 @@
+using MrPaganini.UI.Windows;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,9 +32,10 @@ public class StartMenu : MonoBehaviour
 
     private void StartMusic(IAudioService audioService)
     {
+        var _volumeSetting = AllServices.Singleton.Single<ISettingsService>().SettingsConfig;
         _audioSource = audioService.AudioSource;
         _audioSource.clip = _startMenuSound;
         _audioSource.Play();
-        _audioSource.volume = 0.2f;
+        _audioSource.volume = _volumeSetting.Volume;
     }
 }
