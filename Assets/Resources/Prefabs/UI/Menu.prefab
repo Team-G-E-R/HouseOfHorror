@@ -122,7 +122,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3953443324355123947}
+      - m_Target: {fileID: 7893222527780629647}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -1161,7 +1161,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3953443324355123947}
+      - m_Target: {fileID: 7893222527780629647}
         m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
@@ -3313,7 +3313,7 @@ GameObject:
   - component: {fileID: 6296410653908770563}
   - component: {fileID: 1626024663652462497}
   - component: {fileID: 4173135915839475951}
-  - component: {fileID: 3953443324355123947}
+  - component: {fileID: 7893222527780629647}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -3406,7 +3406,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &3953443324355123947
+--- !u!114 &7893222527780629647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3415,10 +3415,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8757809853898035415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986043c7aee07bc4ea03078969b0716b, type: 3}
+  m_Script: {fileID: 11500000, guid: 436ef5497cff384458f5a5a8e9d41695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startMenuSound: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
+  _startMenuSound: {fileID: 0}
 --- !u!1 &8799110820113435207
 GameObject:
   m_ObjectHideFlags: 0
