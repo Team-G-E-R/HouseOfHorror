@@ -1,10 +1,8 @@
-using MrPaganini.UI.Windows;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class StartMenu : MonoBehaviour
 {
-    [SerializeField] private AudioClip _audioToNextScene;
     [SerializeField] private AudioClip _startMenuSound;
     private string NextLevel = "";
 
@@ -16,7 +14,7 @@ public class StartMenu : MonoBehaviour
     public void Construct(GameFactory gameFactory,
         IAudioService audioService, IPersistentProgressService progressService)
     {
-        _loadLevel = new LoadLevel(gameFactory, progressService, _audioToNextScene);
+        _loadLevel = new LoadLevel(gameFactory, progressService);
         _progressService = progressService;
         Debug.Log(progressService.PlayerProgress);
         NextLevel = _progressService.PlayerProgress.WorldData.PositionOnLevel.Level;
@@ -33,10 +31,9 @@ public class StartMenu : MonoBehaviour
 
     private void StartMusic(IAudioService audioService)
     {
-        var _volumeSetting = AllServices.Singleton.Single<ISettingsService>().SettingsConfig;
         _audioSource = audioService.AudioSource;
         _audioSource.clip = _startMenuSound;
         _audioSource.Play();
-        _audioSource.volume = _volumeSetting.Volume;
+        _audioSource.volume = 0.2f;
     }
 }
