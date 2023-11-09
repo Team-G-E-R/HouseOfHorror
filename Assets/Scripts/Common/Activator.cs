@@ -6,42 +6,36 @@ using UnityEngine.UI;
 
 public class Activator : MonoBehaviour
 {
-    
-    private bool isInRange;
-   public KeyCode InteractKey = KeyCode.E;
-   /* public UnityEvent InteractAction; */
-   private GameObject InteractItem;
-    public bool key = false;
+    private bool _isInRange;
+    public KeyCode InteractKey = KeyCode.E;
+    /* public UnityEvent InteractAction; */
+    private GameObject InteractItem;
+    private bool key = false;
     
     [SerializeField] GameObject inputButtonImage;
    
-   private void Start()
+   private void Awake()
    {
-     inputButtonImage.SetActive(false);
+        inputButtonImage.SetActive(false);
    }
    
    private void Update() 
    {    
-        if((isInRange)&(Input.GetKeyDown(InteractKey)))
+        if((_isInRange)&(Input.GetKeyDown(InteractKey)))
         {
-           Debug.Log("1st stage");
-           if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
-           {
-                ob.Interact();
-           }
-            
+            if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
+            {
+                 ob.Interact();
+            }
             /* InteractAction.Invoke(); */
         }
-        if ((isInRange) & (Input.GetKeyDown(InteractKey)))
+        if ((_isInRange) & (Input.GetKeyDown(InteractKey)))
         {
-            Debug.Log("2st stage");
             if ((InteractItem.TryGetComponent<Key>(out Key ob1)))
             {
-                
                 ob1.Interact1();
                 inputButtonImage.SetActive(false);
             }
-
             /* InteractAction.Invoke(); */
         }
 
@@ -52,13 +46,11 @@ public class Activator : MonoBehaviour
    {
         if ((other.tag == "Interactable"))
         {
-            isInRange =true;
+            _isInRange =true;
             inputButtonImage.SetActive(true);
-            Debug.Log("4st stage");
             if (key == false)
             {
                 InteractItem = other.gameObject;
-
             }
            
             else 
@@ -66,21 +58,14 @@ public class Activator : MonoBehaviour
                 Debug.Log("нет ключа");
             }
         }
-            
 
-
-            
-       
-        if ((other.tag == "key"))
+        if ((other.tag == "Key"))
         {
-
-            isInRange = true;
+            _isInRange = true;
             inputButtonImage.SetActive(true);
             InteractItem = other.gameObject;
 
             key = false;
-            
-
         }
    }
 
@@ -91,13 +76,13 @@ public class Activator : MonoBehaviour
         {
                inputButtonImage.SetActive(false);
                InteractItem=null;
-               isInRange=false;  
+               _isInRange=false;  
         }
-        if ((other.tag == "key"))
+        else if ((other.tag == "Key"))
         {
             inputButtonImage.SetActive(false);
             InteractItem = null;
-            isInRange = false;
+            _isInRange = false;
         }
     }
 }

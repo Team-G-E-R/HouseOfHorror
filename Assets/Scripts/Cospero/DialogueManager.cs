@@ -35,7 +35,7 @@ private void Update()
      {
         return;
      }
-    StopAllCoroutines();
+        StopAllCoroutines();
      if (_dialogueTextUI.text!=_curSentanceText)
      {
         _dialogueTextUI.text=_curSentanceText;
