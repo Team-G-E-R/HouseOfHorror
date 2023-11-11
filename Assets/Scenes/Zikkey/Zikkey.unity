@@ -240,7 +240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98697bfc3b372c64e860930d1b27ceec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _container: {fileID: 1063669508}
+  _onWin:
+    m_PersistentCalls:
+      m_Calls: []
+  _container: {fileID: 1063669509}
   _unitPrefab: {fileID: 8673378197040477102, guid: cc1ba8df3d452fa45a9257ae6f081b76, type: 3}
   _gridSize: {x: 3, y: 3}
 --- !u!1 &303032796

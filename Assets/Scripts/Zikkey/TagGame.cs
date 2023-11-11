@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class TagGame : MonoBehaviour
 {
     [SerializeField] private UnityEvent _onWin;
 
-    [SerializeField] private RectTransform _container;
+    [SerializeField] private GridLayoutGroup _container;
     [SerializeField] private TagUnit _unitPrefab;
     [SerializeField] private Vector2Int _gridSize = new(3, 3);
     [SerializeField] private TagUnit[,] _grid;
@@ -28,12 +29,13 @@ public class TagGame : MonoBehaviour
 
     public void InitializeField()
     {
+        _container.constraintCount = _gridSize.y;
         _grid = new TagUnit[_gridSize.x, _gridSize.y];
 
         for (int x = 0; x < _gridSize.x; x++)
             for (int y = 0; y < _gridSize.y; y++)
             {
-                TagUnit unit = Instantiate(_unitPrefab, _container);
+                TagUnit unit = Instantiate(_unitPrefab, _container.transform);
                 _grid[x, y] = unit;
                 unit.Initialize(this, x, y);
             }
@@ -62,7 +64,6 @@ public class TagGame : MonoBehaviour
     {
         Vector2Int coordinates = unit.Coordinates;
         TagUnit[] relatives = GetCloseUnits(coordinates);
-        print(relatives.Length);
 
         foreach (TagUnit relative in relatives)
             if (relative.Value == 0)
