@@ -18,17 +18,9 @@ public class CameraScript : MonoBehaviour
     private Vector3 posOffSet;
     private Vector3 velocity;
 
-    private void Start()
+    private void Awake()
     {
-        if (GameObject.FindWithTag("Player") != null)
-        {
-            player = GameObject.FindWithTag("Player"); 
-            Debug.Log("!= null");  
-        }
-        else
-        {
-            Debug.Log("== null");
-        }
+        player = GameObject.FindWithTag("Player");
     }
 
     void FixedUpdate()
