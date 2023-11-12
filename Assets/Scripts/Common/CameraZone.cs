@@ -16,33 +16,23 @@ public class CameraZone : MonoBehaviour
         _camera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         _cameraFovEnter = _camera.fieldOfView;
     }
-
+    
     private void Update()
     {
-        if (_isLerp)
-        {
-            CameraBack();
-        }
-        else
-        {
-            CameraForward();
-        }
+        if (_isLerp) CameraBack();
+        else CameraForward();
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player")) {
-            _isLerp = true;
-        }
+        if(other.CompareTag("Player")) _isLerp = true;
     }
-
+    
     private void OnTriggerExit(Collider other)
     { 
-        if(other.CompareTag("Player")) {
-            _isLerp = false;
-        }
+        if(other.CompareTag("Player")) _isLerp = false;
     }
-
+    
     private void CameraBack()
     {
         _camera.fieldOfView = Mathf.Lerp(_camera.fieldOfView, _fovEnd, _timeToChangeFov);
