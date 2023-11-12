@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1133311159485262996}
   - component: {fileID: 9154736323847400606}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6660930582131202183}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -65,8 +64,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0556986, y: 2.5565786, z: 1}
-  m_Center: {x: -0.07109593, y: 1.6773859, z: 0}
+  m_Size: {x: 2.996969, y: 3.338863, z: 3.672121}
+  m_Center: {x: -0.023391325, y: 1.2862439, z: 0.21708393}
 --- !u!1 &3916165176587457489
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,13 +91,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3916165176587457489}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01848568, y: 1.037, z: 0.07999992}
+  m_LocalPosition: {x: -0.01848568, y: 0.563, z: 0.07999992}
   m_LocalScale: {x: 0.08781174, y: 0.090733126, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6660930582131202183}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4513080093510781590
 BoxCollider:
@@ -162,7 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 5bf889dcc2f755448adc7c3bf71ec280, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2b901df7753f6642a02472ba4196ff1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -183,11 +182,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6660930582131202183}
   - component: {fileID: 6557730468733383628}
-  - component: {fileID: 3595740395555591272}
   - component: {fileID: 386725236640579394}
   - component: {fileID: 8054932606710085218}
   - component: {fileID: 4270227068629499826}
   - component: {fileID: 2096970200673349920}
+  - component: {fileID: 4829415382637932425}
+  - component: {fileID: 196547302635179600}
   m_Layer: 0
   m_Name: Player_Playable(NoInteract)
   m_TagString: Player
@@ -202,6 +202,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4145644554613055969}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.8, y: -7.761, z: 14.33}
   m_LocalScale: {x: 3.0409722, y: 2.7455957, z: 1}
@@ -210,7 +211,6 @@ Transform:
   - {fileID: 3080247587865516212}
   - {fileID: 2201848096086734884}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &6557730468733383628
 Rigidbody:
@@ -220,9 +220,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4145644554613055969}
   serializedVersion: 4
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 0.05
+  m_Mass: 10
+  m_Drag: 1
+  m_AngularDrag: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -234,32 +234,11 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &3595740395555591272
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4145644554613055969}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3285561, y: 0.9879585, z: 0.16584003}
-  m_Center: {x: -0.02481776, y: -0.016022312, z: 0}
 --- !u!95 &386725236640579394
 Animator:
   serializedVersion: 5
@@ -270,7 +249,7 @@ Animator:
   m_GameObject: {fileID: 4145644554613055969}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8549bbae340b41a4a8757511c2d09246, type: 2}
+  m_Controller: {fileID: 9100000, guid: 206fcad7d8001f6499f10f8e4b4bd8ee, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -322,7 +301,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dcbad517cc9550e468e209be9611f883, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3be962a696b79864e97c4e083371ecef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -358,8 +337,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprintKey: 304
-  speed: 100
+  speed: 225
   sprintSpeedBonus: 50
   animator: {fileID: 386725236640579394}
   physicsBody: {fileID: 6557730468733383628}
   spriteRenderer: {fileID: 8054932606710085218}
+--- !u!136 &4829415382637932425
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145644554613055969}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.17885543
+  m_Height: 1.1620874
+  m_Direction: 1
+  m_Center: {x: -0.037022837, y: -0.4372046, z: 0}
+--- !u!114 &196547302635179600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4145644554613055969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3234229b2f97c3478c94ee40b400901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractKey: 101
+  inputButtonImage: {fileID: 3916165176587457489}
