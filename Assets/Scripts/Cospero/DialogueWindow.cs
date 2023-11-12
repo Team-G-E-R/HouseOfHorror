@@ -7,15 +7,9 @@ using UnityEngine;
 public class DialogueWindow 
 {
      
-   /*  public float[] dialogueTime; 
-    public Sprite[] characterSprite;  
-    public string[] name;*/
+   
     [TextArea(3,10)]
-    public string[] _sentenses;
-    public int[] _indexOfSpeakers;
-    /* public string _mainCharName;
-    public string _oftherCharName; */
-    public string[] _characterNames;
+    public string _jsonAssetName;
     public Color[] _charColor;
    
 }
