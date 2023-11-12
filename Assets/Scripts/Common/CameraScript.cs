@@ -1,8 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Camera))]
 public class CameraScript : MonoBehaviour
 {
     private GameObject player;
+    [Tooltip("Time that the camera will follow the player")]
     [SerializeField] float timeOffSet;
     [Header("Camera boundary settings")]
     [SerializeField] float leftCameraLimit;
@@ -11,6 +13,7 @@ public class CameraScript : MonoBehaviour
     [SerializeField] float upperCameraLimit;
     [SerializeField] private float _zStartPos;
     [SerializeField] private float _zEndPos;
+    [Tooltip("How far the camera will be from the player on the Z Axis")]
     [SerializeField] private float _zPosOffsetPlayer;
     private Vector3 posOffSet;
     private Vector3 velocity;
