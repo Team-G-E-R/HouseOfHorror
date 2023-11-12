@@ -629,6 +629,7 @@ GameObject:
   - component: {fileID: 192272714}
   - component: {fileID: 192272713}
   - component: {fileID: 192272712}
+  - component: {fileID: 192272715}
   m_Layer: 0
   m_Name: Kids (1)
   m_TagString: Untagged
@@ -724,6 +725,27 @@ Transform:
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &192272715
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192272711}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0348135, y: 1, z: 0.17947069}
+  m_Center: {x: 0.010098329, y: -0.00000023196418, z: -0.044490267}
 --- !u!43 &223893113
 Mesh:
   m_ObjectHideFlags: 0
@@ -1949,6 +1971,7 @@ GameObject:
   - component: {fileID: 591635531}
   - component: {fileID: 591635530}
   - component: {fileID: 591635529}
+  - component: {fileID: 591635532}
   m_Layer: 0
   m_Name: Kids
   m_TagString: Untagged
@@ -2044,6 +2067,27 @@ Transform:
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 18.256, z: 0}
+--- !u!65 &591635532
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591635528}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0348135, y: 1, z: 0.17947069}
+  m_Center: {x: 0.010098329, y: -0.00000023196418, z: -0.044490267}
 --- !u!1 &598247868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2859,6 +2903,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 712441898}
+    - target: {fileID: 3526789945965466288, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3813985aa67507441831edacf52d0bc9, type: 2}
     - target: {fileID: 3541406745668341509, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -3028,6 +3076,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 611934658}
     - target: {fileID: 6413987677062259548, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413987677062259548, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413987677062259548, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 6413987677062259548, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_SortingOrder
       value: -1
       objectReference: {fileID: 0}
@@ -3059,6 +3119,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 62152202}
+    - target: {fileID: 6857114781187130065, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857114781187130065, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6037736
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857114781187130065, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6037736
+      objectReference: {fileID: 0}
     - target: {fileID: 6857114781187130065, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -3175,6 +3247,18 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1023773532}
+    - target: {fileID: 8794621056437410269, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794621056437410269, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 8794621056437410269, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
     - target: {fileID: 8794621056437410269, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_SortingOrder
       value: -1
@@ -6667,6 +6751,7 @@ GameObject:
   - component: {fileID: 1447706713}
   - component: {fileID: 1447706712}
   - component: {fileID: 1447706711}
+  - component: {fileID: 1447706714}
   m_Layer: 0
   m_Name: Kids (3)
   m_TagString: Untagged
@@ -6762,6 +6847,27 @@ Transform:
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -24.624, z: 0}
+--- !u!65 &1447706714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447706710}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0348135, y: 1, z: 0.17947069}
+  m_Center: {x: 0.010098329, y: -0.00000023196418, z: -0.044490267}
 --- !u!43 &1477049872
 Mesh:
   m_ObjectHideFlags: 0
@@ -7960,6 +8066,7 @@ GameObject:
   - component: {fileID: 1818110519}
   - component: {fileID: 1818110518}
   - component: {fileID: 1818110517}
+  - component: {fileID: 1818110520}
   m_Layer: 0
   m_Name: Kids (2)
   m_TagString: Untagged
@@ -8055,6 +8162,27 @@ Transform:
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 31.797, z: 0}
+--- !u!65 &1818110520
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818110516}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0348135, y: 1, z: 0.17947069}
+  m_Center: {x: 0.010098329, y: -0.00000023196418, z: -0.044490267}
 --- !u!1001 &1864235971
 PrefabInstance:
   m_ObjectHideFlags: 0
