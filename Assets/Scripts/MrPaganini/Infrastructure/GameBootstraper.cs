@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameBootstraper : MonoBehaviour
 {
-    private const string InitialLevel = "Level 1";
+    public string InitialLevel = "Level 1";
     private const string StartMenu = "StartMenu";
 
     private GameFactory _gameFactory;

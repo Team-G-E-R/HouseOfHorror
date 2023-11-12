@@ -182,7 +182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6660930582131202183}
   - component: {fileID: 6557730468733383628}
-  - component: {fileID: 3595740395555591272}
   - component: {fileID: 386725236640579394}
   - component: {fileID: 8054932606710085218}
   - component: {fileID: 4270227068629499826}
@@ -240,27 +239,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &3595740395555591272
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4145644554613055969}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 0.3285561, y: 0.9879585, z: 0.16584003}
-  m_Center: {x: -0.02481776, y: -0.016022312, z: 0}
 --- !u!95 &386725236640579394
 Animator:
   serializedVersion: 5
@@ -359,8 +337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sprintKey: 304
-  speed: 200
-  sprintSpeedBonus: 100
+  speed: 225
+  sprintSpeedBonus: 50
   animator: {fileID: 386725236640579394}
   physicsBody: {fileID: 6557730468733383628}
   spriteRenderer: {fileID: 8054932606710085218}
