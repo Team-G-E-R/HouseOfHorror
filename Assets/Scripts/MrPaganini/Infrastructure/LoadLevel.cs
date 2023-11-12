@@ -48,8 +48,8 @@ public class LoadLevel
     private void EnableMusic()
     {
         var audioService = AllServices.Singleton.Single<IAudioService>();
-        audioService.AudioSource.clip = _audioToNextScene;
-        audioService.AudioSource.Play();
+        /*audioService.AudioSource.clip = _audioToNextScene;
+        audioService.AudioSource.Play();*/
     }
 
     private void InitGameWorld()

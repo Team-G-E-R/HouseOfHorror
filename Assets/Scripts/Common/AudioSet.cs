@@ -1,5 +1,3 @@
-using GameResources.SO;
-using MrPaganini.UI.Windows;
 using UnityEngine;
 
 public class AudioSet : MonoBehaviour
@@ -11,26 +9,32 @@ public class AudioSet : MonoBehaviour
 
     private void Awake()
     {
-       
+       FindAudio();
     }
 
-    private void Start()
+    private void FindAudio()
     {
-        //_audioSource = FindObjectOfType<AudioSource>().GetComponent<AudioSource>();
-        _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
-        if (_audioSource == null)
+        if (GameObject.FindWithTag("Audio") == null)
         {
             transform.gameObject.tag = "Audio";
             _audioSource = gameObject.AddComponent<AudioSource>();
+
+            MusicSet();
         }
-        else if (GameObject.FindWithTag("Audio").GetComponent<AudioSource>() != null)
+        else if (GameObject.FindWithTag("Audio") != null)
         {
-            _audioSource.clip = _audioClip;
-            _audioSource.Play();
-            if (_needToBeLooped)
-            {
-                _audioSource.loop = true;   
-            }   
+            _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+            MusicSet();
         }
+    }
+
+        private void MusicSet()
+    {
+        _audioSource.clip = _audioClip;
+        _audioSource.Play();
+        if (_needToBeLooped)
+        {
+            _audioSource.loop = true;   
+        }   
     }
 }
