@@ -34,7 +34,7 @@ public class LoadLevel
 
     private void OnLoaded()
     {
-        InitGameWorld();
+        //InitGameWorld();
         EnableMusic();
         InformProgressReaders();
         _loadingCurtain.Hide();
