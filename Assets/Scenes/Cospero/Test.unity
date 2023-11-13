@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -209,13 +209,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366742858}
-  serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &385990042
 GameObject:
@@ -301,13 +301,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385990042}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1085517927 stripped
 MonoBehaviour:
@@ -407,13 +407,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862986974}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1289966276463969903
 PrefabInstance:
@@ -426,6 +426,14 @@ PrefabInstance:
     - target: {fileID: 7021622021559957202, guid: 62a43752e63942e40b82a7f2a934ca98, type: 3}
       propertyPath: m_Name
       value: DIalogueManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766235108423010864, guid: 62a43752e63942e40b82a7f2a934ca98, type: 3}
+      propertyPath: Name
+      value: Dialogue1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766235108423010864, guid: 62a43752e63942e40b82a7f2a934ca98, type: 3}
+      propertyPath: _isRussian
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7766235108423010864, guid: 62a43752e63942e40b82a7f2a934ca98, type: 3}
       propertyPath: _dialogueObjUI
@@ -449,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8031386253186639310, guid: 62a43752e63942e40b82a7f2a934ca98, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8031386253186639310, guid: 62a43752e63942e40b82a7f2a934ca98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -518,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8821715333948496978, guid: 2167c1bdebe29e843bbf0929da76b79b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8821715333948496978, guid: 2167c1bdebe29e843bbf0929da76b79b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -607,7 +615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1472083410600771287, guid: d14e2fd88c272fc4293d899986efd428, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1472083410600771287, guid: d14e2fd88c272fc4293d899986efd428, type: 3}
       propertyPath: m_LocalPosition.x
@@ -649,6 +657,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3320329867698031503, guid: d14e2fd88c272fc4293d899986efd428, type: 3}
+      propertyPath: dialogue._jsonAssetName
+      value: Dialogue1
+      objectReference: {fileID: 0}
     - target: {fileID: 3513924727398017927, guid: d14e2fd88c272fc4293d899986efd428, type: 3}
       propertyPath: m_Name
       value: Capsule
@@ -658,13 +670,3 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d14e2fd88c272fc4293d899986efd428, type: 3}
---- !u!1660057539 &9223372036854775807
-SceneRoots:
-  m_ObjectHideFlags: 0
-  m_Roots:
-  - {fileID: 385990045}
-  - {fileID: 366742860}
-  - {fileID: 3856014577030408788}
-  - {fileID: 1862986977}
-  - {fileID: 1289966276463969903}
-  - {fileID: 6195060273456211253}

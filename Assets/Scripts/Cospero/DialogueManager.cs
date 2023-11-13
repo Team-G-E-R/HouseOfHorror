@@ -6,8 +6,10 @@ using UnityEngine.UI;
 using System;
 using Unity.VisualScripting;
 
+
 public class DialogueManager : MonoBehaviour
 {
+public bool _isRussian;
 public TMP_Text _dialogueTextUI;
 public TMP_Text _speakerNameUI;
 public Queue<int>  _indexOfSpeaker; 
@@ -16,13 +18,14 @@ public bool _dialogueIsPlaying;
 public GameObject _dialogueObjUI;
 public Image _dialogueImageUI;
 private string _curSentanceText;
-
+private string _dialogueFileName;
 private string[] _charName;
 private Color[] _dialogueColours;
 private float _dialogueTimerValue;
-
+private string[] _jsonSentenses;
 private void Start() 
 {
+    
     _sentence=new Queue<string>();
     _indexOfSpeaker = new Queue<int>();
     _dialogueIsPlaying=false;
@@ -47,18 +50,32 @@ private void Update()
      }
 }
 public void StartDialogue(DialogueWindow  dialogue)
-{   
-    _dialogueColours=dialogue._charColor;
-    _charName=dialogue._characterNames;
+{   _dialogueFileName=dialogue._jsonAssetName;
+    ThingModel _thingModel=new ThingModel();
+    var jsonTextFile = Resources.Load<TextAsset>("Texts/"+_dialogueFileName);
+    
+    //JsonUtility.FromJsonOverwrite<ThingModel>(jsonTextFile.text);
+    JsonUtility.FromJsonOverwrite(jsonTextFile.text, _thingModel);
+    if (_isRussian)
+    {
+        _jsonSentenses=_thingModel._ruLines;
+    }
+    else
+    {
+         _jsonSentenses=_thingModel._euLines;
+    }
+    _charName=_thingModel._namesOfTheSpeakers;
+    _dialogueColours=dialogue._charColor;   
+    
     _sentence.Clear();
     _indexOfSpeaker.Clear();
     _dialogueIsPlaying=true;
     _dialogueObjUI.SetActive(true);
-    foreach (string sentense in dialogue._sentenses)
+    foreach (string sentense in _jsonSentenses)
     {
         _sentence.Enqueue(sentense);
     }
-    foreach (int whoIsSpeaking in dialogue._indexOfSpeakers)
+    foreach (int whoIsSpeaking in _thingModel._indexesOfSpeakers)
     {
         _indexOfSpeaker.Enqueue(whoIsSpeaking);
     }
@@ -96,6 +113,15 @@ private void EndDialogue()
     _dialogueObjUI.SetActive(false);
     
     }
+}
+
+
+public class ThingModel: MonoBehaviour
+{
+    public string[] _ruLines;
+    public string[] _euLines; 
+    public int[] _indexesOfSpeakers;
+    public string[] _namesOfTheSpeakers;
 }
 
 /*  IEnumerator NextDialogueStage()
