@@ -4,9 +4,23 @@ using UnityEngine.UI;
 
 public class FadeInOut : MonoBehaviour
 {
+    [Header("Fade settings")]
     [SerializeField] public float duration;
     [SerializeField] Image imageForFade;
+    [Header("Fade on start settings")]
+    [SerializeField] private bool _needToFadeOnStart;
+    [SerializeField] private FadeChoose fade;
+    public enum FadeChoose{
+        NeedFadeIn,
+        NeedFadeOut
+    }
     private float currentTime;
+
+    private void Start()
+    {
+        if (_needToFadeOnStart && fade == FadeChoose.NeedFadeIn) FadeIn();
+        else if (_needToFadeOnStart && fade == FadeChoose.NeedFadeOut) FadeOut();
+    }
 
     public void FadeIn()
     {
@@ -15,7 +29,6 @@ public class FadeInOut : MonoBehaviour
 
     public void FadeOut()
     {
-
         StartCoroutine(FadeOutCrt());
     }
 
