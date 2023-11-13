@@ -34,7 +34,6 @@ public class LoadLevel
 
     private void OnLoaded()
     {
-        //InitGameWorld();
         EnableMusic();
         InformProgressReaders();
         _loadingCurtain.Hide();
@@ -52,25 +51,6 @@ public class LoadLevel
         audioService.AudioSource.Play();*/
     }
 
-    private void InitGameWorld()
-    {
-        SpawnPlayer();
-        SpawnCamera();
-    }
-
-    private void SpawnCamera()
-    {
-        PlayerCamera camera = _gameFactory.CreateCamera().GetComponent<PlayerCamera>();
-        GameObject spawnObject = GameObject.FindWithTag(InitialCameraPointTag);
-        camera.transform.position = spawnObject.transform.position;
-    }
-
-    private void SpawnPlayer()
-    {
-        Player player = _gameFactory.CreatPlayer().GetComponent<Player>();
-        GameObject spawnObject = GameObject.FindWithTag(InitialPlayerPointTag);
-        player.transform.position = spawnObject.transform.position;
-    }
 
     private LoadingCurtain InstantiateLoadingCurtain()
     {
