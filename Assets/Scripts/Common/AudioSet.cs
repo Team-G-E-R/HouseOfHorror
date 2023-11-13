@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.UI;
 
 public class AudioSet : MonoBehaviour
 {
@@ -16,25 +14,15 @@ public class AudioSet : MonoBehaviour
     
     private AudioSource _audioSource;
 
-    private void Awake()
+    private void Start()
     {
        FindAudio();
     }
 
     private void FindAudio()
     {
-        if (GameObject.FindWithTag("Audio") == null)
-        {
-            transform.gameObject.tag = "Audio";
-            _audioSource = gameObject.AddComponent<AudioSource>();
-
-            MusicSet();
-        }
-        else if (GameObject.FindWithTag("Audio") != null)
-        {
-            _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
-            MusicSet();
-        }
+        _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+        MusicSet();
     }
 
     private void MusicSet()
