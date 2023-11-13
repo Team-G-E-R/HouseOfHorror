@@ -26,8 +26,8 @@ public class GameBootstraper : MonoBehaviour
         RegisterSettingsService();
         RegisterProgressService();
         RegisterSaveLoadService();
-        
-        
+
+
         sceneLoader.Load(StartMenu, OnLoaded);
         
         DontDestroyOnLoad(this);
@@ -89,5 +89,7 @@ public class GameBootstraper : MonoBehaviour
         _allServices
             .RegisterSingle<IAudioService>()
             .To(audioService);
+        audioService.AudioSource.transform.gameObject.tag = "Audio";
+        audioService.AudioSource.loop = true;
     }
 }
