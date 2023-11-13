@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class Activator : MonoBehaviour
 {
     private bool _isInRange;
     public KeyCode InteractKey = KeyCode.E;
-    /* public UnityEvent InteractAction; */
     private GameObject InteractItem;
     private bool key = false;
     
@@ -25,10 +20,11 @@ public class Activator : MonoBehaviour
         {
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
-                 ob.Interact();
+                ob.Interact();
+                inputButtonImage.SetActive(false);
             }
-            /* InteractAction.Invoke(); */
         }
+        
         if ((_isInRange) & (Input.GetKeyDown(InteractKey)))
         {
             if ((InteractItem.TryGetComponent<Key>(out Key ob1)))
@@ -36,11 +32,8 @@ public class Activator : MonoBehaviour
                 ob1.Interact1();
                 inputButtonImage.SetActive(false);
             }
-            /* InteractAction.Invoke(); */
         }
-
-
-    }
+   }
 
    private void OnTriggerEnter(Collider other)
    {
@@ -48,15 +41,9 @@ public class Activator : MonoBehaviour
         {
             _isInRange =true;
             inputButtonImage.SetActive(true);
-            if (key == false)
-            {
-                InteractItem = other.gameObject;
-            }
-           
-            else 
-            {
-                Debug.Log("нет ключа");
-            }
+            
+            if (key == false) InteractItem = other.gameObject;
+            else Debug.Log("нет ключа");
         }
 
         if ((other.tag == "Key"))
@@ -78,6 +65,7 @@ public class Activator : MonoBehaviour
                InteractItem=null;
                _isInRange=false;  
         }
+        
         else if ((other.tag == "Key"))
         {
             inputButtonImage.SetActive(false);

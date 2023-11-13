@@ -1,32 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Common.Scripts;
 using UnityEngine;
-
-
 
 public class DialogueTrigger : MonoBehaviour
 {
     public DialogueWindow dialogue;
-    private bool DiaPlaying;
-   
-    public void ActivateDialogue()
-    {   
-        DiaPlaying=FindObjectOfType<DialogueManager>()._dialogueIsPlaying;
-        if(DiaPlaying==false)
-        {
-            FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        }
-          
-    }
+    private bool _diaPlaying;
 
-    private void Update() 
+    public void ActivateDialogue()
     {
-       if(Input.GetKeyDown(KeyCode.H))
-        {
-            ActivateDialogue();
-        } 
+        GameObject.FindWithTag("Player").GetComponent<movement>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<Activator>().enabled = false;
+        _diaPlaying = FindObjectOfType<DialogueManager>()._dialogueIsPlaying;
+        
+        if(_diaPlaying == false) FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
-    
-   
 }
