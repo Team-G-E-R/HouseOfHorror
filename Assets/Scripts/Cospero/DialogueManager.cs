@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using Common.Scripts;
 
-public class DialogueManager : Interactable
+public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue settings")]
     [Space(5)]
@@ -23,6 +23,8 @@ public class DialogueManager : Interactable
     private Color[] _dialogueColours;
     private float _dialogueTimerValue;
     private string[] _jsonSentenses;
+    [HideInInspector]
+    public DialogueTrigger _dialogueTrigger;
     
     private void Start() 
     {
@@ -34,14 +36,15 @@ public class DialogueManager : Interactable
     
     private void Update() 
     {
-         if (Input.GetKeyDown(KeyCode.E) == false) return;
+        if (Input.GetKeyDown(KeyCode.E) == false) return;
          StopAllCoroutines();
          if (_dialogueTextUI.text != _curSentanceText) _dialogueTextUI.text = _curSentanceText;
          else DisplayNextLine();
     }
     
     public void StartDialogue(DialogueWindow dialogue)
-    {   _dialogueFileName = dialogue._jsonAssetName;
+    {
+        _dialogueFileName = dialogue._jsonAssetName;
         ThingModel _thingModel = new ThingModel();
         var jsonTextFile = Resources.Load<TextAsset>("Texts/"+_dialogueFileName);
         
@@ -96,9 +99,10 @@ public class DialogueManager : Interactable
     
     private void EndDialogue()
         {
-            InteractAction.Invoke();
             _dialogueIsPlaying = false;
             _dialogueObjUI.SetActive(false);
+            _dialogueTrigger.Interact();
+            Debug.Log(_dialogueTrigger);
             GameObject.FindWithTag("Player").GetComponent<movement>().enabled = true;
             GameObject.FindWithTag("Player").GetComponent<Activator>().enabled = true;
         }

@@ -131,19 +131,35 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 286108300781852694, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: _needToFadeOnStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 419994466721896439, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: _audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
     - target: {fileID: 419994466721896439, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: _needScreamer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 419994466721896439, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: _screamerToPlay
       value: 
+      objectReference: {fileID: 8300000, guid: 5c06ae97ceab41c47b4f408fe6558ee8, type: 3}
+    - target: {fileID: 419994466721896439, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: _screamerMustBeLooped
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 562430840403073019, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1326051825817643052, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1751826710560537561, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -170,6 +186,10 @@ PrefabInstance:
     - target: {fileID: 1828720819893508535, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: m_Center.z
       value: -6.37021
+      objectReference: {fileID: 0}
+    - target: {fileID: 2961470521170346353, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4044394552746033604, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: m_RootOrder
@@ -215,6 +235,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4351350665037789535, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: _nextLevel
+      value: Kitchen_1F
+      objectReference: {fileID: 0}
     - target: {fileID: 6507056024244667768, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: m_Name
       value: Systems
@@ -235,15 +259,20 @@ PrefabInstance:
       propertyPath: _fovEnd
       value: 25
       objectReference: {fileID: 0}
-    - target: {fileID: 8782765394975392941, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+    - target: {fileID: 7553300875038120525, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8782765394975392941, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 562430840403073019, guid: be437589501def54ba4f79977b61e3ad, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4044394552746033604, guid: be437589501def54ba4f79977b61e3ad, type: 3}
-      insertIndex: 5
+      insertIndex: 4
       addedObject: {fileID: 423450865}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be437589501def54ba4f79977b61e3ad, type: 3}
@@ -1258,6 +1287,70 @@ Transform:
   m_Father: {fileID: 850945824}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &222614358
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222614359}
+  - component: {fileID: 222614360}
+  m_Layer: 0
+  m_Name: Dialogue 2
+  m_TagString: DialogueTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222614359
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222614358}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1171234263}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &222614360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222614358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5607d92a52089042a0f04dfe66a45ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 460471507}
+        m_TargetAssemblyTypeName: SceneTransitions, Assembly-CSharp
+        m_MethodName: NextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  dialogue:
+    _jsonAssetName: DialogueApart3
+    _charColor:
+    - {r: 0, g: 0, b: 0, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
 --- !u!43 &319835052
 Mesh:
   m_ObjectHideFlags: 0
@@ -1677,6 +1770,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2947947725209286132, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
   m_PrefabInstance: {fileID: 1063077923}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &460471507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4351350665037789535, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+  m_PrefabInstance: {fileID: 4588024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee2beaee38f8e8c42be94215c5a18844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &485229448
 GameObject:
   m_ObjectHideFlags: 0
@@ -1689,7 +1793,7 @@ GameObject:
   - component: {fileID: 485229450}
   m_Layer: 0
   m_Name: Dialogue 0
-  m_TagString: Untagged
+  m_TagString: DialogueTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1721,10 +1825,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5607d92a52089042a0f04dfe66a45ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134449577}
+        m_TargetAssemblyTypeName: CutsceneScript, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogue:
     _jsonAssetName: DialogueApart
     _charColor:
     - {r: 0, g: 0, b: 0, a: 1}
+--- !u!114 &500282152 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 419994466721896439, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+  m_PrefabInstance: {fileID: 4588024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe0c25383d7ec44d9bb6677de6c9e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &526742655
 Mesh:
   m_ObjectHideFlags: 0
@@ -4290,16 +4420,24 @@ PrefabInstance:
       value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 627085672396766821, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 738.314
+      objectReference: {fileID: 0}
+    - target: {fileID: 627085672396766821, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 53.291
+      value: 110.567
+      objectReference: {fileID: 0}
+    - target: {fileID: 627085672396766821, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.477
       objectReference: {fileID: 0}
     - target: {fileID: 627085672396766821, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: -161.36186
       objectReference: {fileID: 0}
     - target: {fileID: 1656646188638954700, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_Name
-      value: DIalogueManagerCutscene
+      value: DIalogueManager
       objectReference: {fileID: 0}
     - target: {fileID: 1790280145301849692, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_SortingOrder
@@ -4363,7 +4501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812408554134784795, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.4
+      value: 85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4400,6 +4538,7 @@ Transform:
   m_Children:
   - {fileID: 485229449}
   - {fileID: 2068920181}
+  - {fileID: 222614359}
   m_Father: {fileID: 835257642}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6270,6 +6409,85 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1707738061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8659866218053707447, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
+  m_PrefabInstance: {fileID: 5047949042741420355}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1707738063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707738061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 222614360}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 500282152}
+        m_TargetAssemblyTypeName: AudioSet, Assembly-CSharp
+        m_MethodName: ScreamerStop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &1707738064
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707738061}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.7992947, y: 2.792448, z: 4.1721735}
+  m_Center: {x: -4.871838, y: 0.09890604, z: 3.8408694}
+--- !u!114 &1707738065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707738061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fovEnd: 25
+  _timeToChangeFov: 0.005
 --- !u!1 &1716517096
 GameObject:
   m_ObjectHideFlags: 0
@@ -8636,7 +8854,7 @@ GameObject:
   - component: {fileID: 2068920182}
   m_Layer: 0
   m_Name: Dialogue 1
-  m_TagString: Untagged
+  m_TagString: DialogueTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8668,6 +8886,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5607d92a52089042a0f04dfe66a45ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134449577}
+        m_TargetAssemblyTypeName: CutsceneScript, Assembly-CSharp
+        m_MethodName: Continue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   dialogue:
     _jsonAssetName: DialogueApart2
     _charColor:
@@ -9024,6 +9257,17 @@ Transform:
   m_Father: {fileID: 1716517097}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2121413964 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 286108300781852694, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+  m_PrefabInstance: {fileID: 4588024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0400f401e0a2ac41aacd64acaa9f311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2134449572
 GameObject:
   m_ObjectHideFlags: 0
@@ -9137,6 +9381,30 @@ MonoBehaviour:
         - m_Target: {fileID: 2134449577}
           m_TargetAssemblyTypeName: CutsceneScript, Assembly-CSharp
           m_MethodName: CutsceneOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 2121413964}
+          m_TargetAssemblyTypeName: FadeInOut, Assembly-CSharp
+          m_MethodName: FadeOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 500282152}
+          m_TargetAssemblyTypeName: AudioSet, Assembly-CSharp
+          m_MethodName: ScreamerPlay
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -10010,6 +10278,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 625038772}
+    - target: {fileID: 8659866218053707447, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 8659866218053707447, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
+      propertyPath: m_TagString
+      value: Interactable
+      objectReference: {fileID: 0}
     - target: {fileID: 8944004839325278939, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.526
@@ -10025,7 +10301,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8659866218053707447, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1707738065}
+    - targetCorrespondingSourceObject: {fileID: 8659866218053707447, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1707738064}
+    - targetCorrespondingSourceObject: {fileID: 8659866218053707447, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1707738063}
   m_SourcePrefab: {fileID: 100100000, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
 --- !u!4 &5047949042741420356 stripped
 Transform:
