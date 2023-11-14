@@ -9850,6 +9850,10 @@ PrefabInstance:
       propertyPath: _nextLevel
       value: MC_apartment
       objectReference: {fileID: 0}
+    - target: {fileID: 4351350665037789535, guid: be437589501def54ba4f79977b61e3ad, type: 3}
+      propertyPath: _nextLevelIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6507056024244667768, guid: be437589501def54ba4f79977b61e3ad, type: 3}
       propertyPath: m_Name
       value: Systems
