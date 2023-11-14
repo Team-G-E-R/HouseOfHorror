@@ -21,8 +21,16 @@ public class AudioSet : MonoBehaviour
 
     private void FindAudio()
     {
-        _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
-        MusicSet();
+        if (_audioSource == null && AllServices.Singleton == null)
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            MusicSet();
+        }
+        else
+        {
+            _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+            MusicSet();
+        }
     }
 
     private void MusicSet()
