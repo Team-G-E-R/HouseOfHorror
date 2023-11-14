@@ -8,18 +8,9 @@ public class Interactable : MonoBehaviour
     [Header("Event that will activate after interact/dialogue")]
     [Space(20)]
     public UnityEvent InteractAction;
-    [Tooltip("Destroy this interactable after usage")]
-    [SerializeField] private bool _oneUsage;
 
     public void Interact()
     {
-        if (_oneUsage) Destroy(gameObject);
         InteractAction.Invoke();
-    }
-
-    public void DestroyInteractable()
-    {
-        _oneUsage = true;
-        Interact();
     }
 }
