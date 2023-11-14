@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace Common.Scripts
 {
-    [RequireComponent(typeof(Activator))]
     public class movement : MonoBehaviour
     {
 
@@ -65,17 +64,6 @@ namespace Common.Scripts
         public void SetSprint(bool sprint) => _sprintLocked = !sprint;
         public void SetWalk(bool walk) => _movementLocked = !walk;
 
-        public void TurnOffMovement()
-        {
-            GetComponent<Activator>().enabled = false;
-            this.enabled = false;
-        }
-        
-        public void TurnOnMovement()
-        {
-            GetComponent<Activator>().enabled = true;
-            this.enabled = true;
-        }
         #endregion
     }
 }

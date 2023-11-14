@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class TagGame : MonoBehaviour
 {
     [SerializeField] private UnityEvent _onWin;
-    [Space(10)]
+
     [SerializeField] private GridLayoutGroup _container;
     [SerializeField] private TagUnit _unitPrefab;
     [SerializeField] private Vector2Int _gridSize = new(3, 3);
     [SerializeField] private TagUnit[,] _grid;
-    
+
     private const int INITIAL_OFFSET = -1;
     private const int RESULT_OFFSET = 1;
 
@@ -22,39 +22,14 @@ public class TagGame : MonoBehaviour
         GenerateField();
     }
 
-    private void OnDisable()
-    {
-        ClearField();
-    }
-
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
     public void Show()
     {
         gameObject.SetActive(true);
     }
 
-    public void ClearField()
-    {
-        for (int x = 0; x < _gridSize.x; x++)
-            for (int y = 0; y < _gridSize.y; y++)
-                Destroy(_grid[x, y].gameObject);
-        _grid = null;
-    }
-
-    public void AutoWin()
-    {
-        _onWin.Invoke();
-        Destroy(gameObject);
-    }
-
     public void InitializeField()
     {
         _container.constraintCount = _gridSize.y;
-        
         _grid = new TagUnit[_gridSize.x, _gridSize.y];
 
         for (int x = 0; x < _gridSize.x; x++)
