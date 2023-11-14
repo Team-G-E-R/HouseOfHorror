@@ -15735,6 +15735,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _oneUsage: 1
   dialogue:
     _jsonAssetName: LivingRoomPuzzle
     _charColor:
@@ -17663,6 +17664,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _oneUsage: 0
 --- !u!1 &1341076556
 GameObject:
   m_ObjectHideFlags: 0
@@ -27681,6 +27683,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _oneUsage: 0
   dialogue:
     _jsonAssetName: DoorClosed
     _charColor:
@@ -29667,7 +29670,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c99400b73b2cee043881fb55e9989465, type: 2}
+  - {fileID: 2100000, guid: adb88cab6b94321418c9325b6214b498, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -30044,6 +30047,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _oneUsage: 0
 --- !u!4 &1854242641
 Transform:
   m_ObjectHideFlags: 0
