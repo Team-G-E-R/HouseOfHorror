@@ -16,7 +16,7 @@ public class Activator : MonoBehaviour
    
    private void Update() 
    {    
-        if((_isInRange)&(Input.GetKeyUp(InteractKey)))
+        if((_isInRange)&(Input.GetKeyDown(InteractKey)))
         {
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
@@ -25,7 +25,7 @@ public class Activator : MonoBehaviour
             }
         }
         
-        if ((_isInRange) & (Input.GetKeyUp(InteractKey)))
+        if ((_isInRange) & (Input.GetKeyDown(InteractKey)))
         {
             if ((InteractItem.TryGetComponent<Key>(out Key ob1)))
             {
@@ -40,7 +40,7 @@ public class Activator : MonoBehaviour
         if ((other.tag == "Interactable"))
         {
             _isInRange =true;
-            inputButtonImage.SetActive(true);
+            ShowPic();
             
             if (key == false) InteractItem = other.gameObject;
             else Debug.Log("нет ключа");
@@ -56,21 +56,18 @@ public class Activator : MonoBehaviour
         }
    }
 
+   public void ShowPic()
+   {
+       inputButtonImage.SetActive(true);
+   }
 
    private void OnTriggerExit(Collider other) 
    {
-        if ((other.tag == "Interactable"))
+        if ((other.tag == "Interactable" || (other.tag == "Key")))
         {
                inputButtonImage.SetActive(false);
                InteractItem=null;
                _isInRange=false;  
         }
-        
-        else if ((other.tag == "Key"))
-        {
-            inputButtonImage.SetActive(false);
-            InteractItem = null;
-            _isInRange = false;
-        }
-    }
+   }
 }
