@@ -8,6 +8,8 @@ public class DialogueTrigger : Interactable
 
     public void ActivateDialogue()
     {
+        GameObject.FindWithTag("Player").GetComponent<movement>().enabled = false;
+        GameObject.FindWithTag("Player").GetComponent<Activator>().enabled = false;
         var manager = FindObjectOfType<DialogueManager>();
         _diaPlaying = manager._dialogueIsPlaying;
         manager._dialogueTrigger = this;
