@@ -25,6 +25,7 @@ public class PauseMenu : MonoBehaviour
             _audioSource.volume = _volumeSetting.Volume;
             _soundVolume.value = _volumeSetting.Volume;
         }
+        DontDestroyOnLoad(this.gameObject);
     }
     
     private void Update()
