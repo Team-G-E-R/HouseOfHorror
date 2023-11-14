@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 public class SceneTransitions : MonoBehaviour
 {
     private LoadLevel _loadLevel;
-    [SerializeField] private string _nextLevel;
+    [SerializeField] private int _nextLevelIndex;
     
     public void NextScene()
     {
-        SceneManager.LoadScene(_nextLevel, LoadSceneMode.Single);
+        SceneManager.LoadScene(_nextLevelIndex, LoadSceneMode.Single);
     }
 }
