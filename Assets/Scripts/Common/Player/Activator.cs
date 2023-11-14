@@ -40,7 +40,7 @@ public class Activator : MonoBehaviour
         if ((other.tag == "Interactable"))
         {
             _isInRange =true;
-            inputButtonImage.SetActive(true);
+            ShowPic();
             
             if (key == false) InteractItem = other.gameObject;
             else Debug.Log("нет ключа");
@@ -56,6 +56,10 @@ public class Activator : MonoBehaviour
         }
    }
 
+   public void ShowPic()
+   {
+       inputButtonImage.SetActive(true);
+   }
 
    private void OnTriggerExit(Collider other) 
    {

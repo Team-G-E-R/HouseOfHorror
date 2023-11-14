@@ -45,6 +45,12 @@ public class TagGame : MonoBehaviour
         _grid = null;
     }
 
+    public void AutoWin()
+    {
+        _onWin.Invoke();
+        Destroy(gameObject);
+    }
+
     public void InitializeField()
     {
         _container.constraintCount = _gridSize.y;
