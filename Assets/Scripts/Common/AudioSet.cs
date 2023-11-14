@@ -9,10 +9,12 @@ public class AudioSet : MonoBehaviour
     [Space(15)]
     [Header("Additional")]
     [SerializeField] private bool _needScreamer;
+    [SerializeField] private bool _screamerMustBeLooped;
     [Tooltip("Will work only if upper bool true")]
     [SerializeField] private AudioClip _screamerToPlay;
     
     private AudioSource _audioSource;
+    private AudioSource _audioSource2;
 
     private void Start()
     {
@@ -21,8 +23,16 @@ public class AudioSet : MonoBehaviour
 
     private void FindAudio()
     {
-        _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
-        MusicSet();
+        if (_audioSource == null && AllServices.Singleton == null)
+        {
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            MusicSet();
+        }
+        else
+        {
+            _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+            MusicSet();
+        }
     }
 
     private void MusicSet()
@@ -37,11 +47,23 @@ public class AudioSet : MonoBehaviour
 
     public void ScreamerPlay()
     {
-        if (_needScreamer)
+        if (_needScreamer && _screamerMustBeLooped)
         {
-           var _audioSource2 = gameObject.AddComponent<AudioSource>();
+           _audioSource2 = gameObject.AddComponent<AudioSource>();
+           _audioSource2.loop = true;
            _audioSource2.clip = _screamerToPlay;
            _audioSource2.Play();
         }
+        else
+        {
+            _audioSource2 = gameObject.AddComponent<AudioSource>();
+            _audioSource2.clip = _screamerToPlay;
+            _audioSource2.Play();  
+        }
+    }
+
+    public void ScreamerStop()
+    {
+        _audioSource2.Stop();
     }
 }
