@@ -102,7 +102,6 @@ public class DialogueManager : MonoBehaviour
             _dialogueIsPlaying = false;
             _dialogueObjUI.SetActive(false);
             _dialogueTrigger.Interact();
-            Debug.Log(_dialogueTrigger);
             GameObject.FindWithTag("Player").GetComponent<movement>().enabled = true;
             GameObject.FindWithTag("Player").GetComponent<Activator>().enabled = true;
         }
