@@ -99,9 +99,11 @@ public class DialogueManager : MonoBehaviour
     
     private void EndDialogue()
         {
-            _dialogueTrigger.Interact();
             _dialogueIsPlaying = false;
             _dialogueObjUI.SetActive(false);
+            _dialogueTrigger.Interact();
+            GameObject.FindWithTag("Player").GetComponent<movement>().enabled = true;
+            GameObject.FindWithTag("Player").GetComponent<Activator>().enabled = true;
         }
     }
 
