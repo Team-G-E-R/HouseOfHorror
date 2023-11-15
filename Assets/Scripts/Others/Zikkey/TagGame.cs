@@ -30,11 +30,13 @@ public class TagGame : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
+        Cursor.visible = false;
     }
 
     public void Show()
     {
         gameObject.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void ClearField()
