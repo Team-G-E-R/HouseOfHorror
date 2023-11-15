@@ -123,9 +123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7893222527780629647}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 1216039523552583775}
+        m_TargetAssemblyTypeName: Repository, Assembly-CSharp
+        m_MethodName: Save
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -135,9 +135,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1216039523552583775}
-        m_TargetAssemblyTypeName: Repository, Assembly-CSharp
-        m_MethodName: Save
+      - m_Target: {fileID: 6232056023612688706}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: SceneLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -606,7 +606,6 @@ GameObject:
   - component: {fileID: 7388619855498307763}
   - component: {fileID: 4666572117954053619}
   - component: {fileID: 5400416310703968664}
-  - component: {fileID: 8344906084747126804}
   m_Layer: 5
   m_Name: VolumeSetting
   m_TagString: Untagged
@@ -732,20 +731,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8344906084747126804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1504190389356405826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbaf775300c4bb5a3f02238c81a9902, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _startMenuSound: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
-  _soundVolume: {fileID: 6055065231884123020}
 --- !u!1 &1635895183392863062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,8 +1173,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7893222527780629647}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+      - m_Target: {fileID: 6232056023612688706}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1920,7 +1905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _resolutionSettings: {fileID: 4868230030737313691}
-  _audioSettings: {fileID: 8344906084747126804}
+  _audioSettings: {fileID: 0}
 --- !u!1 &5322518928815123793
 GameObject:
   m_ObjectHideFlags: 0
@@ -3171,13 +3156,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8344906084747126804}
-        m_TargetAssemblyTypeName: MrPaganini.UI.Windows.AudioSettings, Assembly-CSharp
-        m_MethodName: OnChangeVolume
+      - m_Target: {fileID: 6232056023612688706}
+        m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
+        m_MethodName: VolumeSet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3486,7 +3471,7 @@ GameObject:
   - component: {fileID: 6296410653908770563}
   - component: {fileID: 1626024663652462497}
   - component: {fileID: 4173135915839475951}
-  - component: {fileID: 7893222527780629647}
+  - component: {fileID: 6232056023612688706}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -3579,7 +3564,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7893222527780629647
+--- !u!114 &6232056023612688706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3588,11 +3573,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8757809853898035415}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 436ef5497cff384458f5a5a8e9d41695, type: 3}
+  m_Script: {fileID: 11500000, guid: 506e194da89e43540988f1f1e570d828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioToNextScene: {fileID: 0}
-  _startMenuSound: {fileID: 8300000, guid: 3403dc61e88aad64db6e5adf561e6d1f, type: 3}
+  _nextSceneIndex: 1
 --- !u!1 &8799110820113435207
 GameObject:
   m_ObjectHideFlags: 0
