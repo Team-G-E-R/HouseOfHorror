@@ -22,11 +22,16 @@ public class MenuScript : MonoBehaviour
       _volumeSlider = GetComponentInChildren<Slider>();
       _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
    }
-   
-   public void SceneLoad()
+
+   private void SaveData()
    {
       _dataScript._data.Volume = _volumeSlider.value;
       _dataScript.Save();
+   }
+   
+   public void SceneLoad()
+   {
+      SaveData();
       SceneManager.LoadScene(_nextSceneIndex, LoadSceneMode.Single);
    }
 
@@ -37,6 +42,7 @@ public class MenuScript : MonoBehaviour
 
    public void ExitGame()
    {
+      SaveData();
       Application.Quit();
    }
 }
