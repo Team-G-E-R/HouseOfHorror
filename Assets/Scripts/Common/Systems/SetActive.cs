@@ -7,6 +7,7 @@ public class SetActive : MonoBehaviour
 
     public void TurnOn()
     {
+        Cursor.visible = true;
         foreach (var obj in _whatToSetActive)
         {
             obj.SetActive(true);

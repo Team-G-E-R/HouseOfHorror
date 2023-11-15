@@ -2792,6 +2792,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2096970200673349920, guid: 1fbe47b4a639a7042bd3c8a433b7003c, type: 3}
+      propertyPath: speed
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2096970200673349920, guid: 1fbe47b4a639a7042bd3c8a433b7003c, type: 3}
+      propertyPath: sprintSpeedBonus
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3916165176587457489, guid: 1fbe47b4a639a7042bd3c8a433b7003c, type: 3}
       propertyPath: m_IsActive
       value: 0
