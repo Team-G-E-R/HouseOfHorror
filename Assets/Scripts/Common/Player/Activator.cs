@@ -16,7 +16,7 @@ public class Activator : MonoBehaviour
    
    private void Update() 
    {    
-        if((_isInRange)&(Input.GetKeyDown(InteractKey)))
+        if((_isInRange)&(Input.GetKeyUp(InteractKey)))
         {
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
@@ -25,7 +25,7 @@ public class Activator : MonoBehaviour
             }
         }
         
-        if ((_isInRange) & (Input.GetKeyDown(InteractKey)))
+        if ((_isInRange) & (Input.GetKeyUp(InteractKey)))
         {
             if ((InteractItem.TryGetComponent<Key>(out Key ob1)))
             {
@@ -43,7 +43,7 @@ public class Activator : MonoBehaviour
             ShowPic();
             
             if (key == false) InteractItem = other.gameObject;
-            else Debug.Log("нет ключа");
+            else Debug.Log("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ");
         }
 
         if ((other.tag == "Key"))
