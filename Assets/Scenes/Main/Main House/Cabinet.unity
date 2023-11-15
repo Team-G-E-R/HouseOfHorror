@@ -9634,6 +9634,7 @@ GameObject:
   - component: {fileID: 920251547}
   - component: {fileID: 920251546}
   - component: {fileID: 920251545}
+  - component: {fileID: 920251548}
   m_Layer: 5
   m_Name: ToMenu
   m_TagString: Untagged
@@ -9706,9 +9707,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: mainMenuButton
+      - m_Target: {fileID: 920251548}
+        m_TargetAssemblyTypeName: ToStartMenu, Assembly-CSharp
+        m_MethodName: ToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9756,6 +9757,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920251543}
   m_CullTransparentMesh: 1
+--- !u!114 &920251548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920251543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c2075c9a02e426458bf2e553ed5ce76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &926785494
 GameObject:
   m_ObjectHideFlags: 0
@@ -13998,7 +14011,6 @@ MonoBehaviour:
   _whatToSetActive:
   - {fileID: 1664948008}
   _whatToSetInactive:
-  - {fileID: 0}
   - {fileID: 1108488992}
 --- !u!65 &1582264099
 BoxCollider:
