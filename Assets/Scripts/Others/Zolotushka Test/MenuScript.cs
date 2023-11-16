@@ -8,25 +8,25 @@ public class MenuScript : MonoBehaviour
 
    private Slider _volumeSlider;
    private AudioSource _audioSource;
-   private SavedDataScript _dataScript;
+   private Data _data;
 
    private void Start()
    {
       FoundObjs();
-      _volumeSlider.value = _dataScript._data.Volume;
+      _volumeSlider.value = _data.GameData.Volume;
    }
 
    private void FoundObjs()
    {
-      _dataScript = GameObject.FindWithTag("Data").GetComponent<SavedDataScript>();
-      _volumeSlider = GetComponentInChildren<Slider>();
+      _data = GameObject.FindWithTag("Data").GetComponent<Data>();
       _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+      _volumeSlider = GetComponentInChildren<Slider>();
    }
 
    private void SaveData()
    {
-      _dataScript._data.Volume = _volumeSlider.value;
-      _dataScript.Save();
+      _data.GameData.Volume = _volumeSlider.value;
+      _data.Save();
    }
    
    public void SceneLoad()

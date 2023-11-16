@@ -2,36 +2,38 @@ using UnityEngine;
 
 public class BootstrapSystem : MonoBehaviour
 {
-    public AudioClip MenuMusic;
+    [SerializeField] private AudioClip _menuMusic;
     
     private AudioSource _audioSource;
     private float _soundVolume;
-    private SavedDataScript _dataScript;
+    private Data _data;
+    private const string DataName = "GameData";
+    private const string AudioName = "AudioService";
 
     private void Awake()
-    {
-        DataCreate();
+    { 
+        InitializeData();
         AudioCreate();
         MenuLoad();
     }
 
-    private void DataCreate()
+    private void InitializeData()
     {
-        GameObject _data = new GameObject();
-        _data.name = "GameData";
-        _data.tag = "Data";
-        _dataScript = _data.AddComponent<SavedDataScript>();
-        _dataScript.Load();
-        _soundVolume = _dataScript._data.Volume;
+        GameObject gameDataFile = new GameObject();
+        gameDataFile.name = DataName;
+        gameDataFile.tag = "Data";
+        _data = gameDataFile.AddComponent<Data>();
+        _data.Load();
+        _soundVolume = _data.GameData.Volume;
         DontDestroyOnLoad(_data);
     }
     
     private void AudioCreate()
     {
-        GameObject audio = new GameObject();
-        audio.name = "AudioService";
-        audio.tag = "Audio";
-        _audioSource = audio.AddComponent<AudioSource>();
+        GameObject audioFile = new GameObject();
+        audioFile.name = AudioName;
+        audioFile.tag = "Audio";
+        _audioSource = audioFile.AddComponent<AudioSource>();
         
         AudioSystemSet();
         DontDestroyOnLoad(_audioSource);
@@ -44,7 +46,7 @@ public class BootstrapSystem : MonoBehaviour
 
     private void AudioSystemSet()
     {
-        _audioSource.clip = MenuMusic;
+        _audioSource.clip = _menuMusic;
         _audioSource.loop = true;
         _audioSource.volume = _soundVolume;
         _audioSource.Play();

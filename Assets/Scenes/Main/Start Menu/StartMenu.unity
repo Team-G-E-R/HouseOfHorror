@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &39549769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +183,6 @@ GameObject:
   m_Component:
   - component: {fileID: 118528156}
   - component: {fileID: 118528155}
-  - component: {fileID: 118528157}
   m_Layer: 0
   m_Name: TestSystem
   m_TagString: Untagged
@@ -203,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dcc8631570dadb45ab830f46e562de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuMusic: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
+  _menuMusic: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
 --- !u!4 &118528156
 Transform:
   m_ObjectHideFlags: 0
@@ -219,20 +218,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &118528157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118528154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69bbff63c19b5de469301719e860acfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    Volume: 0
 --- !u!1 &160422938
 GameObject:
   m_ObjectHideFlags: 0
