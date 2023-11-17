@@ -40,6 +40,7 @@ public class PauseMenu : Finder
 
         if (_isMenuActive)
         {
+            _allAudio = GameObject.FindGameObjectsWithTag("Audio");
             CursorOn();
             Time.timeScale = 0f;
             transform.GetChild(0).gameObject.SetActive(true);
