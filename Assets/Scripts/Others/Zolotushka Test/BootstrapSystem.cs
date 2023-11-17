@@ -10,8 +10,7 @@ public class BootstrapSystem : Finder
 
     private void Awake()
     { 
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        CursorOn();
         FindObjs();
         AudioSystemSet();
         MenuLoad();
