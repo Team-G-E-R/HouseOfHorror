@@ -5,21 +5,22 @@ using UnityEngine.UI;
 public class FadeInOut : MonoBehaviour
 {
     [Header("Fade settings")]
-    [SerializeField] public float duration;
-    [SerializeField] Image imageForFade;
+    public float duration;
+    [SerializeField] private Image imageForFade;
     [Header("Fade on start settings")]
     [SerializeField] private bool _needToFadeOnStart;
-    [SerializeField] private FadeChoose fade;
-    public enum FadeChoose{
+    [SerializeField] private FadeChoose _fade;
+    public enum FadeChoose
+    {
         NeedFadeIn,
         NeedFadeOut
     }
-    private float currentTime;
+    private float _currentTime;
 
     private void Start()
     {
-        if (_needToFadeOnStart && fade == FadeChoose.NeedFadeIn) FadeIn();
-        else if (_needToFadeOnStart && fade == FadeChoose.NeedFadeOut) FadeOut();
+        if (_needToFadeOnStart && _fade == FadeChoose.NeedFadeIn) FadeIn();
+        else if (_needToFadeOnStart && _fade == FadeChoose.NeedFadeOut) FadeOut();
     }
 
     public void FadeIn()
@@ -34,29 +35,29 @@ public class FadeInOut : MonoBehaviour
 
     private IEnumerator FadeInCrt()
     {
-        while (currentTime < duration)
+        while (_currentTime < duration)
         {
-            float alpha = Mathf.Lerp(0f, 1f, currentTime / duration);
+            float alpha = Mathf.Lerp(0f, 1f, _currentTime / duration);
             imageForFade.color = new Color(imageForFade.color.r, imageForFade.color.g, imageForFade.color.b, alpha);
-            currentTime += Time.deltaTime;
+            _currentTime += Time.deltaTime;
             yield return null;
         }
 
-        currentTime = 0;
+        _currentTime = 0;
         yield break;
     }
 
     private IEnumerator FadeOutCrt()
     {
-        while (currentTime < duration)
+        while (_currentTime < duration)
         {
-            float alpha = Mathf.Lerp(1f, 0f, currentTime / duration);
+            float alpha = Mathf.Lerp(1f, 0f, _currentTime / duration);
             imageForFade.color = new Color(imageForFade.color.r, imageForFade.color.g, imageForFade.color.b, alpha);
-            currentTime += Time.deltaTime;
+            _currentTime += Time.deltaTime;
             yield return null;
         }
 
-        currentTime = 0;
+        _currentTime = 0;
         yield break;
     }
 }

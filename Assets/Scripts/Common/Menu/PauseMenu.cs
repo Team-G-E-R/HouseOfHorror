@@ -99,6 +99,7 @@ public class PauseMenu : MonoBehaviour
         if (audioService != null) Destroy(audioService.gameObject);
         SceneManager.LoadScene(mainMenuSceneIndex);
         Time.timeScale = 1f;
+        Cursor.visible = true;
         Destroy(gameObject);
     }
 }
