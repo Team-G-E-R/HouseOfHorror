@@ -4,9 +4,9 @@ public class BootstrapSystem : MonoBehaviour
 {
     [SerializeField] private AudioClip _menuMusic;
     
+    private Data _data;
     private AudioSource _audioSource;
     private float _soundVolume;
-    private Data _data;
     private const string DataName = "GameData";
     private const string AudioName = "AudioService";
 
