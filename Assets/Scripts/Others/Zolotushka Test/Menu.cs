@@ -3,13 +3,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
-public class Menu : MonoBehaviour
+public class Menu : Finder
 {
    [SerializeField] private int _nextSceneIndex;
    [SerializeField] private AudioClip _audioStartBtn;
-
-   private Data _data;
-   private AudioSource _audioSource;
+   
    private AudioSource _audioSourceStartBtn;
    private Slider _volumeSlider;
    private AsyncOperation _level;
@@ -17,16 +15,19 @@ public class Menu : MonoBehaviour
 
    private void Start()
    {
-      FoundObjs();
-      CreateAudioBtn();
-      _volumeSlider.value = _data.GameData.Volume;
-   }
-
-   private void FoundObjs()
-   {
-      _data = GameObject.FindWithTag("Data").GetComponent<Data>();
-      _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
       _volumeSlider = GetComponentInChildren<Slider>();
+      FindObjs();
+      _volumeSlider.value = Dataobj.GameData.Volume;
+      CreateAudioBtn();
+   }
+   
+   private void CreateAudioBtn()
+   {
+      GameObject audioFile = new GameObject();
+      audioFile.name = AudioName;
+      _audioSourceStartBtn = audioFile.AddComponent<AudioSource>();
+      _audioSourceStartBtn.clip = _audioStartBtn;
+      _audioSourceStartBtn.volume = Dataobj.GameData.Volume;
    }
 
    public void SceneLoad()
@@ -35,34 +36,25 @@ public class Menu : MonoBehaviour
       Cursor.visible = false;
       SaveData();
       _audioSourceStartBtn.Play();
-      _audioSource.Stop();
+      AudioSourceObj.Stop();
       StartCoroutine(FadeInTransition());
+   }
+   
+   private void SaveData()
+   {
+      Dataobj.GameData.Volume = _volumeSlider.value;
+      Dataobj.Save();
    }
 
    public void VolumeSet()
    {
-      _audioSource.volume = _volumeSlider.value;
+      AudioSourceObj.volume = _volumeSlider.value;
    }
 
    public void ExitGame()
    {
       SaveData();
       Application.Quit();
-   }
-   
-   private void SaveData()
-   {
-      _data.GameData.Volume = _volumeSlider.value;
-      _data.Save();
-   }
-
-   private void CreateAudioBtn()
-   {
-      GameObject audioFile = new GameObject();
-      audioFile.name = AudioName;
-      _audioSourceStartBtn = audioFile.AddComponent<AudioSource>();
-      _audioSourceStartBtn.clip = _audioStartBtn;
-      _audioSourceStartBtn.volume = _data.GameData.Volume;
    }
 
    private IEnumerator FadeInTransition()

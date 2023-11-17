@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -5,19 +6,25 @@ using UnityEngine.UI;
 public class PauseMenu : MonoBehaviour
 {
     private Data _data;
-    private bool isMenuActive;
+    private bool isMenuActive = false;
     private Slider _soundVolume;
 
     private AudioSource _audioSource;
-    
-    private void Start()
+    private GameObject[] _allAudio;
+
+    private void Awake()
     {
         FoundsObj();
+    }
+
+    private void Start()
+    {
+        //FoundsObj();
         
-        _soundVolume.value = _audioSource.volume;
+        _soundVolume.value = _data.GameData.Volume;
         transform.GetChild(0).gameObject.SetActive(false);
         
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(this.gameObject);
     }
     
     private void Update()
@@ -27,14 +34,27 @@ public class PauseMenu : MonoBehaviour
 
     private void FoundsObj()
     {
-        _data = GameObject.FindWithTag("Data").GetComponent<Data>();
-        _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+        if (GameObject.FindWithTag("Data") == null)
+        {
+            GameObject NewData = new GameObject();
+            NewData.name = "Data";
+            NewData.tag = "Data";
+            _data = NewData.AddComponent<Data>();
+            _data.Load();
+            DontDestroyOnLoad(_data);
+        }
+        else _data = GameObject.FindWithTag("Data").GetComponent<Data>();
+        _allAudio = GameObject.FindGameObjectsWithTag("Audio");
         _soundVolume = GetComponentInChildren<Slider>();
     }
 
     public void VolumeSet()
     {
-        _audioSource.volume = _soundVolume.value;
+        foreach (var obj in _allAudio)
+        {
+            _audioSource = obj.GetComponent<AudioSource>();
+            _audioSource.volume = _soundVolume.value;
+        }
     }
 
     private void MenuActive()
@@ -67,8 +87,11 @@ public class PauseMenu : MonoBehaviour
         SaveData();
         
         Destroy(_data.gameObject);
-        Destroy(_audioSource.gameObject);
-        
+        foreach (var go in _allAudio)
+        {
+            Destroy(go);
+        }
+
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
         

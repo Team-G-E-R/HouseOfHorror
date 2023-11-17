@@ -15,55 +15,59 @@ public class AudioSet : MonoBehaviour
     
     private AudioSource _audioSource;
     private AudioSource _audioSource2;
+    private Data _data;
 
-    private void Start()
+    private void Awake()
     {
-       FindAudio();
+       FindObjs();
+       MusicSet();
+       ScreamerSet();
     }
 
-    private void FindAudio()
+    private void FindObjs()
     {
-        if (_audioSource == null && AllServices.Singleton == null)
+        if (GameObject.FindWithTag("Audio") == null)
         {
-            _audioSource = gameObject.AddComponent<AudioSource>();
-            MusicSet();
+            GameObject NewData = new GameObject();
+            NewData.name = "Data";
+            NewData.tag = "Data";
+            _data = NewData.AddComponent<Data>();
+            _data.Load();
         }
-        else
-        {
-            _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
-            MusicSet();
+        else _data = GameObject.FindWithTag("Data").GetComponent<Data>();
+        if (GameObject.FindWithTag("Audio") == null)
+        { 
+            _audioSource = gameObject.
+                AddComponent<AudioSource>().GetComponent<AudioSource>();
+            tag = "Audio";
         }
+        else _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
     }
 
     private void MusicSet()
     {
+        _audioSource.volume = _data.GameData.Volume;
         _audioSource.clip = _audioClip;
+        if (_needToBeLooped) _audioSource.loop = true;
         _audioSource.Play();
-        if (_needToBeLooped)
-        {
-            _audioSource.loop = true;   
-        }   
-    }
-
-    public void ScreamerPlay()
-    {
-        if (_needScreamer && _screamerMustBeLooped)
-        {
-           _audioSource2 = gameObject.AddComponent<AudioSource>();
-           _audioSource2.loop = true;
-           _audioSource2.clip = _screamerToPlay;
-           _audioSource2.Play();
-        }
-        else
-        {
-            _audioSource2 = gameObject.AddComponent<AudioSource>();
-            _audioSource2.clip = _screamerToPlay;
-            _audioSource2.Play();  
-        }
     }
 
     public void ScreamerStop()
     {
         _audioSource2.Stop();
+    }
+
+    private void ScreamerSet()
+    {
+        if (_needScreamer) ScreamerPlay();
+    }
+
+    public void ScreamerPlay()
+    {
+        _audioSource2 = gameObject.AddComponent<AudioSource>();
+        _audioSource2.clip = _screamerToPlay;
+        _audioSource2.volume = _data.GameData.Volume;
+        if (_screamerMustBeLooped) _audioSource2.loop = true;
+        _audioSource2.Play();
     }
 }
