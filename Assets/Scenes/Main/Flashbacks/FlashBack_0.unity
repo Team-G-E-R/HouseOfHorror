@@ -10226,10 +10226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0400f401e0a2ac41aacd64acaa9f311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1.7
+  duration: 1
   imageForFade: {fileID: 8896455694586302881}
-  _needToFadeOnStart: 0
-  fade: 1
+  _needToFadeOnStart: 1
+  _fade: 1
 --- !u!114 &6321875544034084647
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,11 +10,13 @@ public class FadeInOut : MonoBehaviour
     [Header("Fade on start settings")]
     [SerializeField] private bool _needToFadeOnStart;
     [SerializeField] private FadeChoose _fade;
+    
     public enum FadeChoose
     {
         NeedFadeIn,
         NeedFadeOut
     }
+    
     private float _currentTime;
 
     private void Start()
@@ -42,9 +44,7 @@ public class FadeInOut : MonoBehaviour
             _currentTime += Time.deltaTime;
             yield return null;
         }
-
         _currentTime = 0;
-        yield break;
     }
 
     private IEnumerator FadeOutCrt()
@@ -56,8 +56,6 @@ public class FadeInOut : MonoBehaviour
             _currentTime += Time.deltaTime;
             yield return null;
         }
-
         _currentTime = 0;
-        yield break;
     }
 }

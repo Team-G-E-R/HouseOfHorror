@@ -12,6 +12,8 @@ public class BootstrapSystem : MonoBehaviour
 
     private void Awake()
     { 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         InitializeData();
         AudioCreate();
         MenuLoad();

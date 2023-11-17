@@ -1,105 +1,95 @@
-using GameResources.SO;
-using MrPaganini.UI.Windows;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public GameObject pauseMenu;
-    private bool isMenuActive = false;
-    [SerializeField] KeyCode KeyToActivateMenu;
-    [SerializeField] int mainMenuSceneIndex;
-    [SerializeField] private Slider _soundVolume;
-    private SettingsConfig _volumeSetting;
-    
+    private Data _data;
+    private bool isMenuActive;
+    private Slider _soundVolume;
+
     private AudioSource _audioSource;
     
     private void Start()
     {
-        pauseMenu.SetActive(false);
-        if (AllServices.Singleton != null)
-        {
-            _volumeSetting = AllServices.Singleton.Single<ISettingsService>().SettingsConfig;
-            _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
-            _audioSource.volume = _volumeSetting.Volume;
-            _soundVolume.value = _volumeSetting.Volume;
-        }
-        DontDestroyOnLoad(this.gameObject);
+        FoundsObj();
+        
+        _soundVolume.value = _audioSource.volume;
+        transform.GetChild(0).gameObject.SetActive(false);
+        
+        DontDestroyOnLoad(gameObject);
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyToActivateMenu))
-        {
-            var audioService = FindObjectOfType<AudioService>();
-            if (audioService != null) MenuActive(audioService);
-            else MenuActive2();
-        }
+        if (Input.GetKeyDown(KeyCode.Escape)) MenuActive();
     }
 
-    public void OnValueSound()
+    private void FoundsObj()
     {
-        _volumeSetting.Volume = _soundVolume.value;
+        _data = GameObject.FindWithTag("Data").GetComponent<Data>();
+        _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+        _soundVolume = GetComponentInChildren<Slider>();
+    }
+
+    public void VolumeSet()
+    {
         _audioSource.volume = _soundVolume.value;
     }
 
-    private void MenuActive(IAudioService audioService)
+    private void MenuActive()
     {
-        isMenuActive=!isMenuActive;
+        isMenuActive = !isMenuActive;
 
         if (isMenuActive)
         {
-            _audioSource = audioService.AudioSource;
-            _audioSource.volume = _volumeSetting.Volume;
-
-            Cursor.visible = true;
-            pauseMenu.SetActive(true);
+            CursorOn();
             Time.timeScale = 0f;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
-            pauseMenu.SetActive(false);
+            CursorOff();
             Time.timeScale = 1f;
-            Cursor.visible = false;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
+    }
+
+    public void ContinueButton()
+    {
+        SaveData();
+        MenuActive();
     }
     
-    private void MenuActive2()
+    public void MainMenuButton()
     {
-        isMenuActive=!isMenuActive;
-
-        if (isMenuActive)
-        {
-            _soundVolume.onValueChanged.AddListener((v) => _audioSource.volume = v);
-            if (AllServices.Singleton != null) _audioSource.volume = _volumeSetting.Volume;
-
-            Cursor.visible = true;
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
-        }
-        else
-        {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
-            Cursor.visible = false;
-        }
-    }
-
-    public void continueButton()
-    {
-        var audioService = FindObjectOfType<AudioService>();
-        if (audioService != null) MenuActive(audioService);
-        else MenuActive2();
-    }
-    
-    public void mainMenuButton()
-    {
-        var audioService = FindObjectOfType<AudioService>();
-        if (audioService != null) Destroy(audioService.gameObject);
-        SceneManager.LoadScene(mainMenuSceneIndex);
+        CursorOff();
+        SaveData();
+        
+        Destroy(_data.gameObject);
+        Destroy(_audioSource.gameObject);
+        
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
-        Cursor.visible = true;
+        
         Destroy(gameObject);
+    }
+
+    private void SaveData()
+    {
+        _data.GameData.Volume = _soundVolume.value;
+        _data.Save();
+    }
+    
+    private void CursorOn()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    
+    private void CursorOff()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 }
