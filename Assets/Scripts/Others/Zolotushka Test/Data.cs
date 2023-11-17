@@ -4,18 +4,18 @@ using System.IO;
 public class Data : MonoBehaviour
 {
     public DataSettings GameData;
-    private string filePath => Application.streamingAssetsPath + "/settings.json";
+    private string _filePath => Application.streamingAssetsPath + "/settings.json";
 
     [ContextMenu("Save")]
     public void Save()
     {
-        File.WriteAllText(filePath, JsonUtility.ToJson(GameData));
+        File.WriteAllText(_filePath, JsonUtility.ToJson(GameData));
     }
     
     [ContextMenu("Load")]
     public void Load()
     {
-        GameData = JsonUtility.FromJson<DataSettings>(File.ReadAllText(filePath));
+        GameData = JsonUtility.FromJson<DataSettings>(File.ReadAllText(_filePath));
     }
 
     [System.Serializable]

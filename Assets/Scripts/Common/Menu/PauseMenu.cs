@@ -1,30 +1,24 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : Finder
 {
-    private Data _data;
-    private bool isMenuActive = false;
+    private bool _isMenuActive = false;
     private Slider _soundVolume;
-
-    private AudioSource _audioSource;
+    
     private GameObject[] _allAudio;
-
-    private void Awake()
-    {
-        FoundsObj();
-    }
 
     private void Start()
     {
-        //FoundsObj();
-        
-        _soundVolume.value = _data.GameData.Volume;
+        FindObjs();
+
+        _allAudio = GameObject.FindGameObjectsWithTag("Audio");
+        _soundVolume = gameObject.GetComponentInChildren<Slider>();
+        _soundVolume.value = Dataobj.GameData.Volume;
         transform.GetChild(0).gameObject.SetActive(false);
         
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(gameObject);
     }
     
     private void Update()
@@ -32,36 +26,19 @@ public class PauseMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) MenuActive();
     }
 
-    private void FoundsObj()
-    {
-        if (GameObject.FindWithTag("Data") == null)
-        {
-            GameObject NewData = new GameObject();
-            NewData.name = "Data";
-            NewData.tag = "Data";
-            _data = NewData.AddComponent<Data>();
-            _data.Load();
-            DontDestroyOnLoad(_data);
-        }
-        else _data = GameObject.FindWithTag("Data").GetComponent<Data>();
-        _allAudio = GameObject.FindGameObjectsWithTag("Audio");
-        _soundVolume = GetComponentInChildren<Slider>();
-    }
-
     public void VolumeSet()
     {
         foreach (var obj in _allAudio)
         {
-            _audioSource = obj.GetComponent<AudioSource>();
-            _audioSource.volume = _soundVolume.value;
+            obj.GetComponent<AudioSource>().volume = _soundVolume.value;
         }
     }
 
     private void MenuActive()
     {
-        isMenuActive = !isMenuActive;
+        _isMenuActive = !_isMenuActive;
 
-        if (isMenuActive)
+        if (_isMenuActive)
         {
             CursorOn();
             Time.timeScale = 0f;
@@ -86,7 +63,7 @@ public class PauseMenu : MonoBehaviour
         CursorOff();
         SaveData();
         
-        Destroy(_data.gameObject);
+        Destroy(Dataobj.gameObject);
         foreach (var go in _allAudio)
         {
             Destroy(go);
@@ -100,19 +77,7 @@ public class PauseMenu : MonoBehaviour
 
     private void SaveData()
     {
-        _data.GameData.Volume = _soundVolume.value;
-        _data.Save();
-    }
-    
-    private void CursorOn()
-    {
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.None;
-    }
-    
-    private void CursorOff()
-    {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Dataobj.GameData.Volume = _soundVolume.value;
+        Dataobj.Save();
     }
 }

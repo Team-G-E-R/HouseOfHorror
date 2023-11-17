@@ -11,7 +11,7 @@ public class Menu : Finder
    private AudioSource _audioSourceStartBtn;
    private Slider _volumeSlider;
    private AsyncOperation _level;
-   private const string AudioName = "AudioButton";
+   private const string _audioName = "AudioButton";
 
    private void Start()
    {
@@ -24,7 +24,7 @@ public class Menu : Finder
    private void CreateAudioBtn()
    {
       GameObject audioFile = new GameObject();
-      audioFile.name = AudioName;
+      audioFile.name = _audioName;
       _audioSourceStartBtn = audioFile.AddComponent<AudioSource>();
       _audioSourceStartBtn.clip = _audioStartBtn;
       _audioSourceStartBtn.volume = Dataobj.GameData.Volume;

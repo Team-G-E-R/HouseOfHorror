@@ -10237,6 +10237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0c25383d7ec44d9bb6677de6c9e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSourceObj: {fileID: 0}
+  AllAudio: []
+  Dataobj: {fileID: 0}
   _audioClip: {fileID: 8300000, guid: 1379616e614dd1f489824afaaec8aa73, type: 3}
   _needToBeLooped: 1
   _needScreamer: 0
