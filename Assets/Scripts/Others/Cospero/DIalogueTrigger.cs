@@ -1,6 +1,3 @@
-using Common.Scripts;
-using UnityEngine;
-
 public class DialogueTrigger : Interactable
 {
     public DialogueWindow dialogue;

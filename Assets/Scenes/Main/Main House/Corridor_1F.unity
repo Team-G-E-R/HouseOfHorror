@@ -2806,11 +2806,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4145644554613055969, guid: 1fbe47b4a639a7042bd3c8a433b7003c, type: 3}
       propertyPath: m_Name
-      value: Player_Playable(NoInteract)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6660930582131202183, guid: 1fbe47b4a639a7042bd3c8a433b7003c, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6660930582131202183, guid: 1fbe47b4a639a7042bd3c8a433b7003c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12967,7 +12967,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1335304607 stripped
 MonoBehaviour:
@@ -19070,7 +19070,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!114 &1835491723
 MonoBehaviour:
