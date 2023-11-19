@@ -13,7 +13,7 @@ public class Menu : Finder
    private AsyncOperation _level;
    private const string _audioName = "AudioButton";
 
-   private void Start()
+   private void Awake()
    {
       _volumeSlider = GetComponentInChildren<Slider>();
       FindObjs();
@@ -35,6 +35,7 @@ public class Menu : Finder
       Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
       SaveData();
+      _audioSourceStartBtn.volume = Dataobj.GameData.Volume;
       _audioSourceStartBtn.Play();
       AudioSourceObj.Stop();
       StartCoroutine(FadeInTransition());
