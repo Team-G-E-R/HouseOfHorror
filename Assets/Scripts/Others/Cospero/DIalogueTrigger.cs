@@ -1,6 +1,8 @@
+using UnityEngine;
+
 public class DialogueTrigger : Interactable
 {
-    public DialogueWindow dialogue;
+    [SerializeField] private DialogueWindow _dialogue;
     private bool _diaPlaying;
 
     public void ActivateDialogue()
@@ -9,6 +11,6 @@ public class DialogueTrigger : Interactable
         _diaPlaying = manager._dialogueIsPlaying;
         manager._dialogueTrigger = this;
         
-        if(_diaPlaying == false) FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        if(_diaPlaying == false) FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);
     }
 }
