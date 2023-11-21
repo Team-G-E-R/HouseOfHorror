@@ -1,35 +1,26 @@
+using Common.Scripts;
 using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
-    private bool _isInRange;
-    public KeyCode InteractKey = KeyCode.E;
+    private bool _isInRange = false;
     private GameObject InteractItem;
     private bool key = false;
     
     [SerializeField] GameObject inputButtonImage;
-   
-   private void Awake()
+
+    private void Awake()
    {
         inputButtonImage.SetActive(false);
    }
    
    private void Update() 
    {    
-        if((_isInRange)&(Input.GetKeyDown(InteractKey)))
+        if((_isInRange)&(Input.GetKeyDown(KeyCode.E)))
         {
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
                 ob.Interact();
-                inputButtonImage.SetActive(false);
-            }
-        }
-        
-        if ((_isInRange) & (Input.GetKeyDown(InteractKey)))
-        {
-            if ((InteractItem.TryGetComponent<Key>(out Key ob1)))
-            {
-                ob1.Interact1();
                 inputButtonImage.SetActive(false);
             }
         }
@@ -39,20 +30,10 @@ public class Activator : MonoBehaviour
    {
         if ((other.tag == "Interactable"))
         {
-            _isInRange =true;
-            ShowPic();
-            
-            if (key == false) InteractItem = other.gameObject;
-            else Debug.Log("��� �����");
-        }
-
-        if ((other.tag == "Key"))
-        {
             _isInRange = true;
-            inputButtonImage.SetActive(true);
-            InteractItem = other.gameObject;
+            ShowPic();
 
-            key = false;
+            if (key == false) InteractItem = other.gameObject;
         }
    }
 
@@ -63,7 +44,7 @@ public class Activator : MonoBehaviour
 
    private void OnTriggerExit(Collider other) 
    {
-        if ((other.tag == "Interactable" || (other.tag == "Key")))
+        if ((other.tag == "Interactable"))
         {
                inputButtonImage.SetActive(false);
                InteractItem=null;

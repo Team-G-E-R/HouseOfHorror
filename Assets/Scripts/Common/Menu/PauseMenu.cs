@@ -1,105 +1,84 @@
-using GameResources.SO;
-using MrPaganini.UI.Windows;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour
+public class PauseMenu : Finder
 {
-    public GameObject pauseMenu;
-    private bool isMenuActive = false;
-    [SerializeField] KeyCode KeyToActivateMenu;
-    [SerializeField] int mainMenuSceneIndex;
-    [SerializeField] private Slider _soundVolume;
-    private SettingsConfig _volumeSetting;
+    private bool _isMenuActive = false;
+    private Slider _soundVolume;
     
-    private AudioSource _audioSource;
-    
+    private GameObject[] _allAudio;
+
     private void Start()
     {
-        pauseMenu.SetActive(false);
-        if (AllServices.Singleton != null)
-        {
-            _volumeSetting = AllServices.Singleton.Single<ISettingsService>().SettingsConfig;
-            _audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
-            _audioSource.volume = _volumeSetting.Volume;
-            _soundVolume.value = _volumeSetting.Volume;
-        }
-        DontDestroyOnLoad(this.gameObject);
+        FindObjs();
+
+        _allAudio = GameObject.FindGameObjectsWithTag("Audio");
+        _soundVolume = gameObject.GetComponentInChildren<Slider>();
+        _soundVolume.value = Dataobj.GameData.Volume;
+        transform.GetChild(0).gameObject.SetActive(false);
+        
+        DontDestroyOnLoad(gameObject);
     }
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyToActivateMenu))
+        if (Input.GetKeyDown(KeyCode.Escape)) MenuActive();
+    }
+
+    public void VolumeSet()
+    {
+        foreach (var obj in _allAudio)
         {
-            var audioService = FindObjectOfType<AudioService>();
-            if (audioService != null) MenuActive(audioService);
-            else MenuActive2();
+            obj.GetComponent<AudioSource>().volume = _soundVolume.value;
         }
     }
 
-    public void OnValueSound()
+    private void MenuActive()
     {
-        _volumeSetting.Volume = _soundVolume.value;
-        _audioSource.volume = _soundVolume.value;
-    }
+        _isMenuActive = !_isMenuActive;
 
-    private void MenuActive(IAudioService audioService)
-    {
-        isMenuActive=!isMenuActive;
-
-        if (isMenuActive)
+        if (_isMenuActive)
         {
-            _audioSource = audioService.AudioSource;
-            _audioSource.volume = _volumeSetting.Volume;
-
-            Cursor.visible = true;
-            pauseMenu.SetActive(true);
+            _allAudio = GameObject.FindGameObjectsWithTag("Audio");
+            CursorOn();
             Time.timeScale = 0f;
+            transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
-            pauseMenu.SetActive(false);
+            CursorOff();
             Time.timeScale = 1f;
-            Cursor.visible = false;
+            transform.GetChild(0).gameObject.SetActive(false);
         }
+    }
+
+    public void ContinueButton()
+    {
+        SaveData();
+        MenuActive();
     }
     
-    private void MenuActive2()
+    public void MainMenuButton()
     {
-        isMenuActive=!isMenuActive;
-
-        if (isMenuActive)
+        CursorOff();
+        SaveData();
+        
+        Destroy(Dataobj.gameObject);
+        foreach (var go in _allAudio)
         {
-            _soundVolume.onValueChanged.AddListener((v) => _audioSource.volume = v);
-            if (AllServices.Singleton != null) _audioSource.volume = _volumeSetting.Volume;
-
-            Cursor.visible = true;
-            pauseMenu.SetActive(true);
-            Time.timeScale = 0f;
+            Destroy(go);
         }
-        else
-        {
-            pauseMenu.SetActive(false);
-            Time.timeScale = 1f;
-            Cursor.visible = false;
-        }
-    }
 
-    public void continueButton()
-    {
-        var audioService = FindObjectOfType<AudioService>();
-        if (audioService != null) MenuActive(audioService);
-        else MenuActive2();
-    }
-    
-    public void mainMenuButton()
-    {
-        var audioService = FindObjectOfType<AudioService>();
-        if (audioService != null) Destroy(audioService.gameObject);
-        SceneManager.LoadScene(mainMenuSceneIndex);
+        SceneManager.LoadScene(0);
         Time.timeScale = 1f;
-        Cursor.visible = true;
+        
         Destroy(gameObject);
+    }
+
+    private void SaveData()
+    {
+        Dataobj.GameData.Volume = _soundVolume.value;
+        Dataobj.Save();
     }
 }

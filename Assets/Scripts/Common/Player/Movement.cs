@@ -7,19 +7,13 @@ namespace Common.Scripts
     {
 
         #region Inspector
-
-        [SerializeField] private KeyCode _sprintKey = KeyCode.LeftShift;
+        
         [SerializeField] private float speed = 100f;
         [SerializeField] private float sprintSpeedBonus = 50f;
 
         [Header("Relations")]
-        public Animator animator;
-
-        [SerializeField]
-        private Rigidbody physicsBody = null;
-
-        [SerializeField]
-        private SpriteRenderer spriteRenderer = null;
+        [SerializeField] private Animator animator;
+        [SerializeField] private Rigidbody physicsBody = null;
 
         #endregion
 
@@ -29,7 +23,7 @@ namespace Common.Scripts
         private Vector3 _movement;
         private bool _movementLocked;
         private bool _sprintLocked;
-
+        
         #endregion
 
 
@@ -43,12 +37,7 @@ namespace Common.Scripts
             animator.SetFloat("Horizontal", horizontal);
             animator.SetFloat("Vertical", vertical);
             animator.SetFloat("Speed", _movement.sqrMagnitude);
-
-            //if (horizontal > 0)
-            //    spriteRenderer.flipX = false;
-            //else if (horizontal < 0)
-            //    spriteRenderer.flipX = true;
-
+            
             _movement = new Vector3(horizontal, 0, vertical).normalized;
         }
 
@@ -57,7 +46,7 @@ namespace Common.Scripts
             if (_movementLocked)
                 return;
 
-            float sprint = _sprintLocked == false && Input.GetKey(_sprintKey) ? sprintSpeedBonus : 0;
+            float sprint = _sprintLocked == false && Input.GetKey(KeyCode.LeftShift) ? sprintSpeedBonus : 0;
             physicsBody.velocity = _movement * (speed + sprint) * Time.fixedDeltaTime;
             physicsBody.AddForce(Physics.gravity * (physicsBody.mass * physicsBody.mass));
         }
@@ -76,6 +65,7 @@ namespace Common.Scripts
             GetComponent<Activator>().enabled = true;
             this.enabled = true;
         }
+        
         #endregion
     }
 }

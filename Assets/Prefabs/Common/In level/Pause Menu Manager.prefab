@@ -586,7 +586,7 @@ Transform:
   - {fileID: 5214233954642668821}
   - {fileID: 4972305862773499592}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7994531656293487840
 MonoBehaviour:
@@ -600,10 +600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71ab8a5b437e7644a5c64a91e37f0f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 8628468125176651559}
-  KeyToActivateMenu: 27
-  mainMenuSceneIndex: 0
-  _soundVolume: {fileID: 8658655990313650640}
 --- !u!1 &2416732335235626500
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +724,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7994531656293487840}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: mainMenuButton
+        m_MethodName: MainMenuButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -938,7 +934,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7994531656293487840}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: continueButton
+        m_MethodName: ContinueButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1177,7 +1173,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7994531656293487840}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: OnValueSound
+        m_MethodName: VolumeSet
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

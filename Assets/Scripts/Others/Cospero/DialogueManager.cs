@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Common.Scripts;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using Common.Scripts;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -25,9 +25,11 @@ public class DialogueManager : MonoBehaviour
     private string[] _jsonSentenses;
     [HideInInspector]
     public DialogueTrigger _dialogueTrigger;
-    
-    private void Start() 
+    private bool _moveEnable = true;
+
+    private void Start()
     {
+        _dialogueTrigger = GameObject.FindWithTag("DialogueTrigger").GetComponent<DialogueTrigger>();
         _sentence = new Queue<string>();
         _indexOfSpeaker = new Queue<int>();
         _dialogueIsPlaying = false;
@@ -37,18 +39,18 @@ public class DialogueManager : MonoBehaviour
     private void Update() 
     {
         if (Input.GetKeyDown(KeyCode.E) == false) return;
-         StopAllCoroutines();
-         if (_dialogueTextUI.text != _curSentanceText) _dialogueTextUI.text = _curSentanceText;
-         else DisplayNextLine();
+        StopAllCoroutines();
+        if (_dialogueTextUI.text != _curSentanceText) _dialogueTextUI.text = _curSentanceText;
+        else if (_dialogueIsPlaying) DisplayNextLine();
     }
     
     public void StartDialogue(DialogueWindow dialogue)
     {
-        _dialogueFileName = dialogue._jsonAssetName;
+        MovementOffOn();
         ThingModel _thingModel = new ThingModel();
-        var jsonTextFile = Resources.Load<TextAsset>("Texts/"+_dialogueFileName);
+        var jsonTextFile = dialogue._jsonFile.text;
         
-        JsonUtility.FromJsonOverwrite(jsonTextFile.text, _thingModel);
+        JsonUtility.FromJsonOverwrite(jsonTextFile, _thingModel);
         
         if (_isRussian) _jsonSentenses = _thingModel._ruLines;
         else _jsonSentenses = _thingModel._euLines;
@@ -73,6 +75,7 @@ public class DialogueManager : MonoBehaviour
             
             if (_sentence.Count == 0)
             {
+                _dialogueTrigger.Interact();
                 EndDialogue();
                 return;
             }
@@ -99,10 +102,20 @@ public class DialogueManager : MonoBehaviour
     
     private void EndDialogue()
         {
-            _dialogueTrigger.Interact();
             _dialogueIsPlaying = false;
             _dialogueObjUI.SetActive(false);
+            MovementOffOn();
         }
+
+    private void MovementOffOn()
+    {
+        _moveEnable = !_moveEnable;
+        var player = GameObject.FindWithTag("Player");
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.GetComponent<Animator>().enabled = _moveEnable;
+        player.GetComponent<movement>().enabled = _moveEnable;
+        player.GetComponent<Activator>().enabled = _moveEnable;
+    }
     }
 
 public class ThingModel: MonoBehaviour
