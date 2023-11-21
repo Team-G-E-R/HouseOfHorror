@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class Activator : MonoBehaviour
 {
-    public bool _isInRange = false;
-    public KeyCode InteractKey = KeyCode.E;
+    private bool _isInRange = false;
     private GameObject InteractItem;
     private bool key = false;
     
@@ -17,7 +16,7 @@ public class Activator : MonoBehaviour
    
    private void Update() 
    {    
-        if((_isInRange)&(Input.GetKeyDown(InteractKey)))
+        if((_isInRange)&(Input.GetKeyDown(KeyCode.E)))
         {
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
