@@ -26,7 +26,6 @@ public class DialogueManager : MonoBehaviour
     [HideInInspector]
     public DialogueTrigger _dialogueTrigger;
     private bool _moveEnable = true;
-    private ThingModel _thingModel;
 
     private void Start()
     {
@@ -48,7 +47,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueWindow dialogue)
     {
         MovementOffOn();
-        _thingModel = gameObject.AddComponent<ThingModel>();
+        ThingModel _thingModel = new ThingModel();
         var jsonTextFile = dialogue._jsonFile.text;
         
         JsonUtility.FromJsonOverwrite(jsonTextFile, _thingModel);
@@ -103,7 +102,6 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
         {
             DialogueIsPlaying = false;
-            Destroy(_thingModel);
             DialogueObjUI.SetActive(false);
             MovementOffOn();
         }
@@ -119,7 +117,7 @@ public class DialogueManager : MonoBehaviour
     }
     }
 
-public class ThingModel: MonoBehaviour
+public class ThingModel
     {
         public string[] _ruLines;
         public string[] _euLines; 
