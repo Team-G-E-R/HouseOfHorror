@@ -9,62 +9,63 @@ public class DialogueManager : MonoBehaviour
 {
     [Header("Dialogue settings")]
     [Space(5)]
-    public bool _isRussian;
-    public TMP_Text _dialogueTextUI;
-    public TMP_Text _speakerNameUI;
-    public Queue<int>  _indexOfSpeaker; 
-    public Queue<string>  _sentence;
-    public bool _dialogueIsPlaying;
-    public GameObject _dialogueObjUI;
-    public Image _dialogueImageUI;
+    public bool IsRussian;
+    public TMP_Text DialogueTextUI;
+    public TMP_Text SpeakerNameUI;
+    public Queue<int> IndexOfSpeaker; 
+    public Queue<string> Sentence;
+    public bool DialogueIsPlaying;
+    public GameObject DialogueObjUI;
+    public Image DialogueImageUI;
+    
     private string _curSentanceText;
     private string _dialogueFileName;
     private string[] _charName;
     private Color[] _dialogueColours;
-    private float _dialogueTimerValue;
     private string[] _jsonSentenses;
     [HideInInspector]
     public DialogueTrigger _dialogueTrigger;
     private bool _moveEnable = true;
+    private ThingModel _thingModel;
 
     private void Start()
     {
         _dialogueTrigger = GameObject.FindWithTag("DialogueTrigger").GetComponent<DialogueTrigger>();
-        _sentence = new Queue<string>();
-        _indexOfSpeaker = new Queue<int>();
-        _dialogueIsPlaying = false;
-        _dialogueObjUI.SetActive(false);
+        Sentence = new Queue<string>();
+        IndexOfSpeaker = new Queue<int>();
+        DialogueIsPlaying = false;
+        DialogueObjUI.SetActive(false);
     }
     
     private void Update() 
     {
         if (Input.GetKeyDown(KeyCode.E) == false) return;
         StopAllCoroutines();
-        if (_dialogueTextUI.text != _curSentanceText) _dialogueTextUI.text = _curSentanceText;
-        else if (_dialogueIsPlaying) DisplayNextLine();
+        if (DialogueTextUI.text != _curSentanceText) DialogueTextUI.text = _curSentanceText;
+        else if (DialogueIsPlaying) DisplayNextLine();
     }
     
     public void StartDialogue(DialogueWindow dialogue)
     {
         MovementOffOn();
-        ThingModel _thingModel = new ThingModel();
+        _thingModel = gameObject.AddComponent<ThingModel>();
         var jsonTextFile = dialogue._jsonFile.text;
         
         JsonUtility.FromJsonOverwrite(jsonTextFile, _thingModel);
         
-        if (_isRussian) _jsonSentenses = _thingModel._ruLines;
+        if (IsRussian) _jsonSentenses = _thingModel._ruLines;
         else _jsonSentenses = _thingModel._euLines;
         
         _charName = _thingModel._namesOfTheSpeakers;
         _dialogueColours = dialogue._charColor;
         
-        _sentence.Clear();
-        _indexOfSpeaker.Clear();
-        _dialogueIsPlaying = true;
-        _dialogueObjUI.SetActive(true);
+        Sentence.Clear();
+        IndexOfSpeaker.Clear();
+        DialogueIsPlaying = true;
+        DialogueObjUI.SetActive(true);
         
-        foreach (string sentense in _jsonSentenses) _sentence.Enqueue(sentense);
-        foreach (int whoIsSpeaking in _thingModel._indexesOfSpeakers) _indexOfSpeaker.Enqueue(whoIsSpeaking);
+        foreach (string sentense in _jsonSentenses) Sentence.Enqueue(sentense);
+        foreach (int whoIsSpeaking in _thingModel._indexesOfSpeakers) IndexOfSpeaker.Enqueue(whoIsSpeaking);
         
         DisplayNextLine();
     }
@@ -73,37 +74,37 @@ public class DialogueManager : MonoBehaviour
         {
             StopAllCoroutines();
             
-            if (_sentence.Count == 0)
+            if (Sentence.Count == 0)
             {
                 _dialogueTrigger.Interact();
                 EndDialogue();
                 return;
             }
             
-            string sentense = _sentence.Dequeue();
-            int indexOfSpeaker = _indexOfSpeaker.Dequeue();
+            string sentense = Sentence.Dequeue();
+            int indexOfSpeaker = IndexOfSpeaker.Dequeue();
             _curSentanceText = sentense;
             StartCoroutine(TypeLines(sentense, indexOfSpeaker));
         }
     
     IEnumerator TypeLines(string sentense, int indexOfSpeaker)
         {
-            _dialogueTimerValue = (float)sentense.Length/20f+1.5f;
-            _speakerNameUI.text = _charName[indexOfSpeaker];
-            _dialogueImageUI.color = _dialogueColours[indexOfSpeaker];
-           _dialogueTextUI.text = "";
+            SpeakerNameUI.text = _charName[indexOfSpeaker]; 
+            DialogueImageUI.color = _dialogueColours[indexOfSpeaker];
+            DialogueTextUI.text = "";
            
             foreach (char letter in sentense.ToCharArray())
             {
-                _dialogueTextUI.text += letter;
+                DialogueTextUI.text += letter;
                 yield return new WaitForSeconds(0.05f);
             }
         }
     
     private void EndDialogue()
         {
-            _dialogueIsPlaying = false;
-            _dialogueObjUI.SetActive(false);
+            DialogueIsPlaying = false;
+            Destroy(_thingModel);
+            DialogueObjUI.SetActive(false);
             MovementOffOn();
         }
 

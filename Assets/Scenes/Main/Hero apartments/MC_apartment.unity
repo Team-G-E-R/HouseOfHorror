@@ -9104,8 +9104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3234229b2f97c3478c94ee40b400901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isInRange: 0
-  InteractKey: 101
   inputButtonImage: {fileID: 3661972163717570583}
 --- !u!1 &2207148806057558408
 GameObject:
@@ -10895,12 +10893,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d1cc4e0d5498c47b66d19f327bcd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isRussian: 1
-  _dialogueTextUI: {fileID: 8178928832427945247}
-  _speakerNameUI: {fileID: 4985010100553634663}
-  _dialogueIsPlaying: 0
-  _dialogueObjUI: {fileID: 8259323589016706524}
-  _dialogueImageUI: {fileID: 2902792924949832033}
+  IsRussian: 1
+  DialogueTextUI: {fileID: 8178928832427945247}
+  SpeakerNameUI: {fileID: 4985010100553634663}
+  DialogueIsPlaying: 0
+  DialogueObjUI: {fileID: 8259323589016706524}
+  DialogueImageUI: {fileID: 2902792924949832033}
   _dialogueTrigger: {fileID: 0}
 --- !u!1 &7054229614131600170
 GameObject:
@@ -11433,7 +11431,7 @@ GameObject:
   - component: {fileID: 4315612007199058522}
   - component: {fileID: 4985010100553634663}
   m_Layer: 5
-  m_Name: SpeakerName
+  m_Name: Speaker Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

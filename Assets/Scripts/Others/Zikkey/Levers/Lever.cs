@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class Lever : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text _stateInfo;
-    [SerializeField] [Multiline] private string _textPreset = "Рычаг:\n{}";
-    [SerializeField] private string[] _activationsPreset = new string[] { "поднят", "опущен" };
+    [SerializeField] [Multiline] private string _textPreset = "Р С‹С‡Р°Рі:\n{}";
+    [SerializeField] private string[] _activationsPreset = new string[] { "РїРѕРґРЅСЏС‚", "РѕРїСѓС‰РµРЅ" };
 
     [SerializeField] private bool _current = false;
     [SerializeField] private bool _needed = true;

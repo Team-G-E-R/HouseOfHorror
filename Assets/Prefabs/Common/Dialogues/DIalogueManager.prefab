@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 9054412094079017685}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2696864674248718949
 MonoBehaviour:
@@ -45,27 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d1cc4e0d5498c47b66d19f327bcd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TestScriptDelete, Assembly-CSharp
-        m_MethodName: AfterDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _isRussian: 1
-  _dialogueTextUI: {fileID: 3835353120370603899}
-  _speakerNameUI: {fileID: 114522251487512835}
-  _dialogueIsPlaying: 0
-  _dialogueObjUI: {fileID: 3902243924783728568}
-  _dialogueImageUI: {fileID: 7849853241521584901}
+  IsRussian: 1
+  DialogueTextUI: {fileID: 3835353120370603899}
+  SpeakerNameUI: {fileID: 114522251487512835}
+  DialogueIsPlaying: 0
+  DialogueObjUI: {fileID: 3902243924783728568}
+  DialogueImageUI: {fileID: 7849853241521584901}
+  _dialogueTrigger: {fileID: 0}
 --- !u!1001 &97864721371570743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74,6 +60,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2947947725209286132}
     m_Modifications:
+    - target: {fileID: 344830537772050423, guid: 113372b027d72444ca3fb2f64bcc95ae, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -344.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 344830537772050423, guid: 113372b027d72444ca3fb2f64bcc95ae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338272526429087773, guid: 113372b027d72444ca3fb2f64bcc95ae, type: 3}
+      propertyPath: m_Name
+      value: Speaker Name
+      objectReference: {fileID: 0}
     - target: {fileID: 5078843611056665270, guid: 113372b027d72444ca3fb2f64bcc95ae, type: 3}
       propertyPath: m_Name
       value: DIalogueCanvas
