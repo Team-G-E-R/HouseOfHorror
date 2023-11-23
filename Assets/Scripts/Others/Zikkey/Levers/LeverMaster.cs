@@ -1,18 +1,34 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LeverMaster : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Lever[] _levers;
+    [SerializeField] private bool _canCompleteMultipleTimes = false;
+
+    private bool _completed = false;
+
+    public UnityEvent OnPazzleCompleted = new();
+
+    private void Awake()
     {
-        
+        for (int i = 0; i < _levers.Length; i++)
+            _levers[i].OnStateChanged.AddListener(UpdatePazzleState);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdatePazzleState()
     {
-        
+        if (_completed && _canCompleteMultipleTimes == false)
+            return;
+
+        bool success = true;
+
+        for (int i = 0; i < _levers.Length; i++)
+            if (_levers[i].Success == false)
+                success = false;
+
+        if (success)
+            OnPazzleCompleted.Invoke();
     }
+
 }

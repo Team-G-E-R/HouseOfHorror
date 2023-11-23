@@ -1,18 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer))]
 public class LeversTest : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private MeshRenderer _renderer;
+
+    private void Awake()
     {
-        
+        _renderer = GetComponent<MeshRenderer>();
+        HideRenderer();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void HideRenderer()
     {
-        
+        _renderer.enabled = false;
+    }
+
+    public void ShowRenderer()
+    {
+        _renderer.enabled = true;
     }
 }
