@@ -8,7 +8,7 @@ public class LeverMaster : MonoBehaviour
 
     private bool _completed = false;
 
-    public UnityEvent OnPazzleCompleted = new();
+    public UnityEvent OnCompleted = new();
 
     private void Awake()
     {
@@ -28,7 +28,10 @@ public class LeverMaster : MonoBehaviour
                 success = false;
 
         if (success)
-            OnPazzleCompleted.Invoke();
+        {
+            _completed = true;
+            OnCompleted.Invoke();
+        }
     }
 
 }

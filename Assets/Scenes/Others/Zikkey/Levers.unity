@@ -1258,7 +1258,8 @@ MonoBehaviour:
   - {fileID: 986647329}
   - {fileID: 296495806}
   - {fileID: 2022090737}
-  OnPazzleCompleted:
+  _canCompleteMultipleTimes: 0
+  OnCompleted:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1722776118}
