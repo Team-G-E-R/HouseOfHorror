@@ -21321,13 +21321,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0077e3bd6f11340be2476822d0b0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceObj: {fileID: 0}
-  AllAudio: []
-  Dataobj: {fileID: 0}
-  SceneIndex: 0
-  PlayerScenePos: {x: 0, y: 0, z: 0}
-  CameraPos: {x: 0, y: 0, z: 0}
-  key: {fileID: 0}
+  KeysData:
+    Keys: 0000000000
 --- !u!1 &1171603660
 GameObject:
   m_ObjectHideFlags: 0

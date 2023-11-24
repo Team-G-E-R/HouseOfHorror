@@ -7,7 +7,7 @@ public class KeyChecker : PuzzlesData
 
     public void CheckKey()
     {
-        _key = KeysData.HasKey1;
+        _key = KeysData.KeysDict["Key1"];
         if (_key == true) GetComponent<SceneTransitions>().NextScene();
         else GameObject.FindWithTag("DialogueTrigger").GetComponent<DialogueTrigger>().ActivateDialogue();
     }
