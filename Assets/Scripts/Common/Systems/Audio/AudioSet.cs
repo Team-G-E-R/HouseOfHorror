@@ -24,7 +24,7 @@ public class AudioSet : Finder
 
     private void MusicSet()
     {
-        AudioSourceObj.volume = Dataobj.GameData.Volume;
+        AudioSourceObj.volume = SettingsDataobj.GameSettingsData.Volume;
         AudioSourceObj.clip = _audioClip;
         if (_needToBeLooped) AudioSourceObj.loop = true;
         AudioSourceObj.Play();
@@ -47,7 +47,7 @@ public class AudioSet : Finder
         Screamer.tag = "Audio";
         _audioSource2 = Screamer.AddComponent<AudioSource>();
         _audioSource2.clip = _screamerToPlay;
-        _audioSource2.volume = Dataobj.GameData.Volume;
+        _audioSource2.volume = SettingsDataobj.GameSettingsData.Volume;
         if (_screamerMustBeLooped) _audioSource2.loop = true;
         _audioSource2.Play();
     }

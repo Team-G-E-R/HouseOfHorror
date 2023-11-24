@@ -1,21 +1,21 @@
 using UnityEngine;
 using System.IO;
 
-public class Data : MonoBehaviour
+public class SettingsData : MonoBehaviour
 {
-    public DataSettings GameData;
+    public DataSettings GameSettingsData;
     private string _filePath => Application.streamingAssetsPath + "/settings.json";
 
     [ContextMenu("Save")]
     public void Save()
     {
-        File.WriteAllText(_filePath, JsonUtility.ToJson(GameData));
+        File.WriteAllText(_filePath, JsonUtility.ToJson(GameSettingsData));
     }
     
     [ContextMenu("Load")]
     public void Load()
     {
-        GameData = JsonUtility.FromJson<DataSettings>(File.ReadAllText(_filePath));
+        GameSettingsData = JsonUtility.FromJson<DataSettings>(File.ReadAllText(_filePath));
     }
 
     [System.Serializable]

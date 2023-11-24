@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Finder : MonoBehaviour
 {
@@ -7,23 +8,30 @@ public class Finder : MonoBehaviour
     [HideInInspector]
     public GameObject[] AllAudio;
     [HideInInspector]
-    public Data Dataobj;
+    public SettingsData SettingsDataobj;
     
-    private const string DataName = "GameData";
+    private const string SettingsDataName = "GameSettingsData";
     private const string AudioName = "AudioService";
-    
+
+    [HideInInspector]
+    public int SceneIndex;
+    [HideInInspector]
+    public Vector3 PlayerScenePos;
+    [HideInInspector]
+    public Vector3 CameraPos;
+
     public void FindObjs()
     {
-        if (GameObject.FindWithTag("Data") == null)
+        if (GameObject.FindWithTag("SettingsData") == null)
         {
-            GameObject NewData = new GameObject();
-            NewData.name = DataName;
-            NewData.tag = "Data";
-            Dataobj = NewData.AddComponent<Data>();
-            Dataobj.Load();
-            DontDestroyOnLoad(Dataobj);
+            GameObject NewSettingsData = new GameObject();
+            NewSettingsData.name = SettingsDataName;
+            NewSettingsData.tag = "SettingsData";
+            SettingsDataobj = NewSettingsData.AddComponent<SettingsData>();
+            SettingsDataobj.Load();
+            DontDestroyOnLoad(SettingsDataobj);
         }
-        else Dataobj = GameObject.FindWithTag("Data").GetComponent<Data>();
+        else SettingsDataobj = GameObject.FindWithTag("SettingsData").GetComponent<SettingsData>();
 
         if (GameObject.FindWithTag("Audio") == null)
         {
@@ -34,6 +42,13 @@ public class Finder : MonoBehaviour
             DontDestroyOnLoad(AudioSourceObj);
         }
         else AudioSourceObj = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+    }
+
+    public void FindPlayerSettingsData()
+    {
+        SceneIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerScenePos = GameObject.FindWithTag("Player").transform.position;
+        CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
     }
     
     public void CursorOn()
