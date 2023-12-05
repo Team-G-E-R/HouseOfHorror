@@ -13,4 +13,7 @@ public class DialogueTrigger : Interactable
         
         if(_diaPlaying == false) FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);
     }
+    private void Update() {
+        if (Input.GetKeyDown(KeyCode.H)) ActivateDialogue();
+    }
 }

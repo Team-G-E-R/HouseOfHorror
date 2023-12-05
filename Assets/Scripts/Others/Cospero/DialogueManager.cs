@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(DialogueWindow dialogue)
     {
-        MovementOffOn();
+        //MovementOffOn();
         ThingModel _thingModel = new ThingModel();
         var jsonTextFile = dialogue._jsonFile.text;
         
@@ -104,10 +104,10 @@ public class DialogueManager : MonoBehaviour
         {
             _dialogueIsPlaying = false;
             _dialogueObjUI.SetActive(false);
-            MovementOffOn();
+            //MovementOffOn();
         }
 
-    private void MovementOffOn()
+    /* private void MovementOffOn()
     {
         _moveEnable = !_moveEnable;
         var player = GameObject.FindWithTag("Player");
@@ -115,8 +115,8 @@ public class DialogueManager : MonoBehaviour
         player.GetComponent<Animator>().enabled = _moveEnable;
         player.GetComponent<movement>().enabled = _moveEnable;
         player.GetComponent<Activator>().enabled = _moveEnable;
-    }
-    }
+    }*/
+    } 
 
 public class ThingModel: MonoBehaviour
     {
