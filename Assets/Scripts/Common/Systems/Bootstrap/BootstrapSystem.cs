@@ -4,7 +4,7 @@ public class BootstrapSystem : Finder
 {
     [SerializeField] private AudioClip _menuMusic;
     
-    private Data _data;
+    private SettingsData _SettingsData;
     private AudioSource _audioSource;
     private float _soundVolume;
 

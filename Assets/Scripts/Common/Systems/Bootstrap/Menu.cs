@@ -17,7 +17,7 @@ public class Menu : Finder
    {
       _volumeSlider = GetComponentInChildren<Slider>();
       FindObjs();
-      _volumeSlider.value = Dataobj.GameData.Volume;
+      _volumeSlider.value = SettingsDataobj.GameSettingsData.Volume;
       CreateAudioBtn();
    }
    
@@ -27,24 +27,24 @@ public class Menu : Finder
       audioFile.name = _audioName;
       _audioSourceStartBtn = audioFile.AddComponent<AudioSource>();
       _audioSourceStartBtn.clip = _audioStartBtn;
-      _audioSourceStartBtn.volume = Dataobj.GameData.Volume;
+      _audioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
    }
 
    public void SceneLoad()
    {
       Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
-      SaveData();
-      _audioSourceStartBtn.volume = Dataobj.GameData.Volume;
+      SaveSettingsData();
+      _audioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
       _audioSourceStartBtn.Play();
       AudioSourceObj.Stop();
       StartCoroutine(FadeInTransition());
    }
    
-   private void SaveData()
+   private void SaveSettingsData()
    {
-      Dataobj.GameData.Volume = _volumeSlider.value;
-      Dataobj.Save();
+      SettingsDataobj.GameSettingsData.Volume = _volumeSlider.value;
+      SettingsDataobj.Save();
    }
 
    public void VolumeSet()
@@ -54,7 +54,7 @@ public class Menu : Finder
 
    public void ExitGame()
    {
-      SaveData();
+      SaveSettingsData();
       Application.Quit();
    }
 
