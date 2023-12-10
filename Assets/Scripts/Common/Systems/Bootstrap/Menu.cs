@@ -5,10 +5,10 @@ using System.Collections;
 
 public class Menu : Finder
 {
+   public AudioClip AudioStartBtn;
+   public AudioSource AudioSourceStartBtn;
    [SerializeField] private int _nextSceneIndex;
-   [SerializeField] private AudioClip _audioStartBtn;
    
-   private AudioSource _audioSourceStartBtn;
    private Slider _volumeSlider;
    private AsyncOperation _level;
    private const string _audioName = "AudioButton";
@@ -25,9 +25,9 @@ public class Menu : Finder
    {
       GameObject audioFile = new GameObject();
       audioFile.name = _audioName;
-      _audioSourceStartBtn = audioFile.AddComponent<AudioSource>();
-      _audioSourceStartBtn.clip = _audioStartBtn;
-      _audioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      AudioSourceStartBtn = audioFile.AddComponent<AudioSource>();
+      AudioSourceStartBtn.clip = AudioStartBtn;
+      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
    }
 
    public void SceneLoad()
@@ -35,8 +35,8 @@ public class Menu : Finder
       Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
       SaveSettingsData();
-      _audioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
-      _audioSourceStartBtn.Play();
+      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      AudioSourceStartBtn.Play();
       AudioSourceObj.Stop();
       StartCoroutine(FadeInTransition());
    }
@@ -61,7 +61,7 @@ public class Menu : Finder
    private IEnumerator FadeInTransition()
    {
       var fade = GetComponent<FadeInOut>();
-      fade.duration = _audioStartBtn.length;
+      fade.duration = AudioStartBtn.length;
       fade.FadeIn();
       yield return new WaitForSeconds(fade.duration + 0.5f);
       SceneManager.LoadScene(_nextSceneIndex, LoadSceneMode.Single);
