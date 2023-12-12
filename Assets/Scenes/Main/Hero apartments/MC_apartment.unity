@@ -5895,8 +5895,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7271624, y: 1.4846866, z: 2.740664}
-  m_Center: {x: -5.407904, y: -0.5549747, z: 3.431586}
+  m_Size: {x: 1.6972594, y: 1.679524, z: 3.4163547}
+  m_Center: {x: -5.4228554, y: -0.457556, z: 3.347623}
 --- !u!114 &1707738065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8823,7 +8823,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSourceObj: {fileID: 0}
   AllAudio: []
-  Dataobj: {fileID: 0}
+  SettingsDataobj: {fileID: 0}
+  SceneIndex: 0
+  PlayerScenePos: {x: 0, y: 0, z: 0}
+  CameraPos: {x: 0, y: 0, z: 0}
   _audioClip: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
   _needToBeLooped: 1
   _needScreamer: 0
@@ -10989,8 +10992,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1694921, y: 1.7730452, z: 1}
-  m_Center: {x: 0.039490223, y: 1.2856191, z: 0}
+  m_Size: {x: 0.40014318, y: 1.5249473, z: 1}
+  m_Center: {x: 0.10153025, y: 1.2438551, z: 0}
 --- !u!1 &7290514384024297611
 GameObject:
   m_ObjectHideFlags: 0

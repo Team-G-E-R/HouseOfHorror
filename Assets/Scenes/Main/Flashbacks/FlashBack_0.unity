@@ -2196,9 +2196,10 @@ GameObject:
   - component: {fileID: 598247869}
   - component: {fileID: 598247871}
   - component: {fileID: 598247870}
+  - component: {fileID: 598247872}
   m_Layer: 0
-  m_Name: Camera trigger
-  m_TagString: Untagged
+  m_Name: Trigger
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2237,8 +2238,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.0145457, y: 1.2668113, z: 2.6436234}
-  m_Center: {x: 0.031869747, y: -0.09411157, z: -0.22588348}
+  m_Size: {x: 1.3844659, y: 1.2668113, z: 2.6436234}
+  m_Center: {x: -0.009361367, y: -0.09411157, z: -0.22588348}
 --- !u!114 &598247871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2253,6 +2254,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 15
   _timeToChangeFov: 0.005
+--- !u!114 &598247872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598247868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1841027915}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 1
 --- !u!43 &603808047
 Mesh:
   m_ObjectHideFlags: 0
@@ -5731,7 +5760,6 @@ GameObject:
   - component: {fileID: 1103723011}
   - component: {fileID: 1103723014}
   - component: {fileID: 1103723013}
-  - component: {fileID: 1103723015}
   m_Layer: 0
   m_Name: SPIRIT_KID
   m_TagString: Interactable
@@ -5849,34 +5877,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1103723015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103723010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1841027915}
-        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
-        m_MethodName: ActivateDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _oneUsage: 1
 --- !u!43 &1202839088
 Mesh:
   m_ObjectHideFlags: 0
@@ -6758,7 +6758,8 @@ Transform:
   m_LocalPosition: {x: 13.57, y: -5.757, z: 30.31}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1987426225}
   m_Father: {fileID: 2112139108}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 42.494, z: 0}
@@ -9109,6 +9110,103 @@ Transform:
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1987426224
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1987426225}
+  - component: {fileID: 1987426228}
+  - component: {fileID: 1987426227}
+  - component: {fileID: 1987426226}
+  m_Layer: 0
+  m_Name: Trigger
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1987426225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987426224}
+  m_LocalRotation: {x: -0, y: 0.030466821, z: -0, w: 0.99953574}
+  m_LocalPosition: {x: -0.119, y: -0.09301119, z: 0.3}
+  m_LocalScale: {x: 0.95787245, y: 0.5491192, z: 0.35394654}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1387507718}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 3.492, z: 0}
+--- !u!114 &1987426226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987426224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1841027915}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 1
+--- !u!65 &1987426227
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987426224}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2961774, y: 1.8444095, z: 7.0929947}
+  m_Center: {x: 0.048354167, y: 0.19468692, z: -0.97878927}
+--- !u!114 &1987426228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987426224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fovEnd: 15
+  _timeToChangeFov: 0.005
 --- !u!1 &2043585363
 GameObject:
   m_ObjectHideFlags: 0
@@ -10002,6 +10100,22 @@ PrefabInstance:
     - target: {fileID: 605869595550814767, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
       propertyPath: m_Name
       value: Player_kid
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094187686984890705, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
+      propertyPath: m_Size.x
+      value: 0.61439437
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094187686984890705, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
+      propertyPath: m_Size.z
+      value: 0.64571
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094187686984890705, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0057342504
+      objectReference: {fileID: 0}
+    - target: {fileID: 4094187686984890705, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
+      propertyPath: m_Center.z
+      value: -0.012666702
       objectReference: {fileID: 0}
     - target: {fileID: 8842207863835593620, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
       propertyPath: m_RootOrder
