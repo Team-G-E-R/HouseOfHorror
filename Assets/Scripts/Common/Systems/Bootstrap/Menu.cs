@@ -35,13 +35,18 @@ public class Menu : Finder
       Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
       SaveSettingsData();
+      StartBtnPlay();
+      StartCoroutine(FadeInTransition());
+   }
+
+   public void StartBtnPlay()
+   {
       AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
       AudioSourceStartBtn.Play();
       AudioSourceObj.Stop();
-      StartCoroutine(FadeInTransition());
    }
    
-   private void SaveSettingsData()
+   public void SaveSettingsData()
    {
       SettingsDataobj.GameSettingsData.Volume = _volumeSlider.value;
       SettingsDataobj.Save();

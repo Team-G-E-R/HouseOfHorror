@@ -7,6 +7,7 @@ public class LoadFromMenu : Finder
 {
    public Menu Menu;
    public GameObject UiElements;
+   public GameObject ZeroSavesUi;
    private GameInfo _playerData;
    private string _filePath => Application.streamingAssetsPath + "/save.json";
 
@@ -28,17 +29,25 @@ public class LoadFromMenu : Finder
    [ContextMenu("Load")]
    public void Load()
    {
-      DontDestroyOnLoad(this);
-      _playerData = JsonUtility.FromJson<GameInfo>(File.ReadAllText(_filePath));
-      StartCoroutine("AsyncLoad");
+      DataChecker();
    }
    
+   private void DataChecker()
+   {
+      _playerData = JsonUtility.FromJson<GameInfo>(File.ReadAllText(_filePath));
+      if (_playerData == null) ZeroSavesUi.SetActive(true);
+      else
+      {
+         DontDestroyOnLoad(this);
+         Menu.SaveSettingsData();
+         StartCoroutine("AsyncLoad");
+      }
+   }
+
    IEnumerator AsyncLoad()
    {
       var fade = GetComponent<FadeInOut>();
-      Menu.AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
-      Menu.AudioSourceStartBtn.Play();
-      Menu.AudioSourceObj.Stop();
+      Menu.StartBtnPlay();
       AsyncOperation _asyncOperation;
       _asyncOperation = SceneManager.LoadSceneAsync(_playerData.SceneIndexJson);
       _asyncOperation.allowSceneActivation = false;
@@ -51,10 +60,15 @@ public class LoadFromMenu : Finder
          yield return null;
       }
       Destroy(UiElements);
-      _playerData = JsonUtility.FromJson<GameInfo>(File.ReadAllText(_filePath));
       GameObject.FindWithTag("Player").transform.position = _playerData.PlayerScenePosJson;
       GameObject.FindWithTag("MainCamera").transform.position = _playerData.CameraPosJson;
       Destroy(gameObject);
+   }
+
+   public void BackUi()
+   {
+      UiElements.SetActive(true);
+      ZeroSavesUi.SetActive(false);
    }
 
    [ContextMenu("Reset player saves")]
