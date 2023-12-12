@@ -962,7 +962,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: House of horror v. 0.1
+  m_text: House of horror v. 0.2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0447\u0430\u0442\u044C \u0438\u0433\u0440\u0443\n"
+  m_text: "\u041D\u043E\u0432\u0430\u044F \u0438\u0433\u0440\u0430"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1683,7 +1683,7 @@ GameObject:
   - component: {fileID: 4173135915839475951}
   - component: {fileID: 6232056023612688706}
   - component: {fileID: 7665154195342790036}
-  - component: {fileID: 1647476013936827086}
+  - component: {fileID: 7884473643823127861}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1812,7 +1812,7 @@ MonoBehaviour:
   imageForFade: {fileID: 6450303864726828908}
   _needToFadeOnStart: 0
   _fade: 0
---- !u!114 &1647476013936827086
+--- !u!114 &7884473643823127861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1830,6 +1830,8 @@ MonoBehaviour:
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
+  Menu: {fileID: 6232056023612688706}
+  UiElements: {fileID: 1911978047330894461}
 --- !u!1 &9085573098071244634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,7 +1955,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1647476013936827086}
+      - m_Target: {fileID: 7884473643823127861}
         m_TargetAssemblyTypeName: LoadFromMenu, Assembly-CSharp
         m_MethodName: Load
         m_Mode: 1

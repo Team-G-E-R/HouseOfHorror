@@ -204,7 +204,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSourceObj: {fileID: 0}
   AllAudio: []
-  Dataobj: {fileID: 0}
+  SettingsDataobj: {fileID: 0}
+  SceneIndex: 0
+  PlayerScenePos: {x: 0, y: 0, z: 0}
+  CameraPos: {x: 0, y: 0, z: 0}
   _menuMusic: {fileID: 8300000, guid: 3403dc61e88aad64db6e5adf561e6d1f, type: 3}
 --- !u!4 &118528156
 Transform:

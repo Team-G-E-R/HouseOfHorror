@@ -5,15 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LoadFromMenu : Finder
 {
+   public Menu Menu;
+   public GameObject UiElements;
    private GameInfo _playerData;
-   private Menu _menu;
    private string _filePath => Application.streamingAssetsPath + "/save.json";
 
    private void Awake()
    {
-      DontDestroyOnLoad(this);
       FindObjs();
-      _menu = gameObject.GetComponent<Menu>();
    }
 
    /*[ContextMenu("Save")]
@@ -29,6 +28,7 @@ public class LoadFromMenu : Finder
    [ContextMenu("Load")]
    public void Load()
    {
+      DontDestroyOnLoad(this);
       _playerData = JsonUtility.FromJson<GameInfo>(File.ReadAllText(_filePath));
       StartCoroutine("AsyncLoad");
    }
@@ -36,13 +36,13 @@ public class LoadFromMenu : Finder
    IEnumerator AsyncLoad()
    {
       var fade = GetComponent<FadeInOut>();
-      _menu.AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
-      _menu.AudioSourceStartBtn.Play();
-      _menu.AudioSourceObj.Stop();
+      Menu.AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      Menu.AudioSourceStartBtn.Play();
+      Menu.AudioSourceObj.Stop();
       AsyncOperation _asyncOperation;
       _asyncOperation = SceneManager.LoadSceneAsync(_playerData.SceneIndexJson);
       _asyncOperation.allowSceneActivation = false;
-      fade.duration = _menu.AudioStartBtn.length;
+      fade.duration = Menu.AudioStartBtn.length;
       fade.FadeIn();
       yield return new WaitForSeconds(fade.duration + 0.5f);
       while (!_asyncOperation.isDone)
@@ -50,6 +50,7 @@ public class LoadFromMenu : Finder
          _asyncOperation.allowSceneActivation = true;
          yield return null;
       }
+      Destroy(UiElements);
       _playerData = JsonUtility.FromJson<GameInfo>(File.ReadAllText(_filePath));
       GameObject.FindWithTag("Player").transform.position = _playerData.PlayerScenePosJson;
       GameObject.FindWithTag("MainCamera").transform.position = _playerData.CameraPosJson;
