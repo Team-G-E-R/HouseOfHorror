@@ -43,7 +43,10 @@ public class Menu : Finder
    {
       AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
       AudioSourceStartBtn.Play();
-      AudioSourceObj.Stop();
+      foreach (var a in AudioSourceObj)
+      {
+         a.clip = null;  
+      }
    }
    
    public void SaveSettingsData()
@@ -54,7 +57,10 @@ public class Menu : Finder
 
    public void VolumeSet()
    {
-      AudioSourceObj.volume = _volumeSlider.value;
+      foreach (var a in AudioSourceObj)
+      {
+         a.volume = _volumeSlider.value;  
+      }
    }
 
    public void ExitGame()

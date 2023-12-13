@@ -4527,6 +4527,61 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1340862146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1340862147}
+  - component: {fileID: 1340862148}
+  m_Layer: 0
+  m_Name: Audio set 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1340862147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340862146}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.83621, y: 6.394454, z: 0.07235718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4044394552741969980}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1340862148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340862146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe0c25383d7ec44d9bb6677de6c9e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSourceObj: []
+  SettingsDataobj: {fileID: 0}
+  SceneIndex: 0
+  PlayerScenePos: {x: 0, y: 0, z: 0}
+  CameraPos: {x: 0, y: 0, z: 0}
+  _audioClip: {fileID: 0}
+  _needToBeLooped: 0
+  _needToDisableOnSceneChange: 0
+  _needScreamer: 1
+  _screamerMustBeLooped: 0
+  _screamerToPlay: {fileID: 8300000, guid: 5c06ae97ceab41c47b4f408fe6558ee8, type: 3}
 --- !u!1 &1375216838
 GameObject:
   m_ObjectHideFlags: 0
@@ -8854,8 +8909,6 @@ PlayableDirector:
     value: {fileID: 7204286195323218420}
   - key: {fileID: 286541748180936708, guid: ac6fb98bf35244c49ab93edcb54f7977, type: 2}
     value: {fileID: 25507773811547469}
-  - key: {fileID: 4406167257672458729, guid: ac6fb98bf35244c49ab93edcb54f7977, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &259114274106837733
@@ -8934,14 +8987,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfe0c25383d7ec44d9bb6677de6c9e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceObj: {fileID: 0}
-  AllAudio: []
+  AudioSourceObj: []
   SettingsDataobj: {fileID: 0}
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
-  _audioClip: {fileID: 8300000, guid: 3aa8f1d7601a19d4c88dcaaa262c2e06, type: 3}
+  _audioClip: {fileID: 8300000, guid: b4f4f1e7f6dc1424aa9a2f19b71336fc, type: 3}
   _needToBeLooped: 1
+  _needToDisableOnSceneChange: 1
   _needScreamer: 0
   _screamerMustBeLooped: 1
   _screamerToPlay: {fileID: 8300000, guid: 5c06ae97ceab41c47b4f408fe6558ee8, type: 3}
@@ -9379,6 +9432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66adb4b320bc809439bb31dd6fc91ad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TimeToJump: 0
 --- !u!1 &3340058655138006304
 GameObject:
   m_ObjectHideFlags: 0
@@ -9549,6 +9603,7 @@ Transform:
   m_Children:
   - {fileID: 7421192240880613242}
   - {fileID: 3823567779220313479}
+  - {fileID: 1340862147}
   - {fileID: 5891838181163431891}
   - {fileID: 6498473600431677165}
   - {fileID: 7805226275159961488}

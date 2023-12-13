@@ -2271,8 +2271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 506e194da89e43540988f1f1e570d828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceObj: {fileID: 0}
-  AllAudio: []
+  AudioSourceObj: []
   SettingsDataobj: {fileID: 0}
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
@@ -2311,8 +2310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8a0f798b942da4eadbbe874edef1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceObj: {fileID: 0}
-  AllAudio: []
+  AudioSourceObj:
+  - {fileID: 0}
   SettingsDataobj: {fileID: 0}
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
