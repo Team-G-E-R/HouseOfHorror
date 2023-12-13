@@ -41,12 +41,12 @@ public class Menu : Finder
 
    public void StartBtnPlay()
    {
-      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
-      AudioSourceStartBtn.Play();
       foreach (var a in AudioSourceObj)
       {
          a.clip = null;  
       }
+      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      AudioSourceStartBtn.Play();
    }
    
    public void SaveSettingsData()
