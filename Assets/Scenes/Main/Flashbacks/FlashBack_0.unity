@@ -10730,7 +10730,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  imageForFade: {fileID: 8896455694586302881}
+  _imageForFade: {fileID: 8896455694586302881}
+  _afterFade:
+    m_PersistentCalls:
+      m_Calls: []
   _needToFadeOnStart: 1
   _fade: 1
 --- !u!114 &6321875544034084647

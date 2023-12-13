@@ -58773,11 +58773,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7469800883317192742, guid: 18bc36e1b9a698a4ba5e1ea5001c0378, type: 3}
   m_PrefabInstance: {fileID: 1768585930}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &1013307887 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 9054412094079017685, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
-  m_PrefabInstance: {fileID: 1626523835}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1019165929
 Mesh:
   m_ObjectHideFlags: 0
@@ -63095,7 +63090,7 @@ GameObject:
   - component: {fileID: 1163756468}
   - component: {fileID: 1163756467}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Fade image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63146,18 +63141,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1163756466}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.9039001}
+  m_LocalScale: {x: 0.496, y: 0.496, z: 0.496}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1013307887}
+  m_Father: {fileID: 2015584492}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 251.288, y: 140.45782}
+  m_SizeDelta: {x: 1000, y: 562.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!43 &1174389795
 Mesh:
@@ -71683,10 +71678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9054412094079017685, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1163756469}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
 --- !u!4 &1626523836 stripped
@@ -80356,7 +80348,7 @@ GameObject:
   - component: {fileID: 2015584492}
   - component: {fileID: 2015584493}
   m_Layer: 0
-  m_Name: Fade
+  m_Name: Fade system
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80373,7 +80365,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1163756469}
   m_Father: {fileID: 209976526}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -80390,7 +80383,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1.3
-  imageForFade: {fileID: 1163756467}
+  _imageForFade: {fileID: 1163756467}
+  _afterFade:
+    m_PersistentCalls:
+      m_Calls: []
   _needToFadeOnStart: 1
   _fade: 1
 --- !u!1 &2030505104

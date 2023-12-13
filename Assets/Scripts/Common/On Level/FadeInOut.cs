@@ -1,12 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class FadeInOut : MonoBehaviour
 {
     [Header("Fade settings")]
     public float duration;
-    [SerializeField] private Image imageForFade;
+    [SerializeField] private Image _imageForFade;
+    [Space(10)]
+    [Header("Will work after fade end working")]
+    [Space(5)]
+    [SerializeField] private UnityEvent _afterFade;
     [Header("Fade on start settings")]
     [SerializeField] private bool _needToFadeOnStart;
     [SerializeField] private FadeChoose _fade;
@@ -40,11 +45,12 @@ public class FadeInOut : MonoBehaviour
         while (_currentTime < duration)
         {
             float alpha = Mathf.Lerp(0f, 1f, _currentTime / duration);
-            imageForFade.color = new Color(imageForFade.color.r, imageForFade.color.g, imageForFade.color.b, alpha);
+            _imageForFade.color = new Color(_imageForFade.color.r, _imageForFade.color.g, _imageForFade.color.b, alpha);
             _currentTime += Time.deltaTime;
             yield return null;
         }
         _currentTime = 0;
+        _afterFade.Invoke();
     }
 
     private IEnumerator FadeOutCrt()
@@ -52,10 +58,11 @@ public class FadeInOut : MonoBehaviour
         while (_currentTime < duration)
         {
             float alpha = Mathf.Lerp(1f, 0f, _currentTime / duration);
-            imageForFade.color = new Color(imageForFade.color.r, imageForFade.color.g, imageForFade.color.b, alpha);
+            _imageForFade.color = new Color(_imageForFade.color.r, _imageForFade.color.g, _imageForFade.color.b, alpha);
             _currentTime += Time.deltaTime;
             yield return null;
         }
         _currentTime = 0;
+        _afterFade.Invoke();
     }
 }
