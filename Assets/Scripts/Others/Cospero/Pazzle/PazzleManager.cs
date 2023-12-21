@@ -34,10 +34,13 @@ public class PazzleManager : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
             _isMove=false;
-            if(Mathf.Abs(_pazzlePart.transform.localPosition.x -_movingPatrFinishPos.x)<=15f&&
-            (_pazzlePart.transform.localPosition.y -_movingPatrFinishPos.y)<=15f)
+            if(Mathf.Abs(_pazzlePart.transform.position.x -_movingPatrFinishPos.x)<=1f&&
+            (_pazzlePart.transform.position.y -_movingPatrFinishPos.y)<=1f)
             {
+                _pazzlePart.GetComponent<PolygonCollider2D>().enabled = false;
+
                 _pazzlePart.transform.position=new Vector3 (_movingPatrFinishPos.x,_movingPatrFinishPos.y,_movingPatrFinishPos.z);
+
                 _partFinish=true;
                 _solvedParts+=1;
                 if (_solvedParts==TotalParts)
