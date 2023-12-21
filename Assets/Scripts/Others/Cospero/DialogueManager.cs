@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(DialogueWindow dialogue)
     {
+        //MovementOffOn();
         if (_player != null)
         {
             MovementOffOn();   
@@ -111,6 +112,9 @@ public class DialogueManager : MonoBehaviour
     
     private void EndDialogue()
         {
+            _dialogueIsPlaying = false;
+            _dialogueObjUI.SetActive(false);
+            //MovementOffOn();
             DialogueIsPlaying = false;
             DialogueObjUI.SetActive(false);
             if (_player != null)
@@ -119,9 +123,16 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-    private void MovementOffOn()
+    /* private void MovementOffOn()
     {
         _moveEnable = !_moveEnable;
+        var player = GameObject.FindWithTag("Player");
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.GetComponent<Animator>().enabled = _moveEnable;
+        player.GetComponent<movement>().enabled = _moveEnable;
+        player.GetComponent<Activator>().enabled = _moveEnable;
+    }*/
+    } 
         _player.GetComponent<Rigidbody>().velocity = Vector3.zero;
         _player.GetComponent<Animator>().enabled = _moveEnable;
         _player.GetComponent<movement>().enabled = _moveEnable;
