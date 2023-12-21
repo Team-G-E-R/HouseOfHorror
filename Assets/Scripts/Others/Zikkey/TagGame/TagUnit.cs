@@ -3,7 +3,12 @@ using UnityEngine.UI;
 
 public class TagUnit : MonoBehaviour
 {
+    [SerializeField] private Image _image;
     [SerializeField] private TMPro.TMP_Text _text;
+
+    [SerializeField] private bool _syncText = false;
+    [SerializeField] private bool _syncImage = true;
+
     private Button _button;
 
     private TagGame _game;
@@ -32,7 +37,7 @@ public class TagUnit : MonoBehaviour
 
     public void Initialize(TagGame game, int x, int y) => Initialize(game, new Vector2Int(x, y));
 
-    public void Initialize(TagGame game,Vector2Int coordinates)
+    public void Initialize(TagGame game, Vector2Int coordinates)
     {
         _game = game;
         SetCoordinates(coordinates);
@@ -51,6 +56,9 @@ public class TagUnit : MonoBehaviour
     public void SetValue(int value)
     {
         _value = value;
-        _text.text = value == 0 ? string.Empty : _value.ToString();
+        _text.text = value == 0 || _syncText == false ? string.Empty : _value.ToString();
+
+        if (_syncImage && _game != null)
+            _image.sprite = _game.GetTagIcon(value);
     }
 }
