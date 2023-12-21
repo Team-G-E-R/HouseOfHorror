@@ -3,33 +3,49 @@ using UnityEngine;
 using System.IO;
 using Newtonsoft.Json;
 
+public enum KeyWin
+{
+    Key1 = 1,
+    Key2 = 2,
+    Key3 = 3,
+    Vision = 4,
+    Knife = 5,
+}
 public class PuzzlesData : MonoBehaviour
 {
     public DataKeys KeysData;
-    public string output;
+    public KeyWin KeyToWin;
+    private string output;
     private string _filePath => Application.streamingAssetsPath + "/keys.json";
 
     [ContextMenu("Save")]
     public void Save()
     {
         KeyWin();
-        output = JsonConvert.SerializeObject(KeysData.KeysDict);
+        output = JsonConvert.SerializeObject(KeysData);
         File.WriteAllText(_filePath, output);
     }
 
     [ContextMenu("Load")]
     public void Load()
     {
-        KeysData = JsonUtility.FromJson<DataKeys>(File.ReadAllText(_filePath));
+        var json = File.ReadAllText(_filePath);
+        KeysData = JsonConvert.DeserializeObject<DataKeys>(json);
+    }
+
+    [ContextMenu("Reset keys values")]
+    public void AllDataToZero()
+    {
+        output = JsonConvert.SerializeObject(KeysData);
+        File.WriteAllText(_filePath, output);
     }
 
     public void KeyWin()
     {
         var json = File.ReadAllText(_filePath);
-        Debug.Log(json);
-        KeysData.KeysDict = JsonConvert.DeserializeObject<Dictionary<string, bool>>(json);
+        KeysData = JsonConvert.DeserializeObject<DataKeys>(json);
 
-        KeysData.KeysDict["Key1"] = true; // NEED TO WORK
+        KeysData.KeysDict[KeyToWin.ToString()] = true;
     }
 
     [System.Serializable]
@@ -40,8 +56,8 @@ public class PuzzlesData : MonoBehaviour
             { "Key1", false },
             { "Key2", false },
             { "Key3", false },
-            { "Key4", false },
-            { "Key5", false }
+            { "Vision", false },
+            { "Knife", false }
         };
     }
 }
