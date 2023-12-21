@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.IO;
+using UnityEngine;
 
 public class SaveTrigger : Finder
 {
@@ -7,18 +7,18 @@ public class SaveTrigger : Finder
    private string _filePath => Application.streamingAssetsPath + "/save.json";
    private void OnTriggerEnter(Collider other)
    {
-      Save();
-      Debug.Log("Saved");
-      Destroy(gameObject);
-   }
+        Save();
+        Debug.Log("Saved");
+        Destroy(gameObject);
+    }
    
    [ContextMenu("Save")]
    public void Save()
    {
-      FindPlayerSettingsData();
-      PlayerInfo.SceneIndexJson = SceneIndex;
-      PlayerInfo.PlayerScenePosJson = PlayerScenePos;
-      PlayerInfo.CameraPosJson = CameraPos;
-      File.WriteAllText(_filePath, JsonUtility.ToJson(PlayerInfo));
-   }
+        FindPlayerSettingsData();
+        PlayerInfo.SceneIndexJson = SceneIndex;
+        PlayerInfo.PlayerScenePosJson = PlayerScenePos;
+        PlayerInfo.CameraPosJson = CameraPos;
+        File.WriteAllText(_filePath, JsonUtility.ToJson(PlayerInfo));
+    }
 }

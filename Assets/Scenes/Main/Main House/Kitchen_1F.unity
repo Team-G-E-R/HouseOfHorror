@@ -9009,18 +9009,6 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1361550405}
-        m_TargetAssemblyTypeName: Interactable, Assembly-CSharp
-        m_MethodName: DestroyInteractable
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1108337408}
         m_TargetAssemblyTypeName: SetActive, Assembly-CSharp
         m_MethodName: TurnOn
@@ -66271,7 +66259,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _oneUsage: 0
+  _oneUsage: 1
 --- !u!65 &1361550406
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -84206,6 +84194,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1304964970}
+    - target: {fileID: 5121540947263420740, guid: 90bc06afa06db414db47f754cb81034d, type: 3}
+      propertyPath: _nextLevelIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5748567856038703984, guid: 90bc06afa06db414db47f754cb81034d, type: 3}
       propertyPath: m_Mesh
       value: 

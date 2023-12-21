@@ -9045,11 +9045,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _oneUsage: 0
-  dialogue:
-    _jsonAssetName: DialogueKitchen
-    _charColor:
-    - {r: 0, g: 0, b: 0, a: 1}
-    - {r: 0, g: 0, b: 0, a: 1}
+  _dialogue:
+    _jsonFile: {fileID: 0}
+    _charColor: []
 --- !u!43 &223404389
 Mesh:
   m_ObjectHideFlags: 0
@@ -63931,7 +63929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2beaee38f8e8c42be94215c5a18844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextLevelIndex: 4
+  _nextLevelIndex: 5
 --- !u!43 &1174389795
 Mesh:
   m_ObjectHideFlags: 0
