@@ -33,7 +33,6 @@ RectTransform:
   m_Children:
   - {fileID: 1536858433360787084}
   m_Father: {fileID: 7170460247740913498}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -169,7 +168,6 @@ RectTransform:
   - {fileID: 7170460247740913498}
   - {fileID: 156700771811142807}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -257,6 +255,16 @@ MonoBehaviour:
   _container: {fileID: 3765043492357645049}
   _unitPrefab: {fileID: 8673378197040477102, guid: cc1ba8df3d452fa45a9257ae6f081b76, type: 3}
   _gridSize: {x: 3, y: 3}
+  _tagIcons:
+  - {fileID: 1971431872, guid: 79affab4666eee744bbe1d085dc3d7f4, type: 3}
+  - {fileID: 1613142890, guid: 79affab4666eee744bbe1d085dc3d7f4, type: 3}
+  - {fileID: -1308644290, guid: 79affab4666eee744bbe1d085dc3d7f4, type: 3}
+  - {fileID: -1822523566, guid: d66a3907d082d6545a3a4195acf00539, type: 3}
+  - {fileID: 258983910, guid: d66a3907d082d6545a3a4195acf00539, type: 3}
+  - {fileID: -520264574, guid: d66a3907d082d6545a3a4195acf00539, type: 3}
+  - {fileID: 243068146, guid: 0aedc88724cd80643b59074deaee3558, type: 3}
+  - {fileID: -538730195, guid: 0aedc88724cd80643b59074deaee3558, type: 3}
+  - {fileID: -133449372, guid: 0aedc88724cd80643b59074deaee3558, type: 3}
 --- !u!1 &7343750176130204509
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +296,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1877330049609291725}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -424,7 +431,6 @@ RectTransform:
   m_Children:
   - {fileID: 1877330049609291725}
   m_Father: {fileID: 875017609290298103}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -499,7 +505,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 875017609290298103}
-  m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

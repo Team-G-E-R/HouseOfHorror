@@ -4,7 +4,7 @@ public class BootstrapSystem : Finder
 {
     [SerializeField] private AudioClip _menuMusic;
     
-    private Data _data;
+    private SettingsData _SettingsData;
     private AudioSource _audioSource;
     private float _soundVolume;
 
@@ -23,9 +23,12 @@ public class BootstrapSystem : Finder
 
     private void AudioSystemSet()
     {
-        AudioSourceObj.clip = _menuMusic;
-        AudioSourceObj.loop = true;
-        AudioSourceObj.volume = _soundVolume;
-        AudioSourceObj.Play();
+        foreach (var a in AudioSourceObj)
+        {
+            a.clip = _menuMusic;
+            a.loop = true;
+            a.volume = _soundVolume;
+            a.Play();   
+        }
     }
 }

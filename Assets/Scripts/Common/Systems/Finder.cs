@@ -1,39 +1,63 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class Finder : MonoBehaviour
 {
     [HideInInspector]
-    public AudioSource AudioSourceObj;
+    public List<AudioSource> AudioSourceObj = new List<AudioSource>();
     [HideInInspector]
-    public GameObject[] AllAudio;
-    [HideInInspector]
-    public Data Dataobj;
+    public SettingsData SettingsDataobj;
     
-    private const string DataName = "GameData";
+    private const string SettingsDataName = "GameSettingsData";
     private const string AudioName = "AudioService";
-    
+
+    [HideInInspector]
+    public int SceneIndex;
+    [HideInInspector]
+    public Vector3 PlayerScenePos;
+    [HideInInspector]
+    public Vector3 CameraPos;
+
     public void FindObjs()
     {
-        if (GameObject.FindWithTag("Data") == null)
+        if (GameObject.FindWithTag("SettingsData") == null)
         {
-            GameObject NewData = new GameObject();
-            NewData.name = DataName;
-            NewData.tag = "Data";
-            Dataobj = NewData.AddComponent<Data>();
-            Dataobj.Load();
-            DontDestroyOnLoad(Dataobj);
+            GameObject NewSettingsData = new GameObject();
+            NewSettingsData.name = SettingsDataName;
+            NewSettingsData.tag = "SettingsData";
+            SettingsDataobj = NewSettingsData.AddComponent<SettingsData>();
+            SettingsDataobj.Load();
+            DontDestroyOnLoad(SettingsDataobj);
         }
-        else Dataobj = GameObject.FindWithTag("Data").GetComponent<Data>();
+        else SettingsDataobj = GameObject.FindWithTag("SettingsData").GetComponent<SettingsData>();
 
         if (GameObject.FindWithTag("Audio") == null)
         {
             GameObject audioFile = new GameObject();
             audioFile.name = AudioName;
             audioFile.tag = "Audio";
-            AudioSourceObj = audioFile.AddComponent<AudioSource>();
-            DontDestroyOnLoad(AudioSourceObj);
+            audioFile.AddComponent<AudioSource>();
+            var audio = audioFile.GetComponent<AudioSource>();
+            audio.volume = SettingsDataobj.GameSettingsData.Volume;
+            AudioSourceObj.Add(audio);
+            DontDestroyOnLoad(audioFile);
         }
-        else AudioSourceObj = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+        else
+        {
+            GameObject[] allAudio = GameObject.FindGameObjectsWithTag("Audio");
+            foreach (var a in allAudio)
+            {
+                AudioSourceObj.Add(a.GetComponent<AudioSource>());
+            }
+        }
+    }
+
+    public void FindPlayerSettingsData()
+    {
+        SceneIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerScenePos = GameObject.FindWithTag("Player").transform.position;
+        CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
     }
     
     public void CursorOn()

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18554,8 +18554,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _oneUsage: 1
-  dialogue:
-    _jsonAssetName: LivingRoomPuzzle
+  _dialogue:
+    _jsonFile: {fileID: 4900000, guid: 54341e4fdf35ad049b1c4da005626238, type: 3}
     _charColor:
     - {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &968306786
@@ -18747,6 +18747,46 @@ PrefabInstance:
     m_TransformParent: {fileID: 1303346486}
     m_Modifications:
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: _tagIcons.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 0b5eeb94b08d1cf41862585e865eef81, type: 3}
+    - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -18800,7 +18840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Repository, Assembly-CSharp
+      value: PuzzlesData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -18868,7 +18908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1037545
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18876,23 +18916,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.23325461
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.8365384
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 875017609290298103, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18957,6 +18997,14 @@ PrefabInstance:
     - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765043492357645049, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: m_Spacing.x
+      value: 70.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765043492357645049, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: m_Spacing.y
+      value: 70.92
       objectReference: {fileID: 0}
     - target: {fileID: 3795286603018878160, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_IsActive
@@ -21321,8 +21369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0077e3bd6f11340be2476822d0b0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key:
-    HasKey: 1
+  KeyToWin: 1
 --- !u!1 &1171603660
 GameObject:
   m_ObjectHideFlags: 0
@@ -29788,6 +29835,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 818314395}
+    - target: {fileID: 5121540947263420740, guid: 90bc06afa06db414db47f754cb81034d, type: 3}
+      propertyPath: _nextLevelIndex
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5748567856038703984, guid: 90bc06afa06db414db47f754cb81034d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -31849,10 +31900,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _oneUsage: 0
-  dialogue:
-    _jsonAssetName: DoorClosed
-    _charColor:
-    - {r: 0, g: 0, b: 0, a: 1}
+  _dialogue:
+    _jsonFile: {fileID: 0}
+    _charColor: []
 --- !u!4 &1703466965
 Transform:
   m_ObjectHideFlags: 0
@@ -37676,12 +37726,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d1cc4e0d5498c47b66d19f327bcd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isRussian: 1
-  _dialogueTextUI: {fileID: 3835353121489747981}
-  _speakerNameUI: {fileID: 114522252644433525}
-  _dialogueIsPlaying: 0
-  _dialogueObjUI: {fileID: 3902243926045372622}
-  _dialogueImageUI: {fileID: 7849853240226253939}
+  IsRussian: 1
+  DialogueTextUI: {fileID: 3835353121489747981}
+  SpeakerNameUI: {fileID: 114522252644433525}
+  DialogueIsPlaying: 0
+  DialogueObjUI: {fileID: 3902243926045372622}
+  DialogueImageUI: {fileID: 7849853240226253939}
   _dialogueTrigger: {fileID: 0}
 --- !u!4 &2947947724327092866
 Transform:
@@ -37837,7 +37887,7 @@ GameObject:
   - component: {fileID: 9177402997507278664}
   - component: {fileID: 114522252644433525}
   m_Layer: 5
-  m_Name: SpeakerName
+  m_Name: Speaker Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37912,7 +37962,7 @@ GameObject:
   - component: {fileID: 6880690547835565344}
   - component: {fileID: 3835353121489747981}
   m_Layer: 5
-  m_Name: DialogueText
+  m_Name: Dialogue Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

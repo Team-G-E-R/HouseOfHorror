@@ -8,7 +8,7 @@ public class DialogueTrigger : Interactable
     public void ActivateDialogue()
     {
         var manager = FindObjectOfType<DialogueManager>();
-        _diaPlaying = manager._dialogueIsPlaying;
+        _diaPlaying = manager.DialogueIsPlaying;
         manager._dialogueTrigger = this;
         
         if(_diaPlaying == false) FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);

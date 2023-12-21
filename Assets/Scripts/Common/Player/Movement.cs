@@ -37,8 +37,8 @@ namespace Common.Scripts
             animator.SetFloat("Horizontal", horizontal);
             animator.SetFloat("Vertical", vertical);
             animator.SetFloat("Speed", _movement.sqrMagnitude);
-            
-            _movement = new Vector3(horizontal, 0, vertical).normalized;
+
+            _movement = (transform.right * horizontal + transform.forward * vertical).normalized;
         }
 
         private void FixedUpdate()
@@ -52,7 +52,12 @@ namespace Common.Scripts
         }
 
         public void SetSprint(bool sprint) => _sprintLocked = !sprint;
-        public void SetWalk(bool walk) => _movementLocked = !walk;
+
+        public void SetWalk(bool walk) 
+        { 
+            _movementLocked = !walk;
+            physicsBody.velocity = Vector2.zero;
+        }
 
         public void TurnOffMovement()
         {
