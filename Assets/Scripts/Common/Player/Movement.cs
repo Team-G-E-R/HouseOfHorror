@@ -52,7 +52,12 @@ namespace Common.Scripts
         }
 
         public void SetSprint(bool sprint) => _sprintLocked = !sprint;
-        public void SetWalk(bool walk) => _movementLocked = !walk;
+
+        public void SetWalk(bool walk) 
+        { 
+            _movementLocked = !walk;
+            physicsBody.velocity = Vector2.zero;
+        }
 
         public void TurnOffMovement()
         {
