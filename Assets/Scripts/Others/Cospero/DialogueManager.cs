@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Common.Scripts;
@@ -26,6 +27,12 @@ public class DialogueManager : MonoBehaviour
     [HideInInspector]
     public DialogueTrigger _dialogueTrigger;
     private bool _moveEnable = true;
+    private GameObject _player;
+
+    private void Awake()
+    {
+        _player = GameObject.FindWithTag("Player");
+    }
 
     private void Start()
     {
@@ -46,7 +53,10 @@ public class DialogueManager : MonoBehaviour
     
     public void StartDialogue(DialogueWindow dialogue)
     {
-        MovementOffOn();
+        if (_player != null)
+        {
+            MovementOffOn();   
+        }
         ThingModel _thingModel = new ThingModel();
         var jsonTextFile = dialogue._jsonFile.text;
         
@@ -103,17 +113,19 @@ public class DialogueManager : MonoBehaviour
         {
             DialogueIsPlaying = false;
             DialogueObjUI.SetActive(false);
-            MovementOffOn();
+            if (_player != null)
+            {
+                MovementOffOn();   
+            }
         }
 
     private void MovementOffOn()
     {
         _moveEnable = !_moveEnable;
-        var player = GameObject.FindWithTag("Player");
-        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        player.GetComponent<Animator>().enabled = _moveEnable;
-        player.GetComponent<movement>().enabled = _moveEnable;
-        player.GetComponent<Activator>().enabled = _moveEnable;
+        _player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        _player.GetComponent<Animator>().enabled = _moveEnable;
+        _player.GetComponent<movement>().enabled = _moveEnable;
+        _player.GetComponent<Activator>().enabled = _moveEnable;
     }
     }
 

@@ -1,14 +1,16 @@
 using UnityEngine;
-using System.IO;
+using UnityEngine.Events;
 
 public class KeyChecker : PuzzlesData
 {
-    private bool _key;
-
+    [Space(10)]
+    [SerializeField] private UnityEvent _ifHaveKey;
+    [SerializeField] private UnityEvent _ifDontHaveKey;
     public void CheckKey()
     {
-        _key = KeysData.KeysDict["Key1"];
-        if (_key == true) GetComponent<SceneTransitions>().NextScene();
-        else GameObject.FindWithTag("DialogueTrigger").GetComponent<DialogueTrigger>().ActivateDialogue();
+        Load();
+        var _key = KeysData.KeysDict[KeyToWin.ToString()];
+        if (_key == true) _ifHaveKey.Invoke();
+        else _ifDontHaveKey.Invoke(); 
     }
 }
