@@ -37,8 +37,8 @@ namespace Common.Scripts
             animator.SetFloat("Horizontal", horizontal);
             animator.SetFloat("Vertical", vertical);
             animator.SetFloat("Speed", _movement.sqrMagnitude);
-            
-            _movement = new Vector3(horizontal, 0, vertical).normalized;
+
+            _movement = (transform.right * horizontal + transform.forward * vertical).normalized;
         }
 
         private void FixedUpdate()
