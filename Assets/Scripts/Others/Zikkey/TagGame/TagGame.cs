@@ -1,8 +1,10 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class TagGame : MonoBehaviour
 {
@@ -18,6 +20,11 @@ public class TagGame : MonoBehaviour
     private const int RESULT_OFFSET = 1;
 
     public Sprite GetTagIcon(int index) => _tagIcons[index];
+    private void Update()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 
     private void OnEnable()
     {
@@ -53,6 +60,7 @@ public class TagGame : MonoBehaviour
     public void AutoWin()
     {
         _onWin.Invoke();
+        Cursor.visible = false;
         Destroy(gameObject);
     }
 

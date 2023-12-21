@@ -23,9 +23,12 @@ public class BootstrapSystem : Finder
 
     private void AudioSystemSet()
     {
-        AudioSourceObj.clip = _menuMusic;
-        AudioSourceObj.loop = true;
-        AudioSourceObj.volume = _soundVolume;
-        AudioSourceObj.Play();
+        foreach (var a in AudioSourceObj)
+        {
+            a.clip = _menuMusic;
+            a.loop = true;
+            a.volume = _soundVolume;
+            a.Play();   
+        }
     }
 }

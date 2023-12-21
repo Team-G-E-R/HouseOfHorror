@@ -1,12 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class Finder : MonoBehaviour
 {
-    [HideInInspector]
-    public AudioSource AudioSourceObj;
-    [HideInInspector]
-    public GameObject[] AllAudio;
+    //[HideInInspector]
+    public List<AudioSource> AudioSourceObj = new List<AudioSource>();
     [HideInInspector]
     public SettingsData SettingsDataobj;
     
@@ -38,10 +37,20 @@ public class Finder : MonoBehaviour
             GameObject audioFile = new GameObject();
             audioFile.name = AudioName;
             audioFile.tag = "Audio";
-            AudioSourceObj = audioFile.AddComponent<AudioSource>();
-            DontDestroyOnLoad(AudioSourceObj);
+            audioFile.AddComponent<AudioSource>();
+            var audio = audioFile.GetComponent<AudioSource>();
+            audio.volume = SettingsDataobj.GameSettingsData.Volume;
+            AudioSourceObj.Add(audio);
+            DontDestroyOnLoad(audioFile);
         }
-        else AudioSourceObj = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+        else
+        {
+            var allAudio = GameObject.FindGameObjectsWithTag("Audio");
+            foreach (var a in allAudio)
+            {
+                AudioSourceObj.Add(a.GetComponent<AudioSource>());
+            }
+        }
     }
 
     public void FindPlayerSettingsData()
