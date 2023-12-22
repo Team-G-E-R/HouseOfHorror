@@ -104,10 +104,10 @@ public class TagGame : MonoBehaviour
         TagUnit[] relatives = GetCloseUnits(coordinates);
 
         foreach (TagUnit relative in relatives)
-            if (relative.Value == 0)
+            if (relative.Value == _gridSize.x * _gridSize.y - 1)
             {
                 relative.SetValue(unit.Value);
-                unit.SetValue(0);
+                unit.SetValue(_gridSize.x * _gridSize.y - 1);
             }
 
         if (IsWin())
@@ -149,14 +149,12 @@ public class TagGame : MonoBehaviour
 
     private bool IsWin()
     {
-        int current = 1;
+        int current = 0;
         for (int x = 0; x < _gridSize.x; x++)
             for (int y = 0; y < _gridSize.y; y++)
             {
                 if (_grid[x, y].Value != current)
                     return false;
-                else if (current == 8)
-                    current = 0;
                 else
                     current += 1;
             }

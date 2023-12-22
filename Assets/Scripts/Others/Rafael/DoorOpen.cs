@@ -7,7 +7,7 @@ public class DoorOpen : MonoBehaviour
     [SerializeField] Animator animator;
     public void Activated()
     {
-        animator.SetTrigger("Door");
+        animator.SetTrigger("OPEN_THE_DOOR");
         Debug.Log("Door Opened");
     }
 }
