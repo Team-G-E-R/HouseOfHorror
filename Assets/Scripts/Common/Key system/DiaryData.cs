@@ -29,5 +29,7 @@ public class DiaryData : MonoBehaviour
         {
             { -1, "" },
         };
+
+        public List<int> UnlockedPages = new();
     }
 }

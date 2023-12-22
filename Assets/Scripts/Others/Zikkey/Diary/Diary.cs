@@ -34,8 +34,6 @@ public class Diary : DiaryData
         _prevPage.onClick.AddListener(() => SwapPage(false));
         _nextPage.onClick.AddListener(() => SwapPage(true));
 
-        _firstPage.onEndEdit.AddListener((val) => SaveData(1));
-        _secondPage.onEndEdit.AddListener((val) => SaveData(2));
         _firstPage.lineLimit = _maxLines;
         _secondPage.lineLimit = _maxLines;
     }
@@ -50,7 +48,7 @@ public class Diary : DiaryData
 
     public void EditOpen()
     {
-        Unlock();
+        Lock();
         GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(false);
         _diary.SetActive(true);
     }
@@ -89,20 +87,28 @@ public class Diary : DiaryData
 
     private void LoadData()
     {
-        if (KeysData.Diary.ContainsKey(firstPageIndex + pageOffset))
+        if (KeysData.Diary.ContainsKey(firstPageIndex + pageOffset) && KeysData.UnlockedPages.Contains(firstPageIndex + pageOffset))
             _firstPage.text = KeysData.Diary[firstPageIndex + pageOffset];
         else
             _firstPage.text = string.Empty;
 
-        if (KeysData.Diary.ContainsKey(secondPageIndex + pageOffset))
+        if (KeysData.Diary.ContainsKey(secondPageIndex + pageOffset) && KeysData.UnlockedPages.Contains(secondPageIndex + pageOffset))
             _secondPage.text = KeysData.Diary[secondPageIndex + pageOffset];
         else
             _secondPage.text = string.Empty;
     }
 
-    private void SaveData(int page = firstPageIndex)
+    public void UnlockPage(int page = firstPageIndex)
     {
-        KeysData.Diary[page + pageOffset] = page == firstPageIndex ? _firstPage.text : _secondPage.text;
+        KeysData.UnlockedPages.Add(page + pageOffset);
+        LoadData();
+        Save();
+    }
+
+    public void LockPage(int page = firstPageIndex)
+    {
+        KeysData.UnlockedPages.Remove(page + pageOffset);
+        LoadData();
         Save();
     }
 
