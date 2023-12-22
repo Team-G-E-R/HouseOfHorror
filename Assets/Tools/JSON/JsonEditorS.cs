@@ -1,9 +1,4 @@
 #if UNITY_EDITOR
-/**
- * Copyright (c) Pixisoft Corporations. All rights reserved.
- * 
- * Licensed under the Source EULA. See COPYING in the asset root for license informtaion.
- */
 using System;
 using System.IO;
 using System.Linq;
@@ -26,7 +21,7 @@ namespace Inspect.Json
     /// If you want to edit a JSON file in the "StreammingAssets" Folder change this to DefaultAsset.
     /// Hacky solution to a weird problem :/
     /// </summary>
-    [CustomEditor(typeof(TextAsset), true)]
+    [CustomEditor(typeof(DefaultAsset), true)]
     public class JSONEditor : Editor
     {
         /* Variables */

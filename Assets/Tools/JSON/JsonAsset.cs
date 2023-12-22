@@ -1,9 +1,4 @@
 #if UNITY_EDITOR
-/**
- * Copyright (c) Pixisoft Corporations. All rights reserved.
- * 
- * Licensed under the Source EULA. See COPYING in the asset root for license informtaion.
- */
 using System;
 using System.Collections.Generic;
 using System.Linq;
