@@ -149,14 +149,12 @@ public class TagGame : MonoBehaviour
 
     private bool IsWin()
     {
-        int current = 1;
+        int current = 0;
         for (int x = 0; x < _gridSize.x; x++)
             for (int y = 0; y < _gridSize.y; y++)
             {
                 if (_grid[x, y].Value != current)
                     return false;
-                else if (current == 8)
-                    current = 0;
                 else
                     current += 1;
             }

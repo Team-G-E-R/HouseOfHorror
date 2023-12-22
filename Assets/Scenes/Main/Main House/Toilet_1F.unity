@@ -123,6 +123,171 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!43 &22253774
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: pb_Mesh-365422(Clone)(Clone)
+  serializedVersion: 11
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 36
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 24
+    localAABB:
+      m_Center: {x: 3.0776014, y: 0.37210083, z: 2.4755688}
+      m_Extent: {x: 7.998891, y: 0.3721006, z: 11.769573}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00100011001200110013001200140015001600150017001600
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 24
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 24
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 40
+      format: 0
+      dimension: 2
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 1152
+    _typelessdata: 347b9dc0000080341aec634100000000000000000000803f000080bf0000000000000000000080bf347b9d400000803450393141000080341aec634100000000000000000000803f000080bf0000000000000000000080bf503931c100008034347b9dc0fc833e3f1aec634100000000000000000000803f000080bf0000000000000000000080bf347b9d40fc833e3f50393141fc833e3f1aec634100000000000000000000803f000080bf0000000000000000000080bf503931c1fc833e3f50393141000080341aec63410000803f000000000000000000000000000000000000803f000080bf1aec63410000803450393141000080343eb414c10000803f000000000000000000000000000000000000803f000080bf3eb414c10000803450393141fc833e3f1aec63410000803f000000000000000000000000000000000000803f000080bf1aec6341fc833e3f50393141fc833e3f3eb414c10000803f000000000000000000000000000000000000803f000080bf3eb414c1fc833e3f50393141000080343eb414c10000000000000000000080bf0000803f0000000000000000000080bf5039314100008034347b9dc0000080343eb414c10000000000000000000080bf0000803f0000000000000000000080bf347b9dc00000803450393141fc833e3f3eb414c10000000000000000000080bf0000803f0000000000000000000080bf50393141fc833e3f347b9dc0fc833e3f3eb414c10000000000000000000080bf0000803f0000000000000000000080bf347b9dc0fc833e3f347b9dc0000080343eb414c1000080bf00000000000000000000000000000000000080bf000080bf3eb4144100008034347b9dc0000080341aec6341000080bf00000000000000000000000000000000000080bf000080bf1aec63c100008034347b9dc0fc833e3f3eb414c1000080bf00000000000000000000000000000000000080bf000080bf3eb41441fc833e3f347b9dc0fc833e3f1aec6341000080bf00000000000000000000000000000000000080bf000080bf1aec63c1fc833e3f347b9dc0fc833e3f1aec6341000000000000803f000000000000803f0000000000000000000080bf347b9dc01aec634150393141fc833e3f1aec6341000000000000803f000000000000803f0000000000000000000080bf503931411aec6341347b9dc0fc833e3f3eb414c1000000000000803f000000000000803f0000000000000000000080bf347b9dc03eb414c150393141fc833e3f3eb414c1000000000000803f000000000000803f0000000000000000000080bf503931413eb414c1347b9dc0000080343eb414c100000000000080bf00000000000080bf0000000000000000000080bf347b9d403eb414c150393141000080343eb414c100000000000080bf00000000000080bf0000000000000000000080bf503931c13eb414c1347b9dc0000080341aec634100000000000080bf00000000000080bf0000000000000000000080bf347b9d401aec634150393141000080341aec634100000000000080bf00000000000080bf0000000000000000000080bf503931c11aec6341
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 3.0776014, y: 0.37210083, z: 2.4755688}
+    m_Extent: {x: 7.998891, y: 0.3721006, z: 11.769573}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  m_MeshMetrics[0]: 1
+  m_MeshMetrics[1]: 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
 --- !u!1 &31345629
 GameObject:
   m_ObjectHideFlags: 0
@@ -30429,10 +30594,34 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1746032774}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1971488243}
         m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
         m_MethodName: Teleport
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1248049179}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -33820,10 +34009,34 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1897597614}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1096683680}
         m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
         m_MethodName: Teleport
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1746032774}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -38893,7 +39106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1248049180
 Transform:
   m_ObjectHideFlags: 0
@@ -39786,171 +39999,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!43 &1322266317
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-365422(Clone)
-  serializedVersion: 11
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 36
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 24
-    localAABB:
-      m_Center: {x: 3.0776014, y: 0.37210083, z: 2.4755688}
-      m_Extent: {x: 7.998891, y: 0.3721006, z: 11.769573}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00100011001200110013001200140015001600150017001600
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 24
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 24
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 40
-      format: 0
-      dimension: 2
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 1152
-    _typelessdata: 347b9dc0000080341aec634100000000000000000000803f000080bf0000000000000000000080bf347b9d400000803450393141000080341aec634100000000000000000000803f000080bf0000000000000000000080bf503931c100008034347b9dc0fc833e3f1aec634100000000000000000000803f000080bf0000000000000000000080bf347b9d40fc833e3f50393141fc833e3f1aec634100000000000000000000803f000080bf0000000000000000000080bf503931c1fc833e3f50393141000080341aec63410000803f000000000000000000000000000000000000803f000080bf1aec63410000803450393141000080343eb414c10000803f000000000000000000000000000000000000803f000080bf3eb414c10000803450393141fc833e3f1aec63410000803f000000000000000000000000000000000000803f000080bf1aec6341fc833e3f50393141fc833e3f3eb414c10000803f000000000000000000000000000000000000803f000080bf3eb414c1fc833e3f50393141000080343eb414c10000000000000000000080bf0000803f0000000000000000000080bf5039314100008034347b9dc0000080343eb414c10000000000000000000080bf0000803f0000000000000000000080bf347b9dc00000803450393141fc833e3f3eb414c10000000000000000000080bf0000803f0000000000000000000080bf50393141fc833e3f347b9dc0fc833e3f3eb414c10000000000000000000080bf0000803f0000000000000000000080bf347b9dc0fc833e3f347b9dc0000080343eb414c1000080bf00000000000000000000000000000000000080bf000080bf3eb4144100008034347b9dc0000080341aec6341000080bf00000000000000000000000000000000000080bf000080bf1aec63c100008034347b9dc0fc833e3f3eb414c1000080bf00000000000000000000000000000000000080bf000080bf3eb41441fc833e3f347b9dc0fc833e3f1aec6341000080bf00000000000000000000000000000000000080bf000080bf1aec63c1fc833e3f347b9dc0fc833e3f1aec6341000000000000803f000000000000803f0000000000000000000080bf347b9dc01aec634150393141fc833e3f1aec6341000000000000803f000000000000803f0000000000000000000080bf503931411aec6341347b9dc0fc833e3f3eb414c1000000000000803f000000000000803f0000000000000000000080bf347b9dc03eb414c150393141fc833e3f3eb414c1000000000000803f000000000000803f0000000000000000000080bf503931413eb414c1347b9dc0000080343eb414c100000000000080bf00000000000080bf0000000000000000000080bf347b9d403eb414c150393141000080343eb414c100000000000080bf00000000000080bf0000000000000000000080bf503931c13eb414c1347b9dc0000080341aec634100000000000080bf00000000000080bf0000000000000000000080bf347b9d401aec634150393141000080341aec634100000000000080bf00000000000080bf0000000000000000000080bf503931c11aec6341
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 3.0776014, y: 0.37210083, z: 2.4755688}
-    m_Extent: {x: 7.998891, y: 0.3721006, z: 11.769573}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  m_MeshMetrics[0]: 1
-  m_MeshMetrics[1]: 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
 --- !u!1 &1360254528
 GameObject:
   m_ObjectHideFlags: 0
@@ -42937,10 +42985,34 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1248049179}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1146980224}
         m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
         m_MethodName: Teleport
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1853529549}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -48131,7 +48203,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1746032775
 Transform:
   m_ObjectHideFlags: 0
@@ -53167,6 +53239,7 @@ GameObject:
   - component: {fileID: 1803218282}
   - component: {fileID: 1803218281}
   - component: {fileID: 1803218280}
+  - component: {fileID: 1803218286}
   m_Layer: 0
   m_Name: Floor (2)
   m_TagString: Untagged
@@ -53195,7 +53268,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1322266317}
+  m_Mesh: {fileID: 22253774}
 --- !u!33 &1803218281
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -53203,7 +53276,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803218279}
-  m_Mesh: {fileID: 1322266317}
+  m_Mesh: {fileID: 22253774}
 --- !u!23 &1803218282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53484,7 +53557,7 @@ MonoBehaviour:
     m_AreaError: 15
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
-  m_Mesh: {fileID: 1322266317}
+  m_Mesh: {fileID: 22253774}
   m_VersionIndex: 17275
   m_IsSelectable: 1
   m_SelectedFaces: 
@@ -53505,6 +53578,27 @@ Transform:
   m_Father: {fileID: 1853529550}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1803218286
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803218279}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: da2a2305261f7a544b1654a268b08fd9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &1817962085
 Mesh:
   m_ObjectHideFlags: 0
@@ -55271,10 +55365,34 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1853529549}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 872744111}
         m_TargetAssemblyTypeName: Teleporter, Assembly-CSharp
         m_MethodName: Teleport
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1897597614}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -55330,7 +55448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1853529550
 Transform:
   m_ObjectHideFlags: 0
