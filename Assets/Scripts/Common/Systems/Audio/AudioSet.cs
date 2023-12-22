@@ -6,6 +6,7 @@ public class AudioSet : Finder
     [Tooltip("Select the audio that will play at the beginning of the scene")]
     [SerializeField] private AudioClip _audioClip;
     [SerializeField] private bool _needToBeLooped;
+    [Tooltip("Set all clips to null when component get off")]
     [SerializeField] private bool _needToDisableOnSceneChange;
     [Space(15)]
     [Header("Additional")]
@@ -13,105 +14,77 @@ public class AudioSet : Finder
     [SerializeField] private bool _screamerMustBeLooped;
     [Tooltip("Will work only if upper bool true")]
     [SerializeField] private AudioClip _screamerToPlay;
-    
-    private AudioSource _audioSource2;
-    private bool notFound = true;
+
+    private AudioSource _screamerSource;
 
     private void Awake()
     {
        FindObjs();
        MusicSet();
-       ScreamerSet();
+       if (_needScreamer)
+        ScreamerPlay();
     }
 
     private void MusicSet()
     {
-        if (_audioClip != null)
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
+
+        if (audioSource == null)
+            AudioSourceCreate(_audioClip, _needToBeLooped);
+        else if (_needToBeLooped && audioSource != null)
         {
-            if (_needToBeLooped)
-            {
-                foreach (var a in AudioSourceObj)
-                {
-                    if (a.clip == null)
-                    {
-                        notFound = false;
-                        a.clip = _audioClip;
-                        a.volume = SettingsDataobj.GameSettingsData.Volume;
-                        a.loop = true;
-                        a.Play();
-                    }
-                }
-                if (notFound)
-                {
-                    GameObject audObj = new GameObject();
-                    audObj.name = "Audio " + _audioClip;
-                    audObj.tag = "Audio";
-
-                    audObj.AddComponent<AudioSource>();
-                    var audSource = audObj.GetComponent<AudioSource>();
-                    audSource.clip = _audioClip;
-                    audSource.volume = SettingsDataobj.GameSettingsData.Volume;
-                    audSource.loop = true;
-                    audSource.Play();
-                }
-            }
-            else
-            {
-                foreach (var a in AudioSourceObj)
-                { 
-                    a.PlayOneShot(_audioClip, 1);
-                }    
-            }
+            audioSource.clip = _audioClip;
+            audioSource.loop = true;
+            audioSource.Play();
         }
-    }
-
-    private void AudioSourceCreate()
-    {
-        GameObject go = new GameObject();
-        go.name = "Audio" + _screamerToPlay;
-        go.tag = "Audio";
-
-        _audioSource2 = go.AddComponent<AudioSource>();
-        _audioSource2.clip = _screamerToPlay;
-        _audioSource2.volume = SettingsDataobj.GameSettingsData.Volume;
-        _audioSource2.loop = true;
-        _audioSource2.Play();
-    }
-
-    public void ScreamerStop()
-    {
-        _audioSource2.Stop();
-    }
-
-    private void ScreamerSet()
-    {
-        if (_needScreamer) ScreamerPlay();
+        else
+        {
+            audioSource.clip = _audioClip;
+            audioSource.loop = _needToBeLooped;
+            audioSource.Play();
+        }
     }
 
     public void ScreamerPlay()
     {
-        if (_screamerMustBeLooped) AudioSourceCreate();
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
+
+        if (_screamerMustBeLooped && audioSource != null)
+        {
+            audioSource.clip = _screamerToPlay;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
+        else if (_screamerMustBeLooped && audioSource == null)
+            AudioSourceCreate(_screamerToPlay, _screamerMustBeLooped);
         else
         {
-            foreach (var a in AudioSourceObj)
-            { 
-                a.PlayOneShot(_screamerToPlay, 1);
-            }   
+            AudioSourceObj[0].PlayOneShot(_screamerToPlay, 1);
         }
+    }
+
+    private void AudioSourceCreate(AudioClip audioClip, bool loop)
+    {
+        GameObject go = new GameObject();
+        go.name = "Audio " + audioClip;
+        go.tag = "Audio";
+
+        AudioSource newAudioSource = go.AddComponent<AudioSource>();
+        newAudioSource.clip = audioClip;
+        newAudioSource.volume = SettingsDataobj.GameSettingsData.Volume;
+        newAudioSource.loop = loop;
+        newAudioSource.Play();
+        AudioSourceObj.Add(newAudioSource);
     }
 
     private void OnDisable()
     {
-        if (_needToDisableOnSceneChange)
+        if (_needToDisableOnSceneChange && AudioSourceObj != null)
         {
-            FindObjs();
-            if (AudioSourceObj != null)
+            foreach (var a in AudioSourceObj)
             {
-                foreach (var a in AudioSourceObj)
-                {
-                    a.clip = null;
-                    a.Stop();
-                }   
+                a.clip = null;
+                a.Stop();
             }
         }
     }

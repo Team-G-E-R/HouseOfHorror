@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Finder : MonoBehaviour
 {
-    //[HideInInspector]
+    [HideInInspector]
     public List<AudioSource> AudioSourceObj = new List<AudioSource>();
     [HideInInspector]
     public SettingsData SettingsDataobj;
@@ -45,7 +45,7 @@ public class Finder : MonoBehaviour
         }
         else
         {
-            var allAudio = GameObject.FindGameObjectsWithTag("Audio");
+            GameObject[] allAudio = GameObject.FindGameObjectsWithTag("Audio");
             foreach (var a in allAudio)
             {
                 AudioSourceObj.Add(a.GetComponent<AudioSource>());

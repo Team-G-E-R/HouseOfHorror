@@ -7,6 +7,6 @@ public class SceneTransitions : MonoBehaviour
     
     public void NextScene()
     {
-        SceneManager.LoadScene(_nextLevelIndex, LoadSceneMode.Single);
+        SceneManager.LoadScene(_nextLevelIndex);
     }
 }
