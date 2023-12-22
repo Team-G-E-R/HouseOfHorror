@@ -31,8 +31,7 @@ public class SetLevel : MonoBehaviour
             StartCoroutine(LoadLevel());   
         }
     }
-
-    IEnumerator LoadLevel()
+    public IEnumerator LoadLevel()
     {
         GameObject.FindWithTag("Player").GetComponent<movement>().enabled = false;
         fade.FadeIn();
