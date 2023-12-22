@@ -30,12 +30,12 @@ public class PazzleManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Mouse0) || _isMove == true)
+        if(Input.GetMouseButtonUp(0) && _isMove == true)
         {
             _isMove = false;
             Debug.Log(_solvedParts);
 
-            if(Mathf.Abs(_pazzlePart.transform.position.x -_movingPatrFinishPos.x) <= 1f &&
+            if (Mathf.Abs(_pazzlePart.transform.position.x -_movingPatrFinishPos.x) <= 1f &&
             (_pazzlePart.transform.position.y -_movingPatrFinishPos.y) <= 1f)
             {
                 _pazzlePart.GetComponent<PolygonCollider2D>().enabled = false;

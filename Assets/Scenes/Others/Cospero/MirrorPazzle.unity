@@ -191,6 +191,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1782316733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 117061560398778143, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+  m_PrefabInstance: {fileID: 6328094911599942702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1990371525
 GameObject:
   m_ObjectHideFlags: 0
@@ -389,6 +394,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinButton
       objectReference: {fileID: 0}
+    - target: {fileID: 667656299992761022, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+      propertyPath: OnWinActive
+      value: 
+      objectReference: {fileID: 1782316733}
     - target: {fileID: 1423846491216539238, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
       propertyPath: m_Name
       value: PazzleManager
@@ -477,9 +486,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4656291916428054631, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+      propertyPath: m_Name
+      value: Piece 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975684169899853604, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+      propertyPath: m_Name
+      value: Piece 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451300637369269674, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+      propertyPath: m_Name
+      value: Piece 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7262604880039983800, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7862616555410603469, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+      propertyPath: m_Name
+      value: Piece
+      objectReference: {fileID: 0}
+    - target: {fileID: 8131141249201487088, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+      propertyPath: m_Name
+      value: Piece 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758681542385404656, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
+      propertyPath: m_Name
+      value: Piece 2
       objectReference: {fileID: 0}
     - target: {fileID: 8810443207649306884, guid: 19f5ea2b2d6ac134e9cae18c28c73dcd, type: 3}
       propertyPath: m_Camera
