@@ -1,37 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
 {
-    [SerializeField] GameObject cam1;
-    [SerializeField] GameObject cam2;
+    [SerializeField] bool NeedsMainCam;
     private Collider switchCollider;
+    [SerializeField] Camera[] cameras;
+    private int CurrentCameraIndex;
+    [SerializeField] int ThisCameraIndex;
+    [SerializeField] int NextCameraIndex;
     private void Start()
     {
-        cam1.SetActive(true);
-        cam2.SetActive(false);
-        switchCollider = this.GetComponent<Collider>();
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].gameObject.SetActive(false);
+            Debug.Log("ZeroingCams");
+        }
+        if (NeedsMainCam)
+        {
+            SetMainCam();
+        }
     }
-
+    private void SetMainCam()
+    {
+        for (int i = 0; i < cameras.Length; i++)
+        {
+            cameras[i].gameObject.SetActive(false);
+        }
+        cameras[0].gameObject.SetActive(true);
+    }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("tries to switch");
-        if (other.tag == "Player")
+        Debug.Log("Entered CamTrigger");
+        if (other.gameObject.tag == "CamChecker")
         {
-            cam1.SetActive(false);
-            cam2.SetActive(true);
-            Debug.Log("switched");
+            cameras[ThisCameraIndex].gameObject.SetActive(true);
+            Debug.Log("Switching to Cam" + ThisCameraIndex);
         }
     }
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Tries to exit");
-        if (other.tag == "Player")
+        if(other.gameObject.tag == "CamChecker")
         {
-            cam1.SetActive(true);
-            cam2.SetActive(false);
-            Debug.Log("exited");
+            cameras[ThisCameraIndex].gameObject.SetActive(false);
+            Debug.Log("Exiting Cam" + ThisCameraIndex);
         }
     }
 }
