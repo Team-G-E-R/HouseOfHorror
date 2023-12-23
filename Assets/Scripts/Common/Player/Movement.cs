@@ -23,12 +23,11 @@ namespace Common.Scripts
         private Vector3 _movement;
         private bool _movementLocked;
         private bool _sprintLocked;
-        
+
         #endregion
 
 
         #region MonoBehaviour
-
         private void Update()
         {
             float vertical = Input.GetAxisRaw("Vertical");
