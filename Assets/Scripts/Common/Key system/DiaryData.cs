@@ -24,10 +24,14 @@ public class DiaryData : MonoBehaviour
     public class DataKeys
     {
         public int Turn = 1;
+        public int RequiredTurn = 1;
 
         public Dictionary<int, string> Diary = new Dictionary<int, string>()
         {
             { -1, "" },
         };
+
+        public List<int> UnlockedPages = new();
+        public List<int> AnimatedPages = new();
     }
 }
