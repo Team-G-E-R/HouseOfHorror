@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
 {
-    [SerializeField] bool NotNeedsMainCam;
+    [SerializeField] bool NeedsMainCam;
     private Collider switchCollider;
     [SerializeField] Camera[] cameras;
     private int CurrentCameraIndex;
@@ -19,6 +19,10 @@ public class CameraSwitch : MonoBehaviour
             cameras[i].gameObject.SetActive(false);
             Debug.Log("ZeroingCams");
         }
+        if (NeedsMainCam)
+        {
+            SetMainCam();
+        }
     }
     private void SetMainCam()
     {
@@ -30,6 +34,7 @@ public class CameraSwitch : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Entered CamTrigger");
         if (other.gameObject.tag == "CamChecker")
         {
             cameras[ThisCameraIndex].gameObject.SetActive(true);
