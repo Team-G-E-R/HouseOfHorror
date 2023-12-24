@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6490609797155109676}
   - component: {fileID: 3161763258698068013}
   m_Layer: 5
-  m_Name: Button
+  m_Name: WinButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 1621326880277745544}
   - component: {fileID: 667656299992761022}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: PazzleManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalParts: 6
-  WinButton: {fileID: 117061560398778143}
+  OnWinActive: {fileID: 117061560398778143}
 --- !u!1 &1465443721751835298
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,7 +812,7 @@ GameObject:
   - component: {fileID: 7858895903875159331}
   - component: {fileID: 5669342440416906625}
   m_Layer: 0
-  m_Name: "\u043A\u0443\u0441\u043E\u043A4"
+  m_Name: Piece 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 1190395911583914490}
   - component: {fileID: 6993515721409014089}
   m_Layer: 0
-  m_Name: "\u043A\u0443\u0441\u043E\u043A6"
+  m_Name: Piece 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1317,7 +1317,7 @@ GameObject:
   - component: {fileID: 2327200743847375348}
   - component: {fileID: 1230517159578529375}
   m_Layer: 0
-  m_Name: "\u043A\u0443\u0441\u043E\u043A3"
+  m_Name: Piece 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1685,7 +1685,7 @@ GameObject:
   - component: {fileID: 1411395917789118802}
   - component: {fileID: 8552079145940622648}
   m_Layer: 0
-  m_Name: "\u043A\u0443\u0441\u043E\u043A1"
+  m_Name: Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1891,7 +1891,7 @@ GameObject:
   - component: {fileID: 8080597935241093453}
   - component: {fileID: 2529882554186548367}
   m_Layer: 0
-  m_Name: "\u043A\u0443\u0441\u043E\u043A5"
+  m_Name: Piece 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2143,7 +2143,7 @@ GameObject:
   - component: {fileID: 8267152951768756357}
   - component: {fileID: 4894714536843343627}
   m_Layer: 0
-  m_Name: "\u043A\u0443\u0441\u043E\u043A2"
+  m_Name: Piece 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
