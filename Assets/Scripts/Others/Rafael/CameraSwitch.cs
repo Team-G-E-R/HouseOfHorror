@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Transactions;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.ProBuilder.MeshOperations;
 
 public class CameraSwitch : MonoBehaviour
 {
-    [SerializeField] bool NeedsMainCam;
     private Collider switchCollider;
     [SerializeField] Camera[] cameras;
-    private int CurrentCameraIndex;
+    private static int CurrentCameraIndex;
     [SerializeField] int ThisCameraIndex;
     [SerializeField] int NextCameraIndex;
     private void Start()
@@ -19,34 +19,34 @@ public class CameraSwitch : MonoBehaviour
             cameras[i].gameObject.SetActive(false);
             Debug.Log("ZeroingCams");
         }
-        if (NeedsMainCam)
-        {
-            SetMainCam();
-        }
-    }
-    private void SetMainCam()
-    {
-        for (int i = 0; i < cameras.Length; i++)
-        {
-            cameras[i].gameObject.SetActive(false);
-        }
-        cameras[0].gameObject.SetActive(true);
     }
     private void OnTriggerEnter(Collider other)
+    {
+        StartCoroutine(CamSwitcher(other));
+        
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        //StartCoroutine(CamSwitcher(other));
+
+    }
+    private IEnumerator CamSwitcher(Collider other)
     {
         Debug.Log("Entered CamTrigger");
         if (other.gameObject.tag == "CamChecker")
         {
-            cameras[ThisCameraIndex].gameObject.SetActive(true);
+            CurrentCameraIndex = ThisCameraIndex;
             Debug.Log("Switching to Cam" + ThisCameraIndex);
+            yield return new WaitForSeconds(0.1f);
+            if (CurrentCameraIndex == ThisCameraIndex)
+            {
+                for (int i = 0; i < cameras.Length; i++)
+                {
+                    cameras[i].gameObject.SetActive(i == ThisCameraIndex);
+                }
+            }
         }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.gameObject.tag == "CamChecker")
-        {
-            cameras[ThisCameraIndex].gameObject.SetActive(false);
-            Debug.Log("Exiting Cam" + ThisCameraIndex);
-        }
+
     }
 }
