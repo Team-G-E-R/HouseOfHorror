@@ -10756,9 +10756,9 @@ MonoBehaviour:
   _audioClip: {fileID: 8300000, guid: ae0925114dcfa654c9d5da28d774d9ed, type: 3}
   _needToBeLooped: 1
   _needToDisableOnSceneChange: 1
-  _needScreamer: 1
+  _needScreamer: 0
   _screamerMustBeLooped: 0
-  _screamerToPlay: {fileID: 8300000, guid: de420a4be8714a24bab312e5daed8fa7, type: 3}
+  _screamerToPlay: {fileID: 0}
 --- !u!114 &6587292878816053643
 MonoBehaviour:
   m_ObjectHideFlags: 0

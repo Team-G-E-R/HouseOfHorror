@@ -41,7 +41,7 @@ public class PazzleManager : MonoBehaviour
                 _pazzlePart.GetComponent<PolygonCollider2D>().enabled = false;
 
                 _pazzlePart.transform.position = new Vector3 (_movingPatrFinishPos.x,
-                _movingPatrFinishPos.y,_movingPatrFinishPos.z);
+                _movingPatrFinishPos.y, _movingPatrFinishPos.z);
 
                 _partFinish = true;
                 _solvedParts += 1;
@@ -53,8 +53,8 @@ public class PazzleManager : MonoBehaviour
         _mousePosition = Input.mousePosition;
 
         if(_isMove && !_partFinish)
-            _pazzlePart.transform.localPosition = new Vector3(_mousePosition.x - _startPartPosX,
-            _mousePosition.y - _startPartPosY,0);
+            _pazzlePart.transform.localPosition = new Vector3 (_mousePosition.x - _startPartPosX,
+                _mousePosition.y - _startPartPosY, 0);
     }
     
 }
