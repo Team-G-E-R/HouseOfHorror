@@ -16,7 +16,7 @@ public class Activator : MonoBehaviour
    
    private void Update() 
    {    
-        if((_isInRange)&(Input.GetKeyDown(KeyCode.E)))
+        if((_isInRange) && (Input.GetKeyDown(KeyCode.E)))
         {
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {

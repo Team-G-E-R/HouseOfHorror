@@ -63,6 +63,12 @@ public class AudioSet : Finder
         }
     }
 
+    public void ScreamerStop()
+    {
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _screamerToPlay);
+        audioSource.Stop();
+    }
+
     private void AudioSourceCreate(AudioClip audioClip, bool loop)
     {
         GameObject go = new GameObject();
