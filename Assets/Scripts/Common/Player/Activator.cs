@@ -11,7 +11,7 @@ public class Activator : MonoBehaviour
 
     private void Awake()
    {
-        inputButtonImage.SetActive(false);
+        HidePic();
    }
    
    private void Update() 
@@ -21,7 +21,6 @@ public class Activator : MonoBehaviour
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
                 ob.Interact();
-                inputButtonImage.SetActive(false);
             }
         }
    }
@@ -41,12 +40,16 @@ public class Activator : MonoBehaviour
    {
        inputButtonImage.SetActive(true);
    }
+   public void HidePic()
+   {
+       inputButtonImage.SetActive(false);
+   }
 
    private void OnTriggerExit(Collider other) 
    {
         if ((other.tag == "Interactable"))
         {
-               inputButtonImage.SetActive(false);
+               HidePic();
                InteractItem=null;
                _isInRange=false;  
         }
