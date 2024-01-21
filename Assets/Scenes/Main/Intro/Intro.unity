@@ -265,8 +265,9 @@ MonoBehaviour:
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
   _audioClip: {fileID: 8300000, guid: 2960c19de06d44f47b67d583313e3075, type: 3}
-  _needToBeLooped: 1
-  _needToDisableOnSceneChange: 0
+  _beLooped: 1
+  _disableOnSceneChange: 1
+  _saveAudioTime: 0
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 0}
@@ -320,8 +321,9 @@ MonoBehaviour:
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
   _audioClip: {fileID: 8300000, guid: ae0925114dcfa654c9d5da28d774d9ed, type: 3}
-  _needToBeLooped: 1
-  _needToDisableOnSceneChange: 0
+  _beLooped: 1
+  _disableOnSceneChange: 1
+  _saveAudioTime: 0
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 0}
@@ -819,8 +821,9 @@ MonoBehaviour:
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
   _audioClip: {fileID: 8300000, guid: 7e662ebcae6c2f442860d4c94f35f3e3, type: 3}
-  _needToBeLooped: 1
-  _needToDisableOnSceneChange: 0
+  _beLooped: 1
+  _disableOnSceneChange: 1
+  _saveAudioTime: 0
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 0}
