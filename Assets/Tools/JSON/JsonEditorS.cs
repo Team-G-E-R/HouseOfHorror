@@ -319,7 +319,6 @@ namespace Inspect.Json
             return uniqueName;
         }
 
-        [MenuItem("Assets/Create/JSON File", priority = 81)]
         public static void CreateNewJsonFile()
         {
             string path = AssetDatabase.GetAssetPath(Selection.activeObject);
@@ -753,7 +752,6 @@ namespace Inspect.Json
             return uniqueName;
         }
 
-        [MenuItem("Assets/Create/JSON File", priority = 81)]
         public static void CreateNewJsonFile()
         {
             string path = AssetDatabase.GetAssetPath(Selection.activeObject);
