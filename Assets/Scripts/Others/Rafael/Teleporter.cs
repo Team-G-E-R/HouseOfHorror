@@ -12,6 +12,7 @@ public class Teleporter : MonoBehaviour
     {
         Player.transform.position = PlayerNewPos.transform.position;
         Camera.transform.position = CameraNewPos.transform.position;
+        Camera.transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }
 

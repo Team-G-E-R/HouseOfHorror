@@ -77,7 +77,7 @@ public class Diary : DiaryData
         if (_lockClose)
             return;
         Lock();
-        GameObject.FindWithTag("Player").GetComponent<movement>().enabled = _diary.activeSelf;
+        GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(_diary.activeSelf);
         _diary.SetActive(!_diary.activeSelf);
         
         if (_diary.activeSelf)
