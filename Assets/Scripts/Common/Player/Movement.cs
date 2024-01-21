@@ -71,6 +71,7 @@ namespace Common.Scripts
             GetComponent<Activator>().enabled = true;
             this.enabled = true;
         }
+        
         public void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag == "Slope")
