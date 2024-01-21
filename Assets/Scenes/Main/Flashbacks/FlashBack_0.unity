@@ -10825,10 +10825,11 @@ MonoBehaviour:
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
-  _audioClip: {fileID: 8300000, guid: 800a08c4f7524814980be1a4dcfff1b4, type: 3}
+  _audioClip: {fileID: 8300000, guid: 466d1f1c39bb3044fb338367f81d08f8, type: 3}
   _beLooped: 1
   _disableOnSceneChange: 1
-  _saveAudioTime: 0
+  _saveAudioTime: 1
+  _continueAudio: 0
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 0}
