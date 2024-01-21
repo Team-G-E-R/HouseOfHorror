@@ -1969,6 +1969,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _oneUsage: 0
 --- !u!65 &535262016
 BoxCollider:
@@ -2385,6 +2397,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1841027915}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4490,6 +4514,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7660444316573421844}
     m_Modifications:
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1656646188638954700, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_Name
       value: DIalogueManager
@@ -4536,6 +4572,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2947947725209286132, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -9483,6 +9531,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _oneUsage: 0
 --- !u!65 &1987426227
 BoxCollider:
@@ -9571,6 +9631,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1272155376}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

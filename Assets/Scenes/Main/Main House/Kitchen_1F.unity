@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -72023,6 +72023,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 209976526}
     m_Modifications:
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 401588917393491392, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_SizeDelta.x
       value: 696.58
@@ -72093,6 +72105,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2947947725209286132, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812408554134784795, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
