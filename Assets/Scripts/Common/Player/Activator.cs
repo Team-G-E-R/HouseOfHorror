@@ -21,6 +21,10 @@ public class Activator : MonoBehaviour
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
                 ob.Interact();
+                if (ob._oneUsage)
+                {
+                    EndOfInteraction();
+                }
             }
         }
    }
@@ -31,7 +35,6 @@ public class Activator : MonoBehaviour
         {
             _isInRange = true;
             ShowPic();
-
             if (key == false) InteractItem = other.gameObject;
         }
    }
@@ -47,8 +50,17 @@ public class Activator : MonoBehaviour
 
    private void OnTriggerExit(Collider other) 
    {
+    if ((other.tag == "Interactable"))
+        {
+            EndOfInteraction();
+        }   
+   }
+
+   private void EndOfInteraction()
+   {
+        
         HidePic();
         InteractItem = null;
-        _isInRange = false;
+         _isInRange = false;
    }
 }
