@@ -1,4 +1,3 @@
-using Common.Scripts;
 using UnityEngine;
 
 public class Activator : MonoBehaviour
@@ -56,11 +55,10 @@ public class Activator : MonoBehaviour
         }   
    }
 
-   private void EndOfInteraction()
+   public void EndOfInteraction()
    {
-        
         HidePic();
         InteractItem = null;
-         _isInRange = false;
+        _isInRange = false;
    }
 }

@@ -48,6 +48,9 @@ public class MirrorPuzzle : MonoBehaviour
                 win = false;
 
         if (win)
+        {
+            Cursor.visible = false;
             _onWin.Invoke();
+        }
     }
 }

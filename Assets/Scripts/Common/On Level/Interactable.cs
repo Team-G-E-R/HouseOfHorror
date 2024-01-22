@@ -24,6 +24,5 @@ public class Interactable : MonoBehaviour
     public void DestroyInteractable()
     {
         Destroy(gameObject);
-       
     }
 }

@@ -13,7 +13,7 @@ public enum KeyWin
     MirrorKey0 = 6,
     MirrorKey1 = 7,
     MirrorKey2 = 8,
-    MirrorAll = 9
+    MirrorDone = 9
 }
 public class PuzzlesData : MonoBehaviour
 {
@@ -65,7 +65,7 @@ public class PuzzlesData : MonoBehaviour
             { "MirrorKey0", false},
             { "MirrorKey1", false},
             { "MirrorKey2", false},
-            { "MirrorAll", false}
+            { "MirrorDone", false}
         };
     }
 }
