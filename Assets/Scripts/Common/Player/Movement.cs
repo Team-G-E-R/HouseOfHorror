@@ -57,7 +57,8 @@ namespace Common.Scripts
         public void SetWalk(bool walk) 
         { 
             _movementLocked = !walk;
-            physicsBody.velocity = Vector2.zero;
+            physicsBody.velocity = walk == false ? Vector2.zero : physicsBody.velocity;
+            GetComponent<Animator>().enabled = walk;
         }
 
         public void TurnOffMovement()

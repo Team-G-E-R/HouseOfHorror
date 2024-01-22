@@ -12,7 +12,8 @@ public enum KeyWin
     Knife = 5,
     MirrorKey1 = 6,
     MirrorKey2 = 7,
-    MirrorKey3 = 8
+    MirrorKey3 = 8,
+    MirrorAll = 9
 }
 public class PuzzlesData : MonoBehaviour
 {
@@ -63,7 +64,8 @@ public class PuzzlesData : MonoBehaviour
             { "Knife", false },
             { "MirrorKey0", false},
             { "MirrorKey1", false},
-            { "MirrorKey2", false}
+            { "MirrorKey2", false},
+            { "MirrorAll", false}
         };
     }
 }
