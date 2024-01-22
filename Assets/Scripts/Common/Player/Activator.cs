@@ -48,11 +48,7 @@ public class Activator : MonoBehaviour
    private void OnTriggerExit(Collider other) 
    {
         HidePic();
-        InteractItem=null;
-        _isInRange=false;
-        if ((other.tag == "Interactable"))
-        {
-                 
-        }
+        InteractItem = null;
+        _isInRange = false;
    }
 }
