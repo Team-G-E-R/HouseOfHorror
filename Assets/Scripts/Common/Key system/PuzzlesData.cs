@@ -10,9 +10,9 @@ public enum KeyWin
     Key3 = 3,
     Vision = 4,
     Knife = 5,
-    MirrorKey1 = 6,
-    MirrorKey2 = 7,
-    MirrorKey3 = 8,
+    MirrorKey0 = 6,
+    MirrorKey1 = 7,
+    MirrorKey2 = 8,
     MirrorAll = 9
 }
 public class PuzzlesData : MonoBehaviour
