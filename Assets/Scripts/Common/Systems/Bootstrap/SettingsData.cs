@@ -22,5 +22,6 @@ public class SettingsData : MonoBehaviour
     public class DataSettings
     {
         public float Volume;
+        public float MusicTime;
     }
 }

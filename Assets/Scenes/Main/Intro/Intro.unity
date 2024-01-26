@@ -330,8 +330,10 @@ MonoBehaviour:
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
   _audioClip: {fileID: 8300000, guid: 2960c19de06d44f47b67d583313e3075, type: 3}
-  _needToBeLooped: 1
-  _needToDisableOnSceneChange: 0
+  _beLooped: 1
+  _disableOnSceneChange: 1
+  _saveAudioTime: 0
+  _continueAudio: 0
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 0}
@@ -384,9 +386,11 @@ MonoBehaviour:
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
-  _audioClip: {fileID: 8300000, guid: ae0925114dcfa654c9d5da28d774d9ed, type: 3}
-  _needToBeLooped: 1
-  _needToDisableOnSceneChange: 0
+  _audioClip: {fileID: 8300000, guid: 466d1f1c39bb3044fb338367f81d08f8, type: 3}
+  _beLooped: 1
+  _disableOnSceneChange: 1
+  _saveAudioTime: 0
+  _continueAudio: 1
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 0}
@@ -405,6 +409,18 @@ PrefabInstance:
     - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_margin.y
       value: 0.42251676
+      objectReference: {fileID: 0}
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 114522251487512835, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 401588917393491392, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_SizeDelta.x
@@ -487,12 +503,24 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_fontSizeBase
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3835353120370603899, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4812408554134784795, guid: f254d704e7669454e9b4ce43197cb154, type: 3}
       propertyPath: m_SizeDelta.y
@@ -860,8 +888,10 @@ MonoBehaviour:
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}
   _audioClip: {fileID: 8300000, guid: 7e662ebcae6c2f442860d4c94f35f3e3, type: 3}
-  _needToBeLooped: 1
-  _needToDisableOnSceneChange: 0
+  _beLooped: 1
+  _disableOnSceneChange: 1
+  _saveAudioTime: 0
+  _continueAudio: 0
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 0}

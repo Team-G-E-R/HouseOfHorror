@@ -60,6 +60,12 @@ public class Finder : MonoBehaviour
         CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
     }
     
+    public void SaveMusicTime(float time)
+    {
+        SettingsDataobj.GameSettingsData.MusicTime = time;
+        SettingsDataobj.Save();
+    }
+
     public void CursorOn()
     {
         Cursor.visible = true;

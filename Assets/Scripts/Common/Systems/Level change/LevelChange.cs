@@ -13,7 +13,7 @@ public class SetLevel : MonoBehaviour
     
     FadeInOut fade;
 
-    private void Start()
+    private void Awake()
     {
         if (_levelConnection == LevelConnection.ActiveConnection)
         {

@@ -5,9 +5,13 @@ public class AudioSet : Finder
     [Header("Main audio settings")]
     [Tooltip("Select the audio that will play at the beginning of the scene")]
     [SerializeField] private AudioClip _audioClip;
-    [SerializeField] private bool _needToBeLooped;
+    [SerializeField] private bool _beLooped;
     [Tooltip("Set all clips to null when component get off")]
-    [SerializeField] private bool _needToDisableOnSceneChange;
+    [SerializeField] private bool _disableOnSceneChange;
+    [Tooltip("Save audio playback time to JSON file")]
+    [SerializeField] private bool _saveAudioTime;
+    [Tooltip("Continue audio playback with time from JSON file")]
+    [SerializeField] private bool _continueAudio;
     [Space(15)]
     [Header("Additional")]
     [SerializeField] private bool _needScreamer;
@@ -21,6 +25,8 @@ public class AudioSet : Finder
     {
        FindObjs();
        MusicSet();
+       if (_continueAudio)
+        AudioContinue();
        if (_needScreamer)
         ScreamerPlay();
     }
@@ -30,8 +36,8 @@ public class AudioSet : Finder
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
 
         if (audioSource == null)
-            AudioSourceCreate(_audioClip, _needToBeLooped);
-        else if (_needToBeLooped && audioSource != null)
+            AudioSourceCreate(_audioClip, _beLooped);
+        else if (_beLooped && audioSource != null)
         {
             audioSource.clip = _audioClip;
             audioSource.loop = true;
@@ -40,7 +46,7 @@ public class AudioSet : Finder
         else
         {
             audioSource.clip = _audioClip;
-            audioSource.loop = _needToBeLooped;
+            audioSource.loop = _beLooped;
             audioSource.Play();
         }
     }
@@ -63,6 +69,19 @@ public class AudioSet : Finder
         }
     }
 
+    public void ScreamerStop()
+    {
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _screamerToPlay);
+        audioSource.Stop();
+    }
+
+    public void AudioContinue()
+    {
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip);
+        SettingsDataobj.Load();
+        audioSource.time = SettingsDataobj.GameSettingsData.MusicTime;
+    }
+
     private void AudioSourceCreate(AudioClip audioClip, bool loop)
     {
         GameObject go = new GameObject();
@@ -79,12 +98,22 @@ public class AudioSet : Finder
 
     private void OnDisable()
     {
-        if (_needToDisableOnSceneChange && AudioSourceObj != null)
+        if (_saveAudioTime)
+        {
+            AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip);
+            SaveMusicTime(audioSource.time);
+        }
+
+        if (_disableOnSceneChange && AudioSourceObj != null)
         {
             foreach (var a in AudioSourceObj)
             {
-                a.clip = null;
-                a.Stop();
+                if (a != null)
+                {
+                    a.clip = null;
+                    a.time = 0;
+                    a.Stop();
+                }
             }
         }
     }

@@ -57,7 +57,8 @@ namespace Common.Scripts
         public void SetWalk(bool walk) 
         { 
             _movementLocked = !walk;
-            physicsBody.velocity = Vector2.zero;
+            physicsBody.velocity = walk == false ? Vector2.zero : physicsBody.velocity;
+            GetComponent<Animator>().enabled = walk;
         }
 
         public void TurnOffMovement()
@@ -71,6 +72,7 @@ namespace Common.Scripts
             GetComponent<Activator>().enabled = true;
             this.enabled = true;
         }
+
         public void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag == "Slope")

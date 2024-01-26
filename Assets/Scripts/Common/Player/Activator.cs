@@ -1,4 +1,3 @@
-using Common.Scripts;
 using UnityEngine;
 
 public class Activator : MonoBehaviour
@@ -11,17 +10,20 @@ public class Activator : MonoBehaviour
 
     private void Awake()
    {
-        inputButtonImage.SetActive(false);
+        HidePic();
    }
    
    private void Update() 
    {    
-        if((_isInRange)&(Input.GetKeyDown(KeyCode.E)))
+        if((_isInRange) && (Input.GetKeyDown(KeyCode.E)))
         {
             if ((InteractItem.TryGetComponent<Interactable>(out Interactable ob)))
             {
                 ob.Interact();
-                inputButtonImage.SetActive(false);
+                if (ob._oneUsage)
+                {
+                    EndOfInteraction();
+                }
             }
         }
    }
@@ -32,7 +34,6 @@ public class Activator : MonoBehaviour
         {
             _isInRange = true;
             ShowPic();
-
             if (key == false) InteractItem = other.gameObject;
         }
    }
@@ -41,14 +42,23 @@ public class Activator : MonoBehaviour
    {
        inputButtonImage.SetActive(true);
    }
+   public void HidePic()
+   {
+       inputButtonImage.SetActive(false);
+   }
 
    private void OnTriggerExit(Collider other) 
    {
-        if ((other.tag == "Interactable"))
+    if ((other.tag == "Interactable"))
         {
-               inputButtonImage.SetActive(false);
-               InteractItem=null;
-               _isInRange=false;  
-        }
+            EndOfInteraction();
+        }   
+   }
+
+   public void EndOfInteraction()
+   {
+        HidePic();
+        InteractItem = null;
+        _isInRange = false;
    }
 }

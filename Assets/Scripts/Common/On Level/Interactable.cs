@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,7 @@ public class Interactable : MonoBehaviour
         {
             InteractAction.Invoke();
             Destroy(this);
+            //DestroyInteractable();
         }
         else InteractAction.Invoke();
     }
