@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1519675965452160956}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.038, y: 0.614, z: 0.07999992}
+  m_LocalPosition: {x: -0.038, y: 1.466, z: 0.07999992}
   m_LocalScale: {x: 0.044564456, y: 0.04604706, z: 0.5075}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -131,7 +131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3990198734923374125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.038, z: 0}
+  m_LocalPosition: {x: 0, y: 0.563, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194,7 +194,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.046, y: -0.7821197}
+  m_AnchoredPosition: {x: -0.012, y: -0.001}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3339468521703285578
@@ -258,7 +258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6362716689783047673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.22, y: -2.812, z: 14.212}
+  m_LocalPosition: {x: 15.22, y: -2.763, z: 14.212}
   m_LocalScale: {x: 3.0409722, y: 2.7455957, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -314,8 +314,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.3285561, y: 0.9879585, z: 0.16584003}
-  m_Center: {x: -0.02481776, y: -0.016022312, z: 0}
+  m_Size: {x: 0.3285561, y: 1.1012479, z: 0.16584003}
+  m_Center: {x: -0.02481776, y: 0.7351626, z: 0}
 --- !u!95 &8923246169850602106
 Animator:
   serializedVersion: 5
@@ -378,7 +378,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dcbad517cc9550e468e209be9611f883, type: 3}
+  m_Sprite: {fileID: -8078318107749858999, guid: 9835c18ecb576c34b93a6b895f2b8658, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 150
   sprintSpeedBonus: 50
+  GravityMultiplier: 1
   animator: {fileID: 8923246169850602106}
   physicsBody: {fileID: 9125147865393193499}
 --- !u!114 &6655750661780221493
@@ -450,6 +451,6 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2118072
-  m_Height: 0.83686477
+  m_Height: 1.0942808
   m_Direction: 1
-  m_Center: {x: -0.024770003, y: -0.08579097, z: 0.29832137}
+  m_Center: {x: -0.024770003, y: 0.73804146, z: 0.29832137}
