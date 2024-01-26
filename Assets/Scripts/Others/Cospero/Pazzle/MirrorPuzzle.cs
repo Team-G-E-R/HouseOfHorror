@@ -23,6 +23,8 @@ public class MirrorPuzzle : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void CheckRelative(MirrorDragAndDrop mirrorDragAndDrop)
