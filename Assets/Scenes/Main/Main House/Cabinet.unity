@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2676,7 +2676,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56b8d7ed6e110440b3fe9651fa9d895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NeedsMainCam: 0
   cameras:
   - {fileID: 1823022460}
   - {fileID: 659599489}
@@ -5964,7 +5963,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56b8d7ed6e110440b3fe9651fa9d895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NeedsMainCam: 0
   cameras:
   - {fileID: 1823022460}
   - {fileID: 659599489}
@@ -16687,7 +16685,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336034897122916683, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.166
+      value: -1.756
       objectReference: {fileID: 0}
     - target: {fileID: 1336034897122916683, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_LocalPosition.z
