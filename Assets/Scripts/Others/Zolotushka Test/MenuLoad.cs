@@ -11,11 +11,11 @@ public class MenuLoad : MonoBehaviour
 
     public void LoadLevel()
     {
-        if (_gameInfo == null && ZeroSavesUi != null) ZeroSavesUi.SetActive(true);
+        if (_gameInfo.SceneIndex == 0) ZeroSavesUi.SetActive(true);
         else
         {
             DontDestroyOnLoad(this);
-            Menu.SaveSettingsData();
+            Menu.SaveSettingsData(false);
             StartCoroutine("AsyncLoad");
         }
     }

@@ -5,6 +5,7 @@ using System.Collections;
 
 public class Menu : Finder
 {
+   public SaveLoad.GameInfo NewGameData => SaveLoad.Instance.PlayerData;
    public AudioClip AudioStartBtn;
    public AudioSource AudioSourceStartBtn;
    [SerializeField] private int _nextSceneIndex;
@@ -31,10 +32,9 @@ public class Menu : Finder
 
    public void SceneLoad()
    {
-      SaveLoad.Instance.AllDataToZero();
-      Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
-      SaveSettingsData();
+      Cursor.lockState = CursorLockMode.Locked;
+      SaveSettingsData(true);
       StartBtnPlay();
       StartCoroutine(FadeInTransition());
    }
@@ -45,13 +45,17 @@ public class Menu : Finder
       {
          a.clip = null;  
       }
-      AudioSourceStartBtn.volume = GameData.Volume;
+      AudioSourceStartBtn.volume = NewGameData.Volume;
       AudioSourceStartBtn.Play();
    }
    
-   public void SaveSettingsData()
+   public void SaveSettingsData(bool needToResetData)
    {
-      GameData.Volume = _volumeSlider.value;
+      if (needToResetData)
+      {
+         SaveLoad.Instance.AllDataToZero();  
+      }
+      NewGameData.Volume = _volumeSlider.value;
       SaveLoad.Instance.Save();
    }
 
@@ -65,7 +69,7 @@ public class Menu : Finder
 
    public void ExitGame()
    {
-      SaveSettingsData();
+      SaveSettingsData(false);
       Application.Quit();
    }
 

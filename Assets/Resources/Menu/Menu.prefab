@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 448.32}
+  m_AnchoredPosition: {x: 0, y: -0.0000018179}
+  m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7233676559392100659
 CanvasRenderer:
@@ -90,7 +90,6 @@ GameObject:
   - component: {fileID: 1568495013462800104}
   - component: {fileID: 1786559532174657837}
   - component: {fileID: 8428110995058577853}
-  - component: {fileID: 1216039523552583775}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: Untagged
@@ -201,18 +200,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1216039523552583775}
-        m_TargetAssemblyTypeName: Repository, Assembly-CSharp
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 6232056023612688706}
         m_TargetAssemblyTypeName: MenuScript, Assembly-CSharp
         m_MethodName: SceneLoad
@@ -225,19 +212,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1216039523552583775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211604080574690836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b0077e3bd6f11340be2476822d0b0dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KeyToWin: 0
 --- !u!1 &1504190389356405826
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +498,7 @@ MonoBehaviour:
   m_text: "\u041D\u0430\u0437\u0430\u0434"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -587,7 +561,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &2647762580369936966
@@ -981,10 +955,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoadFromMenu, Assembly-CSharp
-        m_MethodName: BackUi
-        m_Mode: 1
+      - m_Target: {fileID: 199758318442264758}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1351,7 +1325,7 @@ MonoBehaviour:
     \u043D\u043E\u0432\u0443\u044E \u0438\u0433\u0440\u0443."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1414,7 +1388,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5447440808933275706
@@ -1483,7 +1457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: House of horror v. 0.2
+  m_text: House of horror v. 0.3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
   m_sharedMaterial: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
@@ -2309,7 +2283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSourceObj: []
-  SettingsDataobj: {fileID: 0}
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}

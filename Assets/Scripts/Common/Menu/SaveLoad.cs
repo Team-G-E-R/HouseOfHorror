@@ -39,14 +39,16 @@ public class SaveLoad : MonoBehaviour
       _playerDict = JsonConvert.DeserializeObject<GameDataDict>(File.ReadAllText(_fileDictPath));
    }
 
-   [ContextMenu("Reset selected saves")]
+   [ContextMenu("Reset all saves")]
    public void AllDataToZero()
    {
-      File.WriteAllText(_filePath, JsonUtility.ToJson(new GameInfo()));
-      File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(new GameDataDict()));
+      _playerData = new GameInfo();
+      _playerDict = new GameDataDict();
+      File.WriteAllText(_filePath, JsonUtility.ToJson(_playerData));
+      File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(_playerDict));
    }
 
-   public void FindPlayerSettingsData()
+   public void FindPlayerSettingsData() // Почему он тут ищет игрока? Убрать
     {
       _playerData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
       _playerData.PlayerScenePos = GameObject.FindWithTag("Player").transform.position;
