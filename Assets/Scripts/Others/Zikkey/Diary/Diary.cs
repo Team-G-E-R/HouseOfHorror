@@ -135,9 +135,9 @@ public class Diary : MonoBehaviour
         int firstPage = firstPageIndex + pageOffset;
         int secondPage = secondPageIndex + pageOffset;
 
-        if (GameData.PlayerData.Diary.ContainsKey(firstPage) && GameData.PlayerData.UnlockedPages.Contains(firstPage))
+        if (GameData.PlayerDict.Diary.ContainsKey(firstPage) && GameData.PlayerData.UnlockedPages.Contains(firstPage))
         {
-            string data = GameData.PlayerData.Diary[firstPage];
+            string data = GameData.PlayerDict.Diary[firstPage];
             if (dynamically && GameData.PlayerData.AnimatedPages.Contains(firstPage) == false)
                 StartCoroutine(LoadTextDynamicly(_firstPage, data, firstPage));
             else if (dynamically == false && GameData.PlayerData.AnimatedPages.Contains(firstPage) == false)
@@ -148,9 +148,9 @@ public class Diary : MonoBehaviour
         else
             _firstPage.text = string.Empty;
 
-        if (GameData.PlayerData.Diary.ContainsKey(secondPage) && GameData.PlayerData.UnlockedPages.Contains(secondPage))
+        if (GameData.PlayerDict.Diary.ContainsKey(secondPage) && GameData.PlayerData.UnlockedPages.Contains(secondPage))
         {
-            string data = GameData.PlayerData.Diary[secondPage];
+            string data = GameData.PlayerDict.Diary[secondPage];
 
             if (dynamically && GameData.PlayerData.AnimatedPages.Contains(secondPage) == false)
                 StartCoroutine(LoadTextDynamicly(_secondPage, data, secondPage));

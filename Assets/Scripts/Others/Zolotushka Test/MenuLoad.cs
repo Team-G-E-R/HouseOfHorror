@@ -25,7 +25,7 @@ public class MenuLoad : MonoBehaviour
         AsyncOperation _asyncOperation;
         var fade = GetComponent<FadeInOut>();
         Menu.StartBtnPlay();
-        _asyncOperation = SceneManager.LoadSceneAsync(_gameInfo.SceneIndexJson);
+        _asyncOperation = SceneManager.LoadSceneAsync(_gameInfo.SceneIndex);
         _asyncOperation.allowSceneActivation = false;
         fade.duration = Menu.AudioStartBtn.length;
         fade.FadeIn();
@@ -36,8 +36,8 @@ public class MenuLoad : MonoBehaviour
             yield return null;
         }
         Destroy(UiElements);
-        GameObject.FindWithTag("Player").transform.position = _gameInfo.PlayerScenePosJson;
-        GameObject.FindWithTag("MainCamera").transform.position = _gameInfo.CameraPosJson;
+        GameObject.FindWithTag("Player").transform.position = _gameInfo.PlayerScenePos;
+        GameObject.FindWithTag("MainCamera").transform.position = _gameInfo.CameraPos;
         Destroy(gameObject);
     }
 

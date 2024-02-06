@@ -15,7 +15,7 @@ public enum KeyWin
 }
 public class PuzzlesData : MonoBehaviour
 {
-    public SaveLoad.GameInfo GameData => SaveLoad.Instance.PlayerData;
+    public SaveLoad.GameDataDict GameData => SaveLoad.Instance.PlayerDict;
     public Dictionary<string, bool> KeysData = new(){};
     public KeyWin KeyToWin;
 
