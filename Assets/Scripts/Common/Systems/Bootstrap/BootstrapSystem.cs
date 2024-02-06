@@ -4,11 +4,10 @@ public class BootstrapSystem : Finder
 {
     [SerializeField] private AudioClip _menuMusic;
     
-    private AudioSource _audioSource;
     private float _soundVolume;
 
-    private void Awake()
-    { 
+    private void Start()
+    {
         CursorOn();
         FindObjs();
         AudioSystemSet();

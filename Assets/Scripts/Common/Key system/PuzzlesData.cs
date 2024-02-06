@@ -22,7 +22,7 @@ public class PuzzlesData : MonoBehaviour
     [ContextMenu("Save")]
     public void Save()
     {
-        KeysData[KeyToWin.ToString()] = true;
+        GameData.KeysDict[KeyToWin.ToString()] = true;
         SaveLoad.Instance.Save();
     }
 

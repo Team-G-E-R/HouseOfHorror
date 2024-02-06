@@ -43,7 +43,7 @@ public class SaveLoad : MonoBehaviour
    public void AllDataToZero()
    {
       File.WriteAllText(_filePath, JsonUtility.ToJson(new GameInfo()));
-      File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(new GameInfo()));
+      File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(new GameDataDict()));
    }
 
    public void FindPlayerSettingsData()
