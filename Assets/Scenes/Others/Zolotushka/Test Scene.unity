@@ -4320,13 +4320,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48a430724e66b3409bdf625436532fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Menu: {fileID: 0}
-  UiElements: {fileID: 0}
-  ZeroSavesUi: {fileID: 0}
   PlayerInfo:
     SceneIndexJson: 0
     PlayerScenePosJson: {x: 0, y: 0, z: 0}
     CameraPosJson: {x: 0, y: 0, z: 0}
+    Turn: 1
+    RequiredTurn: 1
+    UnlockedPages: 
+    AnimatedPages: 
 --- !u!4 &779766338
 Transform:
   m_ObjectHideFlags: 0
@@ -8372,8 +8373,29 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 335115839210070300, guid: b0e3553e95951ba43b5470518f1c0e6c, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5132454858464576243, guid: b0e3553e95951ba43b5470518f1c0e6c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1710142377}
   m_SourcePrefab: {fileID: 100100000, guid: b0e3553e95951ba43b5470518f1c0e6c, type: 3}
+--- !u!1 &1710142376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5132454858464576243, guid: b0e3553e95951ba43b5470518f1c0e6c, type: 3}
+  m_PrefabInstance: {fileID: 1710142375}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1710142377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710142376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0077e3bd6f11340be2476822d0b0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KeyToWin: 1
 --- !u!1 &1728482646
 GameObject:
   m_ObjectHideFlags: 0

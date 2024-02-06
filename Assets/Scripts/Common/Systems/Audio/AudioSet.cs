@@ -78,8 +78,8 @@ public class AudioSet : Finder
     public void AudioContinue()
     {
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip);
-        SettingsDataobj.Load();
-        audioSource.time = SettingsDataobj.GameSettingsData.MusicTime;
+        SaveLoad.Instance.Load();
+        audioSource.time = GameData.MusicTime;
     }
 
     private void AudioSourceCreate(AudioClip audioClip, bool loop)
@@ -90,7 +90,7 @@ public class AudioSet : Finder
 
         AudioSource newAudioSource = go.AddComponent<AudioSource>();
         newAudioSource.clip = audioClip;
-        newAudioSource.volume = SettingsDataobj.GameSettingsData.Volume;
+        newAudioSource.volume = GameData.Volume;
         newAudioSource.loop = loop;
         newAudioSource.Play();
         AudioSourceObj.Add(newAudioSource);

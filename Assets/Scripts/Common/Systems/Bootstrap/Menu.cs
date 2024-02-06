@@ -10,14 +10,13 @@ public class Menu : Finder
    [SerializeField] private int _nextSceneIndex;
    
    private Slider _volumeSlider;
-   private AsyncOperation _level;
    private const string _audioName = "AudioButton";
 
    private void Awake()
    {
       _volumeSlider = GetComponentInChildren<Slider>();
       FindObjs();
-      _volumeSlider.value = SettingsDataobj.GameSettingsData.Volume;
+      _volumeSlider.value = GameData.Volume;
       CreateAudioBtn();
    }
    
@@ -27,11 +26,12 @@ public class Menu : Finder
       audioFile.name = _audioName;
       AudioSourceStartBtn = audioFile.AddComponent<AudioSource>();
       AudioSourceStartBtn.clip = AudioStartBtn;
-      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      AudioSourceStartBtn.volume = GameData.Volume;
    }
 
    public void SceneLoad()
    {
+      SaveLoad.Instance.AllDataToZero();
       Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
       SaveSettingsData();
@@ -45,14 +45,14 @@ public class Menu : Finder
       {
          a.clip = null;  
       }
-      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      AudioSourceStartBtn.volume = GameData.Volume;
       AudioSourceStartBtn.Play();
    }
    
    public void SaveSettingsData()
    {
-      SettingsDataobj.GameSettingsData.Volume = _volumeSlider.value;
-      SettingsDataobj.Save();
+      GameData.Volume = _volumeSlider.value;
+      SaveLoad.Instance.Save();
    }
 
    public void VolumeSet()

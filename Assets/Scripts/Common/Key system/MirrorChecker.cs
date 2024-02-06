@@ -13,7 +13,7 @@ public class MirrorChecker : MonoBehaviour
         _mirrorObj.SetActive(true);
         for (int i = 0; i < _mirrorPieces.Length; i++)
         {
-            if (_puzzlesData.KeysData.KeysDict.TryGetValue("MirrorKey" + i, out key) && key == true)
+            if (_puzzlesData.KeysData.TryGetValue("MirrorKey" + i, out key) && key == true)
                 _mirrorPieces[i].SetActive(true);
                 Debug.Log(key);
         }

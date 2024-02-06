@@ -3,8 +3,9 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Diary : DiaryData
+public class Diary : MonoBehaviour
 {
+    public SaveLoad GameData = SaveLoad.Instance; 
     [SerializeField] private int _maxLines = 24;
     [SerializeField] private int _maxTurns = 20;
 
@@ -34,8 +35,8 @@ public class Diary : DiaryData
 
     private void Awake()
     {
-        Load();
-        SwapPage(KeysData.Turn);
+        GameData.Load();
+        SwapPage(GameData.PlayerData.Turn);
 
         _close.onClick.AddListener(Close);
         _prevPage.onClick.AddListener(() => SwapPage(false));
@@ -114,32 +115,32 @@ public class Diary : DiaryData
         _firstPage.text = string.Empty;
         _secondPage.text = string.Empty;
 
-        KeysData.Turn = _turn;
-        KeysData.RequiredTurn = _turn;
+        GameData.PlayerData.Turn = _turn;
+        GameData.PlayerData.RequiredTurn = _turn;
         LoadData(_openedInEdit);
-        Save();
+        GameData.Save();
     }
 
     private void LoadData(bool dynamically = false)
     {
-        if (KeysData.RequiredTurn != KeysData.Turn)
+        if (GameData.PlayerData.RequiredTurn != GameData.PlayerData.Turn)
         {
-            KeysData.Turn = KeysData.RequiredTurn;
-            _turn = KeysData.Turn;
-            Save();
-            SwapPage(KeysData.Turn);
+            GameData.PlayerData.Turn = GameData.PlayerData.RequiredTurn;
+            _turn = GameData.PlayerData.Turn;
+            GameData.Save();
+            SwapPage(GameData.PlayerData.Turn);
             return;
         }
 
         int firstPage = firstPageIndex + pageOffset;
         int secondPage = secondPageIndex + pageOffset;
 
-        if (KeysData.Diary.ContainsKey(firstPage) && KeysData.UnlockedPages.Contains(firstPage))
+        if (GameData.PlayerData.Diary.ContainsKey(firstPage) && GameData.PlayerData.UnlockedPages.Contains(firstPage))
         {
-            string data = KeysData.Diary[firstPage];
-            if (dynamically && KeysData.AnimatedPages.Contains(firstPage) == false)
+            string data = GameData.PlayerData.Diary[firstPage];
+            if (dynamically && GameData.PlayerData.AnimatedPages.Contains(firstPage) == false)
                 StartCoroutine(LoadTextDynamicly(_firstPage, data, firstPage));
-            else if (dynamically == false && KeysData.AnimatedPages.Contains(firstPage) == false)
+            else if (dynamically == false && GameData.PlayerData.AnimatedPages.Contains(firstPage) == false)
                 _firstPage.text = string.Empty;
             else
                 _firstPage.text = data;
@@ -147,13 +148,13 @@ public class Diary : DiaryData
         else
             _firstPage.text = string.Empty;
 
-        if (KeysData.Diary.ContainsKey(secondPage) && KeysData.UnlockedPages.Contains(secondPage))
+        if (GameData.PlayerData.Diary.ContainsKey(secondPage) && GameData.PlayerData.UnlockedPages.Contains(secondPage))
         {
-            string data = KeysData.Diary[secondPage];
+            string data = GameData.PlayerData.Diary[secondPage];
 
-            if (dynamically && KeysData.AnimatedPages.Contains(secondPage) == false)
+            if (dynamically && GameData.PlayerData.AnimatedPages.Contains(secondPage) == false)
                 StartCoroutine(LoadTextDynamicly(_secondPage, data, secondPage));
-            else if (dynamically == false && KeysData.AnimatedPages.Contains(secondPage) == false)
+            else if (dynamically == false && GameData.PlayerData.AnimatedPages.Contains(secondPage) == false)
                 _secondPage.text = string.Empty;
             else
                 _secondPage.text = data;
@@ -181,25 +182,25 @@ public class Diary : DiaryData
             current += 1;
         }
 
-        KeysData.AnimatedPages.Add(page);
-        Save();
+        GameData.PlayerData.AnimatedPages.Add(page);
+        GameData.Save();
 
         _lockClose = false;
     }
 
     public void UnlockPage(int page = firstPageIndex)
     {
-        if (KeysData.UnlockedPages.Contains(page))
+        if (GameData.PlayerData.UnlockedPages.Contains(page))
             return;
-        KeysData.UnlockedPages.Add(page);
-        KeysData.RequiredTurn = Mathf.RoundToInt(page / 2f);
-        Save();
+        GameData.PlayerData.UnlockedPages.Add(page);
+        GameData.PlayerData.RequiredTurn = Mathf.RoundToInt(page / 2f);
+        GameData.Save();
     }
 
     public void LockPage(int page = firstPageIndex)
     {
-        KeysData.UnlockedPages.Remove(page);
-        Save();
+        GameData.PlayerData.UnlockedPages.Remove(page);
+        GameData.Save();
     }
 
     private void Lock()
