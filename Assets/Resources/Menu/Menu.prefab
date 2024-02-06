@@ -2310,15 +2310,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8a0f798b942da4eadbbe874edef1b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceObj:
-  - {fileID: 0}
-  SettingsDataobj: {fileID: 0}
-  SceneIndex: 0
-  PlayerScenePos: {x: 0, y: 0, z: 0}
-  CameraPos: {x: 0, y: 0, z: 0}
   Menu: {fileID: 6232056023612688706}
   UiElements: {fileID: 1911978047330894461}
   ZeroSavesUi: {fileID: 199758318442264758}
+  WhatToSave: 0
 --- !u!1 &9085573098071244634
 GameObject:
   m_ObjectHideFlags: 0
