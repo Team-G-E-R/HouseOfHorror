@@ -55563,17 +55563,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5183252147231955890, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_Name
+      value: InteractCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 6362716689783047673, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_Name
       value: Player(CamSwitch)
       objectReference: {fileID: 0}
     - target: {fileID: 6858768019582722922, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_Size.x
-      value: 1.1091247
+      value: 1.3001032
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858768019582722922, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_Size.z
+      value: 1.0660869
       objectReference: {fileID: 0}
     - target: {fileID: 6858768019582722922, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_Center.x
-      value: 0.026862498
+      value: 0.04076795
+      objectReference: {fileID: 0}
+    - target: {fileID: 6858768019582722922, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_Center.z
+      value: -0.12394053
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
