@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Diary : MonoBehaviour
 {
-    public SaveLoad GameData = SaveLoad.Instance; 
+    public SaveLoad GameData => SaveLoad.Instance; 
     [SerializeField] private int _maxLines = 24;
     [SerializeField] private int _maxTurns = 20;
 
@@ -35,7 +35,6 @@ public class Diary : MonoBehaviour
 
     private void Awake()
     {
-        GameData.Load();
         SwapPage(GameData.PlayerData.Turn);
 
         _close.onClick.AddListener(Close);
@@ -46,12 +45,12 @@ public class Diary : MonoBehaviour
         _secondPage.lineLimit = _maxLines;
     }
 
-    private void Start()
-    {
-        //UnlockPage(1);
-        //UnlockPage(2);
-        //UnlockPage(4);
-    }
+    // private void Start()
+    // {
+    //     //UnlockPage(1);
+    //     //UnlockPage(2);
+    //     //UnlockPage(4);
+    // }
 
     private void Update()
     {
