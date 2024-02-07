@@ -11,7 +11,10 @@ public class MenuLoad : MonoBehaviour
 
     public void LoadLevel()
     {
-        if (_gameInfo.SceneIndex == 0) ZeroSavesUi.SetActive(true);
+        if (_gameInfo.SceneIndex == 0) 
+        {
+            ZeroSavesUi.SetActive(true);
+        }
         else
         {
             DontDestroyOnLoad(this);
