@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.IO;
-using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
@@ -27,7 +26,6 @@ public class SaveLoad : MonoBehaviour
    [ContextMenu("Save")]
    public void Save()
    {
-      //FindPlayerSettingsData();
       File.WriteAllText(_filePath, JsonUtility.ToJson(_playerData));
       File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(_playerDict));
    }
@@ -47,13 +45,6 @@ public class SaveLoad : MonoBehaviour
       File.WriteAllText(_filePath, JsonUtility.ToJson(_playerData));
       File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(_playerDict));
    }
-
-   public void FindPlayerSettingsData() // Почему он тут ищет игрока? Убрать
-    {
-      _playerData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
-      _playerData.PlayerScenePos = GameObject.FindWithTag("Player").transform.position;
-      _playerData.CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
-    }
 
    [RuntimeInitializeOnLoadMethod]
    public static void CreateInstance()
