@@ -5,19 +5,19 @@ using System.Collections;
 
 public class Menu : Finder
 {
+   public SaveLoad.GameInfo NewGameData => SaveLoad.Instance.PlayerData;
    public AudioClip AudioStartBtn;
    public AudioSource AudioSourceStartBtn;
    [SerializeField] private int _nextSceneIndex;
    
    private Slider _volumeSlider;
-   private AsyncOperation _level;
    private const string _audioName = "AudioButton";
 
    private void Awake()
    {
       _volumeSlider = GetComponentInChildren<Slider>();
       FindObjs();
-      _volumeSlider.value = SettingsDataobj.GameSettingsData.Volume;
+      _volumeSlider.value = GameData.Volume;
       CreateAudioBtn();
    }
    
@@ -27,14 +27,14 @@ public class Menu : Finder
       audioFile.name = _audioName;
       AudioSourceStartBtn = audioFile.AddComponent<AudioSource>();
       AudioSourceStartBtn.clip = AudioStartBtn;
-      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      AudioSourceStartBtn.volume = GameData.Volume;
    }
 
    public void SceneLoad()
    {
-      Cursor.lockState = CursorLockMode.Locked;
       Cursor.visible = false;
-      SaveSettingsData();
+      Cursor.lockState = CursorLockMode.Locked;
+      SaveSettingsData(true);
       StartBtnPlay();
       StartCoroutine(FadeInTransition());
    }
@@ -45,14 +45,18 @@ public class Menu : Finder
       {
          a.clip = null;  
       }
-      AudioSourceStartBtn.volume = SettingsDataobj.GameSettingsData.Volume;
+      AudioSourceStartBtn.volume = NewGameData.Volume;
       AudioSourceStartBtn.Play();
    }
    
-   public void SaveSettingsData()
+   public void SaveSettingsData(bool needToResetData)
    {
-      SettingsDataobj.GameSettingsData.Volume = _volumeSlider.value;
-      SettingsDataobj.Save();
+      if (needToResetData)
+      {
+         SaveLoad.Instance.AllDataToZero();  
+      }
+      NewGameData.Volume = _volumeSlider.value;
+      SaveLoad.Instance.Save();
    }
 
    public void VolumeSet()
@@ -65,7 +69,7 @@ public class Menu : Finder
 
    public void ExitGame()
    {
-      SaveSettingsData();
+      SaveSettingsData(false);
       Application.Quit();
    }
 

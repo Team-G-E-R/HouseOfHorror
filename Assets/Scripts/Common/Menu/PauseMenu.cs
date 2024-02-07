@@ -15,7 +15,7 @@ public class PauseMenu : Finder
 
         _allAudio = GameObject.FindGameObjectsWithTag("Audio");
         _soundVolume = gameObject.GetComponentInChildren<Slider>();
-        _soundVolume.value = SettingsDataobj.GameSettingsData.Volume;
+        _soundVolume.value = GameData.Volume;
         transform.GetChild(0).gameObject.SetActive(false);
         
         DontDestroyOnLoad(gameObject);
@@ -64,7 +64,6 @@ public class PauseMenu : Finder
         CursorOff();
         SaveSettingsData();
         
-        Destroy(SettingsDataobj.gameObject);
         foreach (var go in _allAudio)
         {
             Destroy(go);
@@ -78,7 +77,7 @@ public class PauseMenu : Finder
 
     private void SaveSettingsData()
     {
-        SettingsDataobj.GameSettingsData.Volume = _soundVolume.value;
-        SettingsDataobj.Save();
+        GameData.Volume = _soundVolume.value;
+        SaveLoad.Instance.Save();
     }
 }

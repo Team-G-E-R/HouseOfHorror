@@ -7,9 +7,9 @@ public class Finder : MonoBehaviour
     [HideInInspector]
     public List<AudioSource> AudioSourceObj = new List<AudioSource>();
     [HideInInspector]
-    public SettingsData SettingsDataobj;
+    public SaveLoad.GameInfo GameData => SaveLoad.Instance.PlayerData;
     
-    private const string SettingsDataName = "GameSettingsData";
+    private AudioSource _audioObj;
     private const string AudioName = "AudioService";
 
     [HideInInspector]
@@ -21,26 +21,15 @@ public class Finder : MonoBehaviour
 
     public void FindObjs()
     {
-        if (GameObject.FindWithTag("SettingsData") == null)
-        {
-            GameObject NewSettingsData = new GameObject();
-            NewSettingsData.name = SettingsDataName;
-            NewSettingsData.tag = "SettingsData";
-            SettingsDataobj = NewSettingsData.AddComponent<SettingsData>();
-            SettingsDataobj.Load();
-            DontDestroyOnLoad(SettingsDataobj);
-        }
-        else SettingsDataobj = GameObject.FindWithTag("SettingsData").GetComponent<SettingsData>();
-
         if (GameObject.FindWithTag("Audio") == null)
         {
             GameObject audioFile = new GameObject();
             audioFile.name = AudioName;
             audioFile.tag = "Audio";
             audioFile.AddComponent<AudioSource>();
-            var audio = audioFile.GetComponent<AudioSource>();
-            audio.volume = SettingsDataobj.GameSettingsData.Volume;
-            AudioSourceObj.Add(audio);
+            _audioObj = audioFile.GetComponent<AudioSource>();
+            _audioObj.volume = GameData.Volume;
+            AudioSourceObj.Add(_audioObj);
             DontDestroyOnLoad(audioFile);
         }
         else
@@ -52,18 +41,11 @@ public class Finder : MonoBehaviour
             }
         }
     }
-
-    public void FindPlayerSettingsData()
-    {
-        SceneIndex = SceneManager.GetActiveScene().buildIndex;
-        PlayerScenePos = GameObject.FindWithTag("Player").transform.position;
-        CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
-    }
     
     public void SaveMusicTime(float time)
     {
-        SettingsDataobj.GameSettingsData.MusicTime = time;
-        SettingsDataobj.Save();
+        GameData.MusicTime = time;
+        SaveLoad.Instance.Save();
     }
 
     public void CursorOn()

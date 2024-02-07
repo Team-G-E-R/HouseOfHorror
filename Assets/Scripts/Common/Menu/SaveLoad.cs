@@ -1,110 +1,105 @@
-using System.Collections;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 public class SaveLoad : MonoBehaviour
 {
-   Dictionary<SaveKeys, string> SaveTypes = new() 
-   {
-      [SaveKeys.save] = "save",
-      [SaveKeys.keys] = "keys",
-      [SaveKeys.settings] = "settings",
-      [SaveKeys.diary] = "diary"
-   };
-   public enum SaveKeys : int
-   {
-      save = 0,
-      keys,
-      settings,
-      diary
-   }
-   public Menu Menu;
-   public GameObject UiElements;
-   public GameObject ZeroSavesUi;
-   public SaveKeys WhatToSave;
+   public static SaveLoad Instance;
+   public GameInfo PlayerData => _playerData;
+   public GameDataDict PlayerDict => _playerDict;
    private GameInfo _playerData;
-   private string _filePath => Application.streamingAssetsPath + "/" + SaveTypes[WhatToSave] + ".json";
+   private GameDataDict _playerDict;
+   private const string _dataPath = "/Game Data.json";
+   private const string _dataDictPath = "/Game Data Dict.json";
+   private string _filePath => Application.streamingAssetsPath + _dataPath;
+   private string _fileDictPath => Application.streamingAssetsPath + _dataDictPath;
 
    private void Awake()
    {
       _playerData = new GameInfo();
+      Load();
+      Instance = this;
+      DontDestroyOnLoad(this);
    }
 
    [ContextMenu("Save")]
    public void Save()
    {
-      FindPlayerSettingsData();
+      //FindPlayerSettingsData();
       File.WriteAllText(_filePath, JsonUtility.ToJson(_playerData));
+      File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(_playerDict));
    }
 
    [ContextMenu("Load")]
    public void Load()
    {
-      if (WhatToSave == SaveKeys.save)
-      {
-         LevelDataChecker();  
-      }
-   }
-
-   public void FindPlayerSettingsData()
-    {
-      _playerData.SceneIndexJson = SceneManager.GetActiveScene().buildIndex;
-      _playerData.PlayerScenePosJson = GameObject.FindWithTag("Player").transform.position;
-      _playerData.CameraPosJson = GameObject.FindWithTag("MainCamera").transform.position;
-    }
-   
-   private void LevelDataChecker()
-   {
       _playerData = JsonUtility.FromJson<GameInfo>(File.ReadAllText(_filePath));
-      if (_playerData == null && ZeroSavesUi != null) ZeroSavesUi.SetActive(true);
-      else
-      {
-         DontDestroyOnLoad(this);
-         Menu.SaveSettingsData();
-         StartCoroutine("AsyncLoad");
-      }
+      _playerDict = JsonConvert.DeserializeObject<GameDataDict>(File.ReadAllText(_fileDictPath));
    }
 
-   IEnumerator AsyncLoad()
-   {
-      AsyncOperation _asyncOperation;
-      var fade = GetComponent<FadeInOut>();
-      Menu.StartBtnPlay();
-      _asyncOperation = SceneManager.LoadSceneAsync(_playerData.SceneIndexJson);
-      _asyncOperation.allowSceneActivation = false;
-      fade.duration = Menu.AudioStartBtn.length;
-      fade.FadeIn();
-      yield return new WaitForSeconds(fade.duration + 0.5f);
-      while (!_asyncOperation.isDone)
-      {
-         _asyncOperation.allowSceneActivation = true;
-         yield return null;
-      }
-      Destroy(UiElements);
-      GameObject.FindWithTag("Player").transform.position = _playerData.PlayerScenePosJson;
-      GameObject.FindWithTag("MainCamera").transform.position = _playerData.CameraPosJson;
-      Destroy(gameObject);
-   }
-
-   public void BackUi()
-   {
-      UiElements.SetActive(true);
-      ZeroSavesUi.SetActive(false);
-   }
-
-   [ContextMenu("Reset player saves")]
+   [ContextMenu("Reset all saves")]
    public void AllDataToZero()
    {
+      _playerData = new GameInfo();
+      _playerDict = new GameDataDict();
       File.WriteAllText(_filePath, JsonUtility.ToJson(_playerData));
+      File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(_playerDict));
+   }
+
+   public void FindPlayerSettingsData() // Почему он тут ищет игрока? Убрать
+    {
+      _playerData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
+      _playerData.PlayerScenePos = GameObject.FindWithTag("Player").transform.position;
+      _playerData.CameraPos = GameObject.FindWithTag("MainCamera").transform.position;
+    }
+
+   [RuntimeInitializeOnLoadMethod]
+   public static void CreateInstance()
+   {
+      GameObject data = new GameObject("Game Data");
+      data.AddComponent<SaveLoad>();
    }
 
    [System.Serializable]
    public class GameInfo
    {
-      public int SceneIndexJson;
-      public Vector3 PlayerScenePosJson;
-      public Vector3 CameraPosJson;
+      // Level Data
+      public int SceneIndex;
+      public Vector3 PlayerScenePos;
+      public Vector3 CameraPos;
+
+      // Diary Data
+      public int Turn = 1;
+      public int RequiredTurn = 1;
+
+      public List<int> UnlockedPages = new();
+      public List<int> AnimatedPages = new();
+
+      public float Volume;
+      public float MusicTime;
+   }
+
+   public class GameDataDict
+   {
+      // Key Data
+      public Dictionary<string, bool> KeysDict = new Dictionary<string, bool>()
+        {
+            { "Key1", false },
+            { "Key2", false },
+            { "Key3", false },
+            { "Vision", false },
+            { "Knife", false },
+            { "MirrorKey0", false},
+            { "MirrorKey1", false},
+            { "MirrorKey2", false},
+            { "MirrorDone", false}
+        };
+
+      public Dictionary<int, string> Diary = new Dictionary<int, string>()
+         {
+            { -1, "" },
+         };
    }
 }

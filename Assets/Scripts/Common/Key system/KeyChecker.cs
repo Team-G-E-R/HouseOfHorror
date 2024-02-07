@@ -9,7 +9,7 @@ public class KeyChecker : PuzzlesData
     public void CheckKey()
     {
         Load();
-        var _key = KeysData.KeysDict[KeyToWin.ToString()];
+        var _key = KeysData[KeyToWin.ToString()];
         if (_key == true) _ifHaveKey.Invoke();
         else _ifDontHaveKey.Invoke(); 
     }
