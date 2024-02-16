@@ -4,6 +4,9 @@ public class OnTriggerInteractable : Interactable
 {
     private void OnTriggerEnter(Collider other)
     {
-        Interact();
+        if (other.gameObject.tag == "Player")
+        {
+            Interact();
+        }
     }
 }
