@@ -2,14 +2,13 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
-public class AllLight : MonoBehaviour
+public class Vision : MonoBehaviour
 {
     [SerializeField] private Light[] _specialLights;
-    [Tooltip("Recomended 1")]
+    [Tooltip("Recommend 1")]
     [SerializeField] private float _chromaticIntensity;
-    [Tooltip("Recomended 60")]
+    [Tooltip("Recommend 60")]
     [SerializeField] private float _lensIntensity;
-    [SerializeField] private bool _needToShowHidden;
     [SerializeField] private GameObject[] _hiddenObjs;
     private Light[] _lights;
     private PostProcessVolume _postProcess;
@@ -21,7 +20,7 @@ public class AllLight : MonoBehaviour
     private void OnEnable()
     {
         _postProcess = GameObject.
-        FindGameObjectWithTag("PostProcessing").GetComponent<PostProcessVolume>();
+            FindGameObjectWithTag("PostProcessing").GetComponent<PostProcessVolume>();
         _standartChromatic = _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value;
         _standartLens = _postProcess.profile.GetSetting<LensDistortion>().intensity.value;
 
