@@ -31,8 +31,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605869595550814767}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.95, y: -13.38, z: 20.77}
-  m_LocalScale: {x: 3.0409722, y: 2.7455957, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 146866092217847211}
@@ -187,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 200
   sprintSpeedBonus: 50
+  GravityMultiplier: 1
   animator: {fileID: 2934878610511744109}
   physicsBody: {fileID: 8049677750121112403}
 --- !u!114 &7920579264413887428
@@ -201,7 +202,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3234229b2f97c3478c94ee40b400901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractKey: 101
   inputButtonImage: {fileID: 1745050722497256329}
 --- !u!1 &1745050722497256329
 GameObject:
