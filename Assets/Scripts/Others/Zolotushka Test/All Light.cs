@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 
@@ -34,37 +35,71 @@ public class AllLight : MonoBehaviour
         {
             state = !state;
             _hidden = !_hidden;
-            SwitchLight(state);
+            SwitchLight();
         }
     }
 
-    private void SwitchLight(bool isState)
+    private void SwitchLight()
     {
         _lights = FindObjectsOfType<Light>();
         foreach (var light in _lights)
         {
-            light.enabled = !isState;
+            light.enabled = !state;
         }
         foreach (var lightS in _specialLights)
         {
-            lightS.enabled = isState;
+            lightS.enabled = state;
         }
-        if (isState == true)
-        {
-            _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value = _chromaticIntensity;
-            _postProcess.profile.GetSetting<LensDistortion>().intensity.value = _lensIntensity;
-        }
-        else
-        {
-            _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value = _standartChromatic;
-            _postProcess.profile.GetSetting<LensDistortion>().intensity.value = _standartLens;
-        }
+        
+        float CA = _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value;
+        float LD = _postProcess.profile.GetSetting<LensDistortion>().intensity.value;
+        StartCoroutine(ChangeCA(CA));
+        StartCoroutine(ChangeLD(LD));
+
         if (_hiddenObjs.Length != 0)
         {
             foreach (var obj in _hiddenObjs)
             {
                 obj.SetActive(_hidden);
             }   
+        }
+    }
+
+    private IEnumerator ChangeCA (float CAValue)
+    {
+        float lerpCA = 0;
+        while (CAValue <= _chromaticIntensity)
+        {
+            if (state == true)
+            {
+                lerpCA = Mathf.Lerp(CAValue, _chromaticIntensity, 0.1f);   
+            }
+            else
+            {
+                lerpCA = Mathf.Lerp(CAValue, _standartChromatic, 0.1f); 
+            }
+            _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value = lerpCA;
+            CAValue = lerpCA;
+            yield return null;
+        }
+    }
+    
+    private IEnumerator ChangeLD (float LDValue)
+    {
+        float lerpLD = 0;
+        while (LDValue <= _lensIntensity)
+        {
+            if (state == true)
+            {
+                lerpLD = Mathf.Lerp(LDValue, _lensIntensity, 0.1f); 
+            }
+            else
+            {
+                lerpLD = Mathf.Lerp(LDValue, _standartLens, 0.1f);
+            }
+            _postProcess.profile.GetSetting<LensDistortion>().intensity.value = lerpLD;
+            LDValue = lerpLD;
+            yield return null;
         }
     }
 }
