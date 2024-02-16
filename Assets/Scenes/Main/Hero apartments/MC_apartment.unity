@@ -2973,7 +2973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0400f401e0a2ac41aacd64acaa9f311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 3
+  duration: 1.5
   _imageForFade: {fileID: 340348440}
   _afterFade:
     m_PersistentCalls:
@@ -5474,6 +5474,62 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &1488968498
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1488968499}
+  - component: {fileID: 1488968500}
+  m_Layer: 0
+  m_Name: Audio set 3 for chapter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1488968499
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488968498}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.83621, y: 6.394454, z: 0.07235718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4044394552741969980}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1488968500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488968498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe0c25383d7ec44d9bb6677de6c9e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSourceObj: []
+  SceneIndex: 0
+  PlayerScenePos: {x: 0, y: 0, z: 0}
+  CameraPos: {x: 0, y: 0, z: 0}
+  _audioClip: {fileID: 0}
+  _beLooped: 0
+  _disableOnSceneChange: 0
+  _saveAudioTime: 0
+  _continueAudio: 0
+  _needScreamer: 0
+  _screamerMustBeLooped: 0
+  _screamerToPlay: {fileID: 8300000, guid: 03b16ef1ffd93554aa06dd65140fe095, type: 3}
 --- !u!43 &1532761072
 Mesh:
   m_ObjectHideFlags: 0
@@ -6552,7 +6608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0400f401e0a2ac41aacd64acaa9f311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duration: 1.7
+  duration: 1
   _imageForFade: {fileID: 1607494922}
   _afterFade:
     m_PersistentCalls:
@@ -10575,6 +10631,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1488968500}
+        m_TargetAssemblyTypeName: AudioSet, Assembly-CSharp
+        m_MethodName: ScreamerPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1736187168}
         m_TargetAssemblyTypeName: FadeInOut, Assembly-CSharp
         m_MethodName: FadeIn
@@ -10718,6 +10786,7 @@ Transform:
   - {fileID: 7421192240880613242}
   - {fileID: 3823567779220313479}
   - {fileID: 1340862147}
+  - {fileID: 1488968499}
   - {fileID: 5891838181163431891}
   - {fileID: 6498473600431677165}
   - {fileID: 7805226275159961488}

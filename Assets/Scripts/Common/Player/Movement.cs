@@ -45,12 +45,10 @@ namespace Common.Scripts
             {
                 animator.SetFloat("Horizontal", _lastHorisontalInput/2);
                 animator.SetFloat("Vertical", _lastVerticalInput/2);
-                Debug.Log(_lastHorisontalInput+" "+_lastVerticalInput);
                 
             }
             else if ((Math.Abs(vertical)>0.5f) | (Math.Abs(horizontal)>0.5f))
             {
-                //Debug.Log(vertical+" "+ horizontal);
                 animator.SetFloat("Horizontal", horizontal);
                 animator.SetFloat("Vertical", vertical);
                 _lastHorisontalInput=horizontal;
