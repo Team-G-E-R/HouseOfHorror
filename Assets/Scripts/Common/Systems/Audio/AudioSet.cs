@@ -21,7 +21,7 @@ public class AudioSet : Finder
 
     private AudioSource _screamerSource;
 
-    private void Awake()
+    private void Start()
     {
        FindObjs();
        MusicSet();
