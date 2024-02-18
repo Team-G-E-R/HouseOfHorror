@@ -33,7 +33,7 @@ public class Diary : MonoBehaviour
     private bool _openedInEdit = false;
     private bool _lockClose = false;
 
-    private void Awake()
+    private void Start()
     {
         SwapPage(GameData.PlayerData.Turn);
 

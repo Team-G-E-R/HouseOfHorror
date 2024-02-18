@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Sprite_Shadow
-  m_Shader: {fileID: 4800000, guid: 4abea70c726ed1a4c9ddc85b170cf8b1, type: 3}
+  m_Shader: {fileID: 4800000, guid: e13c293be35078a44a666fe08eecc3db, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -76,7 +76,7 @@ Material:
     m_Floats:
     - PixelSnap: 1
     - _BumpScale: 1
-    - _Cutoff: 0.341
+    - _Cutoff: 0.678
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _EnableExternalAlpha: 0
