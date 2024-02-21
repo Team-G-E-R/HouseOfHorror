@@ -17,7 +17,8 @@ public class SetLevel : MonoBehaviour
     {
         if (_levelConnection == LevelConnection.ActiveConnection)
         {
-            StartCoroutine(PlayerOffOn());
+            GameObject.FindWithTag("Player").transform.position = _spawnPointPlayer.position;
+            GameObject.FindWithTag("MainCamera").transform.position = _spawnPointCamera.position;
         }
     }
 
@@ -38,15 +39,5 @@ public class SetLevel : MonoBehaviour
         fade.FadeIn();
         yield return new WaitForSeconds(fade.duration + 1);
         SceneManager.LoadScene(_targetSceneName);
-    }
-
-    public IEnumerator PlayerOffOn()
-    {
-        GameObject.FindWithTag("Player").GetComponent<movement>().TurnOffMovement();
-        yield return new WaitForFixedUpdate();
-        GameObject.FindWithTag("Player").transform.position = _spawnPointPlayer.position;
-        GameObject.FindWithTag("MainCamera").transform.position = _spawnPointCamera.position;
-        yield return new WaitForFixedUpdate();
-        GameObject.FindWithTag("Player").GetComponent<movement>().TurnOnMovement();
     }
 }

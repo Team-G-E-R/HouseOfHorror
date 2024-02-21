@@ -9,9 +9,9 @@ public class Activator : MonoBehaviour
     [SerializeField] GameObject inputButtonImage;
 
     private void Awake()
-    {
+   {
         HidePic();
-    }
+   }
    
    private void Update() 
    {    

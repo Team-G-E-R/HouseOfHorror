@@ -14,6 +14,7 @@ public enum PartNumber
 public class MirrorPuzzle : MonoBehaviour
 {
     [SerializeField] private UnityEvent _onWin;
+    [SerializeField] private GameObject _winBtn;
     [SerializeField] private float _maxPositionDifferences = 10f;
     [SerializeField] private MirrorDragAndDrop[] _dynamicParts;
     [SerializeField] private MirrorConstant[] _constantParts;
@@ -51,8 +52,13 @@ public class MirrorPuzzle : MonoBehaviour
 
         if (win)
         {
-            Cursor.visible = false;
-            _onWin.Invoke();
+            _winBtn.SetActive(true);   
         }
+    }
+
+    public void OnBtnClick()
+    {
+        Cursor.visible = false;
+        _onWin.Invoke();
     }
 }
