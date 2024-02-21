@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2676,11 +2676,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56b8d7ed6e110440b3fe9651fa9d895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras:
-  - {fileID: 1823022460}
-  - {fileID: 659599489}
-  ThisCameraIndex: 0
-  NextCameraIndex: 0
+  _enablingCamera: {fileID: 0}
+  _main: 0
 --- !u!65 &465895731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5963,11 +5960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f56b8d7ed6e110440b3fe9651fa9d895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameras:
-  - {fileID: 1823022460}
-  - {fileID: 659599489}
-  ThisCameraIndex: 1
-  NextCameraIndex: 0
+  _enablingCamera: {fileID: 0}
+  _main: 0
 --- !u!65 &647714042
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17007,6 +17001,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 44046161}
+    - target: {fileID: 2589306873760782417, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.409
+      objectReference: {fileID: 0}
     - target: {fileID: 2592166764620225157, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_IsActive
       value: 0
