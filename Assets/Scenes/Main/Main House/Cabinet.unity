@@ -9187,6 +9187,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &787805683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6362716689783047673, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+  m_PrefabInstance: {fileID: 1723517783}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &800356071
 GameObject:
   m_ObjectHideFlags: 0
@@ -16675,15 +16680,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1336034897122916683, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.7786918
+      value: -1.827
       objectReference: {fileID: 0}
     - target: {fileID: 1336034897122916683, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.756
+      value: -1.344
       objectReference: {fileID: 0}
     - target: {fileID: 1336034897122916683, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.2890508
+      value: 3.722
       objectReference: {fileID: 0}
     - target: {fileID: 1336034897122916683, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17010,6 +17015,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2822899717432634257, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: playerDebug
+      value: 
+      objectReference: {fileID: 787805683}
+    - target: {fileID: 2822899717432634257, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: _levelConnection
       value: 
       objectReference: {fileID: 11400000, guid: 32724aee001648f4c8abac6381a28ed3, type: 2}
@@ -17017,6 +17026,10 @@ PrefabInstance:
       propertyPath: _targetSceneName
       value: Corridor_1F
       objectReference: {fileID: 0}
+    - target: {fileID: 2822899717432634257, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: _spawnPointCamera
+      value: 
+      objectReference: {fileID: 1823022461}
     - target: {fileID: 3717265303047380800, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_Mesh
       value: 

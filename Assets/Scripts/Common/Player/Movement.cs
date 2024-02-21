@@ -55,7 +55,7 @@ namespace Common.Scripts
                 _lastVerticalInput = vertical;
             }
             /* animator.SetFloat("Horizontal", horizontal);
-            animator.SetFloat("Vertical", vertical); */
+            animator.SetFloat("Vertical", vertical);*/
             animator.SetFloat("Speed", _movement.sqrMagnitude);
             _movement = (transform.right * horizontal + transform.forward * vertical).normalized;
         }
@@ -64,9 +64,11 @@ namespace Common.Scripts
         {
             if (_movementLocked)
                 return;
-
-            float sprint = _sprintLocked == false && Input.GetKey(KeyCode.LeftShift) ? sprintSpeedBonus : 0;
-            _charContr.Move(_movement * (speed + sprint) * Time.fixedDeltaTime);
+            if (_movement != Vector3.zero)
+            {
+                float sprint = _sprintLocked == false && Input.GetKey(KeyCode.LeftShift) ? sprintSpeedBonus : 0;
+                _charContr.Move(_movement * (speed + sprint) * Time.fixedDeltaTime);   
+            }
             if (!IsGrounded())
             {
                 _charContr.Move(-transform.up * _mass);
@@ -92,28 +94,12 @@ namespace Common.Scripts
             _movementLocked = true;
             animator.SetFloat("Horizontal", _lastHorisontalInput/2 );
             animator.SetFloat("Vertical", _lastVerticalInput/2);
-            _charContr.Move(Vector3.zero);
         }
         
         public void TurnOnMovement()
         {
             GetComponent<Activator>().enabled = true;
             _movementLocked = false;
-        }
-
-        public void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag == "Slope")
-            {
-                speed = speed * 2;
-            }
-        }
-        public void OnCollisionExit(Collision collision)
-        {
-            if (collision.gameObject.tag == "Slope")
-            {
-                speed = speed / 2;
-            }
         }
 
         #endregion

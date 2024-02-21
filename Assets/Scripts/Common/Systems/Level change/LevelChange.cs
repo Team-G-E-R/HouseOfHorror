@@ -17,8 +17,7 @@ public class SetLevel : MonoBehaviour
     {
         if (_levelConnection == LevelConnection.ActiveConnection)
         {
-            GameObject.FindWithTag("Player").transform.position = _spawnPointPlayer.position;
-            GameObject.FindWithTag("MainCamera").transform.position = _spawnPointCamera.position;
+            StartCoroutine(PlayerOffOn());
         }
     }
 
@@ -27,12 +26,10 @@ public class SetLevel : MonoBehaviour
         var player = GameObject.FindWithTag("Player").transform;
         if (player != null || playerDebug != null)
         {
-            Debug.Log("player not null");
             LevelConnection.ActiveConnection = _levelConnection;
             fade = FindObjectOfType<FadeInOut>();
             StartCoroutine(LoadLevel());   
         }
-        Debug.Log("Player null");
     }
     public IEnumerator LoadLevel()
     {
@@ -41,5 +38,15 @@ public class SetLevel : MonoBehaviour
         fade.FadeIn();
         yield return new WaitForSeconds(fade.duration + 1);
         SceneManager.LoadScene(_targetSceneName);
+    }
+
+    public IEnumerator PlayerOffOn()
+    {
+        GameObject.FindWithTag("Player").GetComponent<movement>().TurnOffMovement();
+        yield return new WaitForFixedUpdate();
+        GameObject.FindWithTag("Player").transform.position = _spawnPointPlayer.position;
+        GameObject.FindWithTag("MainCamera").transform.position = _spawnPointCamera.position;
+        yield return new WaitForFixedUpdate();
+        GameObject.FindWithTag("Player").GetComponent<movement>().TurnOnMovement();
     }
 }
