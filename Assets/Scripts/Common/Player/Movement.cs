@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Common.Scripts
 {
-    [RequireComponent(typeof(Activator))]
+    [RequireComponent(typeof(Activator), typeof(CharacterController), typeof(Animator))]
     public class movement : MonoBehaviour
     {
 
@@ -11,11 +11,11 @@ namespace Common.Scripts
         
         [SerializeField] private float speed = 100f;
         [SerializeField] private float sprintSpeedBonus = 50f;
-        [SerializeField] private int GravityMultiplier = 1;
+        [SerializeField] private float _mass = 1f;
 
         [Header("Relations")]
         [SerializeField] private Animator animator;
-        [SerializeField] private Rigidbody physicsBody = null;
+        [SerializeField] private CharacterController _charContr;
         private float _lastHorisontalInput=0;
         private float _lastVerticalInput=0;
         
@@ -37,25 +37,23 @@ namespace Common.Scripts
         #region MonoBehaviour
         private void Update()
         {
-            float vertical = Input.GetAxisRaw("Vertical");
-            float horizontal = Input.GetAxisRaw("Horizontal");
             if (_movementLocked)
                 return;
-            if(vertical==0 && horizontal==0)
+            float vertical = Input.GetAxisRaw("Vertical");
+            float horizontal = Input.GetAxisRaw("Horizontal");
+            if(vertical == 0 && horizontal == 0)
             {
                 animator.SetFloat("Horizontal", _lastHorisontalInput/2);
                 animator.SetFloat("Vertical", _lastVerticalInput/2);
                 
             }
-            else if ((Math.Abs(vertical)>0.5f) | (Math.Abs(horizontal)>0.5f))
+            else if ((Math.Abs(vertical) > 0.5f) | (Math.Abs(horizontal) > 0.5f))
             {
                 animator.SetFloat("Horizontal", horizontal);
                 animator.SetFloat("Vertical", vertical);
-                _lastHorisontalInput=horizontal;
-                _lastVerticalInput=vertical;
-                
+                _lastHorisontalInput = horizontal;
+                _lastVerticalInput = vertical;
             }
-           
             /* animator.SetFloat("Horizontal", horizontal);
             animator.SetFloat("Vertical", vertical); */
             animator.SetFloat("Speed", _movement.sqrMagnitude);
@@ -68,8 +66,16 @@ namespace Common.Scripts
                 return;
 
             float sprint = _sprintLocked == false && Input.GetKey(KeyCode.LeftShift) ? sprintSpeedBonus : 0;
-            physicsBody.velocity = _movement * (speed + sprint) * Time.fixedDeltaTime;
-            physicsBody.AddForce(Physics.gravity * physicsBody.mass * GravityMultiplier);
+            _charContr.Move(_movement * (speed + sprint) * Time.fixedDeltaTime);
+            if (!IsGrounded())
+            {
+                _charContr.Move(-transform.up * _mass);
+            }
+        }
+
+        private bool IsGrounded()
+        {
+            return Physics.Raycast(transform.position, -Vector3.up, 0.01f);
         }
 
         public void SetSprint(bool sprint) => _sprintLocked = !sprint;
@@ -77,25 +83,22 @@ namespace Common.Scripts
         public void SetWalk(bool walk) 
         { 
             _movementLocked = !walk;
-            physicsBody.velocity = walk == false ? Vector2.zero : physicsBody.velocity;
             GetComponent<Animator>().enabled = walk;
         }
 
         public void TurnOffMovement()
         {
             GetComponent<Activator>().enabled = false;
-            //this.enabled = false;
-            _movementLocked=true;
+            _movementLocked = true;
             animator.SetFloat("Horizontal", _lastHorisontalInput/2 );
             animator.SetFloat("Vertical", _lastVerticalInput/2);
-            physicsBody.velocity =Vector3.zero;
+            _charContr.Move(Vector3.zero);
         }
         
         public void TurnOnMovement()
         {
             GetComponent<Activator>().enabled = true;
-            _movementLocked=false;
-            //this.enabled = true;
+            _movementLocked = false;
         }
 
         public void OnCollisionEnter(Collision collision)
@@ -109,7 +112,7 @@ namespace Common.Scripts
         {
             if (collision.gameObject.tag == "Slope")
             {
-                speed = speed /2;
+                speed = speed / 2;
             }
         }
 
