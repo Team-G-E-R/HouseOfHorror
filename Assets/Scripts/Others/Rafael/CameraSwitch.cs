@@ -35,7 +35,7 @@ public class CameraSwitch : MonoBehaviour
 
     private IEnumerator CamSwitcher(Collider other)
     {
-        if (other.gameObject.tag == "CamChecker")
+        if (other.gameObject.tag == "Player")
         {
             TempCurrentCamera = _enablingCamera;
             yield return new WaitForSeconds(Delay);
