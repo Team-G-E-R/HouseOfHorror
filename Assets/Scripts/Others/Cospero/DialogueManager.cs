@@ -122,8 +122,6 @@ public class DialogueManager : MonoBehaviour
     private void MovementOffOn()
     {
         _moveEnable = !_moveEnable;
-        _player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        _player.GetComponent<Animator>().enabled = _moveEnable;
         _player.GetComponent<movement>().enabled = _moveEnable;
         _player.GetComponent<Activator>().enabled = _moveEnable;
     }
