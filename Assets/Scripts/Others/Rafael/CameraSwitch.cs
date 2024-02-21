@@ -30,25 +30,27 @@ public class CameraSwitch : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
     {
-        StartCoroutine(CamSwitcher(other));
-    }
-
-    private IEnumerator CamSwitcher(Collider other)
-    {
         if (other.gameObject.tag == "Player")
         {
             TempCurrentCamera = _enablingCamera;
-            yield return new WaitForSeconds(Delay);
 
             if (TempCurrentCamera == _enablingCamera)
                 AttachCamera();
             else
             {
                 if (AnyOpened())
-				    _enablingCamera.SetActive(false);
+				_enablingCamera.SetActive(false);
 			}
         }
     }
+
+    /*private IEnumerator CamSwitcher(Collider other)
+    {
+
+            //yield return new WaitForSeconds(Delay);
+            yield return null;
+        }
+    }*/
 
     private void AttachCamera()
     {
