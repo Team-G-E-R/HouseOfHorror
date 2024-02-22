@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Common.Scripts;
@@ -99,7 +98,6 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeLines(string sentense, int indexOfSpeaker)
     {
         SpeakerNameUI.text = _charName[indexOfSpeaker];
-        DialogueImageUI.color = _dialogueColours[indexOfSpeaker];
         DialogueTextUI.text = "";
 
         foreach (char letter in sentense.ToCharArray())
