@@ -115,7 +115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -285, y: -39}
   m_SizeDelta: {x: 201.34192, y: 67.3321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1568495013462800104
@@ -248,7 +248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -269, y: -150}
+  m_AnchoredPosition: {x: 0, y: -163}
   m_SizeDelta: {x: 182.54, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4666572117954053619
@@ -306,15 +306,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -601,7 +601,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0040932, y: -176}
+  m_AnchoredPosition: {x: -283, y: -196}
   m_SizeDelta: {x: 201.35, y: 34.080994}
   m_Pivot: {x: 0.5000002, y: 0.49999964}
 --- !u!222 &204686246318478512
@@ -1457,7 +1457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: House of horror v. 0.3
+  m_text: House of horror v. 0.4
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
   m_sharedMaterial: {fileID: -7225297236055963735, guid: 2cf00f098c3df704db6b6cfc74715622, type: 2}
@@ -2361,7 +2361,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -89}
+  m_AnchoredPosition: {x: -285, y: -121}
   m_SizeDelta: {x: 201.34192, y: 67.3321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6286196843580289131
