@@ -8444,7 +8444,6 @@ Transform:
   m_Children:
   - {fileID: 1626523836}
   - {fileID: 215597386}
-  - {fileID: 1108337407}
   - {fileID: 314434523}
   - {fileID: 2015584492}
   m_Father: {fileID: 0}
@@ -8849,10 +8848,22 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1108337408}
-        m_TargetAssemblyTypeName: SetActive, Assembly-CSharp
-        m_MethodName: TurnOn
-        m_Mode: 1
+      - m_Target: {fileID: 35630816}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1866243099}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8861,7 +8872,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1108337408}
+      - m_Target: {fileID: 215597387}
         m_TargetAssemblyTypeName: SetActive, Assembly-CSharp
         m_MethodName: TurnOff
         m_Mode: 1
@@ -61360,54 +61371,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!1 &1108337406
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1108337407}
-  - component: {fileID: 1108337408}
-  m_Layer: 0
-  m_Name: SetActive
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1108337407
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108337406}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 209976526}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1108337408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1108337406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55e702cefe26cce47bc3bc5c484ef85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _whatToSetActive:
-  - {fileID: 35630816}
-  _whatToSetInactive:
-  - {fileID: 1866243099}
 --- !u!1 &1111087497
 GameObject:
   m_ObjectHideFlags: 0
@@ -66698,12 +66661,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5195185, y: 1.2871248, z: 0.2}
-  m_Center: {x: 0.03130583, y: -0.020703524, z: 0}
+  m_Size: {x: 1.3072215, y: 1.2871248, z: 0.7774594}
+  m_Center: {x: 0.14370412, y: -0.020703526, z: -0.11417723}
 --- !u!43 &1375163481
 Mesh:
   m_ObjectHideFlags: 0
