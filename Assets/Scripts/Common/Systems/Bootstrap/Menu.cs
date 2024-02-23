@@ -13,7 +13,7 @@ public class Menu : Finder
    private Slider _volumeSlider;
    private const string _audioName = "AudioButton";
 
-   private void Awake()
+   private void Start()
    {
       _volumeSlider = GetComponentInChildren<Slider>();
       FindObjs();

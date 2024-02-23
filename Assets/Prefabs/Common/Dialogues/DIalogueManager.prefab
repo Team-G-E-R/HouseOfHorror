@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 9054412094079017685}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2696864674248718949
 MonoBehaviour:
@@ -71,6 +71,10 @@ PrefabInstance:
     - target: {fileID: 344830537772050423, guid: 113372b027d72444ca3fb2f64bcc95ae, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -7.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838582713565832299, guid: 113372b027d72444ca3fb2f64bcc95ae, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3774656565479806284, guid: 113372b027d72444ca3fb2f64bcc95ae, type: 3}
       propertyPath: m_hasFontAssetChanged

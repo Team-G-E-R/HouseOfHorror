@@ -27,12 +27,10 @@ public class SetLevel : MonoBehaviour
         var player = GameObject.FindWithTag("Player").transform;
         if (player != null || playerDebug != null)
         {
-            Debug.Log("player not null");
             LevelConnection.ActiveConnection = _levelConnection;
             fade = FindObjectOfType<FadeInOut>();
             StartCoroutine(LoadLevel());   
         }
-        Debug.Log("Player null");
     }
     public IEnumerator LoadLevel()
     {

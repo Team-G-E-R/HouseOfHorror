@@ -34,6 +34,9 @@ public class RoomSpawner : MonoBehaviour
         if (Math.Abs(_camera.transform.position.z - _lastPosition.z) 
             < Math.Abs(_poolRoom[0].transform.position.z - _lastPosition.z)/2)
         {
+            print(_lastPosition);
+            print(_camera.transform.position.z);
+            print(_poolRoom[0].transform.position.z);
             for (int i = 0; i < _poolRoom.Count / 4; i++)
             {
                 Destroy(_poolRoom[i]);

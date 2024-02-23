@@ -11,16 +11,11 @@ public class BootstrapSystem : Finder
         CursorOn();
         FindObjs();
         AudioSystemSet();
-        MenuLoad();
-    }
-
-    private void MenuLoad()
-    {
-        Instantiate(Resources.Load<GameObject>("Menu/Menu"));
     }
 
     private void AudioSystemSet()
     {
+        _soundVolume = GameData.Volume;
         foreach (var a in AudioSourceObj)
         {
             a.clip = _menuMusic;

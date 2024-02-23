@@ -43,7 +43,7 @@ public class CameraScript : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(new Vector2(leftCameraLimit, upperCameraLimit), new Vector2(rightCameraLimit, upperCameraLimit));

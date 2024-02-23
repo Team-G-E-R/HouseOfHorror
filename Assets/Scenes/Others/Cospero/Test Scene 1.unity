@@ -4325,16 +4325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48a430724e66b3409bdf625436532fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSourceObj:
-  - {fileID: 0}
-  SettingsDataobj: {fileID: 0}
-  SceneIndex: 0
-  PlayerScenePos: {x: 0, y: 0, z: 0}
-  CameraPos: {x: 0, y: 0, z: 0}
-  PlayerInfo:
-    SceneIndexJson: 0
-    PlayerScenePosJson: {x: 0, y: 0, z: 0}
-    CameraPosJson: {x: 0, y: 0, z: 0}
 --- !u!4 &779766338
 Transform:
   m_ObjectHideFlags: 0
@@ -11817,6 +11807,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1266825343771598368, guid: 25e4a7ba8e48bea4fa6651cb71bd3b7a, type: 3}
+      propertyPath: m_Size.z
+      value: 2.098116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266825343771598368, guid: 25e4a7ba8e48bea4fa6651cb71bd3b7a, type: 3}
+      propertyPath: m_Center.y
+      value: 9.451844e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266825343771598368, guid: 25e4a7ba8e48bea4fa6651cb71bd3b7a, type: 3}
+      propertyPath: m_Center.z
+      value: -0.94905746
+      objectReference: {fileID: 0}
     - target: {fileID: 3135999881063966206, guid: 25e4a7ba8e48bea4fa6651cb71bd3b7a, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -11940,7 +11942,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSourceObj: []
-  SettingsDataobj: {fileID: 0}
   SceneIndex: 0
   PlayerScenePos: {x: 0, y: 0, z: 0}
   CameraPos: {x: 0, y: 0, z: 0}

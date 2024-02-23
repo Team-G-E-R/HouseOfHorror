@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using Common.Scripts;
@@ -99,7 +98,6 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeLines(string sentense, int indexOfSpeaker)
     {
         SpeakerNameUI.text = _charName[indexOfSpeaker];
-        DialogueImageUI.color = _dialogueColours[indexOfSpeaker];
         DialogueTextUI.text = "";
 
         foreach (char letter in sentense.ToCharArray())
@@ -122,8 +120,6 @@ public class DialogueManager : MonoBehaviour
     private void MovementOffOn()
     {
         _moveEnable = !_moveEnable;
-        _player.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        _player.GetComponent<Animator>().enabled = _moveEnable;
         _player.GetComponent<movement>().enabled = _moveEnable;
         _player.GetComponent<Activator>().enabled = _moveEnable;
     }

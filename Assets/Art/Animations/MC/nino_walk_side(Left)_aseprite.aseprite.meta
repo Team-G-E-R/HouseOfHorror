@@ -121,7 +121,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: nino_walk_side(Left)_aseprite_Frame_0
     originalName: 
-    pivot: {x: 0.47826087, y: -0.15686275}
+    pivot: {x: 0.41304347, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -141,7 +141,7 @@ ScriptedImporter:
     uvTransform: {x: 73, y: 4}
   - name: nino_walk_side(Left)_aseprite_Frame_1
     originalName: 
-    pivot: {x: 0.5555556, y: -0.15384616}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -161,7 +161,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: nino_walk_side(Left)_aseprite_Frame_2
     originalName: 
-    pivot: {x: 0.47826087, y: -0.15686275}
+    pivot: {x: 0.41304347, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -181,7 +181,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 64}
   - name: nino_walk_side(Left)_aseprite_Frame_3
     originalName: 
-    pivot: {x: 0.5769231, y: -0.15384616}
+    pivot: {x: 0.5192308, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -211,32 +211,32 @@ ScriptedImporter:
     - name: nino_walk_side(Left)_aseprite_Frame_0
       frameIndex: 0
       cellRect:
-        x: 21
-        y: 8
+        x: 4
+        y: 0
         width: 23
         height: 51
       spriteId: 481a8d8157be696429cc66c6c926f86b
     - name: nino_walk_side(Left)_aseprite_Frame_1
       frameIndex: 1
       cellRect:
-        x: 17
-        y: 8
+        x: 0
+        y: 0
         width: 27
         height: 52
       spriteId: f8c1328b38065a54ea4f50b968b1864a
     - name: nino_walk_side(Left)_aseprite_Frame_2
       frameIndex: 2
       cellRect:
-        x: 21
-        y: 8
+        x: 4
+        y: 0
         width: 23
         height: 51
       spriteId: 265498bce0a24f3459e85f305eca06f8
     - name: nino_walk_side(Left)_aseprite_Frame_3
       frameIndex: 3
       cellRect:
-        x: 17
-        y: 8
+        x: 0
+        y: 0
         width: 26
         height: 52
       spriteId: 9221d714ea9ef614ab3705247a20459b
@@ -293,4 +293,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 27, y: 52}

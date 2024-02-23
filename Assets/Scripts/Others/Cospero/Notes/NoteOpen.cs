@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NoteOpen : MonoBehaviour
@@ -12,6 +10,4 @@ public class NoteOpen : MonoBehaviour
     {
         NoteManager.GetComponent<NoteManager>().FirstStageOpen(noteText, noteSprite);
     }
-
-
 }
