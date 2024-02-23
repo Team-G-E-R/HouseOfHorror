@@ -1957,6 +1957,18 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1431922007}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: ActivateDialogue
@@ -1972,18 +1984,6 @@ MonoBehaviour:
       - m_Target: {fileID: 127819148}
         m_TargetAssemblyTypeName: Activator, Assembly-CSharp
         m_MethodName: HidePic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 127819148}
-        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
-        m_MethodName: EndOfInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2406,6 +2406,18 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1841027915}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: ActivateDialogue
@@ -6556,6 +6568,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOnMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _oneUsage: 0
   _dialogue:
     _jsonFile: {fileID: 4900000, guid: 4ba31929965d3c5449299e15b4947688, type: 3}
@@ -7435,6 +7459,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOnMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _oneUsage: 0
   _dialogue:
     _jsonFile: {fileID: 4900000, guid: 6ca06e661d253694bb21db910a8c45ff, type: 3}
@@ -7568,6 +7604,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0348135, y: 1, z: 0.17947069}
   m_Center: {x: 0.010098329, y: -0.00000023196418, z: -0.044490267}
+--- !u!114 &1466975338 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7787792317155623968, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
+  m_PrefabInstance: {fileID: 3536183780149210876}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffbc42dd0e67b6e4abc167a90ecff0ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1477049872
 Mesh:
   m_ObjectHideFlags: 0
@@ -8516,6 +8563,18 @@ MonoBehaviour:
       - m_Target: {fileID: 127819148}
         m_TargetAssemblyTypeName: Activator, Assembly-CSharp
         m_MethodName: ShowPic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOnMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9641,6 +9700,18 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1728482648}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: ActivateDialogue
@@ -9656,18 +9727,6 @@ MonoBehaviour:
       - m_Target: {fileID: 127819148}
         m_TargetAssemblyTypeName: Activator, Assembly-CSharp
         m_MethodName: HidePic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 127819148}
-        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
-        m_MethodName: EndOfInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9762,6 +9821,18 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1272155376}
         m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
         m_MethodName: ActivateDialogue
@@ -9777,18 +9848,6 @@ MonoBehaviour:
       - m_Target: {fileID: 127819148}
         m_TargetAssemblyTypeName: Activator, Assembly-CSharp
         m_MethodName: HidePic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 127819148}
-        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
-        m_MethodName: EndOfInteraction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
