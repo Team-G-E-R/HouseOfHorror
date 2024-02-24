@@ -3211,6 +3211,14 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: speed
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: sprintSpeedBonus
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1519675965452160956, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}

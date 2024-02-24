@@ -84,6 +84,8 @@ public class DialogueManager : MonoBehaviour
 
         if (Sentence.Count == 0)
         {
+            DialogueIsPlaying = false;
+            DialogueObjUI.SetActive(false);
             _dialogueTrigger.Interact();
             EndDialogue();
             return;
@@ -109,8 +111,8 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        DialogueIsPlaying = false;
-        DialogueObjUI.SetActive(false);
+        //DialogueIsPlaying = false;
+        //DialogueObjUI.SetActive(false);
         if (_player != null)
         {
             MovementOffOn();

@@ -53480,6 +53480,86 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 754435674}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 653052656}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 653052654}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 653052655}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EndOfInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: set_enabled
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SetPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Activated
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Activator, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.Collider, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: SetLevel, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: DoorOpen, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 481629996323242954, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -53608,6 +53688,33 @@ PrefabInstance:
       addedObject: {fileID: 1866243100}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+--- !u!114 &653052654 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2822899717432634257, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+  m_PrefabInstance: {fileID: 653052653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35630816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca468e4f81ac77a42aa45d2576a91678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &653052655 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6312783362288546868, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+  m_PrefabInstance: {fileID: 653052653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35630816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6b411df36d337d4c8e5e870a7c7221c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &653052656 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 3320190079400029531, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+  m_PrefabInstance: {fileID: 653052653}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &657099398
 GameObject:
   m_ObjectHideFlags: 0
@@ -55809,6 +55916,18 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.12394053
       objectReference: {fileID: 0}
+    - target: {fileID: 8798329288400315930, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_StepOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: sprintSpeedBonus
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -55822,6 +55941,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1336034897122916683, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
   m_PrefabInstance: {fileID: 754435672}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &754435674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6655750661780221493, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+  m_PrefabInstance: {fileID: 754435672}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420623544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3234229b2f97c3478c94ee40b400901, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &755022479
 Mesh:
   m_ObjectHideFlags: 0
@@ -71919,7 +72049,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584724464}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.746279, y: -1.5338109, z: 6.927907}
+  m_LocalPosition: {x: 2.746279, y: -1.5338109, z: 5.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
