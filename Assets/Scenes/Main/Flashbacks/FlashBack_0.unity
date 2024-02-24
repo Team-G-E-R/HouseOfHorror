@@ -123,6 +123,192 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &26393065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 26393066}
+  - component: {fileID: 26393069}
+  - component: {fileID: 26393068}
+  - component: {fileID: 26393067}
+  m_Layer: 0
+  m_Name: Trigger (3)
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &26393066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26393065}
+  m_LocalRotation: {x: -0, y: -0.0057950015, z: -0, w: 0.9999832}
+  m_LocalPosition: {x: -0.1, y: 0.02918782, z: 0.12}
+  m_LocalScale: {x: 1.1614697, y: 0.667817, z: 0.08736856}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1818110519}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -0.664, z: 0}
+--- !u!114 &26393067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26393065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 396539919}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 0
+--- !u!65 &26393068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26393065}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2961774, y: 1.8444095, z: 7.0929947}
+  m_Center: {x: 0.048354167, y: 0.19468692, z: -0.97878927}
+--- !u!114 &26393069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26393065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fovEnd: 20
+  _timeToChangeFov: 0.005
+--- !u!1 &34233620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34233621}
+  - component: {fileID: 34233622}
+  m_Layer: 0
+  m_Name: DialogueTrigger main end
+  m_TagString: DialogueTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34233621
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34233620}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.574947, y: -5.5082607, z: 26.750677}
+  m_LocalScale: {x: 3.040972, y: 2.745596, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7660444316573421844}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34233622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34233620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5607d92a52089042a0f04dfe66a45ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7929946750684211599}
+        m_TargetAssemblyTypeName: SceneTransitions, Assembly-CSharp
+        m_MethodName: NextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 1
+  _dialogue:
+    _jsonFile: {fileID: 4900000, guid: a1f178a63dafb3e4fa2787397c748661, type: 3}
+    _charColor:
+    - {r: 0, g: 0, b: 0, a: 1}
+    - {r: 0, g: 0, b: 0, a: 1}
 --- !u!43 &62152202
 Mesh:
   m_ObjectHideFlags: 0
@@ -288,6 +474,183 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &87214751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 87214752}
+  - component: {fileID: 87214753}
+  m_Layer: 0
+  m_Name: Audio set Phone Call
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &87214752
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87214751}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.83621, y: 6.394454, z: 0.07235718}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7660444316573421844}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &87214753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87214751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe0c25383d7ec44d9bb6677de6c9e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSourceObj: []
+  SceneIndex: 0
+  PlayerScenePos: {x: 0, y: 0, z: 0}
+  CameraPos: {x: 0, y: 0, z: 0}
+  _audioClip: {fileID: 0}
+  _beLooped: 0
+  _disableOnSceneChange: 0
+  _saveAudioTime: 0
+  _continueAudio: 0
+  _needScreamer: 0
+  _screamerMustBeLooped: 1
+  _screamerToPlay: {fileID: 8300000, guid: 970b1524fcad5094f869c8682c1b31b6, type: 3}
+--- !u!1 &98962291
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98962292}
+  - component: {fileID: 98962295}
+  - component: {fileID: 98962294}
+  - component: {fileID: 98962293}
+  m_Layer: 0
+  m_Name: Trigger (2)
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &98962292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98962291}
+  m_LocalRotation: {x: -0, y: -0.023338944, z: -0, w: 0.99972767}
+  m_LocalPosition: {x: -0.046, y: 0.02918782, z: 0}
+  m_LocalScale: {x: 1.1614695, y: 0.667817, z: 0.087368555}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 192272714}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -2.675, z: 0}
+--- !u!114 &98962293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98962291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 396539919}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 0
+--- !u!65 &98962294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98962291}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2961774, y: 1.8444095, z: 7.0929947}
+  m_Center: {x: 0.048354167, y: 0.19468692, z: -0.97878927}
+--- !u!114 &98962295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98962291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fovEnd: 20
+  _timeToChangeFov: 0.005
 --- !u!4 &118476585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 18175345102977113, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
@@ -737,7 +1100,8 @@ Transform:
   m_LocalPosition: {x: -6.872759, y: -6.342056, z: 50.94072}
   m_LocalScale: {x: 4.1113, y: 4.1113, z: 4.1113}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 98962292}
   m_Father: {fileID: 2112139108}
   m_RootOrder: -2
   m_LocalEulerAnglesHint: {x: 0, y: -45.345, z: 0}
@@ -1257,6 +1621,82 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &396539917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396539918}
+  - component: {fileID: 396539919}
+  m_Layer: 0
+  m_Name: DialogueTrigger Background Guys
+  m_TagString: DialogueTrigger
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &396539918
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396539917}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13.574947, y: -5.5082607, z: 26.750677}
+  m_LocalScale: {x: 3.040972, y: 2.745596, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7660444316573421844}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396539919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396539917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5607d92a52089042a0f04dfe66a45ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: ShowPic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOnMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 0
+  _dialogue:
+    _jsonFile: {fileID: 4900000, guid: 5770820fa794fa746b6b8fb1f8884093, type: 3}
+    _charColor:
+    - {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &416818897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,7 +2737,8 @@ Transform:
   m_LocalPosition: {x: 9.22, y: -6.342056, z: 56.59}
   m_LocalScale: {x: 4.1113, y: 4.1113, z: 4.1113}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1116511925}
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 20.402, z: 0}
@@ -6179,6 +6620,127 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1116511924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116511925}
+  - component: {fileID: 1116511928}
+  - component: {fileID: 1116511927}
+  - component: {fileID: 1116511926}
+  m_Layer: 0
+  m_Name: Trigger (1)
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1116511925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116511924}
+  m_LocalRotation: {x: -0, y: -0.0037230104, z: -0, w: 0.99999315}
+  m_LocalPosition: {x: -0.068, y: 0.02918782, z: 0.028}
+  m_LocalScale: {x: 1.1614695, y: 0.667817, z: 0.087368555}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 591635531}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -0.427, z: 0}
+--- !u!114 &1116511926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116511924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 396539919}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 0
+--- !u!65 &1116511927
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116511924}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2961774, y: 1.8444095, z: 7.0929947}
+  m_Center: {x: 0.048354167, y: 0.19468692, z: -0.97878927}
+--- !u!114 &1116511928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116511924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fovEnd: 20
+  _timeToChangeFov: 0.005
 --- !u!43 &1202839088
 Mesh:
   m_ObjectHideFlags: 0
@@ -6344,6 +6906,127 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1213070492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1213070493}
+  - component: {fileID: 1213070496}
+  - component: {fileID: 1213070495}
+  - component: {fileID: 1213070494}
+  m_Layer: 0
+  m_Name: Trigger (3)
+  m_TagString: Interactable
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1213070493
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213070492}
+  m_LocalRotation: {x: -0, y: -0.006900698, z: -0, w: 0.9999763}
+  m_LocalPosition: {x: -0.019, y: 0.02918782, z: 0.036}
+  m_LocalScale: {x: 1.1614695, y: 0.667817, z: 0.08736855}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1447706713}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: -0.791, z: 0}
+--- !u!114 &1213070494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213070492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8312508cfbe8b4baefc0e010097490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1466975338}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 396539919}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 127819148}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 0
+--- !u!65 &1213070495
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213070492}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2961774, y: 1.8444095, z: 7.0929947}
+  m_Center: {x: 0.048354167, y: 0.19468692, z: -0.97878927}
+--- !u!114 &1213070496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213070492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fovEnd: 20
+  _timeToChangeFov: 0.005
 --- !u!43 &1223946476
 Mesh:
   m_ObjectHideFlags: 0
@@ -7579,7 +8262,8 @@ Transform:
   m_LocalPosition: {x: -0.04, y: -6.342056, z: 55.51}
   m_LocalScale: {x: 4.1113, y: 4.1113, z: 4.1113}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1213070493}
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -10.989, z: 0}
@@ -9143,7 +9827,8 @@ Transform:
   m_LocalPosition: {x: 15.4, y: -6.342056, z: 50.53}
   m_LocalScale: {x: 4.1113, y: 4.1113, z: 4.1113}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 26393066}
   m_Father: {fileID: 2112139108}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 62.294, z: 0}
@@ -9179,7 +9864,7 @@ GameObject:
   - component: {fileID: 1841027914}
   - component: {fileID: 1841027915}
   m_Layer: 0
-  m_Name: DialogueTrigger
+  m_Name: DialogueTrigger main
   m_TagString: DialogueTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9215,9 +9900,21 @@ MonoBehaviour:
   InteractAction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7929946750684211599}
-        m_TargetAssemblyTypeName: SceneTransitions, Assembly-CSharp
-        m_MethodName: NextScene
+      - m_Target: {fileID: 87214753}
+        m_TargetAssemblyTypeName: AudioSet, Assembly-CSharp
+        m_MethodName: ScreamerPlay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 34233622}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: ActivateDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10804,6 +11501,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.012666702
       objectReference: {fileID: 0}
+    - target: {fileID: 7518268195423945877, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
+      propertyPath: m_StepOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8842207863835593620, guid: 21ed72b887510b14aa1c725559a803b5, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -11096,15 +11797,18 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7457895343338767535}
+  - {fileID: 87214752}
   - {fileID: 264530892756969211}
   - {fileID: 594749621357170629}
   - {fileID: 1861590838928432082}
   - {fileID: 857599658}
   - {fileID: 1778928448}
   - {fileID: 1841027914}
+  - {fileID: 34233621}
   - {fileID: 1728482647}
   - {fileID: 1431922006}
   - {fileID: 1272155375}
+  - {fileID: 396539918}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

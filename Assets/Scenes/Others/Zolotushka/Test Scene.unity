@@ -1745,7 +1745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &350459245
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7615,7 +7615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1273326234
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8422,7 +8422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1407432714
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9143,7 +9143,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1518896469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12977,6 +12977,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vision System
       objectReference: {fileID: 0}
+    - target: {fileID: 8164109478240725982, guid: b1da546f10a17ec42ac67c81a620fd9d, type: 3}
+      propertyPath: _hiddenObjs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164109478240725982, guid: b1da546f10a17ec42ac67c81a620fd9d, type: 3}
+      propertyPath: _hiddenObjs.Array.data[0]
+      value: 
+      objectReference: {fileID: 350459244}
+    - target: {fileID: 8164109478240725982, guid: b1da546f10a17ec42ac67c81a620fd9d, type: 3}
+      propertyPath: _hiddenObjs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1407432713}
+    - target: {fileID: 8164109478240725982, guid: b1da546f10a17ec42ac67c81a620fd9d, type: 3}
+      propertyPath: _hiddenObjs.Array.data[2]
+      value: 
+      objectReference: {fileID: 1518896468}
+    - target: {fileID: 8164109478240725982, guid: b1da546f10a17ec42ac67c81a620fd9d, type: 3}
+      propertyPath: _hiddenObjs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1273326233}
     - target: {fileID: 8164109478240725982, guid: b1da546f10a17ec42ac67c81a620fd9d, type: 3}
       propertyPath: _specialLights.Array.data[0]
       value: 

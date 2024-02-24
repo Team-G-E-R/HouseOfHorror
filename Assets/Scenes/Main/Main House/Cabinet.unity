@@ -16374,6 +16374,14 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: -0.09807336
       objectReference: {fileID: 0}
+    - target: {fileID: 8798329288400315930, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8798329288400315930, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_StepOffset
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
