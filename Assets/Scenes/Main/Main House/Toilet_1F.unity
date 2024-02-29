@@ -14747,6 +14747,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 254686746502143045, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: InteractAction.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
@@ -15017,6 +15021,18 @@ MonoBehaviour:
   _ifHaveKey:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 527987892}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 527987890}
         m_TargetAssemblyTypeName: DoorOpen, Assembly-CSharp
         m_MethodName: Activated
@@ -15056,6 +15072,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!82 &527987892 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8583684967407626903, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+  m_PrefabInstance: {fileID: 527987887}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &535955235
 GameObject:
   m_ObjectHideFlags: 0
@@ -63866,6 +63887,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9162144548276945273, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: cbdedc0dfa7ef4243ad3ee27f1a43921, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5183252147231955890, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
