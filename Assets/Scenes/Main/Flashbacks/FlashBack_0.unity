@@ -244,6 +244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!1 &34233620
 GameObject:
   m_ObjectHideFlags: 0
@@ -651,6 +653,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!4 &118476585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 18175345102977113, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
@@ -2469,6 +2473,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!43 &537916993
 Mesh:
   m_ObjectHideFlags: 0
@@ -2832,6 +2838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!114 &598247872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5831,6 +5839,76 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &982655958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982655959}
+  - component: {fileID: 982655961}
+  - component: {fileID: 982655960}
+  m_Layer: 0
+  m_Name: Zoom out trigger 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982655959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982655958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 48.64}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7660444316573421844}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &982655960
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982655958}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 49.161423, y: 6.16916, z: 18.286732}
+  m_Center: {x: 1.0086174, y: -5.1061206, z: -5.365362}
+--- !u!114 &982655961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982655958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fovEnd: 55
+  _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!43 &998898061
 Mesh:
   m_ObjectHideFlags: 0
@@ -6741,6 +6819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!43 &1202839088
 Mesh:
   m_ObjectHideFlags: 0
@@ -7027,6 +7107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!43 &1223946476
 Mesh:
   m_ObjectHideFlags: 0
@@ -9668,7 +9750,7 @@ GameObject:
   - component: {fileID: 1778928450}
   - component: {fileID: 1778928449}
   m_Layer: 0
-  m_Name: Zoom trigger
+  m_Name: Zoom out trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9723,7 +9805,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fovEnd: 55
-  _timeToChangeFov: 0.005
+  _timeToChangeFov: 0.05
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!1 &1818110516
 GameObject:
   m_ObjectHideFlags: 0
@@ -10469,6 +10553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
 --- !u!1 &2043283930
 GameObject:
   m_ObjectHideFlags: 0
@@ -10482,7 +10568,7 @@ GameObject:
   - component: {fileID: 2043283933}
   - component: {fileID: 2043283932}
   m_Layer: 0
-  m_Name: Trigger
+  m_Name: Trigger pills
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10590,6 +10676,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0.15
+  _valueToChangeFovEnter: 5
 --- !u!1 &2043585363
 GameObject:
   m_ObjectHideFlags: 0
@@ -11806,13 +11894,14 @@ Transform:
   - {fileID: 594749621357170629}
   - {fileID: 1861590838928432082}
   - {fileID: 857599658}
-  - {fileID: 1778928448}
   - {fileID: 1841027914}
   - {fileID: 34233621}
   - {fileID: 1728482647}
   - {fileID: 1431922006}
   - {fileID: 1272155375}
   - {fileID: 396539918}
+  - {fileID: 1778928448}
+  - {fileID: 982655959}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
