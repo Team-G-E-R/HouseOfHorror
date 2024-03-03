@@ -18,8 +18,9 @@ public class CameraZone : MonoBehaviour
 
     private Camera _camera;
     private static float _cameraFovEnter;
-    private Quaternion _cameraRotationStart;
+    private static Quaternion _cameraRotationStart;
     private Quaternion _valueToFinalRotationQuaternion;
+    static bool entered;
 
     private void Awake()
     {
@@ -30,12 +31,21 @@ public class CameraZone : MonoBehaviour
         Euler(_valueToFinalRotation.x, _valueToFinalRotation.y, _valueToFinalRotation.z);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StopAllCoroutines();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             StopAllCoroutines();
-            StartCoroutine(CameraRotation(true));
+            entered = true;
+            StartCoroutine(CameraRotation());
             StartCoroutine(CameraFOVEnter());
         }
     }
@@ -45,7 +55,8 @@ public class CameraZone : MonoBehaviour
         if (other.tag == "Player")
         {
             StopAllCoroutines();
-            StartCoroutine(CameraRotation(false));
+            entered = false;
+            StartCoroutine(CameraRotation());
             StartCoroutine(CameraFOVBack());
         }
     }
@@ -90,21 +101,32 @@ public class CameraZone : MonoBehaviour
         }
     }
 
-    private IEnumerator CameraRotation(bool entered)
+    private IEnumerator CameraRotation()
     {
+        Vector3 a = _camera.transform.rotation.eulerAngles;
+        Quaternion b = _valueToFinalRotationQuaternion;
+        Quaternion c = _cameraRotationStart;
         if (entered)
         {
-            while (_camera.transform.rotation != _valueToFinalRotationQuaternion)
+            while (_camera.transform.rotation != _valueToFinalRotationQuaternion && entered)
             {
-                 _camera.transform.rotation = Quaternion.
-                    Slerp(_camera.transform.rotation,
+                c = Quaternion.Slerp(c,
                         _valueToFinalRotationQuaternion, _timeToChangeRotation);
+                if (a.x > c.eulerAngles.x || a.y > c.eulerAngles.y)
+                {
+                    _camera.transform.rotation = c;
+                }
+                else if (b.eulerAngles.x > a.x || b.eulerAngles.y > a.y || b.eulerAngles.z > a.z)
+                {
+                    _camera.transform.rotation = Quaternion.Slerp(_camera.transform.rotation,
+                        _valueToFinalRotationQuaternion, _timeToChangeRotation);
+                }
                 yield return null;
             }
         }
         else if (!entered)
         {
-            while (_camera.transform.rotation != _cameraRotationStart)
+            while (_camera.transform.rotation != _cameraRotationStart && !entered)
             {
                 _camera.transform.rotation = Quaternion.
                     Slerp(_camera.transform.rotation, 
