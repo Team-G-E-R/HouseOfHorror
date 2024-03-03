@@ -246,6 +246,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!1 &34233620
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,6 +658,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!4 &118476585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 18175345102977113, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
@@ -2046,14 +2052,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465056833}
-  m_LocalRotation: {x: 0.24149989, y: -0, z: -0, w: 0.97040087}
-  m_LocalPosition: {x: -17.950006, y: -8, z: 12.139997}
+  m_LocalRotation: {x: 0.24192187, y: 0, z: 0, w: 0.9702957}
+  m_LocalPosition: {x: -18.339083, y: -8, z: 11.405734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 22.012, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 28, y: 0, z: 0}
 --- !u!114 &465056837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,6 +2481,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!43 &537916993
 Mesh:
   m_ObjectHideFlags: 0
@@ -2840,6 +2849,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!114 &598247872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3868,6 +3880,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 611934658}
     - target: {fileID: 6413987677062259548, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1671341158, guid: dd08bced982dcd744b603c4cec980ca5, type: 3}
+    - target: {fileID: 6413987677062259548, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_Color.b
       value: 0.6039216
       objectReference: {fileID: 0}
@@ -3915,6 +3931,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 62152202}
+    - target: {fileID: 6857114781187130065, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1671341158, guid: dd08bced982dcd744b603c4cec980ca5, type: 3}
     - target: {fileID: 6857114781187130065, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_Color.b
       value: 0.6037736
@@ -4019,6 +4039,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1880949311}
+    - target: {fileID: 8069801744658626107, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069801744658626107, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069801744658626107, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069801744658626107, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8069801744658626107, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 8124085113277331681, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -4047,6 +4087,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1023773532}
+    - target: {fileID: 8794621056437410269, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1671341158, guid: dd08bced982dcd744b603c4cec980ca5, type: 3}
     - target: {fileID: 8794621056437410269, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
       propertyPath: m_Color.b
       value: 0.6039216
@@ -5909,6 +5953,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!43 &998898061
 Mesh:
   m_ObjectHideFlags: 0
@@ -6821,6 +6868,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!43 &1202839088
 Mesh:
   m_ObjectHideFlags: 0
@@ -7109,6 +7159,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!43 &1223946476
 Mesh:
   m_ObjectHideFlags: 0
@@ -9790,8 +9843,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 49.161423, y: 6.16916, z: 7.9165697}
-  m_Center: {x: 1.0086174, y: -5.1061206, z: -0.18028116}
+  m_Size: {x: 49.161423, y: 6.16916, z: 9.06937}
+  m_Center: {x: 1.0086174, y: -5.1061206, z: -0.75668144}
 --- !u!114 &1778928450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9805,9 +9858,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fovEnd: 55
-  _timeToChangeFov: 0.05
-  _valueToChangeFovBack: 0
-  _valueToChangeFovEnter: 0
+  _timeToChangeFov: 0.001
+  _valueToChangeFovBack: 0.05
+  _valueToChangeFovEnter: 0.05
+  _needToChangeRotation: 1
+  _valueToFinalRotation: {x: 13.5, y: 0, z: 0}
+  _timeToChangeRotation: 0.004
 --- !u!1 &1818110516
 GameObject:
   m_ObjectHideFlags: 0
@@ -10555,6 +10611,9 @@ MonoBehaviour:
   _timeToChangeFov: 0.005
   _valueToChangeFovBack: 0
   _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!1 &2043283930
 GameObject:
   m_ObjectHideFlags: 0
@@ -10675,9 +10734,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fovEnd: 20
-  _timeToChangeFov: 0.005
-  _valueToChangeFovBack: 0.15
-  _valueToChangeFovEnter: 5
+  _timeToChangeFov: 0.001
+  _valueToChangeFovBack: 0.05
+  _valueToChangeFovEnter: 0.05
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!1 &2043585363
 GameObject:
   m_ObjectHideFlags: 0
