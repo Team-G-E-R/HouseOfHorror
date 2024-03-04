@@ -54,48 +54,43 @@ public class AudioSet : Finder
        }
     }
 
-    // void Update()
-    // {
-    //     if (GameData.Volume > 0)
-    //     {
-    //         if (_sourcesToIgnore.Length > 1)
-    //         {
-    //             for (int i = 0; i < _sourcesToIgnore.Length; i++)
-    //             {
-    //                 _sourcesToIgnore[i].volume = volumesIgnore[i];
-    //             }
-    //         }
-    //     }
-    //     else if (GameData.Volume <= 0)
-    //     {
-    //         if (_sourcesToIgnore.Length > 1)
-    //         {
-    //             for (int i = 0; i < _sourcesToIgnore.Length; i++)
-    //             {
-    //                 _sourcesToIgnore[i].volume = 0;
-    //             }
-    //         }
-    //     }
-    // }
+    void Update()
+    {
+        if (GameData.Volume > 0 & _sourcesToIgnore.Length > 1)
+        {
+            for (int i = 0; i < _sourcesToIgnore.Length; i++)
+            {
+                _sourcesToIgnore[i].volume = volumesIgnore[i];
+            }
+        }
+        else if (GameData.Volume <= 0 & _sourcesToIgnore.Length > 1)
+        {
+            for (int i = 0; i < _sourcesToIgnore.Length; i++)
+            {
+                _sourcesToIgnore[i].volume = 0;
+            }
+        }
+    }
 
     private void MusicSet()
     {
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
 
-        if (audioSource == null)
+        if (audioSource == null & _audioClip != null)
+        {
             AudioSourceCreate(_audioClip, _beLooped);
-        else if (_beLooped && audioSource != null)
+        }
+        else if (_beLooped & audioSource != null)
         {
             audioSource.clip = _audioClip;
             audioSource.loop = true;
             audioSource.Play();
         }
-        else
+        else if (!_beLooped & audioSource != null)
         {
             audioSource.clip = _audioClip;
             audioSource.loop = _beLooped;
-            print("Im here");
-            //audioSource.Play();
+            audioSource.Play();
         }
     }
 
