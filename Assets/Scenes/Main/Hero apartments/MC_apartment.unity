@@ -2037,7 +2037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a0cfc8123fb204d48841dfc1b0ec540f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a0cfc8123fb204d48841dfc1b0ec540f, type: 3}
       propertyPath: m_LocalScale.x
@@ -7736,6 +7736,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 25
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!1001 &1708769706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7923,7 +7928,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3f8fda17cfbef01448cda1a1e007d84b, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3f8fda17cfbef01448cda1a1e007d84b, type: 3}
       propertyPath: m_LocalScale.x
@@ -8094,6 +8099,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 35
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0.05
+  _valueToChangeFovEnter: 0.05
+  _needToChangeRotation: 1
+  _valueToFinalRotation: {x: 23, y: 0, z: 0}
+  _timeToChangeRotation: 0.003
 --- !u!4 &1737381036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3f8fda17cfbef01448cda1a1e007d84b, type: 3}
@@ -10536,7 +10546,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 21, y: 0, z: 0}
 --- !u!114 &1952144297
 MonoBehaviour:

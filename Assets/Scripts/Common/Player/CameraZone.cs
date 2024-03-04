@@ -5,7 +5,7 @@ public class CameraZone : MonoBehaviour
 {
     [Tooltip ("FOV when entering the trigger")]
     [SerializeField] private float _fovEnd;
-    [Tooltip ("Recommended to use around 0.001")]
+    [Tooltip ("Recommended to use around 0.001, less = faster")]
     [SerializeField] private float _timeToChangeFov;
     [Tooltip ("Recommended to use around 0.05")]
     [SerializeField] private float _valueToChangeFovBack;
@@ -13,7 +13,7 @@ public class CameraZone : MonoBehaviour
     [SerializeField] private float _valueToChangeFovEnter;
     [SerializeField] private bool _needToChangeRotation;
     [SerializeField] private Vector3 _valueToFinalRotation;
-    [Tooltip ("Recommended to use around 0.003-0.005")]
+    [Tooltip ("Recommended to use around 0.001-0.005, more = faster")]
     [SerializeField] private float _timeToChangeRotation;
 
     private Camera _camera;
@@ -29,14 +29,6 @@ public class CameraZone : MonoBehaviour
         _cameraRotationStart = _camera.transform.rotation;
         _valueToFinalRotationQuaternion = Quaternion.
         Euler(_valueToFinalRotation.x, _valueToFinalRotation.y, _valueToFinalRotation.z);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StopAllCoroutines();
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -103,23 +95,33 @@ public class CameraZone : MonoBehaviour
 
     private IEnumerator CameraRotation()
     {
-        Vector3 a = _camera.transform.rotation.eulerAngles;
         Quaternion b = _valueToFinalRotationQuaternion;
         Quaternion c = _cameraRotationStart;
         if (entered)
         {
             while (_camera.transform.rotation != _valueToFinalRotationQuaternion && entered)
             {
-                c = Quaternion.Slerp(c,
-                        _valueToFinalRotationQuaternion, _timeToChangeRotation);
-                if (a.x > c.eulerAngles.x || a.y > c.eulerAngles.y)
+                Vector3 a = _camera.transform.rotation.eulerAngles;
+                if (b.eulerAngles.x > a.x  ||
+                b.eulerAngles.y > a.y  ||
+                b.eulerAngles.z > a.z )
                 {
-                    _camera.transform.rotation = c;
+                        if (c.eulerAngles.x < a.x || c.eulerAngles.y < a.y || c.eulerAngles.z < a.z) //меньше, хотя по факту больше :/
+                        {
+                            _camera.transform.rotation = c;
+                        }
+                        else
+                        {
+                            c = Quaternion.Slerp(c,
+                                _valueToFinalRotationQuaternion, _timeToChangeRotation);
+                            _camera.transform.rotation = Quaternion.Slerp(_camera.transform.rotation,
+                                _valueToFinalRotationQuaternion, _timeToChangeRotation);
+                        }
                 }
-                else if (b.eulerAngles.x > a.x || b.eulerAngles.y > a.y || b.eulerAngles.z > a.z)
+                else
                 {
                     _camera.transform.rotation = Quaternion.Slerp(_camera.transform.rotation,
-                        _valueToFinalRotationQuaternion, _timeToChangeRotation);
+                                _valueToFinalRotationQuaternion, _timeToChangeRotation);
                 }
                 yield return null;
             }

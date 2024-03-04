@@ -242,13 +242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 24
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!1 &34233620
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,13 +654,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 24
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!4 &118476585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 18175345102977113, guid: 22ed933e775072e47a7b7410cfd82ab8, type: 3}
@@ -2477,13 +2477,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 24
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!43 &537916993
 Mesh:
   m_ObjectHideFlags: 0
@@ -2845,13 +2845,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 24
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!114 &598247872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6864,13 +6864,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 24
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!43 &1202839088
 Mesh:
   m_ObjectHideFlags: 0
@@ -7155,13 +7155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 24
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!43 &1223946476
 Mesh:
   m_ObjectHideFlags: 0
@@ -9863,7 +9863,7 @@ MonoBehaviour:
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
   _valueToFinalRotation: {x: 13.5, y: 0, z: 0}
-  _timeToChangeRotation: 0.004
+  _timeToChangeRotation: 0.002
 --- !u!1 &1818110516
 GameObject:
   m_ObjectHideFlags: 0
@@ -10607,13 +10607,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 24
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!1 &2043283930
 GameObject:
   m_ObjectHideFlags: 0
@@ -10733,13 +10733,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3790e51fa958e48820f9e73de2abaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fovEnd: 20
+  _fovEnd: 25
   _timeToChangeFov: 0.001
   _valueToChangeFovBack: 0.05
   _valueToChangeFovEnter: 0.05
   _needToChangeRotation: 1
-  _valueToFinalRotation: {x: 23, y: 0, z: 0}
-  _timeToChangeRotation: 0.005
+  _valueToFinalRotation: {x: 25, y: 0, z: 0}
+  _timeToChangeRotation: 0.007
 --- !u!1 &2043585363
 GameObject:
   m_ObjectHideFlags: 0
