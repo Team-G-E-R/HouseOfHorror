@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioSet : Finder
 {
@@ -19,13 +21,18 @@ public class AudioSet : Finder
     [SerializeField] private bool _screamerMustBeLooped;
     [Tooltip("Will work only if upper bool true")]
     [SerializeField] private AudioClip _screamerToPlay;
-    
+
     private AudioSource[] _sourcesToIgnore;
     private List<float> volumesIgnore = new();
+    private GameObject _menu;
+    private Slider _menuSlider;
 
     private void Start()
     {
         _sourcesToIgnore = (AudioSource[]) GameObject.FindObjectsOfType (typeof(AudioSource));
+        _menu = GameObject.FindWithTag("Menu");
+        _menuSlider = _menu.GetComponentInChildren<Slider>();
+
         if (_sourcesToIgnore.Length > 1)
         {
             print(_sourcesToIgnore.Length);
@@ -34,8 +41,10 @@ public class AudioSet : Finder
                 volumesIgnore.Add(a.volume);
             }
         }
+
        FindObjs();
        MusicSet();
+
        if (_sourcesToIgnore.Length > 1)
             {
                 for (int i = 0; i < _sourcesToIgnore.Length; i++)
@@ -55,18 +64,11 @@ public class AudioSet : Finder
 
     private void Update()
     {
-        if (GameData.Volume > 0 & _sourcesToIgnore.Length > 1)
+        if (_sourcesToIgnore.Length > 1)
         {
             for (int i = 0; i < _sourcesToIgnore.Length; i++)
             {
-                _sourcesToIgnore[i].volume = volumesIgnore[i];
-            }
-        }
-        else if (GameData.Volume <= 0 & _sourcesToIgnore.Length > 1)
-        {
-            for (int i = 0; i < _sourcesToIgnore.Length; i++)
-            {
-                _sourcesToIgnore[i].volume = 0;
+                _sourcesToIgnore[i].volume = volumesIgnore[i] * _menuSlider.value;
             }
         }
     }
