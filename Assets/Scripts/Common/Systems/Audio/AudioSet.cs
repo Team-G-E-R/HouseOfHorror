@@ -19,17 +19,16 @@ public class AudioSet : Finder
     [SerializeField] private bool _screamerMustBeLooped;
     [Tooltip("Will work only if upper bool true")]
     [SerializeField] private AudioClip _screamerToPlay;
-    [Space(10)]
-    [Header("Volume ignore")]
-    [Tooltip("Will ignore volume regarding the settings volume")]
-    [SerializeField] private AudioSource[] _sourcesToIgnore;
-
+    
+    private AudioSource[] _sourcesToIgnore;
     private List<float> volumesIgnore = new();
 
     private void Start()
     {
+        _sourcesToIgnore = (AudioSource[]) GameObject.FindObjectsOfType (typeof(AudioSource));
         if (_sourcesToIgnore.Length > 1)
         {
+            print(_sourcesToIgnore.Length);
             foreach (var a in _sourcesToIgnore)
             {
                 volumesIgnore.Add(a.volume);
@@ -54,7 +53,7 @@ public class AudioSet : Finder
        }
     }
 
-    void Update()
+    private void Update()
     {
         if (GameData.Volume > 0 & _sourcesToIgnore.Length > 1)
         {
