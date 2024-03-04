@@ -28,7 +28,7 @@ public class AudioSet : Finder
 
     private void Start()
     {
-        if (_sourcesToIgnore != null)
+        if (_sourcesToIgnore.Length > 1)
         {
             foreach (var a in _sourcesToIgnore)
             {
@@ -36,7 +36,7 @@ public class AudioSet : Finder
             }   
         }
        FindObjs();
-       if (_sourcesToIgnore != null)
+       if (_sourcesToIgnore.Length > 1)
         {
             for (int i = 0; i < _sourcesToIgnore.Length; i++)
             {
@@ -66,7 +66,7 @@ public class AudioSet : Finder
         {
             audioSource.clip = _audioClip;
             audioSource.loop = _beLooped;
-            if(audioSource.enabled == true)
+            if(audioSource.enabled)
             {
                 audioSource.Play();
             }
@@ -79,6 +79,7 @@ public class AudioSet : Finder
 
         if (_screamerMustBeLooped && audioSource != null)
         {
+            print(audioSource.name);
             audioSource.clip = _screamerToPlay;
             audioSource.loop = true;
             audioSource.Play();

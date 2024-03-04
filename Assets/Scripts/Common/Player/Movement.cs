@@ -17,7 +17,7 @@ namespace Common.Scripts
         [Header("Relations")]
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController _charContr;
-        [SerializeField] private AudioSource _audioSource;
+        //[SerializeField] private AudioSource _audioSource;
         private float _lastHorisontalInput=0;
         private float _lastVerticalInput=0;
         
@@ -105,19 +105,19 @@ namespace Common.Scripts
         }
 
 
-        public void StepSoundPlay()
-        {
-            if (_audioSource.isPlaying)
-            {
-                return;
-            }
-            _audioSource.PlayOneShot(_audioSource.clip);
-        }
+        // public void StepSoundPlay()
+        // {
+        //     if (_audioSource.isPlaying)
+        //     {
+        //         return;
+        //     }
+        //     _audioSource.PlayOneShot(_audioSource.clip);
+        // }
 
-        public void StepSoundStop()
-        {
-            _audioSource?.Stop();
-        }
+        // public void StepSoundStop()
+        // {
+        //     _audioSource?.Stop();
+        // }
         #endregion
     }
 }

@@ -3195,6 +3195,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4750125399726521039, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6362716689783047673, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: m_Name
       value: Player(CamSwitch)
@@ -3218,6 +3222,10 @@ PrefabInstance:
     - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: speed
       value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: _audioSource
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: sprintSpeedBonus
@@ -3246,11 +3254,6 @@ MonoBehaviour:
 --- !u!1 &806851983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6362716689783047673, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
-  m_PrefabInstance: {fileID: 806851981}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &806851984 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4750125399726521039, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
   m_PrefabInstance: {fileID: 806851981}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &828463995
@@ -11251,7 +11254,7 @@ MonoBehaviour:
   _screamerMustBeLooped: 1
   _screamerToPlay: {fileID: 8300000, guid: 5c06ae97ceab41c47b4f408fe6558ee8, type: 3}
   _sourcesToIgnore:
-  - {fileID: 806851984}
+  - {fileID: 0}
 --- !u!224 &464311884769661311
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11397,7 +11400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1822523566, guid: d66a3907d082d6545a3a4195acf00539, type: 3}
+  m_Sprite: {fileID: -1334670150, guid: 14a3298016029d34f92dbbaa73db4303, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Animations;
 
 public class Finder : MonoBehaviour
 {
@@ -20,8 +21,9 @@ public class Finder : MonoBehaviour
 
     public void FindObjs()
     {
-        if (Resources.FindObjectsOfTypeAll<AudioSource>() == null)
+        if (GameObject.FindAnyObjectByType<AudioSource>() == null)
         {
+            print("AudioSource not found, creating");
             GameObject audioFile = new GameObject();
             audioFile.name = AudioName;
             audioFile.tag = "Audio";
@@ -33,6 +35,7 @@ public class Finder : MonoBehaviour
         }
         else
         {
+            print("AudioSource founded, set volume");
             AudioSource[] allAudio = Resources.FindObjectsOfTypeAll<AudioSource>();
             foreach (var a in allAudio)
             {
