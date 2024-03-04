@@ -3211,6 +3211,10 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 0.55
       objectReference: {fileID: 0}
+    - target: {fileID: 8798329288400315930, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+      propertyPath: m_SlopeLimit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9118862275645975312, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
       propertyPath: speed
       value: 2.3
@@ -3242,6 +3246,11 @@ MonoBehaviour:
 --- !u!1 &806851983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6362716689783047673, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
+  m_PrefabInstance: {fileID: 806851981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &806851984 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4750125399726521039, guid: d6b46b818d8be0948be38a26d3f1c459, type: 3}
   m_PrefabInstance: {fileID: 806851981}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &828463995
@@ -5788,6 +5797,7 @@ MonoBehaviour:
   _needScreamer: 1
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 8300000, guid: 5c06ae97ceab41c47b4f408fe6558ee8, type: 3}
+  _sourcesToIgnore: []
 --- !u!1 &1375216838
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,6 +6580,7 @@ MonoBehaviour:
   _needScreamer: 0
   _screamerMustBeLooped: 0
   _screamerToPlay: {fileID: 8300000, guid: 03b16ef1ffd93554aa06dd65140fe095, type: 3}
+  _sourcesToIgnore: []
 --- !u!1 &1489082707
 GameObject:
   m_ObjectHideFlags: 0
@@ -11239,6 +11250,8 @@ MonoBehaviour:
   _needScreamer: 0
   _screamerMustBeLooped: 1
   _screamerToPlay: {fileID: 8300000, guid: 5c06ae97ceab41c47b4f408fe6558ee8, type: 3}
+  _sourcesToIgnore:
+  - {fileID: 806851984}
 --- !u!224 &464311884769661311
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12644,6 +12657,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 526742655}
+    - target: {fileID: 6296830174844705547, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6379969316261807342, guid: a13c193d733fc474ebf8475d7c1867b2, type: 3}
       propertyPath: m_Mesh
       value: 

@@ -20,7 +20,7 @@ public class Finder : MonoBehaviour
 
     public void FindObjs()
     {
-        if (GameObject.FindWithTag("Audio") == null)
+        if (Resources.FindObjectsOfTypeAll<AudioSource>() == null)
         {
             GameObject audioFile = new GameObject();
             audioFile.name = AudioName;
@@ -33,10 +33,11 @@ public class Finder : MonoBehaviour
         }
         else
         {
-            GameObject[] allAudio = GameObject.FindGameObjectsWithTag("Audio");
+            AudioSource[] allAudio = Resources.FindObjectsOfTypeAll<AudioSource>();
             foreach (var a in allAudio)
             {
-                AudioSourceObj.Add(a.GetComponent<AudioSource>());
+                a.volume = GameData.Volume;
+                AudioSourceObj.Add(a);
             }
         }
     }

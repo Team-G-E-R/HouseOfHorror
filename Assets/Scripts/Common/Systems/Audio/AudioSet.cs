@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioSet : Finder
@@ -18,12 +19,30 @@ public class AudioSet : Finder
     [SerializeField] private bool _screamerMustBeLooped;
     [Tooltip("Will work only if upper bool true")]
     [SerializeField] private AudioClip _screamerToPlay;
+    [Space(10)]
+    [Header("Volume ignore")]
+    [Tooltip("Will ignore volume regarding the settings volume")]
+    [SerializeField] private AudioSource[] _sourcesToIgnore;
 
-    private AudioSource _screamerSource;
+    private List<float> volumesIgnore = new();
 
     private void Start()
     {
+        if (_sourcesToIgnore != null)
+        {
+            foreach (var a in _sourcesToIgnore)
+            {
+                volumesIgnore.Add(a.volume);
+            }   
+        }
        FindObjs();
+       if (_sourcesToIgnore != null)
+        {
+            for (int i = 0; i < _sourcesToIgnore.Length; i++)
+            {
+                _sourcesToIgnore[i].volume = volumesIgnore[i];
+            }
+        }
        MusicSet();
        if (_continueAudio)
         AudioContinue();
@@ -47,7 +66,10 @@ public class AudioSet : Finder
         {
             audioSource.clip = _audioClip;
             audioSource.loop = _beLooped;
-            audioSource.Play();
+            if(audioSource.enabled == true)
+            {
+                audioSource.Play();
+            }
         }
     }
 
