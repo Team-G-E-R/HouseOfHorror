@@ -3,7 +3,7 @@ using UnityEngine;
 public class Activator : MonoBehaviour
 {
     private bool _isInRange = false;
-    private GameObject InteractItem;
+    private static GameObject InteractItem;
     private bool key = false;
     
     [SerializeField] GameObject inputButtonImage;
@@ -38,21 +38,31 @@ public class Activator : MonoBehaviour
         }
    }
 
+   private void OnTriggerStay(Collider other)
+   {
+        if ((other.tag == "Interactable"))
+        {
+            _isInRange = true;
+            ShowPic();
+            if (key == false) InteractItem = other.gameObject;
+        }
+   }
+
    public void ShowPic()
    {
-       inputButtonImage.SetActive(true);
+        inputButtonImage.SetActive(true);
    }
    public void HidePic()
    {
-       inputButtonImage.SetActive(false);
+        inputButtonImage.SetActive(false);
    }
 
    private void OnTriggerExit(Collider other) 
    {
-    if ((other.tag == "Interactable"))
-        {
-            EndOfInteraction();
-        }   
+        if ((other.tag == "Interactable"))
+            {
+                EndOfInteraction();
+            }   
    }
 
    public void EndOfInteraction()

@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -139,12 +139,12 @@ TextureImporter:
       name: Kids_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 32
-        height: 32
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: Kids_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 34
         y: 0
-        width: 32
+        width: 30
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: Kids_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 66
         y: 0
-        width: 32
-        height: 32
+        width: 30
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: Kids_3
       rect:
         serializedVersion: 2
-        x: 96
+        x: 99
         y: 0
-        width: 32
-        height: 32
+        width: 29
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
