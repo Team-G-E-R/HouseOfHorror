@@ -33,22 +33,50 @@ public class AudioSet : Finder
             foreach (var a in _sourcesToIgnore)
             {
                 volumesIgnore.Add(a.volume);
-            }   
-        }
-       FindObjs();
-       if (_sourcesToIgnore.Length > 1)
-        {
-            for (int i = 0; i < _sourcesToIgnore.Length; i++)
-            {
-                _sourcesToIgnore[i].volume = volumesIgnore[i];
             }
         }
+       FindObjs();
        MusicSet();
+       if (_sourcesToIgnore.Length > 1)
+            {
+                for (int i = 0; i < _sourcesToIgnore.Length; i++)
+                {
+                    _sourcesToIgnore[i].volume = volumesIgnore[i];
+                }
+            }
        if (_continueAudio)
-        AudioContinue();
+       {
+            AudioContinue();
+       }
        if (_needScreamer)
-        ScreamerPlay();
+       {
+            ScreamerPlay();
+       }
     }
+
+    // void Update()
+    // {
+    //     if (GameData.Volume > 0)
+    //     {
+    //         if (_sourcesToIgnore.Length > 1)
+    //         {
+    //             for (int i = 0; i < _sourcesToIgnore.Length; i++)
+    //             {
+    //                 _sourcesToIgnore[i].volume = volumesIgnore[i];
+    //             }
+    //         }
+    //     }
+    //     else if (GameData.Volume <= 0)
+    //     {
+    //         if (_sourcesToIgnore.Length > 1)
+    //         {
+    //             for (int i = 0; i < _sourcesToIgnore.Length; i++)
+    //             {
+    //                 _sourcesToIgnore[i].volume = 0;
+    //             }
+    //         }
+    //     }
+    // }
 
     private void MusicSet()
     {
@@ -66,10 +94,8 @@ public class AudioSet : Finder
         {
             audioSource.clip = _audioClip;
             audioSource.loop = _beLooped;
-            if(audioSource.enabled)
-            {
-                audioSource.Play();
-            }
+            print("Im here");
+            //audioSource.Play();
         }
     }
 

@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 6372733940517520606}
   - component: {fileID: 3182106426125665025}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SCREAMER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6598889445469340874
 Transform:
   m_ObjectHideFlags: 0
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 457176350874624666}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.16, y: -1.9, z: -2.01}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 57.265095, y: 2.167768, z: -374.26157}
   m_LocalScale: {x: 1, y: 1, z: 1.0509}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &148674368644842846
 MeshFilter:
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f026ef72757d1924aa8be5f0058eef10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scream: {fileID: 0}
+  scream: {fileID: 3182106426125665025}
 --- !u!82 &3182106426125665025
 AudioSource:
   m_ObjectHideFlags: 0
@@ -130,23 +130,23 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_audioClip: {fileID: 8300000, guid: d283b2ac09168cf4eab2f879ff26a568, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1.15
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 1.27
   MinDistance: 1.0910252
-  MaxDistance: 500
+  MaxDistance: 1.56
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassListenerEffects: 1
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -176,7 +176,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -191,7 +191,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -206,7 +206,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 1.068
       inSlope: 0
       outSlope: 0
       tangentMode: 0

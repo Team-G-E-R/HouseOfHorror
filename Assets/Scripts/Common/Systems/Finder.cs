@@ -23,7 +23,6 @@ public class Finder : MonoBehaviour
     {
         if (GameObject.FindAnyObjectByType<AudioSource>() == null)
         {
-            print("AudioSource not found, creating");
             GameObject audioFile = new GameObject();
             audioFile.name = AudioName;
             audioFile.tag = "Audio";
@@ -35,7 +34,6 @@ public class Finder : MonoBehaviour
         }
         else
         {
-            print("AudioSource founded, set volume");
             AudioSource[] allAudio = Resources.FindObjectsOfTypeAll<AudioSource>();
             foreach (var a in allAudio)
             {
