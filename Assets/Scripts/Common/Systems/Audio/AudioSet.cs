@@ -31,11 +31,12 @@ public class AudioSet : Finder
     {
         _sourcesToIgnore = (AudioSource[]) GameObject.FindObjectsOfType (typeof(AudioSource));
         _menu = GameObject.FindWithTag("Menu");
-        _menuSlider = _menu.GetComponentInChildren<Slider>();
-
+        if (_menu != null)
+        {
+            _menuSlider = _menu.GetComponentInChildren<Slider>();   
+        }
         if (_sourcesToIgnore.Length > 1)
         {
-            print(_sourcesToIgnore.Length);
             foreach (var a in _sourcesToIgnore)
             {
                 volumesIgnore.Add(a.volume);

@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace Common.Scripts
 {
@@ -17,7 +16,7 @@ namespace Common.Scripts
         [Header("Relations")]
         [SerializeField] private Animator animator;
         [SerializeField] private CharacterController _charContr;
-        
+
         private AudioSource _audioSource;
         private float _lastHorisontalInput=0;
         private float _lastVerticalInput=0;
