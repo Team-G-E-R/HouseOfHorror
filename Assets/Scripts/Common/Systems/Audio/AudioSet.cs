@@ -1,4 +1,7 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioSet : Finder
 {
@@ -19,31 +22,73 @@ public class AudioSet : Finder
     [Tooltip("Will work only if upper bool true")]
     [SerializeField] private AudioClip _screamerToPlay;
 
-    private AudioSource _screamerSource;
+    private AudioSource[] _sourcesToIgnore;
+    private List<float> volumesIgnore = new();
+    private GameObject _menu;
+    private Slider _menuSlider;
 
-    private void OnEnable()
+    private void Start()
     {
+        _sourcesToIgnore = (AudioSource[]) GameObject.FindObjectsOfType (typeof(AudioSource));
+        _menu = GameObject.FindWithTag("Menu");
+        if (_menu != null)
+        {
+            _menuSlider = _menu.GetComponentInChildren<Slider>();   
+        }
+        if (_sourcesToIgnore.Length > 1)
+        {
+            foreach (var a in _sourcesToIgnore)
+            {
+                volumesIgnore.Add(a.volume);
+            }
+        }
+
        FindObjs();
        MusicSet();
+
+       if (_sourcesToIgnore.Length > 1)
+            {
+                for (int i = 0; i < _sourcesToIgnore.Length; i++)
+                {
+                    _sourcesToIgnore[i].volume = volumesIgnore[i];
+                }
+            }
        if (_continueAudio)
-        AudioContinue();
+       {
+            AudioContinue();
+       }
        if (_needScreamer)
-        ScreamerPlay();
+       {
+            ScreamerPlay();
+       }
+    }
+
+    private void Update()
+    {
+        if (_sourcesToIgnore.Length > 1)
+        {
+            for (int i = 0; i < _sourcesToIgnore.Length; i++)
+            {
+                _sourcesToIgnore[i].volume = volumesIgnore[i] * _menuSlider.value;
+            }
+        }
     }
 
     private void MusicSet()
     {
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
 
-        if (audioSource == null)
+        if (audioSource == null & _audioClip != null)
+        {
             AudioSourceCreate(_audioClip, _beLooped);
-        else if (_beLooped && audioSource != null)
+        }
+        else if (_beLooped & audioSource != null)
         {
             audioSource.clip = _audioClip;
             audioSource.loop = true;
             audioSource.Play();
         }
-        else
+        else if (!_beLooped & audioSource != null)
         {
             audioSource.clip = _audioClip;
             audioSource.loop = _beLooped;
@@ -57,6 +102,7 @@ public class AudioSet : Finder
 
         if (_screamerMustBeLooped && audioSource != null)
         {
+            print(audioSource.name);
             audioSource.clip = _screamerToPlay;
             audioSource.loop = true;
             audioSource.Play();
