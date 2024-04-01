@@ -85,7 +85,8 @@ public class SaveLoad : MonoBehaviour
             { "MirrorKey0", false},
             { "MirrorKey1", false},
             { "MirrorKey2", false},
-            { "MirrorDone", false}
+            { "MirrorDone", false},
+            { "Visiom", false}
         };
 
       public Dictionary<int, string> Diary = new Dictionary<int, string>()

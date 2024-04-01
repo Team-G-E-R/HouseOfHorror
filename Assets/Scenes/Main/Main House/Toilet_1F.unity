@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0077e3bd6f11340be2476822d0b0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyToWin: 9
+  KeyToWin: 4
 --- !u!114 &171628783 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1349106531573034510, guid: 49bd1741a7719d5438ac210d52c90692, type: 3}
@@ -14862,6 +14862,10 @@ PrefabInstance:
       propertyPath: _spawnPointCamera
       value: 
       objectReference: {fileID: 928731747}
+    - target: {fileID: 2856796681155556362, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3320190079400029531, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_Size.x
       value: 2.4465199
@@ -14965,6 +14969,10 @@ PrefabInstance:
     - target: {fileID: 7555855169394882292, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_Name
       value: Door2Working
+      objectReference: {fileID: 0}
+    - target: {fileID: 7555855169394882292, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7892411790463061051, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_Mesh
