@@ -15,17 +15,20 @@ public class Vision : MonoBehaviour
     private float _standartChromatic;
     private float _standartLens;
     private bool state;
-    private bool _hidden;
+    private bool postProcessEnable;
 
     private void OnEnable()
     {
         _postProcess = GameObject.
             FindGameObjectWithTag("PostProcessing").GetComponent<PostProcessVolume>();
-        _standartChromatic = _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value;
-        _standartLens = _postProcess.profile.GetSetting<LensDistortion>().intensity.value;
+        if (_postProcess.profile.GetSetting<ChromaticAberration>() & _postProcess.profile.GetSetting<LensDistortion>() != null)
+        {
+            _standartChromatic = _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value;
+            _standartLens = _postProcess.profile.GetSetting<LensDistortion>().intensity.value;
+            postProcessEnable = true;
+        }
 
         state = false;
-        _hidden = false;
     }
 
     private void Update()
@@ -33,14 +36,22 @@ public class Vision : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             state = !state;
-            _hidden = !_hidden;
-            SwitchLight();
+
+            if (_hiddenObjs.Length > 0)
+            {
+                foreach (var obj in _hiddenObjs)
+                {
+                    obj.SetActive(!obj.activeSelf);
+                }
+            }
+            SwitchLight(postProcessEnable);
         }
     }
 
-    private void SwitchLight()
+    private void SwitchLight(bool postProcessEnable)
     {
         _lights = FindObjectsOfType<Light>();
+
         foreach (var light in _lights)
         {
             light.enabled = !state;
@@ -50,17 +61,12 @@ public class Vision : MonoBehaviour
             lightS.enabled = state;
         }
         
-        float CA = _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value;
-        float LD = _postProcess.profile.GetSetting<LensDistortion>().intensity.value;
-        StartCoroutine(ChangeCA(CA));
-        StartCoroutine(ChangeLD(LD));
-
-        if (_hiddenObjs.Length != 0)
+        if (postProcessEnable == true)
         {
-            foreach (var obj in _hiddenObjs)
-            {
-                obj.SetActive(_hidden);
-            }   
+            float CA = _postProcess.profile.GetSetting<ChromaticAberration>().intensity.value;
+            float LD = _postProcess.profile.GetSetting<LensDistortion>().intensity.value;
+            StartCoroutine(ChangeCA(CA));
+            StartCoroutine(ChangeLD(LD)); 
         }
     }
 

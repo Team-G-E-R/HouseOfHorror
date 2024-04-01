@@ -32,7 +32,7 @@ Transform:
   - {fileID: 8403116395351676823}
   - {fileID: 6983413890437163231}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8164109478240725982
 MonoBehaviour:
@@ -46,13 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda5572ea24ab7a4eb08bb7ef6e3359d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _specialLights:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  _specialLights: []
   _chromaticIntensity: 1
   _lensIntensity: 60
   _hiddenObjs: []
