@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -31,6 +29,10 @@ public class NoteManager : MonoBehaviour
     public void FirstStageOpen(string textNote, Sprite Image)
     {
         Player.GetComponent<movement>().TurnOffMovement();
+        if (Player.GetComponent<Vision>() != null)
+        {
+            Player.GetComponent<Vision>().enabled = false;   
+        }
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         //Time.timeScale=0f;
@@ -57,6 +59,10 @@ public class NoteManager : MonoBehaviour
     public void CloseNote()
     {
         Player.GetComponent<movement>().TurnOnMovement();
+        if (Player.GetComponent<Vision>() != null)
+        {
+            Player.GetComponent<Vision>().enabled = true;   
+        }
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         //Time.timeScale=1f;

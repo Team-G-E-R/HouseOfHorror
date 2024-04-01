@@ -18,6 +18,7 @@ public class SaveLoad : MonoBehaviour
    private void Awake()
    {
       _playerData = new GameInfo();
+      _playerDict = new GameDataDict();
       Load();
       Instance = this;
       DontDestroyOnLoad(this);
@@ -80,13 +81,12 @@ public class SaveLoad : MonoBehaviour
             { "Key1", false },
             { "Key2", false },
             { "Key3", false },
-            { "Vision", false },
             { "Knife", false },
             { "MirrorKey0", false},
             { "MirrorKey1", false},
             { "MirrorKey2", false},
             { "MirrorDone", false},
-            { "Visiom", false}
+            { "Vision", false}
         };
 
       public Dictionary<int, string> Diary = new Dictionary<int, string>()
