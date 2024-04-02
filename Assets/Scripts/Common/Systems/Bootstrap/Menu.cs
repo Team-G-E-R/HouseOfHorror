@@ -11,9 +11,20 @@ public class Menu : Finder
    
    private Slider _volumeSlider;
    private const string _audioName = "AudioButton";
+   private GameObject _pauseMenu;
+   private PauseMenu _pauseScript;
 
    private void Start()
    {
+      _pauseMenu = GameObject.FindGameObjectWithTag("Menu");
+      _pauseScript = _pauseMenu.GetComponent<PauseMenu>();
+      if (_pauseScript._isMenuActive)
+      {
+         _pauseScript.MenuActive();
+      }
+      DontDestroyOnLoad(_pauseMenu);
+      _pauseScript.enabled = false;
+      
       _volumeSlider = GetComponentInChildren<Slider>();
       _volumeSlider.value = GameData.Volume;
       CursorOn();
@@ -63,6 +74,12 @@ public class Menu : Finder
       Application.Quit();
    }
 
+   [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+   private static void PauseMenuCreating()
+   {
+      Instantiate(Resources.Load("Pause Menu/Pause Menu"));
+   }
+
    private IEnumerator FadeInTransition()
    {
       var fade = GetComponent<FadeInOut>();
@@ -70,9 +87,6 @@ public class Menu : Finder
       fade.FadeIn();
       yield return new WaitForSeconds(fade.duration + 0.5f);
       SceneManager.LoadScene(_nextSceneIndex, LoadSceneMode.Single);
-      if (GameObject.FindGameObjectWithTag("Menu") == null)
-      {
-         Instantiate(Resources.Load("Pause Menu/Pause Menu"));
-      }
+      _pauseScript.enabled = true;
    }
 }

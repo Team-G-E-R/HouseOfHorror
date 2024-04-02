@@ -100,7 +100,7 @@ namespace Common.Scripts
 
         public void TurnOffMovement()
         {
-            GetComponent<Activator>().enabled = false;
+            GetComponent<Activator>()._isInRange = false;
             _movementLocked = true;
             animator.SetFloat("Horizontal", _lastHorisontalInput / 2);
             animator.SetFloat("Vertical", _lastVerticalInput / 2);
@@ -108,7 +108,6 @@ namespace Common.Scripts
         
         public void TurnOnMovement()
         {
-            GetComponent<Activator>().enabled = true;
             _movementLocked = false;
         }
 

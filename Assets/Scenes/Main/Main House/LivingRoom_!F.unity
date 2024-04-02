@@ -20119,7 +20119,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: f735a9f609e69a9448b57dea81411ffd, type: 3}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -20144,11 +20144,11 @@ PrefabInstance:
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1303346488}
+      objectReference: {fileID: 968306785}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 968306785}
+      objectReference: {fileID: 1441092426}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -20175,11 +20175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: DestroyInteractable
+      value: ActivateDialogue
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ActivateDialogue
+      value: EndOfInteraction
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -20191,11 +20191,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: Interactable, Assembly-CSharp
+      value: DialogueTrigger, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: DialogueTrigger, Assembly-CSharp
+      value: Activator, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 83041447044655503, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: _onWin.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -20314,9 +20314,13 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 428258978}
+    - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1127193204}
     - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
@@ -20330,16 +20334,24 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: TurnOnMovement
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Hide
       objectReference: {fileID: 0}
     - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
       value: ShowPic
       objectReference: {fileID: 0}
     - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Common.Scripts.movement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TagGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3332376888502608238, guid: 758ab41af00d62347861d7c40c1e0030, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
@@ -23373,9 +23385,9 @@ MonoBehaviour:
   _ifDontHaveKey:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1127193204}
-        m_TargetAssemblyTypeName: TagGame, Assembly-CSharp
-        m_MethodName: Show
+      - m_Target: {fileID: 428258978}
+        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
+        m_MethodName: TurnOffMovement
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23385,9 +23397,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 428258978}
-        m_TargetAssemblyTypeName: Common.Scripts.movement, Assembly-CSharp
-        m_MethodName: TurnOffMovement
+      - m_Target: {fileID: 1127193204}
+        m_TargetAssemblyTypeName: TagGame, Assembly-CSharp
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

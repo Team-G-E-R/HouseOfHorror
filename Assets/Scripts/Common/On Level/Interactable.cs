@@ -15,13 +15,7 @@ public class Interactable : MonoBehaviour
         {
             InteractAction.Invoke();
             Destroy(this);
-            //DestroyInteractable();
         }
         else InteractAction.Invoke();
-    }
-
-    public void DestroyInteractable()
-    {
-        Destroy(gameObject);
     }
 }

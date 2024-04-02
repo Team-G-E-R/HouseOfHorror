@@ -2707,6 +2707,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!43 &537916993
 Mesh:
   m_ObjectHideFlags: 0
@@ -3163,6 +3168,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!114 &598247872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10500,6 +10510,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 55
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!1 &1818110516
 GameObject:
   m_ObjectHideFlags: 0
@@ -11297,7 +11312,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _oneUsage: 0
+  _oneUsage: 1
 --- !u!65 &1987426227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11333,6 +11348,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!1 &2017458632
 GameObject:
   m_ObjectHideFlags: 0
@@ -11524,6 +11544,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fovEnd: 20
   _timeToChangeFov: 0.005
+  _valueToChangeFovBack: 0
+  _valueToChangeFovEnter: 0
+  _needToChangeRotation: 0
+  _valueToFinalRotation: {x: 0, y: 0, z: 0}
+  _timeToChangeRotation: 0
 --- !u!1 &2043585363
 GameObject:
   m_ObjectHideFlags: 0

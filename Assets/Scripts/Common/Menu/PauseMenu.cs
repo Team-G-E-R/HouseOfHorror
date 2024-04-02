@@ -5,12 +5,13 @@ using UnityEngine.UI;
 public class PauseMenu : Finder
 {
     [SerializeField] private GameObject menuUi;
-    private bool _isMenuActive = false;
+    [HideInInspector]
+    public bool _isMenuActive = false;
     private Slider _soundVolume;
     
     private GameObject[] _allAudio;
 
-    private void OnEnable()
+    private void Start()
     {
         FindObjs();
 
@@ -18,8 +19,6 @@ public class PauseMenu : Finder
         _soundVolume = gameObject.GetComponentInChildren<Slider>();
         _soundVolume.value = GameData.Volume;
         transform.GetChild(0).gameObject.SetActive(false);
-
-        DontDestroyOnLoad(gameObject);
     }
     
     private void Update()
@@ -35,7 +34,7 @@ public class PauseMenu : Finder
         }
     }
 
-    private void MenuActive()
+    public void MenuActive()
     {
         _isMenuActive = !_isMenuActive;
 
@@ -72,8 +71,6 @@ public class PauseMenu : Finder
 
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
-        
-        Destroy(gameObject);
     }
 
     private void SaveSettingsData()

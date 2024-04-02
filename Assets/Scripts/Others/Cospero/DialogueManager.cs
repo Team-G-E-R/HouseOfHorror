@@ -111,19 +111,27 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        //DialogueIsPlaying = false;
-        //DialogueObjUI.SetActive(false);
+        if (_player.GetComponent<Activator>().OneUsage == false)
+        {
+            StartCoroutine(ActivatorBack());   
+        }
+        ;
         if (_player != null)
         {
             MovementOffOn();
         }
     }
 
+    IEnumerator ActivatorBack()
+    {
+        yield return new WaitForEndOfFrame();
+        _player.GetComponent<Activator>()._isInRange = true;
+    }
+
     private void MovementOffOn()
     {
         _moveEnable = !_moveEnable;
         _player.GetComponent<movement>().enabled = _moveEnable;
-        _player.GetComponent<Activator>().enabled = _moveEnable;
     }
 }
 
