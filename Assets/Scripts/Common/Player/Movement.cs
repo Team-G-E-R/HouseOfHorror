@@ -20,6 +20,7 @@ namespace Common.Scripts
         private AudioSource _audioSource;
         private float _lastHorisontalInput=0;
         private float _lastVerticalInput=0;
+        public SaveLoad.GameInfo GameData => SaveLoad.Instance.PlayerData;
         
 
         #endregion
@@ -38,9 +39,10 @@ namespace Common.Scripts
 
         #region MonoBehaviour
 
-        private void Awake()
+        private void Start()
         {
             _audioSource = GetComponent<AudioSource>();
+            _audioSource.volume = GameData.Volume;
         }
 
         private void Update()

@@ -7,6 +7,10 @@ public class SceneTransitions : MonoBehaviour
     
     public void NextScene()
     {
+        if (GameObject.FindGameObjectWithTag("Menu") == null)
+        {
+            Instantiate(Resources.Load("Pause Menu/Pause Menu"));
+        }
         SceneManager.LoadScene(_nextLevelIndex);
     }
 }

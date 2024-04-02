@@ -43,7 +43,7 @@ public class Activator : MonoBehaviour
         if ((other.tag == "Interactable"))
         {
             _isInRange = true;
-            ShowPic();
+            //ShowPic();
             if (key == false) InteractItem = other.gameObject;
         }
    }

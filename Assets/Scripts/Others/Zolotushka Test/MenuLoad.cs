@@ -11,12 +11,16 @@ public class MenuLoad : MonoBehaviour
 
     public void LoadLevel()
     {
-        if (_gameInfo.SceneIndex == 0) 
+        if (_gameInfo.SceneIndex == 0)
         {
             ZeroSavesUi.SetActive(true);
         }
         else
         {
+            if (GameObject.FindGameObjectWithTag("Menu") == null)
+            {
+                Instantiate(Resources.Load("Pause Menu/Pause Menu"));
+            }
             DontDestroyOnLoad(this);
             Menu.SaveSettingsData(false);
             StartCoroutine("AsyncLoad");
@@ -30,7 +34,7 @@ public class MenuLoad : MonoBehaviour
         Menu.StartBtnPlay();
         _asyncOperation = SceneManager.LoadSceneAsync(_gameInfo.SceneIndex);
         _asyncOperation.allowSceneActivation = false;
-        fade.duration = Menu.AudioStartBtn.length;
+        fade.duration = Menu.AudioSourceStartBtn.clip.length;
         fade.FadeIn();
         yield return new WaitForSeconds(fade.duration + 0.5f);
         while (!_asyncOperation.isDone)

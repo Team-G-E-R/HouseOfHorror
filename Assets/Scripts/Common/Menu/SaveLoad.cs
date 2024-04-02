@@ -2,6 +2,7 @@ using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using UnityEngine.SceneManagement;
 
 public class SaveLoad : MonoBehaviour
 {
@@ -27,6 +28,12 @@ public class SaveLoad : MonoBehaviour
    [ContextMenu("Save")]
    public void Save()
    {
+      if (GameObject.FindWithTag("Player") & GameObject.FindWithTag("MainCamera"))
+      {
+         PlayerData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
+         PlayerData.PlayerScenePos = GameObject.FindWithTag("Player").transform.position;
+         PlayerData.CameraPos = GameObject.FindWithTag("MainCamera").transform.position;  
+      }
       File.WriteAllText(_filePath, JsonUtility.ToJson(_playerData));
       File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(_playerDict));
    }
@@ -42,12 +49,13 @@ public class SaveLoad : MonoBehaviour
    public void AllDataToZero()
    {
       _playerData = new GameInfo();
+      _playerData.Volume = 0.5f;
       _playerDict = new GameDataDict();
       File.WriteAllText(_filePath, JsonUtility.ToJson(_playerData));
       File.WriteAllText(_fileDictPath, JsonConvert.SerializeObject(_playerDict));
    }
 
-   [RuntimeInitializeOnLoadMethod]
+   [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
    public static void CreateInstance()
    {
       GameObject data = new GameObject("Game Data");

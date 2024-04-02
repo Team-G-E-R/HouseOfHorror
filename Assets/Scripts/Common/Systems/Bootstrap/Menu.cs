@@ -6,7 +6,6 @@ using System.Collections;
 public class Menu : Finder
 {
    public SaveLoad.GameInfo NewGameData => SaveLoad.Instance.PlayerData;
-   public AudioClip AudioStartBtn;
    public AudioSource AudioSourceStartBtn;
    [SerializeField] private int _nextSceneIndex;
    
@@ -16,18 +15,9 @@ public class Menu : Finder
    private void Start()
    {
       _volumeSlider = GetComponentInChildren<Slider>();
-      FindObjs();
       _volumeSlider.value = GameData.Volume;
-      CreateAudioBtn();
-   }
-   
-   private void CreateAudioBtn()
-   {
-      GameObject audioFile = new GameObject();
-      audioFile.name = _audioName;
-      AudioSourceStartBtn = audioFile.AddComponent<AudioSource>();
-      AudioSourceStartBtn.clip = AudioStartBtn;
-      AudioSourceStartBtn.volume = GameData.Volume;
+      CursorOn();
+      FindObjs();
    }
 
    public void SceneLoad()
@@ -43,7 +33,7 @@ public class Menu : Finder
    {
       foreach (var a in AudioSourceObj)
       {
-         a.clip = null;  
+         a.GetComponent<AudioSource>().Stop();  
       }
       AudioSourceStartBtn.volume = NewGameData.Volume;
       AudioSourceStartBtn.Play();
@@ -76,9 +66,13 @@ public class Menu : Finder
    private IEnumerator FadeInTransition()
    {
       var fade = GetComponent<FadeInOut>();
-      fade.duration = AudioStartBtn.length;
+      fade.duration = AudioSourceStartBtn.clip.length;
       fade.FadeIn();
       yield return new WaitForSeconds(fade.duration + 0.5f);
       SceneManager.LoadScene(_nextSceneIndex, LoadSceneMode.Single);
+      if (GameObject.FindGameObjectWithTag("Menu") == null)
+      {
+         Instantiate(Resources.Load("Pause Menu/Pause Menu"));
+      }
    }
 }

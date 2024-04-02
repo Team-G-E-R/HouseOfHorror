@@ -1719,9 +1719,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 215597387}
-        m_TargetAssemblyTypeName: SetActive, Assembly-CSharp
-        m_MethodName: TurnOff
+      - m_Target: {fileID: 754435674}
+        m_TargetAssemblyTypeName: Activator, Assembly-CSharp
+        m_MethodName: HidePic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1731,7 +1731,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _oneUsage: 0
+      - m_Target: {fileID: 1915752653}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _oneUsage: 1
   _dialogue:
     _jsonFile: {fileID: 4900000, guid: b46a7791d437fac4faa21a8a33e47841, type: 3}
     _charColor:
@@ -5292,7 +5304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2856796681155556362, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3320190079400029531, guid: cdedfd4edd18d47409fd10fbd24eeb99, type: 3}
       propertyPath: m_Size.x
@@ -14677,7 +14689,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1866243100
 Transform:
   m_ObjectHideFlags: 0
@@ -15212,6 +15224,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1915752653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 76392665418631754, guid: 98bbf910fb54d4c42bcb495c4a639ef7, type: 3}
+  m_PrefabInstance: {fileID: 7113747773787791179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1951502612
 Mesh:
   m_ObjectHideFlags: 0
@@ -17701,6 +17718,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1327534035}
     m_Modifications:
+    - target: {fileID: 307724512402165988, guid: 98bbf910fb54d4c42bcb495c4a639ef7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2448640557334637725, guid: 98bbf910fb54d4c42bcb495c4a639ef7, type: 3}
       propertyPath: m_RootOrder
       value: -1

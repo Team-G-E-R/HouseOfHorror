@@ -33,7 +33,7 @@ public class AudioSet : Finder
         _menu = GameObject.FindWithTag("Menu");
         if (_menu != null)
         {
-            _menuSlider = _menu.GetComponentInChildren<Slider>();   
+            _menuSlider = _menu.GetComponentInChildren<Slider>(true);   
         }
         if (_sourcesToIgnore.Length > 1)
         {
@@ -67,9 +67,16 @@ public class AudioSet : Finder
     {
         if (_sourcesToIgnore.Length > 1)
         {
-            for (int i = 0; i < _sourcesToIgnore.Length; i++)
+            if (_menuSlider == null)
             {
-                _sourcesToIgnore[i].volume = volumesIgnore[i] * _menuSlider.value;
+                _menuSlider = _menu.GetComponentInChildren<Slider>(true);   
+            }
+            else
+            {
+                for (int i = 0; i < _sourcesToIgnore.Length; i++)
+                {
+                    _sourcesToIgnore[i].volume = volumesIgnore[i] * _menuSlider.value;
+                }
             }
         }
     }
