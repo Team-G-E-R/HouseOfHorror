@@ -15,6 +15,7 @@ public class NoteManager : MonoBehaviour
     public GameObject readButtonUI;
     public TMP_Text noteTextUI;
     private float currentTime;
+    private bool opened = false;
     [SerializeField] private Image noteImageUI;
     [SerializeField] private GameObject Player;
 
@@ -26,15 +27,23 @@ public class NoteManager : MonoBehaviour
         SnotePanalUI.SetActive(false);
     }
 
+    private void Update()
+    {
+        if (opened)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
     public void FirstStageOpen(string textNote, Sprite Image)
     {
+        opened = true;
         Player.GetComponent<movement>().TurnOffMovement();
         if (Player.GetComponent<Vision>() != null)
         {
             Player.GetComponent<Vision>().enabled = false;   
         }
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
         //Time.timeScale=0f;
         Image FirstPanelImg=FnotePanalUI.GetComponent<Image>();
         readButtonUI.SetActive(true);
@@ -44,7 +53,6 @@ public class NoteManager : MonoBehaviour
         noteTextUI.text=textNote;
         FirstPanelImg.color = new Color(FirstPanelImg.color.r, FirstPanelImg.color.g, FirstPanelImg.color.b, 0);
         StartCoroutine(FadeInCrt(FirstPanelImg,FadeValue1));
-        Debug.Log("k");
     }
 
     public void SecondStageOpen()
@@ -58,6 +66,7 @@ public class NoteManager : MonoBehaviour
 
     public void CloseNote()
     {
+        opened = false;
         Player.GetComponent<movement>().TurnOnMovement();
         if (Player.GetComponent<Vision>() != null)
         {
