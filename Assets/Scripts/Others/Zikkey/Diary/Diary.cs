@@ -21,7 +21,6 @@ public class Diary : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text _secondPageNumber;
 
     [SerializeField] private GameObject _diary;
-    [SerializeField] private KeyCode _interactKey = KeyCode.Escape;
 
     private int _turn = 1;
 
@@ -51,14 +50,6 @@ public class Diary : MonoBehaviour
     //     //UnlockPage(2);
     //     //UnlockPage(4);
     // }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(_interactKey))
-        {
-            ReadToggle();
-        }
-    }
 
     public void EditOpen()
     {
@@ -91,6 +82,10 @@ public class Diary : MonoBehaviour
         Lock();
         GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(true);
         _diary.SetActive(false);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
 
         _openedInEdit = false;
     }

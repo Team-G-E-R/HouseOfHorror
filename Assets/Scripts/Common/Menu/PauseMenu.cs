@@ -7,6 +7,7 @@ public class PauseMenu : Finder
     [SerializeField] private GameObject menuUi;
     [HideInInspector]
     public bool _isMenuActive = false;
+    public GameObject DiaryButton;
     private Slider _soundVolume;
     
     private GameObject[] _allAudio;
@@ -19,6 +20,11 @@ public class PauseMenu : Finder
         _soundVolume = gameObject.GetComponentInChildren<Slider>();
         _soundVolume.value = GameData.Volume;
         transform.GetChild(0).gameObject.SetActive(false);
+
+        if (GameData.HasDiary == false)
+        {
+            DiaryButton.SetActive(false);
+        }
     }
     
     private void Update()
@@ -71,6 +77,11 @@ public class PauseMenu : Finder
 
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
+    }
+
+    public void MenuActiveInactive()
+    {
+        _isMenuActive = !_isMenuActive;
     }
 
     private void SaveSettingsData()

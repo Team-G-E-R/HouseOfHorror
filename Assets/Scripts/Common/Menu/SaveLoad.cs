@@ -71,6 +71,7 @@ public class SaveLoad : MonoBehaviour
       public Vector3 CameraPos;
 
       // Diary Data
+      public bool HasDiary = false;
       public int Turn = 1;
       public int RequiredTurn = 1;
 
@@ -94,7 +95,12 @@ public class SaveLoad : MonoBehaviour
             { "MirrorKey1", false},
             { "MirrorKey2", false},
             { "MirrorDone", false},
-            { "Vision", false}
+            { "Vision", false},
+            { "DiarySave1", false},
+            { "DiarySave2", false},
+            { "DiarySave3", false},
+            { "DiarySave4", false},
+            { "DiarySave5", false}
         };
 
       public Dictionary<int, string> Diary = new Dictionary<int, string>()
