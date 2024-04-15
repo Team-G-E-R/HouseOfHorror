@@ -112,6 +112,7 @@ public class AudioSet : Finder
             print(audioSource.name);
             audioSource.clip = _screamerToPlay;
             audioSource.loop = true;
+            audioSource.volume = GameData.Volume;
             audioSource.Play();
         }
         else if (_screamerMustBeLooped & audioSource == null)

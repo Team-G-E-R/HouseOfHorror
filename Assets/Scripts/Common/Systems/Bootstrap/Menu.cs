@@ -77,7 +77,8 @@ public class Menu : Finder
    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
    private static void PauseMenuCreating()
    {
-      Instantiate(Resources.Load("Pause Menu/Pause Menu"));
+      var pauseMenu = Instantiate(Resources.Load("Pause Menu/Pause Menu"));
+      DontDestroyOnLoad(pauseMenu);
    }
 
    private IEnumerator FadeInTransition()
