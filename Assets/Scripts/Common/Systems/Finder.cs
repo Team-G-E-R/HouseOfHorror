@@ -36,7 +36,7 @@ public class Finder : MonoBehaviour
             AudioSource[] allAudio = Resources.FindObjectsOfTypeAll<AudioSource>();
             foreach (var a in allAudio)
             {
-                a.volume = GameData.Volume;
+                //a.volume = GameData.Volume; After test delete from comment
                 AudioSourceObj.Add(a);
             }
         }

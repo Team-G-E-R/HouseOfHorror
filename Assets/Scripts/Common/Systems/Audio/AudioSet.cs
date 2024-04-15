@@ -30,17 +30,18 @@ public class AudioSet : Finder
     private void Start()
     {
         _sourcesToIgnore = (AudioSource[]) GameObject.FindObjectsOfType (typeof(AudioSource));
-        _menu = GameObject.FindWithTag("Menu");
-        if (_menu != null)
-        {
-            _menuSlider = _menu.GetComponentInChildren<Slider>(true);   
-        }
         if (_sourcesToIgnore.Length > 1)
         {
             foreach (var a in _sourcesToIgnore)
             {
                 volumesIgnore.Add(a.volume);
+                print(a.volume);
             }
+        }
+        _menu = GameObject.FindWithTag("Menu");
+        if (_menu != null)
+        {
+            _menuSlider = _menu.GetComponentInChildren<Slider>(true);   
         }
 
        FindObjs();
@@ -83,7 +84,11 @@ public class AudioSet : Finder
 
     private void MusicSet()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null & A.enabled == true);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
+        if (audioSource.tag == "Player")
+        {
+            audioSource = null;
+        }
 
         if (audioSource == null & _audioClip != null)
         {
@@ -105,7 +110,7 @@ public class AudioSet : Finder
 
     public void ScreamerPlay()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null & A.enabled);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
 
         if (_screamerMustBeLooped & audioSource != null)
         {

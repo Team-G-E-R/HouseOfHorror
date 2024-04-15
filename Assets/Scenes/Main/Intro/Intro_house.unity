@@ -1832,6 +1832,62 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1 &289153016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 289153018}
+  - component: {fileID: 289153017}
+  m_Layer: 0
+  m_Name: AudioSet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &289153017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289153016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe0c25383d7ec44d9bb6677de6c9e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSourceObj: []
+  SceneIndex: 0
+  PlayerScenePos: {x: 0, y: 0, z: 0}
+  CameraPos: {x: 0, y: 0, z: 0}
+  _audioClip: {fileID: 8300000, guid: ae0925114dcfa654c9d5da28d774d9ed, type: 3}
+  _beLooped: 1
+  _disableOnSceneChange: 0
+  _saveAudioTime: 0
+  _continueAudio: 0
+  _needScreamer: 0
+  _screamerMustBeLooped: 0
+  _screamerToPlay: {fileID: 0}
+--- !u!4 &289153018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289153016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -29.042038, y: 348.12546, z: -649.2309}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302181620
 GameObject:
   m_ObjectHideFlags: 0
@@ -16732,7 +16788,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c34a8a40a817a0241b520d2e73c4898d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.289
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -18479,6 +18535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3234229b2f97c3478c94ee40b400901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OneUsage: 0
+  _isInRange: 0
   inputButtonImage: {fileID: 1519675966277536837}
 --- !u!1 &6662532379496600682
 GameObject:

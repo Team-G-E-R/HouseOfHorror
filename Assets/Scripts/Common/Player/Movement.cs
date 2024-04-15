@@ -18,8 +18,8 @@ namespace Common.Scripts
         [SerializeField] private CharacterController _charContr;
 
         private AudioSource _audioSource;
-        private float _lastHorisontalInput=0;
-        private float _lastVerticalInput=0;
+        private float _lastHorisontalInput = 0;
+        private float _lastVerticalInput = 0;
         public SaveLoad.GameInfo GameData => SaveLoad.Instance.PlayerData;
         
 
