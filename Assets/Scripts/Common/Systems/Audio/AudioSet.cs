@@ -107,14 +107,14 @@ public class AudioSet : Finder
     {
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null & A.enabled);
 
-        if (_screamerMustBeLooped && audioSource != null)
+        if (_screamerMustBeLooped & audioSource != null)
         {
             print(audioSource.name);
             audioSource.clip = _screamerToPlay;
             audioSource.loop = true;
             audioSource.Play();
         }
-        else if (_screamerMustBeLooped && audioSource == null)
+        else if (_screamerMustBeLooped & audioSource == null)
             AudioSourceCreate(_screamerToPlay, _screamerMustBeLooped);
         else
         {
@@ -157,7 +157,7 @@ public class AudioSet : Finder
             SaveMusicTime(audioSource.time);
         }
 
-        if (_disableOnSceneChange && AudioSourceObj != null)
+        if (_disableOnSceneChange & AudioSourceObj != null)
         {
             foreach (var a in AudioSourceObj)
             {
