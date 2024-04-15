@@ -2787,12 +2787,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1732594321166400408, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
       propertyPath: m_text
-      value: House of horror v. 0.5
+      value: House of horror v. 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056096784333945786, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056096784333945786, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056096784333945786, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056096784333945786, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056096784333945786, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 40.636993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056096784333945786, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -63.267
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056096784333945786, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20.318497
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391562371022855524, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391562371022855524, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391562371022855524, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391562371022855524, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391562371022855524, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.511993
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391562371022855524, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 66.1868
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391562371022855524, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -21.255997
       objectReference: {fileID: 0}
     - target: {fileID: 6232056023612688706, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
       propertyPath: AudioSourceStartBtn
       value: 
       objectReference: {fileID: 1647111739}
+    - target: {fileID: 7388619855498307763, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -165
+      objectReference: {fileID: 0}
     - target: {fileID: 8244989997753221779, guid: b31490b360d17ab41bce2a4b41ecf893, type: 3}
       propertyPath: m_Pivot.x
       value: 0
