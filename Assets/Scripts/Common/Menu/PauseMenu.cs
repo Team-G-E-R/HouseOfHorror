@@ -8,6 +8,8 @@ public class PauseMenu : Finder
     [HideInInspector]
     public bool _isMenuActive = false;
     public GameObject DiaryButton;
+    public GameObject DiaryBackground;
+    public GameObject DiaryUI;
     private Slider _soundVolume;
     
     private GameObject[] _allAudio;
@@ -43,6 +45,13 @@ public class PauseMenu : Finder
     public void MenuActive()
     {
         _isMenuActive = !_isMenuActive;
+
+        if (DiaryBackground.activeSelf)
+        {
+            DiaryUI.GetComponent<Diary>().Close();
+            _isMenuActive = !_isMenuActive;
+            return;
+        }
 
         if (_isMenuActive)
         {
