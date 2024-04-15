@@ -9,7 +9,7 @@ public class CutsceneScript : MonoBehaviour
 
     private void Start()
     {
-        _playableDirector = GameObject.FindWithTag("Cutscene").GetComponent<PlayableDirector>();
+        _playableDirector = gameObject.GetComponent<PlayableDirector>();
     }
 
     public void Pause()

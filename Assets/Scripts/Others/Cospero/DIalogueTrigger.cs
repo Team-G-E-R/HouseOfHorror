@@ -11,6 +11,9 @@ public class DialogueTrigger : Interactable
         _diaPlaying = manager.DialogueIsPlaying;
         manager._dialogueTrigger = this;
 
+        Activator player = GameObject.FindWithTag("Player").GetComponent<Activator>();
+        player.OneUsage = _oneUsage;
+
         if(_diaPlaying == false)
         {
             FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);

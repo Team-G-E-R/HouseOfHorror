@@ -83,7 +83,7 @@ public class AudioSet : Finder
 
     private void MusicSet()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null & A.enabled == true);
 
         if (audioSource == null & _audioClip != null)
         {
@@ -105,7 +105,7 @@ public class AudioSet : Finder
 
     public void ScreamerPlay()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null & A.enabled);
 
         if (_screamerMustBeLooped && audioSource != null)
         {
@@ -124,13 +124,13 @@ public class AudioSet : Finder
 
     public void ScreamerStop()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _screamerToPlay);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _screamerToPlay & A.enabled);
         audioSource.Stop();
     }
 
     public void AudioContinue()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip & A.enabled);
         SaveLoad.Instance.Load();
         audioSource.time = GameData.MusicTime;
     }
@@ -153,7 +153,7 @@ public class AudioSet : Finder
     {
         if (_saveAudioTime)
         {
-            AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip);
+            AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip & A.enabled);
             SaveMusicTime(audioSource.time);
         }
 
