@@ -9,7 +9,7 @@ public class CutsceneScript : MonoBehaviour
 
     private void Start()
     {
-        _playableDirector = gameObject.GetComponent<PlayableDirector>();
+        _playableDirector = GetComponent<PlayableDirector>();
     }
 
     public void Pause()

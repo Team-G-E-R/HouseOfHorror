@@ -111,7 +111,7 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        if (_player.GetComponent<Activator>().OneUsage == false)
+        if (_player.GetComponent<Activator>().OneUsage == false & _player != null)
         {
             StartCoroutine(ActivatorBack());   
         }

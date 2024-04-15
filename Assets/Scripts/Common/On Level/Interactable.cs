@@ -11,8 +11,11 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
-        Activator player = GameObject.FindWithTag("Player").GetComponent<Activator>();
-        player.OneUsage = _oneUsage;
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            Activator player = GameObject.FindWithTag("Player").GetComponent<Activator>();
+            player.OneUsage = _oneUsage;   
+        }
         if (_oneUsage)
         {
             InteractAction.Invoke();
