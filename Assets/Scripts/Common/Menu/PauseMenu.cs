@@ -22,11 +22,6 @@ public class PauseMenu : Finder
         _soundVolume = gameObject.GetComponentInChildren<Slider>();
         _soundVolume.value = GameData.Volume;
         transform.GetChild(0).gameObject.SetActive(false);
-
-        if (GameData.HasDiary == false)
-        {
-            DiaryButton.SetActive(false);
-        }
     }
     
     private void Update()
@@ -97,5 +92,30 @@ public class PauseMenu : Finder
     {
         GameData.Volume = _soundVolume.value;
         SaveLoad.Instance.Save();
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (GameData.HasDiary == false)
+        {
+            var colors = DiaryButton.GetComponent<Button>().colors;
+            colors.normalColor = Color.gray;
+            DiaryButton.GetComponent<Button> ().colors = colors;
+            DiaryButton.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            DiaryButton.GetComponent<Button>().interactable = true;
+        }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }

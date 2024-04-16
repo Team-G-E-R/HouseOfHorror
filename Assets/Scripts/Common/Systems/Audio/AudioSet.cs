@@ -85,9 +85,13 @@ public class AudioSet : Finder
     private void MusicSet()
     {
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
-        if (audioSource.tag == "Player")
+
+        if (audioSource != null)
         {
-            audioSource = null;
+            if (audioSource.tag == "Player")
+            {
+                audioSource = null;
+            }   
         }
 
         if (audioSource == null & _audioClip != null)
