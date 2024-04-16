@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,9 +11,24 @@ public enum DiarySave
     DiarySave5
 }
 
+public enum DiaryPages
+{
+    Page1 = 1,
+    Page2,
+    Page3,
+    Page4,
+    Page5,
+    Page6,
+    Page7,
+    Page8,
+    Page9,
+    Page10
+}
+
 public class SaveTrigger : MonoBehaviour
 {
     public DiarySave saveSlot;
+    public DiaryPages diaryPages;
     public SaveLoad GameData => SaveLoad.Instance;
     private GameObject _menu;
     private Diary _diary;
@@ -24,12 +40,12 @@ public class SaveTrigger : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other)
-    {
-        
+    {   
         if (GameData.PlayerDict.KeysDict[saveSlot.ToString()] == false)
         {
             FindPlayerSettingsData();
-            _diary.EditOpen();
+            _diary.UnlockPage((Int16)diaryPages);
+            _diary.EditOpen();       
         }
     }
 

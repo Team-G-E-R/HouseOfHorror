@@ -106,6 +106,7 @@ public class SaveLoad : MonoBehaviour
       public Dictionary<int, string> Diary = new Dictionary<int, string>()
          {
             { -1, "" },
+            { 1, "Пук пук среньк"}
          };
    }
 }

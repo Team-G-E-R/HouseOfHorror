@@ -57,6 +57,8 @@ public class Diary : MonoBehaviour
             return;
         Lock();
         GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(false);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         _diary.SetActive(true);
 
         _openedInEdit = true;
@@ -128,7 +130,6 @@ public class Diary : MonoBehaviour
 
         int firstPage = firstPageIndex + pageOffset;
         int secondPage = secondPageIndex + pageOffset;
-
         if (GameData.PlayerDict.Diary.ContainsKey(firstPage) && GameData.PlayerData.UnlockedPages.Contains(firstPage))
         {
             string data = GameData.PlayerDict.Diary[firstPage];
