@@ -28,7 +28,7 @@ public class SaveLoad : MonoBehaviour
    [ContextMenu("Save")]
    public void Save()
    {
-      if (GameObject.FindWithTag("Player") & GameObject.FindWithTag("MainCamera"))
+      if (GameObject.FindWithTag("Player") & GameObject.FindWithTag("MainCamera") & PlayerData.HasDiary == true)
       {
          PlayerData.SceneIndex = SceneManager.GetActiveScene().buildIndex;
          PlayerData.PlayerScenePos = GameObject.FindWithTag("Player").transform.position;

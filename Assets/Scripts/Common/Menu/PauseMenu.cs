@@ -14,6 +14,12 @@ public class PauseMenu : Finder
     
     private GameObject[] _allAudio;
     private ColorBlock _baseColor;
+    private ColorBlock _baseColorDiary;
+
+    void Start()
+    {
+        _baseColorDiary = DiaryButton.GetComponent<Button>().colors;
+    }
 
     
     private void Update()
@@ -42,6 +48,17 @@ public class PauseMenu : Finder
 
         if (_isMenuActive)
         {
+            if (GameData.HasDiary == false)
+            {
+                _baseColor.normalColor = Color.gray;
+                DiaryButton.GetComponent<Button>().colors = _baseColor;
+                DiaryButton.GetComponent<Button>().interactable = false;
+            }
+            else
+            {
+                DiaryButton.GetComponent<Button>().colors = _baseColorDiary; 
+                DiaryButton.GetComponent<Button>().interactable = true;
+            }
             _allAudio = GameObject.FindGameObjectsWithTag("Audio");
             CursorOn();
             Time.timeScale = 0f;
@@ -102,19 +119,6 @@ public class PauseMenu : Finder
         _soundVolume = gameObject.GetComponentInChildren<Slider>();
         _soundVolume.value = GameData.Volume;
         transform.GetChild(0).gameObject.SetActive(false);
-
-        if (GameData.HasDiary == false)
-        {
-            var colors = DiaryButton.GetComponent<Button>().colors;
-            colors.normalColor = Color.gray;
-            DiaryButton.GetComponent<Button>().colors = colors;
-            DiaryButton.GetComponent<Button>().interactable = false;
-        }
-        else
-        {
-            DiaryButton.GetComponent<Button>().colors = _baseColor; 
-            DiaryButton.GetComponent<Button>().interactable = true;
-        }
     }
 
     void OnDisable()

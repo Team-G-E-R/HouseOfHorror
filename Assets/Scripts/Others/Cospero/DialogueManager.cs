@@ -111,11 +111,11 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        if (_player.GetComponent<Activator>().OneUsage == false & _player != null)
+        if (_player != null & _player.GetComponent<Activator>().OneUsage == false)
         {
             StartCoroutine(ActivatorBack());   
         }
-        ;
+        
         if (_player != null)
         {
             MovementOffOn();
