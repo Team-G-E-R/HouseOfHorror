@@ -56,7 +56,10 @@ public class Diary : MonoBehaviour
         if (_lockClose)
             return;
         Lock();
-        GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(false);
+        if (GameObject.FindWithTag("Player") == true)
+        {
+            GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(false);
+        }
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         _diary.SetActive(true);
@@ -70,7 +73,10 @@ public class Diary : MonoBehaviour
         if (_lockClose)
             return;
         Lock();
-        GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(_diary.activeSelf);
+        if (GameObject.FindWithTag("Player") == true)
+        {
+            GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(_diary.activeSelf);
+        }
         _diary.SetActive(!_diary.activeSelf);
         
         if (_diary.activeSelf)
@@ -82,7 +88,10 @@ public class Diary : MonoBehaviour
         if (_lockClose)
             return;
         Lock();
-        GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(true);
+        if (GameObject.FindWithTag("Player") == true)
+        {
+            GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(true);   
+        }
         _diary.SetActive(false);
 
         Cursor.visible = false;

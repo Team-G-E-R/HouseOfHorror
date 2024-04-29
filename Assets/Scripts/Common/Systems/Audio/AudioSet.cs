@@ -94,17 +94,17 @@ public class AudioSet : Finder
             }   
         }
 
-        if (audioSource == null & _audioClip != null)
+        if (audioSource.clip == null & _audioClip != null)
         {
             AudioSourceCreate(_audioClip, _beLooped);
         }
-        else if (_beLooped & audioSource != null)
+        else if (_beLooped & audioSource.clip != null)
         {
             audioSource.clip = _audioClip;
             audioSource.loop = true;
             audioSource.Play();
         }
-        else if (!_beLooped & audioSource != null)
+        else if (!_beLooped & audioSource.clip != null)
         {
             audioSource.clip = _audioClip;
             audioSource.loop = _beLooped;
@@ -116,15 +116,14 @@ public class AudioSet : Finder
     {
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
 
-        if (_screamerMustBeLooped & audioSource != null)
+        if (_screamerMustBeLooped & audioSource.clip != null)
         {
-            print(audioSource.name);
             audioSource.clip = _screamerToPlay;
             audioSource.loop = true;
             audioSource.volume = GameData.Volume;
             audioSource.Play();
         }
-        else if (_screamerMustBeLooped & audioSource == null)
+        else if (_screamerMustBeLooped & audioSource.clip == null)
             AudioSourceCreate(_screamerToPlay, _screamerMustBeLooped);
         else
         {

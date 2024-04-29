@@ -11,7 +11,8 @@ public enum KeyWin
     MirrorKey0 = 6,
     MirrorKey1 = 7,
     MirrorKey2 = 8,
-    MirrorDone = 9
+    MirrorDone = 9,
+
 }
 public class PuzzlesData : MonoBehaviour
 {

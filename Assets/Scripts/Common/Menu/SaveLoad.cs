@@ -60,6 +60,7 @@ public class SaveLoad : MonoBehaviour
    {
       GameObject data = new GameObject("Game Data");
       data.AddComponent<SaveLoad>();
+      data.tag = "SaveLoad";
    }
 
    [System.Serializable]
@@ -106,7 +107,7 @@ public class SaveLoad : MonoBehaviour
       public Dictionary<int, string> Diary = new Dictionary<int, string>()
          {
             { -1, "" },
-            { 1, "Пук пук среньк"}
+            { 1, "Дом дом дом дом дом дом дом ДООООООООМ коридор"}
          };
    }
 }

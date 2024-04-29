@@ -13,16 +13,8 @@ public class PauseMenu : Finder
     private Slider _soundVolume;
     
     private GameObject[] _allAudio;
+    private ColorBlock _baseColor;
 
-    private void Start()
-    {
-        FindObjs();
-
-        _allAudio = GameObject.FindGameObjectsWithTag("Audio");
-        _soundVolume = gameObject.GetComponentInChildren<Slider>();
-        _soundVolume.value = GameData.Volume;
-        transform.GetChild(0).gameObject.SetActive(false);
-    }
     
     private void Update()
     {
@@ -101,15 +93,26 @@ public class PauseMenu : Finder
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        transform.GetChild(0).gameObject.SetActive(true);
+        _baseColor = DiaryButton.GetComponent<Button>().colors;
+
+        FindObjs();
+
+        _allAudio = GameObject.FindGameObjectsWithTag("Audio");
+        _soundVolume = gameObject.GetComponentInChildren<Slider>();
+        _soundVolume.value = GameData.Volume;
+        transform.GetChild(0).gameObject.SetActive(false);
+
         if (GameData.HasDiary == false)
         {
             var colors = DiaryButton.GetComponent<Button>().colors;
             colors.normalColor = Color.gray;
-            DiaryButton.GetComponent<Button> ().colors = colors;
+            DiaryButton.GetComponent<Button>().colors = colors;
             DiaryButton.GetComponent<Button>().interactable = false;
         }
         else
         {
+            DiaryButton.GetComponent<Button>().colors = _baseColor; 
             DiaryButton.GetComponent<Button>().interactable = true;
         }
     }

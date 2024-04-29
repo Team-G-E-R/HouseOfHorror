@@ -8,9 +8,14 @@ public class MenuLoad : MonoBehaviour
     public GameObject UiElements;
     public GameObject ZeroSavesUi;
     private SaveLoad.GameInfo _gameInfo => SaveLoad.Instance.PlayerData;
+    private GameObject _pauseMenu;
+    private PauseMenu _pauseScript;
+
 
     public void LoadLevel()
     {
+        _pauseMenu = GameObject.FindGameObjectWithTag("Menu");
+        _pauseScript = _pauseMenu.GetComponent<PauseMenu>();
         if (_gameInfo.SceneIndex == 0)
         {
             ZeroSavesUi.SetActive(true);
@@ -21,7 +26,7 @@ public class MenuLoad : MonoBehaviour
             {
                 Instantiate(Resources.Load("Pause Menu/Pause Menu"));
             }
-            DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(this);
             Menu.SaveSettingsData(false);
             StartCoroutine("AsyncLoad");
         }
@@ -33,6 +38,7 @@ public class MenuLoad : MonoBehaviour
         var fade = GetComponent<FadeInOut>();
         Menu.StartBtnPlay();
         _asyncOperation = SceneManager.LoadSceneAsync(_gameInfo.SceneIndex);
+        _pauseScript.enabled = true;
         _asyncOperation.allowSceneActivation = false;
         fade.duration = Menu.AudioSourceStartBtn.clip.length;
         fade.FadeIn();
