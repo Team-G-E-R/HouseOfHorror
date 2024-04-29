@@ -24,7 +24,7 @@ public class PauseMenu : Finder
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) MenuActive();
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.JoystickButton7)) MenuActive();
     }
 
     public void VolumeSet()

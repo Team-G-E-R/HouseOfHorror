@@ -1,5 +1,6 @@
 using Common.Scripts;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Activator : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class Activator : MonoBehaviour
           if((_isInRange))
           {
                ShowPic();
-               if ((Input.GetKeyDown(KeyCode.E)) & InteractItem.TryGetComponent<Interactable>(out Interactable ob))
+               if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0)) & InteractItem.TryGetComponent<Interactable>(out Interactable ob))
                {
                     _isInRange = false;
                     HidePic();

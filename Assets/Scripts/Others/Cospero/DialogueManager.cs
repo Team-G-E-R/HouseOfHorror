@@ -44,10 +44,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) == false) return;
-        StopAllCoroutines();
-        if (DialogueTextUI.text != _curSentanceText) DialogueTextUI.text = _curSentanceText;
-        else if (DialogueIsPlaying) DisplayNextLine();
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0))
+        {
+            StopAllCoroutines();
+            if (DialogueTextUI.text != _curSentanceText) DialogueTextUI.text = _curSentanceText;
+            else if (DialogueIsPlaying) DisplayNextLine();
+        }
     }
 
     public void StartDialogue(DialogueWindow dialogue)
