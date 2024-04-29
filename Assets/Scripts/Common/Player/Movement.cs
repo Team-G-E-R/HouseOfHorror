@@ -18,8 +18,10 @@ namespace Common.Scripts
         [SerializeField] private CharacterController _charContr;
 
         private AudioSource _audioSource;
-        private float _lastHorisontalInput = 0;
-        private float _lastVerticalInput = 0;
+        [HideInInspector]
+        public float _lastHorisontalInput = 0;
+        [HideInInspector]
+        public float _lastVerticalInput = 0;
         public SaveLoad.GameInfo GameData => SaveLoad.Instance.PlayerData;
         
 
@@ -104,6 +106,11 @@ namespace Common.Scripts
             _movementLocked = true;
             animator.SetFloat("Horizontal", _lastHorisontalInput / 2);
             animator.SetFloat("Vertical", _lastVerticalInput / 2);
+        }
+
+        public void StopPlayer()
+        {
+
         }
         
         public void TurnOnMovement()

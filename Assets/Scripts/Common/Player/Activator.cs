@@ -1,3 +1,4 @@
+using Common.Scripts;
 using UnityEngine;
 
 public class Activator : MonoBehaviour
@@ -6,10 +7,14 @@ public class Activator : MonoBehaviour
      public bool _isInRange = false;
      private static GameObject InteractItem;
      [SerializeField] GameObject inputButtonImage;
+     private Animator _playerAnimator;
+     private movement _playerMovement;
 
      private void Awake()
      {
           HidePic();
+          _playerAnimator = gameObject.GetComponent<Animator>();
+          _playerMovement = gameObject.GetComponent<movement>();
      }
    
      private void Update() 
@@ -22,6 +27,8 @@ public class Activator : MonoBehaviour
                     _isInRange = false;
                     HidePic();
                     ob.Interact();
+                    _playerAnimator.SetFloat("Horizontal", _playerMovement._lastHorisontalInput / 2);
+                    _playerAnimator.SetFloat("Vertical", _playerMovement._lastVerticalInput / 2);
                     if (ob._oneUsage)
                     {
                          OneUsage = true;
