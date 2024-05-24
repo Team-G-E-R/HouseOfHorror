@@ -26,21 +26,23 @@ public class AudioSet : Finder
     private List<float> volumesIgnore = new();
     private GameObject _menu;
     private Slider _menuSlider;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         _sourcesToIgnore = (AudioSource[]) GameObject.FindObjectsOfType (typeof(AudioSource));
-        _menu = GameObject.FindWithTag("Menu");
-        if (_menu != null)
-        {
-            _menuSlider = _menu.GetComponentInChildren<Slider>();   
-        }
         if (_sourcesToIgnore.Length > 1)
         {
             foreach (var a in _sourcesToIgnore)
             {
                 volumesIgnore.Add(a.volume);
+                print(a.volume);
             }
+        }
+        _menu = GameObject.FindWithTag("Menu");
+        if (_menu != null)
+        {
+            _menuSlider = _menu.GetComponentInChildren<Slider>(true);   
         }
 
        FindObjs();
@@ -67,32 +69,50 @@ public class AudioSet : Finder
     {
         if (_sourcesToIgnore.Length > 1)
         {
-            for (int i = 0; i < _sourcesToIgnore.Length; i++)
+            if (_menuSlider == null)
             {
-                _sourcesToIgnore[i].volume = volumesIgnore[i] * _menuSlider.value;
+                _menuSlider = _menu.GetComponentInChildren<Slider>(true);   
+            }
+            else
+            {
+                for (int i = 0; i < _sourcesToIgnore.Length; i++)
+                {
+                    _sourcesToIgnore[i].volume = volumesIgnore[i] * _menuSlider.value;
+                }
             }
         }
     }
 
     private void MusicSet()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
+        if (AudioSourceObj.Exists(A => A.clip == null))
+        {
+            _audioSource = AudioSourceObj.Find(A => A.clip == null);
+        }
 
-        if (audioSource == null & _audioClip != null)
+        if (_audioSource != null)
+        {
+            if (_audioSource.tag == "Player")
+            {
+                _audioSource = null;
+            }   
+        }
+
+        if (_audioSource == null & _audioClip != null)
         {
             AudioSourceCreate(_audioClip, _beLooped);
         }
-        else if (_beLooped & audioSource != null)
+        else if (_beLooped & _audioSource != null)
         {
-            audioSource.clip = _audioClip;
-            audioSource.loop = true;
-            audioSource.Play();
+            _audioSource.clip = _audioClip;
+            _audioSource.loop = true;
+            _audioSource.Play();
         }
-        else if (!_beLooped & audioSource != null)
+        else if (!_beLooped & _audioSource != null)
         {
-            audioSource.clip = _audioClip;
-            audioSource.loop = _beLooped;
-            audioSource.Play();
+            _audioSource.clip = _audioClip;
+            _audioSource.loop = _beLooped;
+            _audioSource.Play();
         }
     }
 
@@ -100,14 +120,14 @@ public class AudioSet : Finder
     {
         AudioSource audioSource = AudioSourceObj.Find(A => A.clip == null);
 
-        if (_screamerMustBeLooped && audioSource != null)
+        if (_screamerMustBeLooped & audioSource != null)
         {
-            print(audioSource.name);
             audioSource.clip = _screamerToPlay;
             audioSource.loop = true;
+            audioSource.volume = GameData.Volume;
             audioSource.Play();
         }
-        else if (_screamerMustBeLooped && audioSource == null)
+        else if (_screamerMustBeLooped & audioSource == null)
             AudioSourceCreate(_screamerToPlay, _screamerMustBeLooped);
         else
         {
@@ -117,13 +137,13 @@ public class AudioSet : Finder
 
     public void ScreamerStop()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _screamerToPlay);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _screamerToPlay & A.enabled);
         audioSource.Stop();
     }
 
     public void AudioContinue()
     {
-        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip);
+        AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip & A.enabled);
         SaveLoad.Instance.Load();
         audioSource.time = GameData.MusicTime;
     }
@@ -146,11 +166,11 @@ public class AudioSet : Finder
     {
         if (_saveAudioTime)
         {
-            AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip);
+            AudioSource audioSource = AudioSourceObj.Find(A => A.clip == _audioClip & A.enabled);
             SaveMusicTime(audioSource.time);
         }
 
-        if (_disableOnSceneChange && AudioSourceObj != null)
+        if (_disableOnSceneChange & AudioSourceObj != null)
         {
             foreach (var a in AudioSourceObj)
             {

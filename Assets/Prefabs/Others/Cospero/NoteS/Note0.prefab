@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3136066048118347311}
-  m_LocalRotation: {x: 0.6895085, y: -0, z: -0, w: 0.72427773}
+  m_LocalRotation: {x: 0.68951213, y: 0, z: 0, w: 0.72427416}
   m_LocalPosition: {x: -7.269062, y: -16.04, z: 23.826115}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.8597317, y: 2.8597317, z: 2.8597317}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e95c0cf17f6e55b47bd32ec26aaaa831, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a70df6e8b384b06458e01a01b31497ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de6f8cb38eae9d469575aa355ba22f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteSprite: {fileID: 21300000, guid: e95c0cf17f6e55b47bd32ec26aaaa831, type: 3}
+  noteSprite: {fileID: 21300000, guid: a70df6e8b384b06458e01a01b31497ca, type: 3}
   noteText: "\u0421\u0440\u0430\u0437\u0443 \u043F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E
     \u043A\u0430\u043A \u044F \u043F\u0440\u0438\u0431\u044B\u043B \u0432 \u0441\u0432\u043E\u0439
     \u0440\u043E\u0434\u043D\u043E\u0439 \u0434\u043E\u043C\n\u043D\u0430\u0447\u0430\u043B\u0438
@@ -157,5 +157,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.92, y: 3.9200015, z: 0.20000008}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3915116, y: 1.6142607, z: 1.1329105}
+  m_Center: {x: 0.008830069, y: 0.07190171, z: -0.5314512}

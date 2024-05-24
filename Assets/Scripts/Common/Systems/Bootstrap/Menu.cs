@@ -6,28 +6,29 @@ using System.Collections;
 public class Menu : Finder
 {
    public SaveLoad.GameInfo NewGameData => SaveLoad.Instance.PlayerData;
-   public AudioClip AudioStartBtn;
    public AudioSource AudioSourceStartBtn;
    [SerializeField] private int _nextSceneIndex;
    
    private Slider _volumeSlider;
    private const string _audioName = "AudioButton";
+   private GameObject _pauseMenu;
+   private PauseMenu _pauseScript;
 
    private void Start()
    {
+      _pauseMenu = GameObject.FindGameObjectWithTag("Menu");
+      _pauseScript = _pauseMenu.GetComponent<PauseMenu>();
+      if (_pauseScript._isMenuActive)
+      {
+         _pauseScript.MenuActive();
+      }
+      DontDestroyOnLoad(_pauseMenu);
+      _pauseScript.enabled = false;
+      
       _volumeSlider = GetComponentInChildren<Slider>();
-      FindObjs();
       _volumeSlider.value = GameData.Volume;
-      CreateAudioBtn();
-   }
-   
-   private void CreateAudioBtn()
-   {
-      GameObject audioFile = new GameObject();
-      audioFile.name = _audioName;
-      AudioSourceStartBtn = audioFile.AddComponent<AudioSource>();
-      AudioSourceStartBtn.clip = AudioStartBtn;
-      AudioSourceStartBtn.volume = GameData.Volume;
+      CursorOn();
+      FindObjs();
    }
 
    public void SceneLoad()
@@ -43,7 +44,7 @@ public class Menu : Finder
    {
       foreach (var a in AudioSourceObj)
       {
-         a.clip = null;  
+         a.GetComponent<AudioSource>().Stop();  
       }
       AudioSourceStartBtn.volume = NewGameData.Volume;
       AudioSourceStartBtn.Play();
@@ -73,12 +74,20 @@ public class Menu : Finder
       Application.Quit();
    }
 
+   [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+   private static void PauseMenuCreating()
+   {
+      var pauseMenu = Instantiate(Resources.Load("Pause Menu/Pause Menu"));
+      DontDestroyOnLoad(pauseMenu);
+   }
+
    private IEnumerator FadeInTransition()
    {
       var fade = GetComponent<FadeInOut>();
-      fade.duration = AudioStartBtn.length;
+      fade.duration = AudioSourceStartBtn.clip.length;
       fade.FadeIn();
       yield return new WaitForSeconds(fade.duration + 0.5f);
       SceneManager.LoadScene(_nextSceneIndex, LoadSceneMode.Single);
+      _pauseScript.enabled = true;
    }
 }

@@ -4,6 +4,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class Vision : MonoBehaviour
 {
+    public SaveLoad.GameDataDict GameData => SaveLoad.Instance.PlayerDict;
+    [SerializeField] private GameObject _uiElement;
     [SerializeField] private Light[] _specialLights;
     [Tooltip("Recommend 1")]
     [SerializeField] private float _chromaticIntensity;
@@ -31,9 +33,17 @@ public class Vision : MonoBehaviour
         state = false;
     }
 
+    void Start()
+    {
+        if (GameData.KeysDict["Vision"])
+        {
+            _uiElement.SetActive(true);
+        }
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) & GameData.KeysDict["Vision"])
         {
             state = !state;
 

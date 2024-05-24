@@ -44,10 +44,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) == false) return;
-        StopAllCoroutines();
-        if (DialogueTextUI.text != _curSentanceText) DialogueTextUI.text = _curSentanceText;
-        else if (DialogueIsPlaying) DisplayNextLine();
+        if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.JoystickButton0))
+        {
+            StopAllCoroutines();
+            if (DialogueTextUI.text != _curSentanceText) DialogueTextUI.text = _curSentanceText;
+            else if (DialogueIsPlaying) DisplayNextLine();
+        }
     }
 
     public void StartDialogue(DialogueWindow dialogue)
@@ -111,19 +113,27 @@ public class DialogueManager : MonoBehaviour
 
     private void EndDialogue()
     {
-        //DialogueIsPlaying = false;
-        //DialogueObjUI.SetActive(false);
+        if (_player != null & _player.GetComponent<Activator>().OneUsage == false)
+        {
+            StartCoroutine(ActivatorBack());   
+        }
+        
         if (_player != null)
         {
             MovementOffOn();
         }
     }
 
+    IEnumerator ActivatorBack()
+    {
+        yield return new WaitForEndOfFrame();
+        _player.GetComponent<Activator>()._isInRange = true;
+    }
+
     private void MovementOffOn()
     {
         _moveEnable = !_moveEnable;
         _player.GetComponent<movement>().enabled = _moveEnable;
-        _player.GetComponent<Activator>().enabled = _moveEnable;
     }
 }
 

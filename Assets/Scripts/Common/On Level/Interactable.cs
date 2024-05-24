@@ -11,17 +11,16 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            Activator player = GameObject.FindWithTag("Player").GetComponent<Activator>();
+            player.OneUsage = _oneUsage;   
+        }
         if (_oneUsage)
         {
             InteractAction.Invoke();
             Destroy(this);
-            //DestroyInteractable();
         }
         else InteractAction.Invoke();
-    }
-
-    public void DestroyInteractable()
-    {
-        Destroy(gameObject);
     }
 }

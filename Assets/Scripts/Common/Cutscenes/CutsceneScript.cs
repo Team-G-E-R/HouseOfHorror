@@ -6,10 +6,11 @@ public class CutsceneScript : MonoBehaviour
 {
     private PlayableDirector _playableDirector;
     public float TimeToJump;
+    public SaveLoad GameData => SaveLoad.Instance;
 
     private void Start()
     {
-        _playableDirector = GameObject.FindWithTag("Cutscene").GetComponent<PlayableDirector>();
+        _playableDirector = GetComponent<PlayableDirector>();
     }
 
     public void Pause()
@@ -35,5 +36,11 @@ public class CutsceneScript : MonoBehaviour
     public void JumpToTime()
     {
         _playableDirector.time = TimeToJump;
+    }
+
+    public void SaveForDiary()
+    {
+        GameData.PlayerData.HasDiary = true;
+        GameData.Save();
     }
 }

@@ -10,10 +10,16 @@ public class DialogueTrigger : Interactable
         var manager = FindObjectOfType<DialogueManager>();
         _diaPlaying = manager.DialogueIsPlaying;
         manager._dialogueTrigger = this;
-        
-        if(_diaPlaying == false) FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);
-    }
-    private void Update() {
-        if (Input.GetKeyDown(KeyCode.H)) ActivateDialogue();
+
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            Activator player = GameObject.FindWithTag("Player").GetComponent<Activator>();
+            player.OneUsage = _oneUsage;   
+        }
+
+        if(_diaPlaying == false)
+        {
+            FindObjectOfType<DialogueManager>().StartDialogue(_dialogue);
+        } 
     }
 }

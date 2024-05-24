@@ -33,10 +33,10 @@ public class Finder : MonoBehaviour
         }
         else
         {
-            AudioSource[] allAudio = Resources.FindObjectsOfTypeAll<AudioSource>();
+            AudioSource[] allAudio = FindObjectsByType<AudioSource>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             foreach (var a in allAudio)
             {
-                a.volume = GameData.Volume;
+                a.volume = GameData.Volume; //After test delete from comment
                 AudioSourceObj.Add(a);
             }
         }

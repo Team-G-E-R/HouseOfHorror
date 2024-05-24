@@ -21,7 +21,6 @@ public class Diary : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text _secondPageNumber;
 
     [SerializeField] private GameObject _diary;
-    [SerializeField] private KeyCode _interactKey = KeyCode.Escape;
 
     private int _turn = 1;
 
@@ -52,20 +51,17 @@ public class Diary : MonoBehaviour
     //     //UnlockPage(4);
     // }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(_interactKey))
-        {
-            ReadToggle();
-        }
-    }
-
     public void EditOpen()
     {
         if (_lockClose)
             return;
         Lock();
-        GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(false);
+        if (GameObject.FindWithTag("Player") == true)
+        {
+            GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(false);
+        }
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         _diary.SetActive(true);
 
         _openedInEdit = true;
@@ -77,7 +73,10 @@ public class Diary : MonoBehaviour
         if (_lockClose)
             return;
         Lock();
-        GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(_diary.activeSelf);
+        if (GameObject.FindWithTag("Player") == true)
+        {
+            GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(_diary.activeSelf);
+        }
         _diary.SetActive(!_diary.activeSelf);
         
         if (_diary.activeSelf)
@@ -89,8 +88,15 @@ public class Diary : MonoBehaviour
         if (_lockClose)
             return;
         Lock();
-        GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(true);
+        if (GameObject.FindWithTag("Player") == true)
+        {
+            GameObject.FindWithTag("Player").GetComponent<movement>().SetWalk(true);   
+        }
         _diary.SetActive(false);
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1f;
 
         _openedInEdit = false;
     }
@@ -133,7 +139,6 @@ public class Diary : MonoBehaviour
 
         int firstPage = firstPageIndex + pageOffset;
         int secondPage = secondPageIndex + pageOffset;
-
         if (GameData.PlayerDict.Diary.ContainsKey(firstPage) && GameData.PlayerData.UnlockedPages.Contains(firstPage))
         {
             string data = GameData.PlayerDict.Diary[firstPage];
